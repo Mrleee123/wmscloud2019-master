@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="daov2" />
+        <module name="wms-web-client" />
+        <module name="wmscloud" />
+        <module name="wmsdao" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="wmd-dao" target="1.8" />
+      <module name="wms-dao" target="1.5" />
+      <module name="wms-web" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="daov2" options="-parameters" />
+      <module name="wmd-dao" options="-parameters" />
+      <module name="wms-dao" options="" />
+      <module name="wms-web" options="-parameters" />
+      <module name="wms-web-client" options="-parameters" />
+      <module name="wmscloud" options="-parameters" />
+      <module name="wmsdao" options="-parameters" />
+    </option>
+  </component>
+</project>
