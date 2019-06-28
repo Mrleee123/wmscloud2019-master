@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
+
+    <settings>
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+    </settings>
     <!-- 为Java实体设置类别名 -->
     <typeAliases>
         <!-- 设置方式1，一个一个配置 type中放置的是类的全路径，alias中放置的是 类别名
@@ -23,7 +27,8 @@
             <dataSource type="POOLED">
                 <!-- ${jdbc.driver}代表配置文件中的某一项的key -->
                 <property name="driver" value="com.mysql.jdbc.Driver"/>
-                <property name="url" value="jdbc:mysql://127.0.0.1:3306/asrs_wmscloud"/>
+                <property name="url"
+                          value="jdbc:mysql://127.0.0.1:3306/asrs_wmscloud?useUnicode=true&amp;characterEncoding=utf-8&amp;allowMultiQueries=true"/>
                 <property name="username" value="root"/>
                 <property name="password" value="asrs-123"/>
             </dataSource>
@@ -34,5 +39,7 @@
     <mappers>
         <package name="mappers"/>
     </mappers>
+
+
 
 </configuration>

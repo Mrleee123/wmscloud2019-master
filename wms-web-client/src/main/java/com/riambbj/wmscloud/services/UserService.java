@@ -12,4 +12,16 @@ public class UserService {
     public List<User> getUserList() throws Exception{
         return dao.list();
     }
+
+    /*
+    用户登录
+     */
+//    public User loginUser(String user_code,String password){
+//        return dao.loginByCodeAndPwd(user_code,password);
+//    }
+
+    public User getUserById(long id){
+        return dao.get(id);
+    }
+
 }

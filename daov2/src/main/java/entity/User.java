@@ -9,19 +9,19 @@ public class User implements Serializable {
 
     private Integer issa;
 
-    private String userCode;
+    private String user_Code;
 
-    private String userName;
+    private String user_Name;
 
     private String password;
 
     private String demo;
 
-    private Date createTime;
+    private Date create_Time;
 
     private String creator;
 
-    private Date updateTime;
+    private Date update_Time;
 
     private Integer isenabled;
 
@@ -46,19 +46,19 @@ public class User implements Serializable {
     }
 
     public String getUserCode() {
-        return userCode;
+        return user_Code;
     }
 
     public void setUserCode(String userCode) {
-        this.userCode = userCode == null ? null : userCode.trim();
+        this.user_Code = userCode == null ? null : userCode.trim();
     }
 
     public String getUserName() {
-        return userName;
+        return user_Name;
     }
 
     public void setUserName(String userName) {
-        this.userName = userName == null ? null : userName.trim();
+        this.user_Name = userName == null ? null : userName.trim();
     }
 
     public String getPassword() {
@@ -78,11 +78,11 @@ public class User implements Serializable {
     }
 
     public Date getCreateTime() {
-        return createTime;
+        return create_Time;
     }
 
     public void setCreateTime(Date createTime) {
-        this.createTime = createTime;
+        this.create_Time = createTime;
     }
 
     public String getCreator() {
@@ -94,11 +94,11 @@ public class User implements Serializable {
     }
 
     public Date getUpdateTime() {
-        return updateTime;
+        return update_Time;
     }
 
     public void setUpdateTime(Date updateTime) {
-        this.updateTime = updateTime;
+        this.update_Time = updateTime;
     }
 
     public Integer getIsenabled() {
@@ -124,8 +124,8 @@ public class User implements Serializable {
                 "demo='" +demo  + '\'' +
                 "isenabled='" +isenabled  + '\'' +
                 "isdeleted='" +isdeleted  + '\'' +
-                ", user_Code='" + userCode + '\'' +
-                ", user_Name='" + userName + '\'' +
+                ", user_Code='" + user_Code + '\'' +
+                ", user_Name='" + user_Name + '\'' +
                 ", password=" + password + '\'' +
                   ", creator='" + creator + '\'' +
                 '}';
