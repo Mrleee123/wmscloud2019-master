@@ -14,8 +14,9 @@ public class UserDaoTest {
         User user  = new User();
         user.setUserCode("MM1");
         user.setPassword("11");
+        user.setUserName("MMMMMMMMMMMMMMMMMMMMMMMMMMMM");
         user.setCreator("system");
-        user.setDemo("测");
+        user.setDemo("测33");
         UserDao dao =  new UserDao();
         int result =  dao.add(user);
         if (result ==1) {
@@ -40,8 +41,9 @@ public class UserDaoTest {
         User user  = new User();
        // user.setUserCode("MM1");
         user.setId(5L);
-        user.setUserName("江小P");
+        user.setUserName("江小P111");
         user.setPassword("123456");
+        user.setIsdeleted(1);
        // user.setCreator("system");
         user.setDemo("测试");
         UserDao dao =  new UserDao();
@@ -72,8 +74,27 @@ public class UserDaoTest {
     public void login()  {
         User user =new User();
         UserDao dao = new UserDao();
-         user = dao.loginByCodeAndPwd("lixiaobo","123456qaz");
+         user = dao.loginByCodeAndPwd("lixiaobo111","123456qaz");
         // assertEquals(4, list.size());
         System.out.println("-------test finish----------");
     }
+
+    @Test
+    public void forbiddenUser()  {
+
+        UserDao dao = new UserDao();
+       dao.forbiddenUser(6);
+        // assertEquals(4, list.size());
+        System.out.println("-------test finish----------");
+    }
+
+    @Test
+    public void enableUserById()  {
+
+        UserDao dao = new UserDao();
+        dao.enableUserById(6);
+        // assertEquals(4, list.size());
+        System.out.println("-------test finish----------");
+    }
+
 }

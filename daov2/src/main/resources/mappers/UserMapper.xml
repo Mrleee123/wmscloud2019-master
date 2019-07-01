@@ -148,8 +148,16 @@
       isdeleted = #{isdeleted,jdbcType=INTEGER}
     where id = #{id,jdbcType=BIGINT}
   </update>
+
     <select id="login" resultType="entity.User" parameterType="string">
         select * from t_asrs_sys_user where user_code = #{user_code} and  password = #{password}
     </select>
 
+    <update id="forbiddenUserById" parameterType="java.lang.Long">
+        update t_asrs_sys_user set isenabled = 0,isdeleted =1,update_time =now()     where id = #{id,jdbcType=BIGINT}
+    </update>
+
+    <update id="enableUserById" parameterType="java.lang.Long">
+        update t_asrs_sys_user set isenabled = 1,isdeleted =0,update_time =now()     where id = #{id,jdbcType=BIGINT}
+    </update>
 </mapper>

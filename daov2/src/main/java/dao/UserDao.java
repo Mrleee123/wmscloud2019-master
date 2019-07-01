@@ -1,12 +1,13 @@
 package dao;
 
-import com.sun.xml.internal.ws.api.ha.StickyFeature;
+
 import dbtools.DBTools;
 import entity.User;
 import mappers.UserMapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.session.SqlSession;
 
+import java.util.Date;
 import java.util.List;
 
 public class UserDao {
@@ -45,6 +46,9 @@ public class UserDao {
 
     public int update(User entity)  {
         try {
+            java.sql.Date time = new java.sql.Date(new Date().getTime());
+            Date update_time = time;
+            entity.setUpdateTime(update_time);
             int result = mapper.updateByPrimaryKeySelective(entity);
             sqlSession.commit();
             return result;
@@ -77,12 +81,32 @@ public class UserDao {
         }
     }
 
-    public  User loginByCodeAndPwd( String User_code, String password){
+    public  User loginByCodeAndPwd(String User_code,String password){
         try{
             User user = new User();
             user = mapper.login(User_code,password);
             System.out.println(user);
             return user;
+        }finally {
+            DBTools.closeSession();
+        }
+    }
+
+    public int forbiddenUser(long id){
+        try{
+            int result = mapper.forbiddenUserById(id);
+            sqlSession.commit();
+            return result;
+        }finally {
+            DBTools.closeSession();
+        }
+    }
+
+    public int enableUserById(long id){
+        try{
+            int result = mapper.enableUserById(id);
+            sqlSession.commit();
+            return result;
         }finally {
             DBTools.closeSession();
         }
