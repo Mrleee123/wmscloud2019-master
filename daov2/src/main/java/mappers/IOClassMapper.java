@@ -1,6 +1,6 @@
-package com.dao;
+package mappers;
 
-import com.model.IOClass;
+import entity.IOClass;
 
 public interface IOClassMapper {
     int deleteByPrimaryKey(Integer id);

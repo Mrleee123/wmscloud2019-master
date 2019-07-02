@@ -1,6 +1,6 @@
-package com.dao;
+package mappers;
 
-import com.model.Log;
+import entity.Log;
 
 public interface LogMapper {
     int deleteByPrimaryKey(Long id);

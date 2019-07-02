@@ -18,16 +18,20 @@
     from t_asrs_sys_role
     where id = #{id,jdbcType=INTEGER}
   </select>
+  <select id="selectAll" resultType="entity.Role">
+        select * from t_asrs_sys_role;
+   </select>
+
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from t_asrs_sys_role
     where id = #{id,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="entity.Role">
     insert into t_asrs_sys_role (id, rolecode, rolename,
-      memo, createtime, creator
+      memo, creator
       )
     values (#{id,jdbcType=INTEGER}, #{roleCode,jdbcType=VARCHAR}, #{roleName,jdbcType=VARCHAR}, 
-      #{memo,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{creator,jdbcType=VARCHAR}
+      #{memo,jdbcType=VARCHAR}, #{creator,jdbcType=VARCHAR}
       )
   </insert>
   <insert id="insertSelective" parameterType="entity.Role">
@@ -45,9 +49,7 @@
       <if test="memo != null">
         memo,
       </if>
-      <if test="createTime != null">
-        createtime,
-      </if>
+
       <if test="creator != null">
         creator,
       </if>
@@ -65,9 +67,7 @@
       <if test="memo != null">
         #{memo,jdbcType=VARCHAR},
       </if>
-      <if test="createTime != null">
-        #{createTime,jdbcType=TIMESTAMP},
-      </if>
+
       <if test="creator != null">
         #{creator,jdbcType=VARCHAR},
       </if>
@@ -85,9 +85,7 @@
       <if test="memo != null">
         memo = #{memo,jdbcType=VARCHAR},
       </if>
-      <if test="createTime != null">
-        createtime = #{createTime,jdbcType=TIMESTAMP},
-      </if>
+
       <if test="creator != null">
         creator = #{creator,jdbcType=VARCHAR},
       </if>
@@ -99,8 +97,14 @@
     set rolecode = #{roleCode,jdbcType=VARCHAR},
       rolename = #{roleName,jdbcType=VARCHAR},
       memo = #{memo,jdbcType=VARCHAR},
-      create_time = #{createTime,jdbcType=TIMESTAMP},
+
       creator = #{creator,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="forbiddenRoleById" parameterType="int">
+    update t_asrs_sys_role set isenabled = 0 where id =#{id}
+  </update>
+  <update id="enableRoleById" parameterType="int">
+    update t_asrs_sys_role set isenabled = 1 where id =#{id}
   </update>
 </mapper>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.dao.DevLogMapper">
-  <resultMap id="BaseResultMap" type="com.model.DevLog">
+<mapper namespace="mappers.DevLogMapper">
+  <resultMap id="BaseResultMap" type="entity.DevLog">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="ltime" jdbcType="TIMESTAMP" property="ltime" />
     <result column="devno" jdbcType="VARCHAR" property="devno" />
@@ -26,7 +26,7 @@
     delete from t_asrs_log_devalarm
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.model.DevLog">
+  <insert id="insert" parameterType="entity.DevLog">
     insert into t_asrs_log_devalarm (id, ltime, devno, 
       acode, acontent, cid, 
       palletid, memo, detail, 
@@ -36,7 +36,7 @@
       #{palletid,jdbcType=VARCHAR}, #{memo,jdbcType=VARCHAR}, #{detail,jdbcType=VARCHAR}, 
       #{palletcode,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.model.DevLog">
+  <insert id="insertSelective" parameterType="entity.DevLog">
     insert into t_asrs_log_devalarm
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -103,7 +103,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.model.DevLog">
+  <update id="updateByPrimaryKeySelective" parameterType="entity.DevLog">
     update t_asrs_log_devalarm
     <set>
       <if test="ltime != null">
@@ -136,7 +136,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.model.DevLog">
+  <update id="updateByPrimaryKey" parameterType="entity.DevLog">
     update t_asrs_log_devalarm
     set ltime = #{ltime,jdbcType=TIMESTAMP},
       devno = #{devno,jdbcType=VARCHAR},

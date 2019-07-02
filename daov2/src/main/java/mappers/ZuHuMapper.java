@@ -1,6 +1,6 @@
-package com.dao;
+package mappers;
 
-import com.model.ZuHu;
+import entity.ZuHu;
 
 public interface ZuHuMapper {
     int deleteByPrimaryKey(Integer id);

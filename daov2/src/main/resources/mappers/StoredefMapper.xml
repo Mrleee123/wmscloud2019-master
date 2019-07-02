@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.dao.StoredefMapper">
-  <resultMap id="BaseResultMap" type="com.model.Storedef">
+<mapper namespace="mappers.StoredefMapper">
+  <resultMap id="BaseResultMap" type="entity.Storedef">
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="storedef_code" jdbcType="VARCHAR" property="storedefCode" />
     <result column="storedef_name" jdbcType="VARCHAR" property="storedefName" />
@@ -28,7 +28,7 @@
     delete from t_asrs_sys_storedef
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="com.model.Storedef">
+  <insert id="insert" parameterType="entity.Storedef">
     insert into t_asrs_sys_storedef (id, storedef_code, storedef_name, 
       storedef_type, memo, create_time, 
       creator, update_time, updator, 
@@ -38,7 +38,7 @@
       #{creator,jdbcType=VARCHAR}, #{updateTime,jdbcType=TIMESTAMP}, #{updator,jdbcType=VARCHAR}, 
       #{isenabled,jdbcType=INTEGER}, #{isdeleted,jdbcType=INTEGER})
   </insert>
-  <insert id="insertSelective" parameterType="com.model.Storedef">
+  <insert id="insertSelective" parameterType="entity.Storedef">
     insert into t_asrs_sys_storedef
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -111,7 +111,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.model.Storedef">
+  <update id="updateByPrimaryKeySelective" parameterType="entity.Storedef">
     update t_asrs_sys_storedef
     <set>
       <if test="storedefCode != null">
@@ -147,7 +147,7 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.model.Storedef">
+  <update id="updateByPrimaryKey" parameterType="entity.Storedef">
     update t_asrs_sys_storedef
     set storedef_code = #{storedefCode,jdbcType=VARCHAR},
       storedef_name = #{storedefName,jdbcType=VARCHAR},

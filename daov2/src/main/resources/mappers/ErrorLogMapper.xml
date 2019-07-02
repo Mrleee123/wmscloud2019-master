@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.dao.ErrorLogMapper">
-  <resultMap id="BaseResultMap" type="com.model.ErrorLog">
+<mapper namespace="mappers.ErrorLogMapper">
+  <resultMap id="BaseResultMap" type="entity.ErrorLog">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="lclass" jdbcType="VARCHAR" property="lclass" />
     <result column="worktype" jdbcType="VARCHAR" property="worktype" />
@@ -25,7 +25,7 @@
     delete from t_asrs_log_error
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.model.ErrorLog">
+  <insert id="insert" parameterType="entity.ErrorLog">
     insert into t_asrs_log_error (id, lclass, worktype, 
       cid, palletid, detaill, 
       memo, userid, storedef_id
@@ -35,7 +35,7 @@
       #{memo,jdbcType=VARCHAR}, #{userid,jdbcType=VARCHAR}, #{storedefId,jdbcType=INTEGER}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.model.ErrorLog">
+  <insert id="insertSelective" parameterType="entity.ErrorLog">
     insert into t_asrs_log_error
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -96,7 +96,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.model.ErrorLog">
+  <update id="updateByPrimaryKeySelective" parameterType="entity.ErrorLog">
     update t_asrs_log_error
     <set>
       <if test="lclass != null">
@@ -126,7 +126,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.model.ErrorLog">
+  <update id="updateByPrimaryKey" parameterType="entity.ErrorLog">
     update t_asrs_log_error
     set lclass = #{lclass,jdbcType=VARCHAR},
       worktype = #{worktype,jdbcType=VARCHAR},

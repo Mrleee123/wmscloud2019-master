@@ -1,6 +1,6 @@
-package com.dao;
+package mappers;
 
-import com.model.Service;
+import entity.Service;
 
 public interface ServiceMapper {
     int deleteByPrimaryKey(Long id);

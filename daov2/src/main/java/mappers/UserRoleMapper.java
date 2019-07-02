@@ -1,6 +1,6 @@
-package com.dao;
+package mappers;
 
-import com.model.UserRole;
+import entity.UserRole;
 
 public interface UserRoleMapper {
     int deleteByPrimaryKey(Long id);

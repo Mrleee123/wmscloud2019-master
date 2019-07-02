@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.dao.UserRoleMapper">
-  <resultMap id="BaseResultMap" type="com.model.UserRole">
+<mapper namespace="mappers.UserRoleMapper">
+  <resultMap id="BaseResultMap" type="entity.UserRole">
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="user_code" jdbcType="INTEGER" property="userCode" />
     <result column="role_code" jdbcType="INTEGER" property="roleCode" />
@@ -19,13 +19,13 @@
     delete from t_asrs_user_role
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="com.model.UserRole">
+  <insert id="insert" parameterType="entity.UserRole">
     insert into t_asrs_user_role (id, user_code, role_code
       )
     values (#{id,jdbcType=BIGINT}, #{userCode,jdbcType=INTEGER}, #{roleCode,jdbcType=INTEGER}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.model.UserRole">
+  <insert id="insertSelective" parameterType="entity.UserRole">
     insert into t_asrs_user_role
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -50,7 +50,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.model.UserRole">
+  <update id="updateByPrimaryKeySelective" parameterType="entity.UserRole">
     update t_asrs_user_role
     <set>
       <if test="userCode != null">
@@ -62,7 +62,7 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.model.UserRole">
+  <update id="updateByPrimaryKey" parameterType="entity.UserRole">
     update t_asrs_user_role
     set user_code = #{userCode,jdbcType=INTEGER},
       role_code = #{roleCode,jdbcType=INTEGER}

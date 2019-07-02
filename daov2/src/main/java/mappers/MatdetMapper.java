@@ -1,6 +1,6 @@
-package com.dao;
+package mappers;
 
-import com.model.Matdet;
+import entity.Matdet;
 
 public interface MatdetMapper {
     int deleteByPrimaryKey(Long id);

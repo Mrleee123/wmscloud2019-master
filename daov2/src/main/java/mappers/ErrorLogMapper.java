@@ -1,6 +1,6 @@
-package com.dao;
+package mappers;
 
-import com.model.ErrorLog;
+import entity.ErrorLog;
 
 public interface ErrorLogMapper {
     int deleteByPrimaryKey(Integer id);

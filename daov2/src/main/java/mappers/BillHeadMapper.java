@@ -1,6 +1,6 @@
-package com.dao;
+package mappers;
 
-import com.model.BillHead;
+import entity.BillHead;
 
 public interface BillHeadMapper {
     int deleteByPrimaryKey(Long id);

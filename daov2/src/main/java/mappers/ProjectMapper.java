@@ -1,6 +1,6 @@
-package com.dao;
+package mappers;
 
-import com.model.Project;
+import entity.Project;
 
 public interface ProjectMapper {
     int deleteByPrimaryKey(Integer id);

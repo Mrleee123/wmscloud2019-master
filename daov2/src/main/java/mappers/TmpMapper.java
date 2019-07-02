@@ -1,6 +1,6 @@
-package com.dao;
+package mappers;
 
-import com.model.Tmp;
+import entity.Tmp;
 
 public interface TmpMapper {
     int deleteByPrimaryKey(Integer id);

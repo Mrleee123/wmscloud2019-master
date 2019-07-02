@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.dao.VendorMapper">
-  <resultMap id="BaseResultMap" type="com.model.Vendor">
+<mapper namespace="mappers.VendorMapper">
+  <resultMap id="BaseResultMap" type="entity.Vendor">
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="vendor_name" jdbcType="VARCHAR" property="vendorName" />
     <result column="memo" jdbcType="VARCHAR" property="memo" />
@@ -22,7 +22,7 @@
     delete from t_asrs_sys_vendor
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="com.model.Vendor">
+  <insert id="insert" parameterType="entity.Vendor">
     insert into t_asrs_sys_vendor (id, vendor_name, memo, 
       isinused, create_time, creator
       )
@@ -30,7 +30,7 @@
       #{isinused,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, #{creator,jdbcType=VARCHAR}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.model.Vendor">
+  <insert id="insertSelective" parameterType="entity.Vendor">
     insert into t_asrs_sys_vendor
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -73,7 +73,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.model.Vendor">
+  <update id="updateByPrimaryKeySelective" parameterType="entity.Vendor">
     update t_asrs_sys_vendor
     <set>
       <if test="vendorName != null">
@@ -94,7 +94,7 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.model.Vendor">
+  <update id="updateByPrimaryKey" parameterType="entity.Vendor">
     update t_asrs_sys_vendor
     set vendor_name = #{vendorName,jdbcType=VARCHAR},
       memo = #{memo,jdbcType=VARCHAR},

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.dao.BillHeadMapper">
-  <resultMap id="BaseResultMap" type="com.model.BillHead">
+<mapper namespace="mappers.BillHeadMapper">
+  <resultMap id="BaseResultMap" type="entity.BillHead">
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="billno" jdbcType="VARCHAR" property="billno" />
     <result column="storedef_id" jdbcType="INTEGER" property="storedefId" />
@@ -28,7 +28,7 @@
     from t_asrs_bill_head
     where id = #{id,jdbcType=BIGINT}
   </select>
-  <select id="selectAll" resultType="com.model.BillHead">
+  <select id="selectAll" resultType="entity.BillHead">
         select * from t_asrs_bill_head;
    </select>
 
@@ -36,7 +36,7 @@
     delete from t_asrs_bill_head
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="com.model.BillHead">
+  <insert id="insert" parameterType="entity.BillHead">
     insert into t_asrs_bill_head (id, billno, storedef_id, 
       ioclass_id, vendor_id, customer_id, 
       dept_id, memo, head_status, 
@@ -50,7 +50,7 @@
       #{updateTime,jdbcType=TIMESTAMP}, #{updator,jdbcType=VARCHAR}, #{gateno,jdbcType=VARCHAR}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.model.BillHead">
+  <insert id="insertSelective" parameterType="entity.BillHead">
     insert into t_asrs_bill_head
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -147,7 +147,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.model.BillHead">
+  <update id="updateByPrimaryKeySelective" parameterType="entity.BillHead">
     update t_asrs_bill_head
     <set>
       <if test="billno != null">
@@ -195,7 +195,7 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.model.BillHead">
+  <update id="updateByPrimaryKey" parameterType="entity.BillHead">
     update t_asrs_bill_head
     set billno = #{billno,jdbcType=VARCHAR},
       storedef_id = #{storedefId,jdbcType=INTEGER},

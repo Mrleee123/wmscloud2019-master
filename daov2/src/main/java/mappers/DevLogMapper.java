@@ -1,6 +1,6 @@
-package com.dao;
+package mappers;
 
-import com.model.DevLog;
+import entity.DevLog;
 
 public interface DevLogMapper {
     int deleteByPrimaryKey(Integer id);

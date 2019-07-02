@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.dao.WorkFlowMapper">
-  <resultMap id="BaseResultMap" type="com.model.WorkFlow">
+<mapper namespace="mappers.WorkFlowMapper">
+  <resultMap id="BaseResultMap" type="entity.WorkFlow">
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="Ltime" jdbcType="TIMESTAMP" property="ltime" />
     <result column="storedef_id" jdbcType="INTEGER" property="storedefId" />
@@ -43,7 +43,7 @@
     delete from t_asrs_workflow
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="com.model.WorkFlow">
+  <insert id="insert" parameterType="entity.WorkFlow">
     insert into t_asrs_workflow (id, Ltime, storedef_id, 
       billno, stackerid, work_type, 
       palletid, aisle, slayer, 
@@ -63,7 +63,7 @@
       #{sendTime,jdbcType=TIMESTAMP}, #{createTime,jdbcType=TIMESTAMP}, #{creator,jdbcType=VARCHAR}, 
       #{workId,jdbcType=INTEGER})
   </insert>
-  <insert id="insertSelective" parameterType="com.model.WorkFlow">
+  <insert id="insertSelective" parameterType="entity.WorkFlow">
     insert into t_asrs_workflow
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -220,7 +220,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.model.WorkFlow">
+  <update id="updateByPrimaryKeySelective" parameterType="entity.WorkFlow">
     update t_asrs_workflow
     <set>
       <if test="ltime != null">
@@ -298,7 +298,7 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.model.WorkFlow">
+  <update id="updateByPrimaryKey" parameterType="entity.WorkFlow">
     update t_asrs_workflow
     set Ltime = #{ltime,jdbcType=TIMESTAMP},
       storedef_id = #{storedefId,jdbcType=INTEGER},

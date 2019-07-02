@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.dao.NameMapper">
-  <resultMap id="BaseResultMap" type="com.model.Name">
+<mapper namespace="mappers.NameMapper">
+  <resultMap id="BaseResultMap" type="entity.Name">
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="tname" jdbcType="VARCHAR" property="tname" />
     <result column="nameid" jdbcType="VARCHAR" property="nameid" />
@@ -24,7 +24,7 @@
     delete from t_asrs_sys_name
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="com.model.Name">
+  <insert id="insert" parameterType="entity.Name">
     insert into t_asrs_sys_name (id, tname, nameid, 
       neme, memo, isinused, 
       issys, createtime)
@@ -32,7 +32,7 @@
       #{neme,jdbcType=VARCHAR}, #{memo,jdbcType=VARCHAR}, #{isinused,jdbcType=INTEGER}, 
       #{issys,jdbcType=INTEGER}, #{createtime,jdbcType=TIMESTAMP})
   </insert>
-  <insert id="insertSelective" parameterType="com.model.Name">
+  <insert id="insertSelective" parameterType="entity.Name">
     insert into t_asrs_sys_name
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -87,7 +87,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.model.Name">
+  <update id="updateByPrimaryKeySelective" parameterType="entity.Name">
     update t_asrs_sys_name
     <set>
       <if test="tname != null">
@@ -114,7 +114,7 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.model.Name">
+  <update id="updateByPrimaryKey" parameterType="entity.Name">
     update t_asrs_sys_name
     set tname = #{tname,jdbcType=VARCHAR},
       nameid = #{nameid,jdbcType=VARCHAR},

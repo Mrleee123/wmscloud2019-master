@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.dao.MatdetMapper">
-  <resultMap id="BaseResultMap" type="com.model.Matdet">
+<mapper namespace="mappers.MatdetMapper">
+  <resultMap id="BaseResultMap" type="entity.Matdet">
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="matmain_id" jdbcType="BIGINT" property="matmainId" />
     <result column="matname" jdbcType="VARCHAR" property="matname" />
@@ -31,7 +31,7 @@
     delete from t_asrs_sys_matdet
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="com.model.Matdet">
+  <insert id="insert" parameterType="entity.Matdet">
     insert into t_asrs_sys_matdet (id, matmain_id, matname, 
       mspeci, munit, mweight, 
       memo, maxstore, minstore, 
@@ -43,7 +43,7 @@
       #{storageTime,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, #{creator,jdbcType=VARCHAR}, 
       #{updateTime,jdbcType=TIMESTAMP}, #{updator,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.model.Matdet">
+  <insert id="insertSelective" parameterType="entity.Matdet">
     insert into t_asrs_sys_matdet
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -134,7 +134,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.model.Matdet">
+  <update id="updateByPrimaryKeySelective" parameterType="entity.Matdet">
     update t_asrs_sys_matdet
     <set>
       <if test="matmainId != null">
@@ -179,7 +179,7 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.model.Matdet">
+  <update id="updateByPrimaryKey" parameterType="entity.Matdet">
     update t_asrs_sys_matdet
     set matmain_id = #{matmainId,jdbcType=BIGINT},
       matname = #{matname,jdbcType=VARCHAR},

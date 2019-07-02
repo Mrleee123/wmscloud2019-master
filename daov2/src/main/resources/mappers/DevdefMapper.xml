@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.dao.DevdefMapper">
-  <resultMap id="BaseResultMap" type="com.model.Devdef">
+<mapper namespace="mappers.DevdefMapper">
+  <resultMap id="BaseResultMap" type="entity.Devdef">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="devid" jdbcType="INTEGER" property="devid" />
     <result column="type_id" jdbcType="INTEGER" property="typeId" />
@@ -24,7 +24,7 @@
     delete from t_sys_devdef
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.model.Devdef">
+  <insert id="insert" parameterType="entity.Devdef">
     insert into t_sys_devdef (id, devid, type_id, 
       vendor_id, time_maintenance, time_work, 
       horizonsum, virticalsum)
@@ -32,7 +32,7 @@
       #{vendorId,jdbcType=INTEGER}, #{timeMaintenance,jdbcType=INTEGER}, #{timeWork,jdbcType=INTEGER}, 
       #{horizonsum,jdbcType=DECIMAL}, #{virticalsum,jdbcType=DECIMAL})
   </insert>
-  <insert id="insertSelective" parameterType="com.model.Devdef">
+  <insert id="insertSelective" parameterType="entity.Devdef">
     insert into t_sys_devdef
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -87,7 +87,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.model.Devdef">
+  <update id="updateByPrimaryKeySelective" parameterType="entity.Devdef">
     update t_sys_devdef
     <set>
       <if test="devid != null">
@@ -114,7 +114,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.model.Devdef">
+  <update id="updateByPrimaryKey" parameterType="entity.Devdef">
     update t_sys_devdef
     set devid = #{devid,jdbcType=INTEGER},
       type_id = #{typeId,jdbcType=INTEGER},

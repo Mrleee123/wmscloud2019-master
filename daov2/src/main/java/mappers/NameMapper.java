@@ -1,6 +1,6 @@
-package com.dao;
+package mappers;
 
-import com.model.Name;
+import entity.Name;
 
 public interface NameMapper {
     int deleteByPrimaryKey(Long id);

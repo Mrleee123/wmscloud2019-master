@@ -1,6 +1,6 @@
-package com.dao;
+package mappers;
 
-import com.model.Storedef;
+import entity.Storedef;
 
 public interface StoredefMapper {
     int deleteByPrimaryKey(Long id);

@@ -1,6 +1,6 @@
-package com.dao;
+package mappers;
 
-import com.model.Matmain;
+import entity.Matmain;
 
 public interface MatmainMapper {
     int deleteByPrimaryKey(Integer id);

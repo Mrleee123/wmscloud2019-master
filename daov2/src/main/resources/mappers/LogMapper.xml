@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.dao.LogMapper">
-  <resultMap id="BaseResultMap" type="com.model.Log">
+<mapper namespace="mappers.LogMapper">
+  <resultMap id="BaseResultMap" type="entity.Log">
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="ltime" jdbcType="TIMESTAMP" property="ltime" />
     <result column="lclass" jdbcType="VARCHAR" property="lclass" />
@@ -24,7 +24,7 @@
     delete from t_asrs_log
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="com.model.Log">
+  <insert id="insert" parameterType="entity.Log">
     insert into t_asrs_log (id, ltime, lclass, 
       funmain, munc, userid, 
       memo, detail)
@@ -32,7 +32,7 @@
       #{funmain,jdbcType=VARCHAR}, #{munc,jdbcType=VARCHAR}, #{userid,jdbcType=VARCHAR}, 
       #{memo,jdbcType=VARCHAR}, #{detail,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.model.Log">
+  <insert id="insertSelective" parameterType="entity.Log">
     insert into t_asrs_log
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -87,7 +87,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.model.Log">
+  <update id="updateByPrimaryKeySelective" parameterType="entity.Log">
     update t_asrs_log
     <set>
       <if test="ltime != null">
@@ -114,7 +114,7 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.model.Log">
+  <update id="updateByPrimaryKey" parameterType="entity.Log">
     update t_asrs_log
     set ltime = #{ltime,jdbcType=TIMESTAMP},
       lclass = #{lclass,jdbcType=VARCHAR},

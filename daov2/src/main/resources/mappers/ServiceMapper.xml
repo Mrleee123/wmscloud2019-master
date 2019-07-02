@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.dao.ServiceMapper">
-  <resultMap id="BaseResultMap" type="com.model.Service">
+<mapper namespace="mappers.ServiceMapper">
+  <resultMap id="BaseResultMap" type="entity.Service">
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="service_name" jdbcType="VARCHAR" property="serviceName" />
     <result column="service_address" jdbcType="VARCHAR" property="serviceAddress" />
@@ -24,7 +24,7 @@
     delete from t_web_service
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="com.model.Service">
+  <insert id="insert" parameterType="entity.Service">
     insert into t_web_service (id, service_name, service_address, 
       isenabled, price, unit, 
       create_time, update_time)
@@ -32,7 +32,7 @@
       #{isenabled,jdbcType=INTEGER}, #{price,jdbcType=DECIMAL}, #{unit,jdbcType=VARCHAR}, 
       #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP})
   </insert>
-  <insert id="insertSelective" parameterType="com.model.Service">
+  <insert id="insertSelective" parameterType="entity.Service">
     insert into t_web_service
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -87,7 +87,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.model.Service">
+  <update id="updateByPrimaryKeySelective" parameterType="entity.Service">
     update t_web_service
     <set>
       <if test="serviceName != null">
@@ -114,7 +114,7 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.model.Service">
+  <update id="updateByPrimaryKey" parameterType="entity.Service">
     update t_web_service
     set service_name = #{serviceName,jdbcType=VARCHAR},
       service_address = #{serviceAddress,jdbcType=VARCHAR},

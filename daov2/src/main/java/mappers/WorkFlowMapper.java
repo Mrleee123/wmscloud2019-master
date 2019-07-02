@@ -1,6 +1,6 @@
-package com.dao;
+package mappers;
 
-import com.model.WorkFlow;
+import entity.WorkFlow;
 
 public interface WorkFlowMapper {
     int deleteByPrimaryKey(Long id);

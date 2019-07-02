@@ -1,6 +1,6 @@
-package com.dao;
+package mappers;
 
-import com.model.Vendor;
+import entity.Vendor;
 
 public interface VendorMapper {
     int deleteByPrimaryKey(Long id);

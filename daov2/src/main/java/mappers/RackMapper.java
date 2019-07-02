@@ -1,6 +1,6 @@
-package com.dao;
+package mappers;
 
-import com.model.Rack;
+import entity.Rack;
 
 public interface RackMapper {
     int deleteByPrimaryKey(Long id);

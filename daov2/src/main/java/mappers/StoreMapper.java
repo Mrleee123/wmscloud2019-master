@@ -1,6 +1,6 @@
-package com.dao;
+package mappers;
 
-import com.model.Store;
+import entity.Store;
 
 public interface StoreMapper {
     int deleteByPrimaryKey(Integer id);

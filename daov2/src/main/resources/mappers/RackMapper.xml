@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.dao.RackMapper">
-  <resultMap id="BaseResultMap" type="com.model.Rack">
+<mapper namespace="mappers.RackMapper">
+  <resultMap id="BaseResultMap" type="entity.Rack">
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="storedef_id" jdbcType="INTEGER" property="storedefId" />
     <result column="cid" jdbcType="VARCHAR" property="cid" />
@@ -37,7 +37,7 @@
     delete from t_asrs_rack
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="com.model.Rack">
+  <insert id="insert" parameterType="entity.Rack">
     insert into t_asrs_rack (id, storedef_id, cid, 
       cellcode, palletid, aisle, 
       layer, rank, roww, 
@@ -53,7 +53,7 @@
       #{cpalletid,jdbcType=VARCHAR}, #{xpalletid,jdbcType=VARCHAR}, #{memo,jdbcType=VARCHAR}, 
       #{issys,jdbcType=INTEGER}, #{worktype,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.model.Rack">
+  <insert id="insertSelective" parameterType="entity.Rack">
     insert into t_asrs_rack
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -180,7 +180,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.model.Rack">
+  <update id="updateByPrimaryKeySelective" parameterType="entity.Rack">
     update t_asrs_rack
     <set>
       <if test="storedefId != null">
@@ -243,7 +243,7 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.model.Rack">
+  <update id="updateByPrimaryKey" parameterType="entity.Rack">
     update t_asrs_rack
     set storedef_id = #{storedefId,jdbcType=INTEGER},
       cid = #{cid,jdbcType=VARCHAR},

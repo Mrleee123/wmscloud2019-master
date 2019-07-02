@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.dao.IOClassMapper">
-  <resultMap id="BaseResultMap" type="com.model.IOClass">
+<mapper namespace="mappers.IOClassMapper">
+  <resultMap id="BaseResultMap" type="entity.IOClass">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="ioclass_code" jdbcType="VARCHAR" property="ioclassCode" />
     <result column="ioclass_name" jdbcType="VARCHAR" property="ioclassName" />
@@ -26,7 +26,7 @@
     delete from t_asrs_sys_ioclass
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.model.IOClass">
+  <insert id="insert" parameterType="entity.IOClass">
     insert into t_asrs_sys_ioclass (id, ioclass_code, ioclass_name, 
       tran_type, memo, create_time, 
       creator, update_time, updator
@@ -36,7 +36,7 @@
       #{creator,jdbcType=VARCHAR}, #{updateTime,jdbcType=TIMESTAMP}, #{updator,jdbcType=VARCHAR}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.model.IOClass">
+  <insert id="insertSelective" parameterType="entity.IOClass">
     insert into t_asrs_sys_ioclass
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -97,7 +97,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.model.IOClass">
+  <update id="updateByPrimaryKeySelective" parameterType="entity.IOClass">
     update t_asrs_sys_ioclass
     <set>
       <if test="ioclassCode != null">
@@ -127,7 +127,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.model.IOClass">
+  <update id="updateByPrimaryKey" parameterType="entity.IOClass">
     update t_asrs_sys_ioclass
     set ioclass_code = #{ioclassCode,jdbcType=VARCHAR},
       ioclass_name = #{ioclassName,jdbcType=VARCHAR},
