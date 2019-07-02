@@ -2,79 +2,32 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="254c0f5b-7169-4179-a208-0dfc5c7754aa" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/daov2/src/main/java/dao/RoleDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/daov2/src/test/java/dao/RoleDaoTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wms-web-client/src/main/java/com/riambbj/wmscloud/controllers/RoleController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wms-web-client/src/main/java/com/riambbj/wmscloud/services/RoleService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/daov2/src/main/java/dao/RoleFunctionDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/daov2/src/main/java/entity/RoleFunction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/daov2/src/main/java/mappers/RoleFunctionMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/daov2/src/main/resources/mappers/RoleFunctionMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/daov2/src/test/java/dao/RoleFunctionDaoTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wms-web-client/src/main/java/com/riambbj/wmscloud/controllers/RoleFunctionController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wms-web-client/src/main/java/com/riambbj/wmscloud/services/RoleFunctionService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/daov2/src/main/java/entity/BillHead.java" beforeDir="false" afterPath="$PROJECT_DIR$/daov2/src/main/java/entity/BillHead.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/daov2/src/main/java/entity/DevLog.java" beforeDir="false" afterPath="$PROJECT_DIR$/daov2/src/main/java/entity/DevLog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/daov2/src/main/java/entity/DevType.java" beforeDir="false" afterPath="$PROJECT_DIR$/daov2/src/main/java/entity/DevType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/daov2/src/main/java/entity/DevVendor.java" beforeDir="false" afterPath="$PROJECT_DIR$/daov2/src/main/java/entity/DevVendor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/daov2/src/main/java/entity/Devdef.java" beforeDir="false" afterPath="$PROJECT_DIR$/daov2/src/main/java/entity/Devdef.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/daov2/src/main/java/entity/ErrorLog.java" beforeDir="false" afterPath="$PROJECT_DIR$/daov2/src/main/java/entity/ErrorLog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/daov2/src/main/java/entity/IOClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/daov2/src/main/java/entity/IOClass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/daov2/src/main/java/entity/Log.java" beforeDir="false" afterPath="$PROJECT_DIR$/daov2/src/main/java/entity/Log.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/daov2/src/main/java/entity/Matdet.java" beforeDir="false" afterPath="$PROJECT_DIR$/daov2/src/main/java/entity/Matdet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/daov2/src/main/java/entity/Matmain.java" beforeDir="false" afterPath="$PROJECT_DIR$/daov2/src/main/java/entity/Matmain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/daov2/src/main/java/entity/Name.java" beforeDir="false" afterPath="$PROJECT_DIR$/daov2/src/main/java/entity/Name.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/daov2/src/main/java/entity/Project.java" beforeDir="false" afterPath="$PROJECT_DIR$/daov2/src/main/java/entity/Project.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/daov2/src/main/java/entity/Rack.java" beforeDir="false" afterPath="$PROJECT_DIR$/daov2/src/main/java/entity/Rack.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/daov2/src/main/java/entity/Service.java" beforeDir="false" afterPath="$PROJECT_DIR$/daov2/src/main/java/entity/Service.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/daov2/src/main/java/entity/Store.java" beforeDir="false" afterPath="$PROJECT_DIR$/daov2/src/main/java/entity/Store.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/daov2/src/main/java/entity/Storedef.java" beforeDir="false" afterPath="$PROJECT_DIR$/daov2/src/main/java/entity/Storedef.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/daov2/src/main/java/entity/Tmp.java" beforeDir="false" afterPath="$PROJECT_DIR$/daov2/src/main/java/entity/Tmp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/daov2/src/main/java/entity/UserRole.java" beforeDir="false" afterPath="$PROJECT_DIR$/daov2/src/main/java/entity/UserRole.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/daov2/src/main/java/entity/Vendor.java" beforeDir="false" afterPath="$PROJECT_DIR$/daov2/src/main/java/entity/Vendor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/daov2/src/main/java/entity/WorkFlow.java" beforeDir="false" afterPath="$PROJECT_DIR$/daov2/src/main/java/entity/WorkFlow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/daov2/src/main/java/entity/ZuHu.java" beforeDir="false" afterPath="$PROJECT_DIR$/daov2/src/main/java/entity/ZuHu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/daov2/src/main/java/entity/ZuHuService.java" beforeDir="false" afterPath="$PROJECT_DIR$/daov2/src/main/java/entity/ZuHuService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/daov2/src/main/java/mappers/BillHeadMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/daov2/src/main/java/mappers/BillHeadMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/daov2/src/main/java/mappers/DevLogMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/daov2/src/main/java/mappers/DevLogMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/daov2/src/main/java/mappers/DevTypeMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/daov2/src/main/java/mappers/DevTypeMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/daov2/src/main/java/mappers/DevVendorMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/daov2/src/main/java/mappers/DevVendorMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/daov2/src/main/java/mappers/DevdefMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/daov2/src/main/java/mappers/DevdefMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/daov2/src/main/java/mappers/ErrorLogMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/daov2/src/main/java/mappers/ErrorLogMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/daov2/src/main/java/mappers/IOClassMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/daov2/src/main/java/mappers/IOClassMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/daov2/src/main/java/mappers/LogMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/daov2/src/main/java/mappers/LogMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/daov2/src/main/java/mappers/MatdetMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/daov2/src/main/java/mappers/MatdetMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/daov2/src/main/java/mappers/MatmainMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/daov2/src/main/java/mappers/MatmainMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/daov2/src/main/java/mappers/NameMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/daov2/src/main/java/mappers/NameMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/daov2/src/main/java/mappers/ProjectMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/daov2/src/main/java/mappers/ProjectMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/daov2/src/main/java/mappers/RackMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/daov2/src/main/java/mappers/RackMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/daov2/src/main/java/mappers/RoleMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/daov2/src/main/java/mappers/RoleMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/daov2/src/main/java/mappers/ServiceMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/daov2/src/main/java/mappers/ServiceMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/daov2/src/main/java/mappers/StoreMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/daov2/src/main/java/mappers/StoreMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/daov2/src/main/java/mappers/StoredefMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/daov2/src/main/java/mappers/StoredefMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/daov2/src/main/java/mappers/TmpMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/daov2/src/main/java/mappers/TmpMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/daov2/src/main/java/mappers/UserRoleMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/daov2/src/main/java/mappers/UserRoleMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/daov2/src/main/java/mappers/VendorMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/daov2/src/main/java/mappers/VendorMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/daov2/src/main/java/mappers/WorkFlowMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/daov2/src/main/java/mappers/WorkFlowMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/daov2/src/main/java/mappers/ZuHuMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/daov2/src/main/java/mappers/ZuHuMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/daov2/src/main/java/mappers/ZuHuServiceMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/daov2/src/main/java/mappers/ZuHuServiceMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/daov2/src/main/resources/mappers/BillHeadMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/daov2/src/main/resources/mappers/BillHeadMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/daov2/src/main/resources/mappers/DevLogMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/daov2/src/main/resources/mappers/DevLogMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/daov2/src/main/resources/mappers/DevTypeMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/daov2/src/main/resources/mappers/DevTypeMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/daov2/src/main/resources/mappers/DevVendorMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/daov2/src/main/resources/mappers/DevVendorMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/daov2/src/main/resources/mappers/DevdefMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/daov2/src/main/resources/mappers/DevdefMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/daov2/src/main/resources/mappers/ErrorLogMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/daov2/src/main/resources/mappers/ErrorLogMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/daov2/src/main/resources/mappers/IOClassMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/daov2/src/main/resources/mappers/IOClassMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/daov2/src/main/resources/mappers/LogMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/daov2/src/main/resources/mappers/LogMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/daov2/src/main/resources/mappers/MatdetMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/daov2/src/main/resources/mappers/MatdetMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/daov2/src/main/resources/mappers/MatmainMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/daov2/src/main/resources/mappers/MatmainMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/daov2/src/main/resources/mappers/NameMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/daov2/src/main/resources/mappers/NameMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/daov2/src/main/resources/mappers/ProjectMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/daov2/src/main/resources/mappers/ProjectMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/daov2/src/main/resources/mappers/RackMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/daov2/src/main/resources/mappers/RackMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/daov2/src/main/java/dao/RoleDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/daov2/src/main/java/dao/RoleDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/daov2/src/main/java/entity/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/daov2/src/main/java/entity/Role.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/daov2/src/main/resources/mappers/RoleMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/daov2/src/main/resources/mappers/RoleMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/daov2/src/main/resources/mappers/ServiceMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/daov2/src/main/resources/mappers/ServiceMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/daov2/src/main/resources/mappers/StoreMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/daov2/src/main/resources/mappers/StoreMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/daov2/src/main/resources/mappers/StoredefMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/daov2/src/main/resources/mappers/StoredefMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/daov2/src/main/resources/mappers/TmpMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/daov2/src/main/resources/mappers/TmpMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/daov2/src/main/resources/mappers/UserRoleMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/daov2/src/main/resources/mappers/UserRoleMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/daov2/src/main/resources/mappers/VendorMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/daov2/src/main/resources/mappers/VendorMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/daov2/src/main/resources/mappers/WorkFlowMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/daov2/src/main/resources/mappers/WorkFlowMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/daov2/src/main/resources/mappers/ZuHuMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/daov2/src/main/resources/mappers/ZuHuMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/daov2/src/main/resources/mappers/ZuHuServiceMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/daov2/src/main/resources/mappers/ZuHuServiceMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/daov2/src/test/java/dao/RoleDaoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/daov2/src/test/java/dao/RoleDaoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/daov2/target/classes/dao/UserDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/daov2/target/classes/dbtools/DBTools.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/daov2/target/classes/entity/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/daov2/target/classes/mappers/UserMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/daov2/target/classes/mappers/UserMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/daov2/target/classes/mybatis_cfg.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/daov2/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/daov2/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/daov2/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/daov2/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/daov2/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/daov2/target/test-classes/dao/UserDaoTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/daov2/target/wmsdao-0.0.1-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wms-web-client/src/main/java/com/riambbj/wmscloud/controllers/RoleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/wms-web-client/src/main/java/com/riambbj/wmscloud/controllers/RoleController.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/wms-web-client/target/" />
@@ -103,113 +56,85 @@
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
   </component>
-  <component name="DockManager">
-    <window id="1">
-      <content type="file-editors">
-        <state>
-          <leaf>
-            <file pinned="false" current-in-tab="true">
-              <entry file="file://$PROJECT_DIR$/daov2/src/test/java/dao/UserDaoTest.java">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="1007">
-                    <caret line="94" column="30" selection-start-line="94" selection-start-column="30" selection-end-line="94" selection-end-column="30" />
-                  </state>
-                </provider>
-              </entry>
-            </file>
-          </leaf>
-        </state>
-      </content>
-    </window>
-  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/daov2/src/main/java/mappers/StoreMapper.java">
+        <entry file="file://$PROJECT_DIR$/daov2/src/main/java/entity/RoleFunction.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="38">
-              <caret line="2" column="14" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
+            <state relative-caret-position="75">
+              <caret line="13" column="5" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/daov2/src/main/java/mappers/TmpMapper.java">
+        <entry file="file://$PROJECT_DIR$/daov2/src/test/java/dao/RoleFunctionDaoTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="38">
-              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+            <state relative-caret-position="588">
+              <caret line="55" column="42" selection-start-line="55" selection-start-column="38" selection-end-line="55" selection-end-column="42" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/daov2/src/main/java/mappers/UserRoleMapper.java">
+        <entry file="file://$PROJECT_DIR$/wms-web-client/src/main/java/com/riambbj/wmscloud/services/RoleFunctionService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="38">
-              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/daov2/src/main/java/mappers/VendorMapper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="38">
-              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/daov2/src/main/java/mappers/WorkFlowMapper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="38">
-              <caret line="2" column="14" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/daov2/src/main/java/mappers/ZuHuMapper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="38">
-              <caret line="2" column="14" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/daov2/src/main/java/mappers/ZuHuServiceMapper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="133">
-              <caret line="7" column="26" selection-start-line="7" selection-start-column="15" selection-end-line="7" selection-end-column="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/daov2/src/main/resources/mappers/BillHeadMapper.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="38">
-              <caret line="2" column="26" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
+            <state relative-caret-position="513">
+              <caret line="35" selection-start-line="35" selection-end-line="35" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/daov2/src/main/resources/mappers/ErrorLogMapper.xml">
+        <entry file="file://$PROJECT_DIR$/wms-web-client/src/main/java/com/riambbj/wmscloud/controllers/RoleFunctionController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="114">
-              <caret line="27" column="54" lean-forward="true" selection-start-line="27" selection-start-column="54" selection-end-line="27" selection-end-column="54" />
+            <state relative-caret-position="323">
+              <caret line="17" column="23" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="23" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/daov2/src/main/resources/mappers/ServiceMapper.xml">
+        <entry file="file://$PROJECT_DIR$/daov2/src/main/java/dao/RoleFunctionDao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
-              <caret line="20" column="36" selection-start-line="20" selection-start-column="36" selection-end-line="20" selection-end-column="36" />
+            <state relative-caret-position="474">
+              <caret line="76" column="19" selection-start-line="76" selection-start-column="19" selection-end-line="76" selection-end-column="19" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/wms-web-client/src/main/java/com/riambbj/wmscloud/ServletInitializer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="76">
+              <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/wms-web-client/src/main/java/com/riambbj/wmscloud/controllers/RoleController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="878">
+              <caret line="66" column="26" selection-start-line="66" selection-start-column="26" selection-end-line="66" selection-end-column="26" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -220,6 +145,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Jsp File" />
+        <option value="Class" />
         <option value="JUnit4 Test Class" />
       </list>
     </option>
@@ -230,10 +156,19 @@
       <find>spring-cloud-starter-config</find>
       <find>com.model</find>
       <find>com.dao</find>
+      <find>RoleMapper</find>
+      <find>functionNamr</find>
+      <find>serialVersionUID</find>
+      <find>Role</find>
+      <find>RoleFuctionCode</find>
+      <find>RoleFunctionCode</find>
     </findStrings>
     <replaceStrings>
       <replace>entity</replace>
       <replace>mappers</replace>
+      <replace>functionName</replace>
+      <replace>RoleFuction</replace>
+      <replace>RoleFunction</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -243,20 +178,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/daov2/src/main/resources/mappers/RoleMapper.xml" />
-        <option value="$PROJECT_DIR$/daov2/src/main/java/mappers/RoleMapper.java" />
-        <option value="$PROJECT_DIR$/daov2/src/main/java/dao/RoleDao.java" />
-        <option value="$PROJECT_DIR$/daov2/src/test/java/dao/RoleDaoTest.java" />
-        <option value="$PROJECT_DIR$/wms-web-client/src/main/java/com/riambbj/wmscloud/services/RoleService.java" />
-        <option value="$PROJECT_DIR$/wms-web-client/src/main/java/com/riambbj/wmscloud/controllers/RoleController.java" />
-        <option value="$PROJECT_DIR$/daov2/src/main/java/entity/BillHead.java" />
-        <option value="$PROJECT_DIR$/daov2/src/main/java/entity/Devdef.java" />
-        <option value="$PROJECT_DIR$/daov2/src/main/java/entity/DevLog.java" />
-        <option value="$PROJECT_DIR$/daov2/src/main/java/entity/DevType.java" />
-        <option value="$PROJECT_DIR$/daov2/src/main/java/entity/DevVendor.java" />
-        <option value="$PROJECT_DIR$/daov2/src/main/java/entity/IOClass.java" />
-        <option value="$PROJECT_DIR$/daov2/src/main/java/entity/ErrorLog.java" />
-        <option value="$PROJECT_DIR$/daov2/src/main/java/entity/Log.java" />
         <option value="$PROJECT_DIR$/daov2/src/main/java/entity/Matdet.java" />
         <option value="$PROJECT_DIR$/daov2/src/main/java/entity/Matmain.java" />
         <option value="$PROJECT_DIR$/daov2/src/main/java/entity/Name.java" />
@@ -294,6 +215,20 @@
         <option value="$PROJECT_DIR$/daov2/src/main/java/mappers/ZuHuMapper.java" />
         <option value="$PROJECT_DIR$/daov2/src/main/java/mappers/ZuHuServiceMapper.java" />
         <option value="$PROJECT_DIR$/daov2/src/main/resources/mappers/BillHeadMapper.xml" />
+        <option value="$PROJECT_DIR$/daov2/src/main/resources/mappers/RoleMapper.xml" />
+        <option value="$PROJECT_DIR$/daov2/src/main/java/entity/RoleFunction.java" />
+        <option value="$PROJECT_DIR$/daov2/src/main/java/entity/Role.java" />
+        <option value="$PROJECT_DIR$/daov2/src/main/java/mappers/RoleFuctionMapper.java" />
+        <option value="$PROJECT_DIR$/daov2/src/main/resources/mappers/RoleFuctionMapper.xml" />
+        <option value="$PROJECT_DIR$/daov2/src/main/java/mappers/RoleMapper.java" />
+        <option value="$PROJECT_DIR$/daov2/src/test/java/dao/RoleDaoTest.java" />
+        <option value="$PROJECT_DIR$/daov2/src/main/resources/mappers/RoleFunctionMapper.xml" />
+        <option value="$PROJECT_DIR$/daov2/src/main/java/mappers/RoleFunctionMapper.java" />
+        <option value="$PROJECT_DIR$/daov2/src/main/java/dao/RoleFunctionDao.java" />
+        <option value="$PROJECT_DIR$/daov2/src/test/java/dao/RoleFunctionDaoTest.java" />
+        <option value="$PROJECT_DIR$/wms-web-client/src/main/java/com/riambbj/wmscloud/controllers/RoleController.java" />
+        <option value="$PROJECT_DIR$/wms-web-client/src/main/java/com/riambbj/wmscloud/services/RoleFunctionService.java" />
+        <option value="$PROJECT_DIR$/wms-web-client/src/main/java/com/riambbj/wmscloud/controllers/RoleFunctionController.java" />
       </list>
     </option>
   </component>
@@ -621,7 +556,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../wmscode" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/daov2/src/main/resources/mappers" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
@@ -632,10 +567,14 @@
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\javaproject\wmscloud2019-master\daov2\src\main\resources\mappers" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.riambbj.wmscloud.controllers" />
       <recent name="com.riambbj.wmscloud.services" />
       <recent name="dao" />
+      <recent name="mappers" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="F:\javaproject\wmscloud2019-master\wms-web-client\src\main\webapp\WEB-INF\views" />
@@ -653,8 +592,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.RoleDaoTest.enableRole">
-    <configuration name="RoleDaoTest.add" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.RoleFunctionDaoTest.list">
+    <configuration name="RoleFunctionDaoTest.deleteList" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="wmsdao" />
       <extension name="coverage">
         <pattern>
@@ -663,14 +602,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="dao" />
-      <option name="MAIN_CLASS_NAME" value="dao.RoleDaoTest" />
-      <option name="METHOD_NAME" value="add" />
+      <option name="MAIN_CLASS_NAME" value="dao.RoleFunctionDaoTest" />
+      <option name="METHOD_NAME" value="deleteList" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RoleDaoTest.enableRole" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="RoleFunctionDaoTest.get" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="wmsdao" />
       <extension name="coverage">
         <pattern>
@@ -679,46 +618,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="dao" />
-      <option name="MAIN_CLASS_NAME" value="dao.RoleDaoTest" />
-      <option name="METHOD_NAME" value="enableRole" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="RoleDaoTest.forbiddenRole" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="wmsdao" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="dao.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="dao" />
-      <option name="MAIN_CLASS_NAME" value="dao.RoleDaoTest" />
-      <option name="METHOD_NAME" value="forbiddenRole" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="RoleDaoTest.get" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="wmsdao" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="dao.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="dao" />
-      <option name="MAIN_CLASS_NAME" value="dao.RoleDaoTest" />
+      <option name="MAIN_CLASS_NAME" value="dao.RoleFunctionDaoTest" />
       <option name="METHOD_NAME" value="get" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RoleDaoTest.list" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="RoleFunctionDaoTest.insertList" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="wmsdao" />
       <extension name="coverage">
         <pattern>
@@ -727,8 +634,40 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="dao" />
-      <option name="MAIN_CLASS_NAME" value="dao.RoleDaoTest" />
+      <option name="MAIN_CLASS_NAME" value="dao.RoleFunctionDaoTest" />
+      <option name="METHOD_NAME" value="insertList" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RoleFunctionDaoTest.list" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="wmsdao" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="dao.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="dao" />
+      <option name="MAIN_CLASS_NAME" value="dao.RoleFunctionDaoTest" />
       <option name="METHOD_NAME" value="list" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RoleFunctionDaoTest.update" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="wmsdao" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="dao.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="dao" />
+      <option name="MAIN_CLASS_NAME" value="dao.RoleFunctionDaoTest" />
+      <option name="METHOD_NAME" value="update" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -743,11 +682,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.RoleDaoTest.enableRole" />
-        <item itemvalue="JUnit.RoleDaoTest.forbiddenRole" />
-        <item itemvalue="JUnit.RoleDaoTest.list" />
-        <item itemvalue="JUnit.RoleDaoTest.get" />
-        <item itemvalue="JUnit.RoleDaoTest.add" />
+        <item itemvalue="JUnit.RoleFunctionDaoTest.list" />
+        <item itemvalue="JUnit.RoleFunctionDaoTest.deleteList" />
+        <item itemvalue="JUnit.RoleFunctionDaoTest.insertList" />
+        <item itemvalue="JUnit.RoleFunctionDaoTest.get" />
+        <item itemvalue="JUnit.RoleFunctionDaoTest.update" />
       </list>
     </recent_temporary>
   </component>
@@ -766,7 +705,7 @@
       <workItem from="1561614281137" duration="8440000" />
       <workItem from="1561681767001" duration="22665000" />
       <workItem from="1561941579860" duration="28274000" />
-      <workItem from="1562027579082" duration="8337000" />
+      <workItem from="1562027579082" duration="25753000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <created>1561624135955</created>
@@ -803,43 +742,50 @@
       <option name="project" value="LOCAL" />
       <updated>1562030884907</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="commit">
+      <created>1562037837967</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1562037837967</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="RoleDaoTest_add - 2019.07.02 at 10h 09m 17s.xml">
-      <configuration name="RoleDaoTest.add" configurationId="JUnit" />
+    <history-entry file="RoleFunctionDaoTest_deleteList - 2019.07.02 at 17h 28m 29s.xml">
+      <configuration name="RoleFunctionDaoTest.deleteList" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RoleDaoTest_delete - 2019.07.02 at 10h 10m 03s.xml">
-      <configuration name="RoleDaoTest.delete" configurationId="JUnit" />
+    <history-entry file="RoleFunctionDaoTest_deleteList - 2019.07.02 at 17h 34m 03s.xml">
+      <configuration name="RoleFunctionDaoTest.deleteList" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RoleDaoTest_delete - 2019.07.02 at 10h 10m 35s.xml">
-      <configuration name="RoleDaoTest.delete" configurationId="JUnit" />
+    <history-entry file="RoleFunctionDaoTest_deleteList - 2019.07.02 at 17h 34m 45s.xml">
+      <configuration name="RoleFunctionDaoTest.deleteList" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RoleDaoTest_delete - 2019.07.02 at 10h 12m 46s.xml">
-      <configuration name="RoleDaoTest.delete" configurationId="JUnit" />
+    <history-entry file="RoleFunctionDaoTest_deleteList - 2019.07.02 at 17h 37m 17s.xml">
+      <configuration name="RoleFunctionDaoTest.deleteList" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RoleDaoTest_update - 2019.07.02 at 10h 15m 02s.xml">
-      <configuration name="RoleDaoTest.update" configurationId="JUnit" />
+    <history-entry file="RoleFunctionDaoTest_deleteList - 2019.07.02 at 17h 39m 34s.xml">
+      <configuration name="RoleFunctionDaoTest.deleteList" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RoleDaoTest_add - 2019.07.02 at 10h 16m 57s.xml">
-      <configuration name="RoleDaoTest.add" configurationId="JUnit" />
+    <history-entry file="RoleFunctionDaoTest_deleteList - 2019.07.02 at 17h 40m 31s.xml">
+      <configuration name="RoleFunctionDaoTest.deleteList" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RoleDaoTest_get - 2019.07.02 at 10h 21m 16s.xml">
-      <configuration name="RoleDaoTest.get" configurationId="JUnit" />
+    <history-entry file="RoleFunctionDaoTest_deleteList - 2019.07.02 at 17h 45m 40s.xml">
+      <configuration name="RoleFunctionDaoTest.deleteList" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RoleDaoTest_list - 2019.07.02 at 10h 22m 52s.xml">
-      <configuration name="RoleDaoTest.list" configurationId="JUnit" />
+    <history-entry file="RoleFunctionDaoTest_deleteList - 2019.07.02 at 17h 48m 07s.xml">
+      <configuration name="RoleFunctionDaoTest.deleteList" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RoleDaoTest_forbiddenRole - 2019.07.02 at 10h 38m 11s.xml">
-      <configuration name="RoleDaoTest.forbiddenRole" configurationId="JUnit" />
+    <history-entry file="RoleFunctionDaoTest_deleteList - 2019.07.02 at 17h 53m 57s.xml">
+      <configuration name="RoleFunctionDaoTest.deleteList" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RoleDaoTest_enableRole - 2019.07.02 at 10h 38m 24s.xml">
-      <configuration name="RoleDaoTest.enableRole" configurationId="JUnit" />
+    <history-entry file="RoleFunctionDaoTest_list - 2019.07.02 at 18h 09m 55s.xml">
+      <configuration name="RoleFunctionDaoTest.list" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="74789000" />
+    <option name="totallyTimeSpent" value="92205000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -851,10 +797,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4987775" visible="true" weight="0.18176973" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4987775" visible="true" weight="0.18176973" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -863,8 +808,8 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info id="Web" order="7" sideWeight="0.5012225" side_tool="true" weight="0.24962178" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49946696" visible="true" weight="0.22234273" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.329718" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49946696" visible="true" weight="0.22234273" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -880,7 +825,7 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Maven" order="3" visible="true" weight="0.20362474" />
+      <window_info anchor="right" id="Maven" order="3" visible="true" weight="0.20522387" />
       <window_info anchor="right" id="Palette" order="4" />
       <window_info anchor="right" id="Capture Analysis" order="5" />
       <window_info anchor="right" id="Database" order="6" weight="0.32980332" />
@@ -936,178 +881,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/wms-web-client/src/main/java/com/riambbj/wmscloud/services/RoleService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="551">
-          <caret line="45" lean-forward="true" selection-start-line="45" selection-end-line="45" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#610#611#0" expanded="true" />
-            <element signature="e#653#654#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wms-web-client/src/main/java/com/riambbj/wmscloud/controllers/RoleController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/daov2/src/main/java/entity/BillHead.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-column="15" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/daov2/src/main/java/entity/Devdef.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="15" selection-start-column="15" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/daov2/src/main/java/entity/DevLog.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="15" selection-start-column="15" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/daov2/src/main/java/entity/DevType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="15" selection-start-column="15" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/daov2/src/main/java/entity/DevVendor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="15" selection-start-column="15" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/daov2/src/main/java/entity/IOClass.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="15" selection-start-column="15" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/daov2/src/main/java/entity/ErrorLog.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/daov2/src/main/java/entity/Log.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="15" selection-start-column="15" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/daov2/src/main/java/entity/Matdet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="15" selection-start-column="15" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/daov2/src/main/java/entity/Matmain.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="15" selection-start-column="15" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/daov2/src/main/java/entity/Name.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="15" selection-start-column="15" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/daov2/src/main/java/entity/Project.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="15" selection-start-column="15" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/daov2/src/main/java/entity/Rack.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="15" selection-start-column="15" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/daov2/src/main/java/entity/Role.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="551">
-          <caret line="40" column="42" selection-start-line="40" selection-start-column="42" selection-end-line="40" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/daov2/src/main/java/entity/Service.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="15" selection-start-column="15" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/daov2/src/main/java/entity/Store.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="15" selection-start-column="15" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/daov2/src/main/java/entity/Storedef.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="15" selection-start-column="15" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/daov2/src/main/java/entity/Tmp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="15" selection-start-column="15" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/daov2/src/main/java/entity/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1220">
-          <caret line="129" column="35" selection-start-line="129" selection-start-column="35" selection-end-line="129" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/daov2/src/main/java/entity/UserRole.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="15" selection-start-column="15" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/daov2/src/main/java/entity/Vendor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="15" selection-start-column="15" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/daov2/src/main/java/entity/WorkFlow.java">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -1234,14 +1007,49 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/daov2/src/main/java/mappers/StoreMapper.java">
+    <entry file="file://$PROJECT_DIR$/daov2/src/main/resources/mappers/ServiceMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="20" column="36" selection-start-line="20" selection-start-column="36" selection-end-line="20" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/daov2/src/main/resources/mappers/ErrorLogMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="15" column="68" selection-start-line="15" selection-start-column="68" selection-end-line="15" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/daov2/src/main/resources/mappers/BillHeadMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" column="26" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/daov2/src/main/java/mappers/ZuHuServiceMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="7" column="26" selection-start-line="7" selection-start-column="15" selection-end-line="7" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/daov2/src/main/java/mappers/ZuHuMapper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="38">
           <caret line="2" column="14" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/daov2/src/main/java/mappers/TmpMapper.java">
+    <entry file="file://$PROJECT_DIR$/daov2/src/main/java/mappers/WorkFlowMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" column="14" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/daov2/src/main/java/mappers/VendorMapper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="38">
           <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
@@ -1255,52 +1063,205 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/daov2/src/main/java/mappers/VendorMapper.java">
+    <entry file="file://$PROJECT_DIR$/daov2/src/main/java/mappers/TmpMapper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="38">
           <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/daov2/src/main/java/mappers/WorkFlowMapper.java">
+    <entry file="file://$PROJECT_DIR$/daov2/src/main/java/mappers/StoreMapper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="38">
           <caret line="2" column="14" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/daov2/src/main/java/mappers/ZuHuMapper.java">
+    <entry file="file://$PROJECT_DIR$/daov2/src/main/java/entity/Project.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="2" column="14" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
+        <state relative-caret-position="-19">
+          <caret line="60" column="36" selection-start-line="60" selection-start-column="36" selection-end-line="60" selection-end-column="36" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/daov2/src/main/java/mappers/ZuHuServiceMapper.java">
+    <entry file="file://$PROJECT_DIR$/daov2/src/main/java/entity/DevLog.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="277">
+          <caret line="37" column="14" selection-start-line="37" selection-start-column="14" selection-end-line="37" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/daov2/src/main/java/entity/Role.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-58">
+          <caret line="18" column="22" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
+          <folding>
+            <element signature="e#400#401#0" expanded="true" />
+            <element signature="e#432#433#0" expanded="true" />
+            <element signature="e#479#480#0" expanded="true" />
+            <element signature="e#521#522#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wms-web-client/src/main/java/com/riambbj/wmscloud/services/RoleService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="133">
-          <caret line="7" column="26" selection-start-line="7" selection-start-column="15" selection-end-line="7" selection-end-column="26" />
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/daov2/src/main/resources/mappers/ServiceMapper.xml">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/mybatis/mybatis/3.4.6/mybatis-3.4.6.jar!/org/apache/ibatis/builder/xml/mybatis-3-mapper.dtd">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="20" column="36" selection-start-line="20" selection-start-column="36" selection-end-line="20" selection-end-column="36" />
+        <state relative-caret-position="360">
+          <caret line="263" selection-start-line="263" selection-end-line="263" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/daov2/src/main/resources/mappers/BillHeadMapper.xml">
+    <entry file="file://$PROJECT_DIR$/daov2/src/main/resources/mappers/UserMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="2" column="26" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
+        <state relative-caret-position="323">
+          <caret line="125" column="32" selection-start-line="125" selection-start-column="30" selection-end-line="125" selection-end-column="32" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/daov2/src/main/resources/mappers/ErrorLogMapper.xml">
+    <entry file="file://$PROJECT_DIR$/daov2/src/main/java/dao/UserDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="27" column="54" lean-forward="true" selection-start-line="27" selection-start-column="54" selection-end-line="27" selection-end-column="54" />
+        <state relative-caret-position="456">
+          <caret line="49" column="36" lean-forward="true" selection-start-line="49" selection-start-column="36" selection-end-line="49" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/daov2/src/test/java/dao/RoleDaoTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="23" column="9" lean-forward="true" selection-start-line="23" selection-start-column="9" selection-end-line="23" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wms-web-client/src/main/java/com/riambbj/wmscloud/controllers/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1691">
+          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/daov2/src/main/resources/mappers/RoleMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="23" column="12" selection-start-line="23" selection-start-column="12" selection-end-line="23" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/daov2/src/test/java/dao/UserDaoTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1254">
+          <caret line="94" column="30" selection-start-line="94" selection-start-column="30" selection-end-line="94" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/daov2/src/main/resources/mybatis_cfg.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/daov2/src/main/java/dao/RoleDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="19" column="5" lean-forward="true" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/daov2/src/main/resources/mappers/RoleFunctionMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="30" column="29" selection-start-line="30" selection-start-column="29" selection-end-line="30" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/daov2/src/main/java/mappers/RoleFunctionMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="24" column="1" lean-forward="true" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/daov2/src/main/java/mappers/RoleMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/daov2/src/main/java/entity/RoleFunction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="13" column="5" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/daov2/src/test/java/dao/RoleFunctionDaoTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="588">
+          <caret line="55" column="42" selection-start-line="55" selection-start-column="38" selection-end-line="55" selection-end-column="42" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/daov2/src/main/java/dao/RoleFunctionDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="474">
+          <caret line="76" column="19" selection-start-line="76" selection-start-column="19" selection-end-line="76" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wms-web-client/src/main/java/com/riambbj/wmscloud/ServletInitializer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wms-web-client/src/main/java/com/riambbj/wmscloud/services/RoleFunctionService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="513">
+          <caret line="35" selection-start-line="35" selection-end-line="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wms-web-client/src/main/java/com/riambbj/wmscloud/controllers/RoleController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="878">
+          <caret line="66" column="26" selection-start-line="66" selection-start-column="26" selection-end-line="66" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wms-web-client/src/main/java/com/riambbj/wmscloud/controllers/RoleFunctionController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="17" column="23" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

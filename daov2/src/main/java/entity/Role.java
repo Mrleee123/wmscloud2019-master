@@ -16,7 +16,17 @@ public class Role implements Serializable {
 
     private String creator;
 
+    private int isenabled;
+
     private static final long serialVersionUID = 1L;
+
+    public int getIsenabled() {
+        return isenabled;
+    }
+
+    public void setIsenabled(int isenabled) {
+        this.isenabled = isenabled;
+    }
 
     public Integer getId() {
         return id;
@@ -74,6 +84,7 @@ public class Role implements Serializable {
                 "roleName='" +roleName  + '\'' +
                 "memo='" +memo  + '\'' +
                 ", creator='" + creator + '\'' +
+                ", isenabled='" + isenabled + '\'' +
                 '}';
     }
 }

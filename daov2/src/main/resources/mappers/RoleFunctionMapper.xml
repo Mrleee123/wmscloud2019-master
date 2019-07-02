@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mappers.RoleFunctionMapper">
+  <resultMap id="BaseResultMap" type="entity.RoleFunction">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="RoleCode" jdbcType="VARCHAR" property="RoleCode" />
+    <result column="FunctionName" jdbcType="VARCHAR" property="FunctionName" />
+    <result column="updateTime" jdbcType="TIMESTAMP" property="updateTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, RoleCode, FunctionName, updateTime
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from t_asrs_role_function
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultType="entity.RoleFunction">
+        select * from t_asrs_role_function;
+   </select>
+
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from t_asrs_role_function
+
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+
+  <delete id="deleteList" parameterType="java.lang.Integer">
+    delete from t_asrs_role_function where id in
+    <foreach collection="list"  item="id" open="(" separator="," close=")">
+    #{id}
+    </foreach>
+  </delete>
+
+  <insert id="insert" parameterType="entity.RoleFunction">
+    insert into t_asrs_role_function (id, RoleCode, FunctionName
+      )
+    values (#{id,jdbcType=INTEGER}, #{RoleCode,jdbcType=VARCHAR},#{FunctionName,jdbcType=VARCHAR}
+      )
+  </insert>
+
+  <insert id="insertList" parameterType="entity.RoleFunction">
+    insert into t_asrs_role_function (id, RoleCode, FunctionName
+      )
+    values
+    <foreach collection="list" item="RoleFunction" index="index" separator=",">
+    (#{RoleFunction.id,jdbcType=INTEGER}, #{RoleFunction.RoleCode,jdbcType=VARCHAR},#{RoleFunction.FunctionName,jdbcType=VARCHAR}
+      )
+    </foreach>
+  </insert>
+
+  <insert id="insertSelective" parameterType="entity.RoleFunction">
+    insert into t_asrs_role_function
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="RoleCode != null">
+        RoleCode,
+      </if>
+      <if test="FunctionName != null">
+        FunctionName,
+      </if>
+
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="RoleCode != null">
+        #{RoleCode,jdbcType=VARCHAR},
+      </if>
+      <if test="FunctionName != null">
+        #{FunctionName,jdbcType=VARCHAR},
+      </if>
+
+    </trim>
+  </insert>
+
+  <update id="updateByPrimaryKeySelective" parameterType="entity.RoleFunction">
+    update t_asrs_role_function
+    <set>
+      <if test="RoleCode != null">
+        RoleCode = #{RoleCode,jdbcType=VARCHAR},
+      </if>
+      <if test="FunctionName != null">
+        FunctionName = #{FunctionName,jdbcType=VARCHAR},
+      </if>
+
+
+      <if test="updateTime != null">
+        updateTime = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="entity.RoleFunction">
+    update t_asrs_role_function
+    set RoleCode = #{RoleCode,jdbcType=VARCHAR},
+      FunctionName = #{FunctionName,jdbcType=VARCHAR},
+      updateTime = #{memo,jdbcType=TIMESTAMP},
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+</mapper>

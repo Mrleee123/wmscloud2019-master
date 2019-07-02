@@ -1,11 +1,10 @@
 package com.riambbj.wmscloud.controllers;
 
-import com.riambbj.wmscloud.services.RoleService;
-import entity.Role;
+import com.riambbj.wmscloud.services.RoleFunctionService;
+import entity.RoleFunction;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Date;
 import java.util.List;
 
 
@@ -14,17 +13,17 @@ import java.util.List;
 // @ResponseBody：
 //表示该方法的返回结果直接写入HTTP response body中
 @Controller
-public class RoleController {
+public class RoleFunctionController {
     // @Autto
-    RoleService us = new RoleService();
+    RoleFunctionService us = new RoleFunctionService();
 
     //查询所有用户   @ResponseBody 使返回的不是链接
-    @RequestMapping(value = "/role/selectAll", method = RequestMethod.GET)
+    @RequestMapping(value = "/roleFunction/selectAll", method = RequestMethod.GET)
     @ResponseBody
-    public List<Role> getUser() throws Exception {
+    public List<RoleFunction> getUser() throws Exception {
 
         try {
-            return us.getRoleList();
+            return us.getRoleFunctionList();
 
         } catch (Exception e) {
             return null;
@@ -34,11 +33,11 @@ public class RoleController {
     }
 
     //根据id查询用户
-    @RequestMapping(value = "/role/selectById", method = RequestMethod.GET)
+    @RequestMapping(value = "/roleFunction/selectById", method = RequestMethod.GET)
     @ResponseBody
-    public Role getUserByid(@RequestParam(value = "id") int id) {
+    public RoleFunction getUserByid(@RequestParam(value = "id") int id) {
         try {
-            Role role = us.getRoleById(id);
+            RoleFunction role = us.getRoleFunctionById(id);
 
             return role;
         } catch (Exception e) {
@@ -48,10 +47,10 @@ public class RoleController {
 
 
 
-    @PostMapping(value = "/role/addRole")
+    @PostMapping(value = "/roleFunction/addRole")
     @ResponseBody
     //public String login(@RequestBody String user_code, @RequestBody String password) {
-    public String addRole(@RequestBody Role role) {
+    public String addRoleFunction(@RequestBody RoleFunction role) {
 //        String user_code = user.getUserCode();
 //        String password = user.getPassword();
 //        long id = user.getId();
@@ -61,7 +60,7 @@ public class RoleController {
 //        int isendable = user.getIsenabled();
 //        int isdeleted = user.getIsdeleted();
        try {
-           us.inserRoleInfo(role);
+           us.insertRoleFunctionInfo(role);
            return "TRUE";
        }catch (Exception e){
            return "FALSE";
@@ -69,10 +68,10 @@ public class RoleController {
     }
 
     //更新用户信息 需要有id号
-    @PostMapping(value = "/role/updateRoleInfo")
+    @PostMapping(value = "/roleFunction/updateRoleInfo")
     @ResponseBody
     //public String login(@RequestBody String user_code, @RequestBody String password) {
-    public String updateUserInfo(@RequestBody Role role) {
+    public String updateUserInfo(@RequestBody RoleFunction role) {
 //        String user_code = user.getUserCode();
 //        String password = user.getPassword();
 //        long id = user.getId();
@@ -82,7 +81,7 @@ public class RoleController {
 //        int isendable = user.getIsenabled();
 //        int isdeleted = user.getIsdeleted();
         try {
-            us.updateRoleInfo(role);
+            us.updateRoleFunctionInfo(role);
             return "TRUE";
         } catch (Exception e) {
             System.out.println(e.toString());
@@ -90,42 +89,42 @@ public class RoleController {
         }
     }
 
-    //删除用户
-    @RequestMapping(value = "/role/deleteRole", method = RequestMethod.GET)
+
+    @RequestMapping(value = "/roleFunction/deleteRoleFunction", method = RequestMethod.GET)
     @ResponseBody
     public String deleteUser(@RequestParam(value = "id") int id) {
         try {
             // System.out.println(id);
-            us.deleteRole(id);
+            us.deleteRoleFunction(id);
             return "TRUE";
         } catch (Exception e) {
             return "FALSE";
         }
     }
 
-    //禁用用户
-    @RequestMapping(value = "/role/forbiddenRole", method = RequestMethod.GET)
-    @ResponseBody
-    public String forbiddenUser(@RequestParam(value = "id") int id) {
-        try {
-            us.forbiddenRoleById(id);
-            return "TRUE";
-        } catch (Exception e) {
-            return "FALSE";
-        }
-    }
 
-    //启用用户
-    @RequestMapping(value = "/role/enableRole", method = RequestMethod.GET)
-    @ResponseBody
-    public String enableUser(@RequestParam(value = "id") int id) {
-        try {
-            us.enableRoleById(id);
-            return "TRUE";
-        } catch (Exception e) {
-            return "FALSE";
-        }
-    }
+//    @RequestMapping(value = "/role/forbiddenRole", method = RequestMethod.GET)
+//    @ResponseBody
+//    public String forbiddenUser(@RequestParam(value = "id") int id) {
+//        try {
+//            us.forbiddenRoleById(id);
+//            return "TRUE";
+//        } catch (Exception e) {
+//            return "FALSE";
+//        }
+//    }
+//
+//
+//    @RequestMapping(value = "/role/enableRole", method = RequestMethod.GET)
+//    @ResponseBody
+//    public String enableUser(@RequestParam(value = "id") int id) {
+//        try {
+//            us.enableRoleById(id);
+//            return "TRUE";
+//        } catch (Exception e) {
+//            return "FALSE";
+//        }
+//    }
 }
 
 

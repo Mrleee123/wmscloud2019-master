@@ -15,7 +15,7 @@ public class RoleDaoTest {
     @Test
     public void add() {
         Role role = new Role();
-        role.setRoleCode("0101");
+        role.setRoleCode("010221");
         role.setRoleName("库官员");
         role.setCreator("system");
         int result =dao.add(role);

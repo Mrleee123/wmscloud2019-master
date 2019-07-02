@@ -8,9 +8,10 @@
     <result column="memo" jdbcType="VARCHAR" property="memo" />
     <result column="createtime" jdbcType="TIMESTAMP" property="createTime" />
     <result column="creator" jdbcType="VARCHAR" property="creator" />
+    <result column="isenabled" jdbcType="VARCHAR" property="isenabled" />
   </resultMap>
   <sql id="Base_Column_List">
-    id, rolecode, rolename, memo, createtime, creator
+    id, rolecode, rolename, memo, createtime, creator,isenabled
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 

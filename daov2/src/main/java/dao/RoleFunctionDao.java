@@ -2,24 +2,25 @@ package dao;
 
 
 import dbtools.DBTools;
-import entity.Role;
-import mappers.RoleMapper;
+import entity.RoleFunction;
+import mappers.RoleFunctionMapper;
 import org.apache.ibatis.session.SqlSession;
 
+import java.util.Date;
 import java.util.List;
 
-public class RoleDao {
+public class RoleFunctionDao {
     private SqlSession sqlSession;
-    private RoleMapper mapper;
+    private RoleFunctionMapper mapper;
 
-    public RoleDao() {
+    public RoleFunctionDao() {
         sqlSession = DBTools.getSession();
 
-        mapper = sqlSession.getMapper(RoleMapper.class);
+        mapper = sqlSession.getMapper(RoleFunctionMapper.class);
 
     }
 
-    public int add(Role entity)  {
+    public int add(RoleFunction entity)  {
         //调用数据库操作函数后需要commit才会提交
         try {
             int result = mapper.insert(entity);
@@ -42,8 +43,11 @@ public class RoleDao {
         }
     }
 
-    public int update(Role entity)  {
+    public int update(RoleFunction entity)  {
         try {
+            java.sql.Date time = new java.sql.Date(new Date().getTime());
+            Date updateTime = time;
+            entity.setUpdateTime(updateTime);
             int result = mapper.updateByPrimaryKeySelective(entity);
             sqlSession.commit();
             return result;
@@ -53,9 +57,9 @@ public class RoleDao {
         }
     }
 
-    public Role get(int id)  {
+    public RoleFunction get(int id)  {
         try {
-            Role result = mapper.selectByPrimaryKey(id);
+            RoleFunction result = mapper.selectByPrimaryKey(id);
             System.out.println(result);
             return result;
         }
@@ -65,9 +69,9 @@ public class RoleDao {
         }
     }
 
-    public List<Role> list() {
+    public List<RoleFunction> list() {
         try {
-            List<Role> result = mapper.selectAll();
+            List<RoleFunction> result = mapper.selectAll();
             System.out.println(result);
             return result;
         } finally {
@@ -76,25 +80,26 @@ public class RoleDao {
         }
     }
 
-    public int forbiddenRoleById(int id){
-        try{
-            int result = mapper.forbiddenRoleById(id);
+    public int insertList(List<RoleFunction> roleFunctionList){
+        try {
+            int result = mapper.insertList(roleFunctionList);
             sqlSession.commit();
             return result;
-        }
-        finally {
+        } finally {
             DBTools.closeSession();
+            // sqlSession.close();
         }
     }
 
-    public int enableRoleById(int id){
-        try{
-            int result = mapper.enableRoleById(id);
+    public int deleteList(List list){
+        try {
+            int result = mapper.deleteList(list);
             sqlSession.commit();
             return result;
-        }
-        finally {
+        } finally {
             DBTools.closeSession();
+            // sqlSession.close();
         }
     }
+
 }
