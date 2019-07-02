@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.ZuHuServiceMapper">
+  <resultMap id="BaseResultMap" type="com.model.ZuHuService">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="zuhu_id" jdbcType="INTEGER" property="zuhuId" />
+    <result column="service_id" jdbcType="INTEGER" property="serviceId" />
+    <result column="timework" jdbcType="INTEGER" property="timework" />
+    <result column="timeleft" jdbcType="INTEGER" property="timeleft" />
+    <result column="moneyleft" jdbcType="DECIMAL" property="moneyleft" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, zuhu_id, service_id, timework, timeleft, moneyleft
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from t_zuhu_service
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from t_zuhu_service
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.model.ZuHuService">
+    insert into t_zuhu_service (id, zuhu_id, service_id, 
+      timework, timeleft, moneyleft
+      )
+    values (#{id,jdbcType=INTEGER}, #{zuhuId,jdbcType=INTEGER}, #{serviceId,jdbcType=INTEGER}, 
+      #{timework,jdbcType=INTEGER}, #{timeleft,jdbcType=INTEGER}, #{moneyleft,jdbcType=DECIMAL}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.model.ZuHuService">
+    insert into t_zuhu_service
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="zuhuId != null">
+        zuhu_id,
+      </if>
+      <if test="serviceId != null">
+        service_id,
+      </if>
+      <if test="timework != null">
+        timework,
+      </if>
+      <if test="timeleft != null">
+        timeleft,
+      </if>
+      <if test="moneyleft != null">
+        moneyleft,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="zuhuId != null">
+        #{zuhuId,jdbcType=INTEGER},
+      </if>
+      <if test="serviceId != null">
+        #{serviceId,jdbcType=INTEGER},
+      </if>
+      <if test="timework != null">
+        #{timework,jdbcType=INTEGER},
+      </if>
+      <if test="timeleft != null">
+        #{timeleft,jdbcType=INTEGER},
+      </if>
+      <if test="moneyleft != null">
+        #{moneyleft,jdbcType=DECIMAL},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.model.ZuHuService">
+    update t_zuhu_service
+    <set>
+      <if test="zuhuId != null">
+        zuhu_id = #{zuhuId,jdbcType=INTEGER},
+      </if>
+      <if test="serviceId != null">
+        service_id = #{serviceId,jdbcType=INTEGER},
+      </if>
+      <if test="timework != null">
+        timework = #{timework,jdbcType=INTEGER},
+      </if>
+      <if test="timeleft != null">
+        timeleft = #{timeleft,jdbcType=INTEGER},
+      </if>
+      <if test="moneyleft != null">
+        moneyleft = #{moneyleft,jdbcType=DECIMAL},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.model.ZuHuService">
+    update t_zuhu_service
+    set zuhu_id = #{zuhuId,jdbcType=INTEGER},
+      service_id = #{serviceId,jdbcType=INTEGER},
+      timework = #{timework,jdbcType=INTEGER},
+      timeleft = #{timeleft,jdbcType=INTEGER},
+      moneyleft = #{moneyleft,jdbcType=DECIMAL}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

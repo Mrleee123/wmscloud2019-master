@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.MatmainMapper">
+  <resultMap id="BaseResultMap" type="com.model.Matmain">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="matmainid" jdbcType="VARCHAR" property="matmainid" />
+    <result column="mmname" jdbcType="VARCHAR" property="mmname" />
+    <result column="memo" jdbcType="VARCHAR" property="memo" />
+    <result column="isinused" jdbcType="INTEGER" property="isinused" />
+    <result column="issys" jdbcType="INTEGER" property="issys" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="userid" jdbcType="VARCHAR" property="userid" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, matmainid, mmname, memo, isinused, issys, create_time, userid
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from t_asrs_sys_matmain
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from t_asrs_sys_matmain
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.model.Matmain">
+    insert into t_asrs_sys_matmain (id, matmainid, mmname, 
+      memo, isinused, issys, 
+      create_time, userid)
+    values (#{id,jdbcType=INTEGER}, #{matmainid,jdbcType=VARCHAR}, #{mmname,jdbcType=VARCHAR}, 
+      #{memo,jdbcType=VARCHAR}, #{isinused,jdbcType=INTEGER}, #{issys,jdbcType=INTEGER}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{userid,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.model.Matmain">
+    insert into t_asrs_sys_matmain
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="matmainid != null">
+        matmainid,
+      </if>
+      <if test="mmname != null">
+        mmname,
+      </if>
+      <if test="memo != null">
+        memo,
+      </if>
+      <if test="isinused != null">
+        isinused,
+      </if>
+      <if test="issys != null">
+        issys,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="userid != null">
+        userid,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="matmainid != null">
+        #{matmainid,jdbcType=VARCHAR},
+      </if>
+      <if test="mmname != null">
+        #{mmname,jdbcType=VARCHAR},
+      </if>
+      <if test="memo != null">
+        #{memo,jdbcType=VARCHAR},
+      </if>
+      <if test="isinused != null">
+        #{isinused,jdbcType=INTEGER},
+      </if>
+      <if test="issys != null">
+        #{issys,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="userid != null">
+        #{userid,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.model.Matmain">
+    update t_asrs_sys_matmain
+    <set>
+      <if test="matmainid != null">
+        matmainid = #{matmainid,jdbcType=VARCHAR},
+      </if>
+      <if test="mmname != null">
+        mmname = #{mmname,jdbcType=VARCHAR},
+      </if>
+      <if test="memo != null">
+        memo = #{memo,jdbcType=VARCHAR},
+      </if>
+      <if test="isinused != null">
+        isinused = #{isinused,jdbcType=INTEGER},
+      </if>
+      <if test="issys != null">
+        issys = #{issys,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="userid != null">
+        userid = #{userid,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.model.Matmain">
+    update t_asrs_sys_matmain
+    set matmainid = #{matmainid,jdbcType=VARCHAR},
+      mmname = #{mmname,jdbcType=VARCHAR},
+      memo = #{memo,jdbcType=VARCHAR},
+      isinused = #{isinused,jdbcType=INTEGER},
+      issys = #{issys,jdbcType=INTEGER},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      userid = #{userid,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

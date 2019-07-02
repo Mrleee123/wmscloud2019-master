@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.DevVendorMapper">
+  <resultMap id="BaseResultMap" type="com.model.DevVendor">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="vendor_name" jdbcType="VARCHAR" property="vendorName" />
+    <result column="isused" jdbcType="INTEGER" property="isused" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, vendor_name, isused
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from t_dev_vendor
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from t_dev_vendor
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.model.DevVendor">
+    insert into t_dev_vendor (id, vendor_name, isused
+      )
+    values (#{id,jdbcType=INTEGER}, #{vendorName,jdbcType=VARCHAR}, #{isused,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.model.DevVendor">
+    insert into t_dev_vendor
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="vendorName != null">
+        vendor_name,
+      </if>
+      <if test="isused != null">
+        isused,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="vendorName != null">
+        #{vendorName,jdbcType=VARCHAR},
+      </if>
+      <if test="isused != null">
+        #{isused,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.model.DevVendor">
+    update t_dev_vendor
+    <set>
+      <if test="vendorName != null">
+        vendor_name = #{vendorName,jdbcType=VARCHAR},
+      </if>
+      <if test="isused != null">
+        isused = #{isused,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.model.DevVendor">
+    update t_dev_vendor
+    set vendor_name = #{vendorName,jdbcType=VARCHAR},
+      isused = #{isused,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.RackMapper">
+  <resultMap id="BaseResultMap" type="com.model.Rack">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="storedef_id" jdbcType="INTEGER" property="storedefId" />
+    <result column="cid" jdbcType="VARCHAR" property="cid" />
+    <result column="cellcode" jdbcType="VARCHAR" property="cellcode" />
+    <result column="palletid" jdbcType="VARCHAR" property="palletid" />
+    <result column="aisle" jdbcType="INTEGER" property="aisle" />
+    <result column="layer" jdbcType="INTEGER" property="layer" />
+    <result column="rank" jdbcType="INTEGER" property="rank" />
+    <result column="roww" jdbcType="INTEGER" property="roww" />
+    <result column="status" jdbcType="VARCHAR" property="status" />
+    <result column="lasttime" jdbcType="TIMESTAMP" property="lasttime" />
+    <result column="plattype" jdbcType="VARCHAR" property="plattype" />
+    <result column="cellclass" jdbcType="VARCHAR" property="cellclass" />
+    <result column="spalletid" jdbcType="VARCHAR" property="spalletid" />
+    <result column="lpalletid" jdbcType="VARCHAR" property="lpalletid" />
+    <result column="cpalletid" jdbcType="VARCHAR" property="cpalletid" />
+    <result column="xpalletid" jdbcType="VARCHAR" property="xpalletid" />
+    <result column="memo" jdbcType="VARCHAR" property="memo" />
+    <result column="issys" jdbcType="INTEGER" property="issys" />
+    <result column="worktype" jdbcType="VARCHAR" property="worktype" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, storedef_id, cid, cellcode, palletid, aisle, layer, rank, roww, status, lasttime, 
+    plattype, cellclass, spalletid, lpalletid, cpalletid, xpalletid, memo, issys, worktype
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from t_asrs_rack
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from t_asrs_rack
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.model.Rack">
+    insert into t_asrs_rack (id, storedef_id, cid, 
+      cellcode, palletid, aisle, 
+      layer, rank, roww, 
+      status, lasttime, plattype, 
+      cellclass, spalletid, lpalletid, 
+      cpalletid, xpalletid, memo, 
+      issys, worktype)
+    values (#{id,jdbcType=BIGINT}, #{storedefId,jdbcType=INTEGER}, #{cid,jdbcType=VARCHAR}, 
+      #{cellcode,jdbcType=VARCHAR}, #{palletid,jdbcType=VARCHAR}, #{aisle,jdbcType=INTEGER}, 
+      #{layer,jdbcType=INTEGER}, #{rank,jdbcType=INTEGER}, #{roww,jdbcType=INTEGER}, 
+      #{status,jdbcType=VARCHAR}, #{lasttime,jdbcType=TIMESTAMP}, #{plattype,jdbcType=VARCHAR}, 
+      #{cellclass,jdbcType=VARCHAR}, #{spalletid,jdbcType=VARCHAR}, #{lpalletid,jdbcType=VARCHAR}, 
+      #{cpalletid,jdbcType=VARCHAR}, #{xpalletid,jdbcType=VARCHAR}, #{memo,jdbcType=VARCHAR}, 
+      #{issys,jdbcType=INTEGER}, #{worktype,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.model.Rack">
+    insert into t_asrs_rack
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="storedefId != null">
+        storedef_id,
+      </if>
+      <if test="cid != null">
+        cid,
+      </if>
+      <if test="cellcode != null">
+        cellcode,
+      </if>
+      <if test="palletid != null">
+        palletid,
+      </if>
+      <if test="aisle != null">
+        aisle,
+      </if>
+      <if test="layer != null">
+        layer,
+      </if>
+      <if test="rank != null">
+        rank,
+      </if>
+      <if test="roww != null">
+        roww,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="lasttime != null">
+        lasttime,
+      </if>
+      <if test="plattype != null">
+        plattype,
+      </if>
+      <if test="cellclass != null">
+        cellclass,
+      </if>
+      <if test="spalletid != null">
+        spalletid,
+      </if>
+      <if test="lpalletid != null">
+        lpalletid,
+      </if>
+      <if test="cpalletid != null">
+        cpalletid,
+      </if>
+      <if test="xpalletid != null">
+        xpalletid,
+      </if>
+      <if test="memo != null">
+        memo,
+      </if>
+      <if test="issys != null">
+        issys,
+      </if>
+      <if test="worktype != null">
+        worktype,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="storedefId != null">
+        #{storedefId,jdbcType=INTEGER},
+      </if>
+      <if test="cid != null">
+        #{cid,jdbcType=VARCHAR},
+      </if>
+      <if test="cellcode != null">
+        #{cellcode,jdbcType=VARCHAR},
+      </if>
+      <if test="palletid != null">
+        #{palletid,jdbcType=VARCHAR},
+      </if>
+      <if test="aisle != null">
+        #{aisle,jdbcType=INTEGER},
+      </if>
+      <if test="layer != null">
+        #{layer,jdbcType=INTEGER},
+      </if>
+      <if test="rank != null">
+        #{rank,jdbcType=INTEGER},
+      </if>
+      <if test="roww != null">
+        #{roww,jdbcType=INTEGER},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="lasttime != null">
+        #{lasttime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="plattype != null">
+        #{plattype,jdbcType=VARCHAR},
+      </if>
+      <if test="cellclass != null">
+        #{cellclass,jdbcType=VARCHAR},
+      </if>
+      <if test="spalletid != null">
+        #{spalletid,jdbcType=VARCHAR},
+      </if>
+      <if test="lpalletid != null">
+        #{lpalletid,jdbcType=VARCHAR},
+      </if>
+      <if test="cpalletid != null">
+        #{cpalletid,jdbcType=VARCHAR},
+      </if>
+      <if test="xpalletid != null">
+        #{xpalletid,jdbcType=VARCHAR},
+      </if>
+      <if test="memo != null">
+        #{memo,jdbcType=VARCHAR},
+      </if>
+      <if test="issys != null">
+        #{issys,jdbcType=INTEGER},
+      </if>
+      <if test="worktype != null">
+        #{worktype,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.model.Rack">
+    update t_asrs_rack
+    <set>
+      <if test="storedefId != null">
+        storedef_id = #{storedefId,jdbcType=INTEGER},
+      </if>
+      <if test="cid != null">
+        cid = #{cid,jdbcType=VARCHAR},
+      </if>
+      <if test="cellcode != null">
+        cellcode = #{cellcode,jdbcType=VARCHAR},
+      </if>
+      <if test="palletid != null">
+        palletid = #{palletid,jdbcType=VARCHAR},
+      </if>
+      <if test="aisle != null">
+        aisle = #{aisle,jdbcType=INTEGER},
+      </if>
+      <if test="layer != null">
+        layer = #{layer,jdbcType=INTEGER},
+      </if>
+      <if test="rank != null">
+        rank = #{rank,jdbcType=INTEGER},
+      </if>
+      <if test="roww != null">
+        roww = #{roww,jdbcType=INTEGER},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="lasttime != null">
+        lasttime = #{lasttime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="plattype != null">
+        plattype = #{plattype,jdbcType=VARCHAR},
+      </if>
+      <if test="cellclass != null">
+        cellclass = #{cellclass,jdbcType=VARCHAR},
+      </if>
+      <if test="spalletid != null">
+        spalletid = #{spalletid,jdbcType=VARCHAR},
+      </if>
+      <if test="lpalletid != null">
+        lpalletid = #{lpalletid,jdbcType=VARCHAR},
+      </if>
+      <if test="cpalletid != null">
+        cpalletid = #{cpalletid,jdbcType=VARCHAR},
+      </if>
+      <if test="xpalletid != null">
+        xpalletid = #{xpalletid,jdbcType=VARCHAR},
+      </if>
+      <if test="memo != null">
+        memo = #{memo,jdbcType=VARCHAR},
+      </if>
+      <if test="issys != null">
+        issys = #{issys,jdbcType=INTEGER},
+      </if>
+      <if test="worktype != null">
+        worktype = #{worktype,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.model.Rack">
+    update t_asrs_rack
+    set storedef_id = #{storedefId,jdbcType=INTEGER},
+      cid = #{cid,jdbcType=VARCHAR},
+      cellcode = #{cellcode,jdbcType=VARCHAR},
+      palletid = #{palletid,jdbcType=VARCHAR},
+      aisle = #{aisle,jdbcType=INTEGER},
+      layer = #{layer,jdbcType=INTEGER},
+      rank = #{rank,jdbcType=INTEGER},
+      roww = #{roww,jdbcType=INTEGER},
+      status = #{status,jdbcType=VARCHAR},
+      lasttime = #{lasttime,jdbcType=TIMESTAMP},
+      plattype = #{plattype,jdbcType=VARCHAR},
+      cellclass = #{cellclass,jdbcType=VARCHAR},
+      spalletid = #{spalletid,jdbcType=VARCHAR},
+      lpalletid = #{lpalletid,jdbcType=VARCHAR},
+      cpalletid = #{cpalletid,jdbcType=VARCHAR},
+      xpalletid = #{xpalletid,jdbcType=VARCHAR},
+      memo = #{memo,jdbcType=VARCHAR},
+      issys = #{issys,jdbcType=INTEGER},
+      worktype = #{worktype,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

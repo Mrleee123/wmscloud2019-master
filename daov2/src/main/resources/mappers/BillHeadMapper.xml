@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.BillHeadMapper">
+  <resultMap id="BaseResultMap" type="com.model.BillHead">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="billno" jdbcType="VARCHAR" property="billno" />
+    <result column="storedef_id" jdbcType="INTEGER" property="storedefId" />
+    <result column="ioclass_id" jdbcType="INTEGER" property="ioclassId" />
+    <result column="vendor_id" jdbcType="INTEGER" property="vendorId" />
+    <result column="customer_id" jdbcType="INTEGER" property="customerId" />
+    <result column="dept_id" jdbcType="INTEGER" property="deptId" />
+    <result column="memo" jdbcType="VARCHAR" property="memo" />
+    <result column="head_status" jdbcType="INTEGER" property="headStatus" />
+    <result column="bill_date" jdbcType="DATE" property="billDate" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="creator" jdbcType="VARCHAR" property="creator" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="updator" jdbcType="VARCHAR" property="updator" />
+    <result column="gateno" jdbcType="VARCHAR" property="gateno" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, billno, storedef_id, ioclass_id, vendor_id, customer_id, dept_id, memo, head_status, 
+    bill_date, create_time, creator, update_time, updator, gateno
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from t_asrs_bill_head
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <select id="selectAll" resultType="com.model.BillHead">
+        select * from t_asrs_bill_head;
+   </select>
+
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from t_asrs_bill_head
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.model.BillHead">
+    insert into t_asrs_bill_head (id, billno, storedef_id, 
+      ioclass_id, vendor_id, customer_id, 
+      dept_id, memo, head_status, 
+      bill_date, create_time, creator, 
+      update_time, updator, gateno
+      )
+    values (#{id,jdbcType=BIGINT}, #{billno,jdbcType=VARCHAR}, #{storedefId,jdbcType=INTEGER}, 
+      #{ioclassId,jdbcType=INTEGER}, #{vendorId,jdbcType=INTEGER}, #{customerId,jdbcType=INTEGER}, 
+      #{deptId,jdbcType=INTEGER}, #{memo,jdbcType=VARCHAR}, #{headStatus,jdbcType=INTEGER}, 
+      #{billDate,jdbcType=DATE}, #{createTime,jdbcType=TIMESTAMP}, #{creator,jdbcType=VARCHAR}, 
+      #{updateTime,jdbcType=TIMESTAMP}, #{updator,jdbcType=VARCHAR}, #{gateno,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.model.BillHead">
+    insert into t_asrs_bill_head
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="billno != null">
+        billno,
+      </if>
+      <if test="storedefId != null">
+        storedef_id,
+      </if>
+      <if test="ioclassId != null">
+        ioclass_id,
+      </if>
+      <if test="vendorId != null">
+        vendor_id,
+      </if>
+      <if test="customerId != null">
+        customer_id,
+      </if>
+      <if test="deptId != null">
+        dept_id,
+      </if>
+      <if test="memo != null">
+        memo,
+      </if>
+      <if test="headStatus != null">
+        head_status,
+      </if>
+      <if test="billDate != null">
+        bill_date,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="creator != null">
+        creator,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+      <if test="updator != null">
+        updator,
+      </if>
+      <if test="gateno != null">
+        gateno,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="billno != null">
+        #{billno,jdbcType=VARCHAR},
+      </if>
+      <if test="storedefId != null">
+        #{storedefId,jdbcType=INTEGER},
+      </if>
+      <if test="ioclassId != null">
+        #{ioclassId,jdbcType=INTEGER},
+      </if>
+      <if test="vendorId != null">
+        #{vendorId,jdbcType=INTEGER},
+      </if>
+      <if test="customerId != null">
+        #{customerId,jdbcType=INTEGER},
+      </if>
+      <if test="deptId != null">
+        #{deptId,jdbcType=INTEGER},
+      </if>
+      <if test="memo != null">
+        #{memo,jdbcType=VARCHAR},
+      </if>
+      <if test="headStatus != null">
+        #{headStatus,jdbcType=INTEGER},
+      </if>
+      <if test="billDate != null">
+        #{billDate,jdbcType=DATE},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="creator != null">
+        #{creator,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updator != null">
+        #{updator,jdbcType=VARCHAR},
+      </if>
+      <if test="gateno != null">
+        #{gateno,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.model.BillHead">
+    update t_asrs_bill_head
+    <set>
+      <if test="billno != null">
+        billno = #{billno,jdbcType=VARCHAR},
+      </if>
+      <if test="storedefId != null">
+        storedef_id = #{storedefId,jdbcType=INTEGER},
+      </if>
+      <if test="ioclassId != null">
+        ioclass_id = #{ioclassId,jdbcType=INTEGER},
+      </if>
+      <if test="vendorId != null">
+        vendor_id = #{vendorId,jdbcType=INTEGER},
+      </if>
+      <if test="customerId != null">
+        customer_id = #{customerId,jdbcType=INTEGER},
+      </if>
+      <if test="deptId != null">
+        dept_id = #{deptId,jdbcType=INTEGER},
+      </if>
+      <if test="memo != null">
+        memo = #{memo,jdbcType=VARCHAR},
+      </if>
+      <if test="headStatus != null">
+        head_status = #{headStatus,jdbcType=INTEGER},
+      </if>
+      <if test="billDate != null">
+        bill_date = #{billDate,jdbcType=DATE},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="creator != null">
+        creator = #{creator,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updator != null">
+        updator = #{updator,jdbcType=VARCHAR},
+      </if>
+      <if test="gateno != null">
+        gateno = #{gateno,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.model.BillHead">
+    update t_asrs_bill_head
+    set billno = #{billno,jdbcType=VARCHAR},
+      storedef_id = #{storedefId,jdbcType=INTEGER},
+      ioclass_id = #{ioclassId,jdbcType=INTEGER},
+      vendor_id = #{vendorId,jdbcType=INTEGER},
+      customer_id = #{customerId,jdbcType=INTEGER},
+      dept_id = #{deptId,jdbcType=INTEGER},
+      memo = #{memo,jdbcType=VARCHAR},
+      head_status = #{headStatus,jdbcType=INTEGER},
+      bill_date = #{billDate,jdbcType=DATE},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      creator = #{creator,jdbcType=VARCHAR},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      updator = #{updator,jdbcType=VARCHAR},
+      gateno = #{gateno,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.ProjectMapper">
+  <resultMap id="BaseResultMap" type="com.model.Project">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="project_name" jdbcType="VARCHAR" property="projectName" />
+    <result column="project_code" jdbcType="VARCHAR" property="projectCode" />
+    <result column="contract_name" jdbcType="VARCHAR" property="contractName" />
+    <result column="totalprice" jdbcType="INTEGER" property="totalprice" />
+    <result column="invoiced" jdbcType="DECIMAL" property="invoiced" />
+    <result column="paid_in_ratio" jdbcType="VARCHAR" property="paidInRatio" />
+    <result column="paid_in_price" jdbcType="VARCHAR" property="paidInPrice" />
+    <result column="status" jdbcType="VARCHAR" property="status" />
+    <result column="address" jdbcType="VARCHAR" property="address" />
+    <result column="leador_electric" jdbcType="VARCHAR" property="leadorElectric" />
+    <result column="leador_soft" jdbcType="VARCHAR" property="leadorSoft" />
+    <result column="MM" jdbcType="VARCHAR" property="mm" />
+    <result column="PM" jdbcType="VARCHAR" property="pm" />
+    <result column="drawing_electric" jdbcType="VARCHAR" property="drawingElectric" />
+    <result column="drawing_design" jdbcType="VARCHAR" property="drawingDesign" />
+    <result column="protocol_monitor" jdbcType="VARCHAR" property="protocolMonitor" />
+    <result column="contract_text" jdbcType="VARCHAR" property="contractText" />
+    <result column="starttime" jdbcType="DATE" property="starttime" />
+    <result column="endtime_calculate" jdbcType="DATE" property="endtimeCalculate" />
+    <result column="endtime_real" jdbcType="DATE" property="endtimeReal" />
+    <result column="aislenum" jdbcType="INTEGER" property="aislenum" />
+    <result column="racknum" jdbcType="BIGINT" property="racknum" />
+    <result column="devnum" jdbcType="BIGINT" property="devnum" />
+    <result column="country" jdbcType="VARCHAR" property="country" />
+    <result column="province" jdbcType="VARCHAR" property="province" />
+    <result column="city" jdbcType="VARCHAR" property="city" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, project_name, project_code, contract_name, totalprice, invoiced, paid_in_ratio, 
+    paid_in_price, status, address, leador_electric, leador_soft, MM, PM, drawing_electric, 
+    drawing_design, protocol_monitor, contract_text, starttime, endtime_calculate, endtime_real, 
+    aislenum, racknum, devnum, country, province, city
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from t_web_project
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from t_web_project
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.model.Project">
+    insert into t_web_project (id, project_name, project_code, 
+      contract_name, totalprice, invoiced, 
+      paid_in_ratio, paid_in_price, status, 
+      address, leador_electric, leador_soft, 
+      MM, PM, drawing_electric, 
+      drawing_design, protocol_monitor, contract_text, 
+      starttime, endtime_calculate, endtime_real, 
+      aislenum, racknum, devnum, 
+      country, province, city
+      )
+    values (#{id,jdbcType=INTEGER}, #{projectName,jdbcType=VARCHAR}, #{projectCode,jdbcType=VARCHAR}, 
+      #{contractName,jdbcType=VARCHAR}, #{totalprice,jdbcType=INTEGER}, #{invoiced,jdbcType=DECIMAL}, 
+      #{paidInRatio,jdbcType=VARCHAR}, #{paidInPrice,jdbcType=VARCHAR}, #{status,jdbcType=VARCHAR}, 
+      #{address,jdbcType=VARCHAR}, #{leadorElectric,jdbcType=VARCHAR}, #{leadorSoft,jdbcType=VARCHAR}, 
+      #{mm,jdbcType=VARCHAR}, #{pm,jdbcType=VARCHAR}, #{drawingElectric,jdbcType=VARCHAR}, 
+      #{drawingDesign,jdbcType=VARCHAR}, #{protocolMonitor,jdbcType=VARCHAR}, #{contractText,jdbcType=VARCHAR}, 
+      #{starttime,jdbcType=DATE}, #{endtimeCalculate,jdbcType=DATE}, #{endtimeReal,jdbcType=DATE}, 
+      #{aislenum,jdbcType=INTEGER}, #{racknum,jdbcType=BIGINT}, #{devnum,jdbcType=BIGINT}, 
+      #{country,jdbcType=VARCHAR}, #{province,jdbcType=VARCHAR}, #{city,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.model.Project">
+    insert into t_web_project
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="projectName != null">
+        project_name,
+      </if>
+      <if test="projectCode != null">
+        project_code,
+      </if>
+      <if test="contractName != null">
+        contract_name,
+      </if>
+      <if test="totalprice != null">
+        totalprice,
+      </if>
+      <if test="invoiced != null">
+        invoiced,
+      </if>
+      <if test="paidInRatio != null">
+        paid_in_ratio,
+      </if>
+      <if test="paidInPrice != null">
+        paid_in_price,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="address != null">
+        address,
+      </if>
+      <if test="leadorElectric != null">
+        leador_electric,
+      </if>
+      <if test="leadorSoft != null">
+        leador_soft,
+      </if>
+      <if test="mm != null">
+        MM,
+      </if>
+      <if test="pm != null">
+        PM,
+      </if>
+      <if test="drawingElectric != null">
+        drawing_electric,
+      </if>
+      <if test="drawingDesign != null">
+        drawing_design,
+      </if>
+      <if test="protocolMonitor != null">
+        protocol_monitor,
+      </if>
+      <if test="contractText != null">
+        contract_text,
+      </if>
+      <if test="starttime != null">
+        starttime,
+      </if>
+      <if test="endtimeCalculate != null">
+        endtime_calculate,
+      </if>
+      <if test="endtimeReal != null">
+        endtime_real,
+      </if>
+      <if test="aislenum != null">
+        aislenum,
+      </if>
+      <if test="racknum != null">
+        racknum,
+      </if>
+      <if test="devnum != null">
+        devnum,
+      </if>
+      <if test="country != null">
+        country,
+      </if>
+      <if test="province != null">
+        province,
+      </if>
+      <if test="city != null">
+        city,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="projectName != null">
+        #{projectName,jdbcType=VARCHAR},
+      </if>
+      <if test="projectCode != null">
+        #{projectCode,jdbcType=VARCHAR},
+      </if>
+      <if test="contractName != null">
+        #{contractName,jdbcType=VARCHAR},
+      </if>
+      <if test="totalprice != null">
+        #{totalprice,jdbcType=INTEGER},
+      </if>
+      <if test="invoiced != null">
+        #{invoiced,jdbcType=DECIMAL},
+      </if>
+      <if test="paidInRatio != null">
+        #{paidInRatio,jdbcType=VARCHAR},
+      </if>
+      <if test="paidInPrice != null">
+        #{paidInPrice,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null">
+        #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="leadorElectric != null">
+        #{leadorElectric,jdbcType=VARCHAR},
+      </if>
+      <if test="leadorSoft != null">
+        #{leadorSoft,jdbcType=VARCHAR},
+      </if>
+      <if test="mm != null">
+        #{mm,jdbcType=VARCHAR},
+      </if>
+      <if test="pm != null">
+        #{pm,jdbcType=VARCHAR},
+      </if>
+      <if test="drawingElectric != null">
+        #{drawingElectric,jdbcType=VARCHAR},
+      </if>
+      <if test="drawingDesign != null">
+        #{drawingDesign,jdbcType=VARCHAR},
+      </if>
+      <if test="protocolMonitor != null">
+        #{protocolMonitor,jdbcType=VARCHAR},
+      </if>
+      <if test="contractText != null">
+        #{contractText,jdbcType=VARCHAR},
+      </if>
+      <if test="starttime != null">
+        #{starttime,jdbcType=DATE},
+      </if>
+      <if test="endtimeCalculate != null">
+        #{endtimeCalculate,jdbcType=DATE},
+      </if>
+      <if test="endtimeReal != null">
+        #{endtimeReal,jdbcType=DATE},
+      </if>
+      <if test="aislenum != null">
+        #{aislenum,jdbcType=INTEGER},
+      </if>
+      <if test="racknum != null">
+        #{racknum,jdbcType=BIGINT},
+      </if>
+      <if test="devnum != null">
+        #{devnum,jdbcType=BIGINT},
+      </if>
+      <if test="country != null">
+        #{country,jdbcType=VARCHAR},
+      </if>
+      <if test="province != null">
+        #{province,jdbcType=VARCHAR},
+      </if>
+      <if test="city != null">
+        #{city,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.model.Project">
+    update t_web_project
+    <set>
+      <if test="projectName != null">
+        project_name = #{projectName,jdbcType=VARCHAR},
+      </if>
+      <if test="projectCode != null">
+        project_code = #{projectCode,jdbcType=VARCHAR},
+      </if>
+      <if test="contractName != null">
+        contract_name = #{contractName,jdbcType=VARCHAR},
+      </if>
+      <if test="totalprice != null">
+        totalprice = #{totalprice,jdbcType=INTEGER},
+      </if>
+      <if test="invoiced != null">
+        invoiced = #{invoiced,jdbcType=DECIMAL},
+      </if>
+      <if test="paidInRatio != null">
+        paid_in_ratio = #{paidInRatio,jdbcType=VARCHAR},
+      </if>
+      <if test="paidInPrice != null">
+        paid_in_price = #{paidInPrice,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null">
+        address = #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="leadorElectric != null">
+        leador_electric = #{leadorElectric,jdbcType=VARCHAR},
+      </if>
+      <if test="leadorSoft != null">
+        leador_soft = #{leadorSoft,jdbcType=VARCHAR},
+      </if>
+      <if test="mm != null">
+        MM = #{mm,jdbcType=VARCHAR},
+      </if>
+      <if test="pm != null">
+        PM = #{pm,jdbcType=VARCHAR},
+      </if>
+      <if test="drawingElectric != null">
+        drawing_electric = #{drawingElectric,jdbcType=VARCHAR},
+      </if>
+      <if test="drawingDesign != null">
+        drawing_design = #{drawingDesign,jdbcType=VARCHAR},
+      </if>
+      <if test="protocolMonitor != null">
+        protocol_monitor = #{protocolMonitor,jdbcType=VARCHAR},
+      </if>
+      <if test="contractText != null">
+        contract_text = #{contractText,jdbcType=VARCHAR},
+      </if>
+      <if test="starttime != null">
+        starttime = #{starttime,jdbcType=DATE},
+      </if>
+      <if test="endtimeCalculate != null">
+        endtime_calculate = #{endtimeCalculate,jdbcType=DATE},
+      </if>
+      <if test="endtimeReal != null">
+        endtime_real = #{endtimeReal,jdbcType=DATE},
+      </if>
+      <if test="aislenum != null">
+        aislenum = #{aislenum,jdbcType=INTEGER},
+      </if>
+      <if test="racknum != null">
+        racknum = #{racknum,jdbcType=BIGINT},
+      </if>
+      <if test="devnum != null">
+        devnum = #{devnum,jdbcType=BIGINT},
+      </if>
+      <if test="country != null">
+        country = #{country,jdbcType=VARCHAR},
+      </if>
+      <if test="province != null">
+        province = #{province,jdbcType=VARCHAR},
+      </if>
+      <if test="city != null">
+        city = #{city,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.model.Project">
+    update t_web_project
+    set project_name = #{projectName,jdbcType=VARCHAR},
+      project_code = #{projectCode,jdbcType=VARCHAR},
+      contract_name = #{contractName,jdbcType=VARCHAR},
+      totalprice = #{totalprice,jdbcType=INTEGER},
+      invoiced = #{invoiced,jdbcType=DECIMAL},
+      paid_in_ratio = #{paidInRatio,jdbcType=VARCHAR},
+      paid_in_price = #{paidInPrice,jdbcType=VARCHAR},
+      status = #{status,jdbcType=VARCHAR},
+      address = #{address,jdbcType=VARCHAR},
+      leador_electric = #{leadorElectric,jdbcType=VARCHAR},
+      leador_soft = #{leadorSoft,jdbcType=VARCHAR},
+      MM = #{mm,jdbcType=VARCHAR},
+      PM = #{pm,jdbcType=VARCHAR},
+      drawing_electric = #{drawingElectric,jdbcType=VARCHAR},
+      drawing_design = #{drawingDesign,jdbcType=VARCHAR},
+      protocol_monitor = #{protocolMonitor,jdbcType=VARCHAR},
+      contract_text = #{contractText,jdbcType=VARCHAR},
+      starttime = #{starttime,jdbcType=DATE},
+      endtime_calculate = #{endtimeCalculate,jdbcType=DATE},
+      endtime_real = #{endtimeReal,jdbcType=DATE},
+      aislenum = #{aislenum,jdbcType=INTEGER},
+      racknum = #{racknum,jdbcType=BIGINT},
+      devnum = #{devnum,jdbcType=BIGINT},
+      country = #{country,jdbcType=VARCHAR},
+      province = #{province,jdbcType=VARCHAR},
+      city = #{city,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.ErrorLogMapper">
+  <resultMap id="BaseResultMap" type="com.model.ErrorLog">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="lclass" jdbcType="VARCHAR" property="lclass" />
+    <result column="worktype" jdbcType="VARCHAR" property="worktype" />
+    <result column="cid" jdbcType="VARCHAR" property="cid" />
+    <result column="palletid" jdbcType="VARCHAR" property="palletid" />
+    <result column="detaill" jdbcType="VARCHAR" property="detaill" />
+    <result column="memo" jdbcType="VARCHAR" property="memo" />
+    <result column="userid" jdbcType="VARCHAR" property="userid" />
+    <result column="storedef_id" jdbcType="INTEGER" property="storedefId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, lclass, worktype, cid, palletid, detaill, memo, userid, storedef_id
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from t_asrs_log_error
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from t_asrs_log_error
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.model.ErrorLog">
+    insert into t_asrs_log_error (id, lclass, worktype, 
+      cid, palletid, detaill, 
+      memo, userid, storedef_id
+      )
+    values (#{id,jdbcType=INTEGER}, #{lclass,jdbcType=VARCHAR}, #{worktype,jdbcType=VARCHAR}, 
+      #{cid,jdbcType=VARCHAR}, #{palletid,jdbcType=VARCHAR}, #{detaill,jdbcType=VARCHAR}, 
+      #{memo,jdbcType=VARCHAR}, #{userid,jdbcType=VARCHAR}, #{storedefId,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.model.ErrorLog">
+    insert into t_asrs_log_error
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="lclass != null">
+        lclass,
+      </if>
+      <if test="worktype != null">
+        worktype,
+      </if>
+      <if test="cid != null">
+        cid,
+      </if>
+      <if test="palletid != null">
+        palletid,
+      </if>
+      <if test="detaill != null">
+        detaill,
+      </if>
+      <if test="memo != null">
+        memo,
+      </if>
+      <if test="userid != null">
+        userid,
+      </if>
+      <if test="storedefId != null">
+        storedef_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="lclass != null">
+        #{lclass,jdbcType=VARCHAR},
+      </if>
+      <if test="worktype != null">
+        #{worktype,jdbcType=VARCHAR},
+      </if>
+      <if test="cid != null">
+        #{cid,jdbcType=VARCHAR},
+      </if>
+      <if test="palletid != null">
+        #{palletid,jdbcType=VARCHAR},
+      </if>
+      <if test="detaill != null">
+        #{detaill,jdbcType=VARCHAR},
+      </if>
+      <if test="memo != null">
+        #{memo,jdbcType=VARCHAR},
+      </if>
+      <if test="userid != null">
+        #{userid,jdbcType=VARCHAR},
+      </if>
+      <if test="storedefId != null">
+        #{storedefId,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.model.ErrorLog">
+    update t_asrs_log_error
+    <set>
+      <if test="lclass != null">
+        lclass = #{lclass,jdbcType=VARCHAR},
+      </if>
+      <if test="worktype != null">
+        worktype = #{worktype,jdbcType=VARCHAR},
+      </if>
+      <if test="cid != null">
+        cid = #{cid,jdbcType=VARCHAR},
+      </if>
+      <if test="palletid != null">
+        palletid = #{palletid,jdbcType=VARCHAR},
+      </if>
+      <if test="detaill != null">
+        detaill = #{detaill,jdbcType=VARCHAR},
+      </if>
+      <if test="memo != null">
+        memo = #{memo,jdbcType=VARCHAR},
+      </if>
+      <if test="userid != null">
+        userid = #{userid,jdbcType=VARCHAR},
+      </if>
+      <if test="storedefId != null">
+        storedef_id = #{storedefId,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.model.ErrorLog">
+    update t_asrs_log_error
+    set lclass = #{lclass,jdbcType=VARCHAR},
+      worktype = #{worktype,jdbcType=VARCHAR},
+      cid = #{cid,jdbcType=VARCHAR},
+      palletid = #{palletid,jdbcType=VARCHAR},
+      detaill = #{detaill,jdbcType=VARCHAR},
+      memo = #{memo,jdbcType=VARCHAR},
+      userid = #{userid,jdbcType=VARCHAR},
+      storedef_id = #{storedefId,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.StoreMapper">
+  <resultMap id="BaseResultMap" type="com.model.Store">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="storedef_id" jdbcType="INTEGER" property="storedefId" />
+    <result column="c_id" jdbcType="BIGINT" property="cId" />
+    <result column="palletid" jdbcType="VARCHAR" property="palletid" />
+    <result column="m_id" jdbcType="BIGINT" property="mId" />
+    <result column="production_date" jdbcType="VARCHAR" property="productionDate" />
+    <result column="num" jdbcType="DECIMAL" property="num" />
+    <result column="weight" jdbcType="DECIMAL" property="weight" />
+    <result column="mstatus" jdbcType="VARCHAR" property="mstatus" />
+    <result column="batchno" jdbcType="VARCHAR" property="batchno" />
+    <result column="vendor_id" jdbcType="INTEGER" property="vendorId" />
+    <result column="customer_id" jdbcType="INTEGER" property="customerId" />
+    <result column="billno" jdbcType="VARCHAR" property="billno" />
+    <result column="bill_head_id" jdbcType="INTEGER" property="billHeadId" />
+    <result column="bill_detail_id" jdbcType="INTEGER" property="billDetailId" />
+    <result column="memo" jdbcType="VARCHAR" property="memo" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, storedef_id, c_id, palletid, m_id, production_date, num, weight, mstatus, batchno, 
+    vendor_id, customer_id, billno, bill_head_id, bill_detail_id, memo
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from t_asrs_store
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from t_asrs_store
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.model.Store">
+    insert into t_asrs_store (id, storedef_id, c_id, 
+      palletid, m_id, production_date, 
+      num, weight, mstatus, 
+      batchno, vendor_id, customer_id, 
+      billno, bill_head_id, bill_detail_id, 
+      memo)
+    values (#{id,jdbcType=INTEGER}, #{storedefId,jdbcType=INTEGER}, #{cId,jdbcType=BIGINT}, 
+      #{palletid,jdbcType=VARCHAR}, #{mId,jdbcType=BIGINT}, #{productionDate,jdbcType=VARCHAR}, 
+      #{num,jdbcType=DECIMAL}, #{weight,jdbcType=DECIMAL}, #{mstatus,jdbcType=VARCHAR}, 
+      #{batchno,jdbcType=VARCHAR}, #{vendorId,jdbcType=INTEGER}, #{customerId,jdbcType=INTEGER}, 
+      #{billno,jdbcType=VARCHAR}, #{billHeadId,jdbcType=INTEGER}, #{billDetailId,jdbcType=INTEGER}, 
+      #{memo,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.model.Store">
+    insert into t_asrs_store
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="storedefId != null">
+        storedef_id,
+      </if>
+      <if test="cId != null">
+        c_id,
+      </if>
+      <if test="palletid != null">
+        palletid,
+      </if>
+      <if test="mId != null">
+        m_id,
+      </if>
+      <if test="productionDate != null">
+        production_date,
+      </if>
+      <if test="num != null">
+        num,
+      </if>
+      <if test="weight != null">
+        weight,
+      </if>
+      <if test="mstatus != null">
+        mstatus,
+      </if>
+      <if test="batchno != null">
+        batchno,
+      </if>
+      <if test="vendorId != null">
+        vendor_id,
+      </if>
+      <if test="customerId != null">
+        customer_id,
+      </if>
+      <if test="billno != null">
+        billno,
+      </if>
+      <if test="billHeadId != null">
+        bill_head_id,
+      </if>
+      <if test="billDetailId != null">
+        bill_detail_id,
+      </if>
+      <if test="memo != null">
+        memo,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="storedefId != null">
+        #{storedefId,jdbcType=INTEGER},
+      </if>
+      <if test="cId != null">
+        #{cId,jdbcType=BIGINT},
+      </if>
+      <if test="palletid != null">
+        #{palletid,jdbcType=VARCHAR},
+      </if>
+      <if test="mId != null">
+        #{mId,jdbcType=BIGINT},
+      </if>
+      <if test="productionDate != null">
+        #{productionDate,jdbcType=VARCHAR},
+      </if>
+      <if test="num != null">
+        #{num,jdbcType=DECIMAL},
+      </if>
+      <if test="weight != null">
+        #{weight,jdbcType=DECIMAL},
+      </if>
+      <if test="mstatus != null">
+        #{mstatus,jdbcType=VARCHAR},
+      </if>
+      <if test="batchno != null">
+        #{batchno,jdbcType=VARCHAR},
+      </if>
+      <if test="vendorId != null">
+        #{vendorId,jdbcType=INTEGER},
+      </if>
+      <if test="customerId != null">
+        #{customerId,jdbcType=INTEGER},
+      </if>
+      <if test="billno != null">
+        #{billno,jdbcType=VARCHAR},
+      </if>
+      <if test="billHeadId != null">
+        #{billHeadId,jdbcType=INTEGER},
+      </if>
+      <if test="billDetailId != null">
+        #{billDetailId,jdbcType=INTEGER},
+      </if>
+      <if test="memo != null">
+        #{memo,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.model.Store">
+    update t_asrs_store
+    <set>
+      <if test="storedefId != null">
+        storedef_id = #{storedefId,jdbcType=INTEGER},
+      </if>
+      <if test="cId != null">
+        c_id = #{cId,jdbcType=BIGINT},
+      </if>
+      <if test="palletid != null">
+        palletid = #{palletid,jdbcType=VARCHAR},
+      </if>
+      <if test="mId != null">
+        m_id = #{mId,jdbcType=BIGINT},
+      </if>
+      <if test="productionDate != null">
+        production_date = #{productionDate,jdbcType=VARCHAR},
+      </if>
+      <if test="num != null">
+        num = #{num,jdbcType=DECIMAL},
+      </if>
+      <if test="weight != null">
+        weight = #{weight,jdbcType=DECIMAL},
+      </if>
+      <if test="mstatus != null">
+        mstatus = #{mstatus,jdbcType=VARCHAR},
+      </if>
+      <if test="batchno != null">
+        batchno = #{batchno,jdbcType=VARCHAR},
+      </if>
+      <if test="vendorId != null">
+        vendor_id = #{vendorId,jdbcType=INTEGER},
+      </if>
+      <if test="customerId != null">
+        customer_id = #{customerId,jdbcType=INTEGER},
+      </if>
+      <if test="billno != null">
+        billno = #{billno,jdbcType=VARCHAR},
+      </if>
+      <if test="billHeadId != null">
+        bill_head_id = #{billHeadId,jdbcType=INTEGER},
+      </if>
+      <if test="billDetailId != null">
+        bill_detail_id = #{billDetailId,jdbcType=INTEGER},
+      </if>
+      <if test="memo != null">
+        memo = #{memo,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.model.Store">
+    update t_asrs_store
+    set storedef_id = #{storedefId,jdbcType=INTEGER},
+      c_id = #{cId,jdbcType=BIGINT},
+      palletid = #{palletid,jdbcType=VARCHAR},
+      m_id = #{mId,jdbcType=BIGINT},
+      production_date = #{productionDate,jdbcType=VARCHAR},
+      num = #{num,jdbcType=DECIMAL},
+      weight = #{weight,jdbcType=DECIMAL},
+      mstatus = #{mstatus,jdbcType=VARCHAR},
+      batchno = #{batchno,jdbcType=VARCHAR},
+      vendor_id = #{vendorId,jdbcType=INTEGER},
+      customer_id = #{customerId,jdbcType=INTEGER},
+      billno = #{billno,jdbcType=VARCHAR},
+      bill_head_id = #{billHeadId,jdbcType=INTEGER},
+      bill_detail_id = #{billDetailId,jdbcType=INTEGER},
+      memo = #{memo,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.TmpMapper">
+  <resultMap id="BaseResultMap" type="com.model.Tmp">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="c_id" jdbcType="BIGINT" property="cId" />
+    <result column="ioclass_id" jdbcType="BIGINT" property="ioclassId" />
+    <result column="palletid" jdbcType="VARCHAR" property="palletid" />
+    <result column="m_id" jdbcType="INTEGER" property="mId" />
+    <result column="num" jdbcType="INTEGER" property="num" />
+    <result column="sweight" jdbcType="DECIMAL" property="sweight" />
+    <result column="mstatus" jdbcType="VARCHAR" property="mstatus" />
+    <result column="vendor_id" jdbcType="INTEGER" property="vendorId" />
+    <result column="customer_id" jdbcType="BIGINT" property="customerId" />
+    <result column="batchno" jdbcType="VARCHAR" property="batchno" />
+    <result column="i_bill_id" jdbcType="BIGINT" property="iBillId" />
+    <result column="memo" jdbcType="VARCHAR" property="memo" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="creator" jdbcType="VARCHAR" property="creator" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, c_id, ioclass_id, palletid, m_id, num, sweight, mstatus, vendor_id, customer_id, 
+    batchno, i_bill_id, memo, create_time, creator
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from t_asrs_puttmp
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from t_asrs_puttmp
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.model.Tmp">
+    insert into t_asrs_puttmp (id, c_id, ioclass_id, 
+      palletid, m_id, num, 
+      sweight, mstatus, vendor_id, 
+      customer_id, batchno, i_bill_id, 
+      memo, create_time, creator
+      )
+    values (#{id,jdbcType=INTEGER}, #{cId,jdbcType=BIGINT}, #{ioclassId,jdbcType=BIGINT}, 
+      #{palletid,jdbcType=VARCHAR}, #{mId,jdbcType=INTEGER}, #{num,jdbcType=INTEGER}, 
+      #{sweight,jdbcType=DECIMAL}, #{mstatus,jdbcType=VARCHAR}, #{vendorId,jdbcType=INTEGER}, 
+      #{customerId,jdbcType=BIGINT}, #{batchno,jdbcType=VARCHAR}, #{iBillId,jdbcType=BIGINT}, 
+      #{memo,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{creator,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.model.Tmp">
+    insert into t_asrs_puttmp
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="cId != null">
+        c_id,
+      </if>
+      <if test="ioclassId != null">
+        ioclass_id,
+      </if>
+      <if test="palletid != null">
+        palletid,
+      </if>
+      <if test="mId != null">
+        m_id,
+      </if>
+      <if test="num != null">
+        num,
+      </if>
+      <if test="sweight != null">
+        sweight,
+      </if>
+      <if test="mstatus != null">
+        mstatus,
+      </if>
+      <if test="vendorId != null">
+        vendor_id,
+      </if>
+      <if test="customerId != null">
+        customer_id,
+      </if>
+      <if test="batchno != null">
+        batchno,
+      </if>
+      <if test="iBillId != null">
+        i_bill_id,
+      </if>
+      <if test="memo != null">
+        memo,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="creator != null">
+        creator,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="cId != null">
+        #{cId,jdbcType=BIGINT},
+      </if>
+      <if test="ioclassId != null">
+        #{ioclassId,jdbcType=BIGINT},
+      </if>
+      <if test="palletid != null">
+        #{palletid,jdbcType=VARCHAR},
+      </if>
+      <if test="mId != null">
+        #{mId,jdbcType=INTEGER},
+      </if>
+      <if test="num != null">
+        #{num,jdbcType=INTEGER},
+      </if>
+      <if test="sweight != null">
+        #{sweight,jdbcType=DECIMAL},
+      </if>
+      <if test="mstatus != null">
+        #{mstatus,jdbcType=VARCHAR},
+      </if>
+      <if test="vendorId != null">
+        #{vendorId,jdbcType=INTEGER},
+      </if>
+      <if test="customerId != null">
+        #{customerId,jdbcType=BIGINT},
+      </if>
+      <if test="batchno != null">
+        #{batchno,jdbcType=VARCHAR},
+      </if>
+      <if test="iBillId != null">
+        #{iBillId,jdbcType=BIGINT},
+      </if>
+      <if test="memo != null">
+        #{memo,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="creator != null">
+        #{creator,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.model.Tmp">
+    update t_asrs_puttmp
+    <set>
+      <if test="cId != null">
+        c_id = #{cId,jdbcType=BIGINT},
+      </if>
+      <if test="ioclassId != null">
+        ioclass_id = #{ioclassId,jdbcType=BIGINT},
+      </if>
+      <if test="palletid != null">
+        palletid = #{palletid,jdbcType=VARCHAR},
+      </if>
+      <if test="mId != null">
+        m_id = #{mId,jdbcType=INTEGER},
+      </if>
+      <if test="num != null">
+        num = #{num,jdbcType=INTEGER},
+      </if>
+      <if test="sweight != null">
+        sweight = #{sweight,jdbcType=DECIMAL},
+      </if>
+      <if test="mstatus != null">
+        mstatus = #{mstatus,jdbcType=VARCHAR},
+      </if>
+      <if test="vendorId != null">
+        vendor_id = #{vendorId,jdbcType=INTEGER},
+      </if>
+      <if test="customerId != null">
+        customer_id = #{customerId,jdbcType=BIGINT},
+      </if>
+      <if test="batchno != null">
+        batchno = #{batchno,jdbcType=VARCHAR},
+      </if>
+      <if test="iBillId != null">
+        i_bill_id = #{iBillId,jdbcType=BIGINT},
+      </if>
+      <if test="memo != null">
+        memo = #{memo,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="creator != null">
+        creator = #{creator,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.model.Tmp">
+    update t_asrs_puttmp
+    set c_id = #{cId,jdbcType=BIGINT},
+      ioclass_id = #{ioclassId,jdbcType=BIGINT},
+      palletid = #{palletid,jdbcType=VARCHAR},
+      m_id = #{mId,jdbcType=INTEGER},
+      num = #{num,jdbcType=INTEGER},
+      sweight = #{sweight,jdbcType=DECIMAL},
+      mstatus = #{mstatus,jdbcType=VARCHAR},
+      vendor_id = #{vendorId,jdbcType=INTEGER},
+      customer_id = #{customerId,jdbcType=BIGINT},
+      batchno = #{batchno,jdbcType=VARCHAR},
+      i_bill_id = #{iBillId,jdbcType=BIGINT},
+      memo = #{memo,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      creator = #{creator,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

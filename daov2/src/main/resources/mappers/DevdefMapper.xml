@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.DevdefMapper">
+  <resultMap id="BaseResultMap" type="com.model.Devdef">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="devid" jdbcType="INTEGER" property="devid" />
+    <result column="type_id" jdbcType="INTEGER" property="typeId" />
+    <result column="vendor_id" jdbcType="INTEGER" property="vendorId" />
+    <result column="time_maintenance" jdbcType="INTEGER" property="timeMaintenance" />
+    <result column="time_work" jdbcType="INTEGER" property="timeWork" />
+    <result column="horizonsum" jdbcType="DECIMAL" property="horizonsum" />
+    <result column="virticalsum" jdbcType="DECIMAL" property="virticalsum" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, devid, type_id, vendor_id, time_maintenance, time_work, horizonsum, virticalsum
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from t_sys_devdef
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from t_sys_devdef
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.model.Devdef">
+    insert into t_sys_devdef (id, devid, type_id, 
+      vendor_id, time_maintenance, time_work, 
+      horizonsum, virticalsum)
+    values (#{id,jdbcType=INTEGER}, #{devid,jdbcType=INTEGER}, #{typeId,jdbcType=INTEGER}, 
+      #{vendorId,jdbcType=INTEGER}, #{timeMaintenance,jdbcType=INTEGER}, #{timeWork,jdbcType=INTEGER}, 
+      #{horizonsum,jdbcType=DECIMAL}, #{virticalsum,jdbcType=DECIMAL})
+  </insert>
+  <insert id="insertSelective" parameterType="com.model.Devdef">
+    insert into t_sys_devdef
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="devid != null">
+        devid,
+      </if>
+      <if test="typeId != null">
+        type_id,
+      </if>
+      <if test="vendorId != null">
+        vendor_id,
+      </if>
+      <if test="timeMaintenance != null">
+        time_maintenance,
+      </if>
+      <if test="timeWork != null">
+        time_work,
+      </if>
+      <if test="horizonsum != null">
+        horizonsum,
+      </if>
+      <if test="virticalsum != null">
+        virticalsum,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="devid != null">
+        #{devid,jdbcType=INTEGER},
+      </if>
+      <if test="typeId != null">
+        #{typeId,jdbcType=INTEGER},
+      </if>
+      <if test="vendorId != null">
+        #{vendorId,jdbcType=INTEGER},
+      </if>
+      <if test="timeMaintenance != null">
+        #{timeMaintenance,jdbcType=INTEGER},
+      </if>
+      <if test="timeWork != null">
+        #{timeWork,jdbcType=INTEGER},
+      </if>
+      <if test="horizonsum != null">
+        #{horizonsum,jdbcType=DECIMAL},
+      </if>
+      <if test="virticalsum != null">
+        #{virticalsum,jdbcType=DECIMAL},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.model.Devdef">
+    update t_sys_devdef
+    <set>
+      <if test="devid != null">
+        devid = #{devid,jdbcType=INTEGER},
+      </if>
+      <if test="typeId != null">
+        type_id = #{typeId,jdbcType=INTEGER},
+      </if>
+      <if test="vendorId != null">
+        vendor_id = #{vendorId,jdbcType=INTEGER},
+      </if>
+      <if test="timeMaintenance != null">
+        time_maintenance = #{timeMaintenance,jdbcType=INTEGER},
+      </if>
+      <if test="timeWork != null">
+        time_work = #{timeWork,jdbcType=INTEGER},
+      </if>
+      <if test="horizonsum != null">
+        horizonsum = #{horizonsum,jdbcType=DECIMAL},
+      </if>
+      <if test="virticalsum != null">
+        virticalsum = #{virticalsum,jdbcType=DECIMAL},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.model.Devdef">
+    update t_sys_devdef
+    set devid = #{devid,jdbcType=INTEGER},
+      type_id = #{typeId,jdbcType=INTEGER},
+      vendor_id = #{vendorId,jdbcType=INTEGER},
+      time_maintenance = #{timeMaintenance,jdbcType=INTEGER},
+      time_work = #{timeWork,jdbcType=INTEGER},
+      horizonsum = #{horizonsum,jdbcType=DECIMAL},
+      virticalsum = #{virticalsum,jdbcType=DECIMAL}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

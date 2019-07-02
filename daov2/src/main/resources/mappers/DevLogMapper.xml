@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.DevLogMapper">
+  <resultMap id="BaseResultMap" type="com.model.DevLog">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="ltime" jdbcType="TIMESTAMP" property="ltime" />
+    <result column="devno" jdbcType="VARCHAR" property="devno" />
+    <result column="acode" jdbcType="VARCHAR" property="acode" />
+    <result column="acontent" jdbcType="VARCHAR" property="acontent" />
+    <result column="cid" jdbcType="VARCHAR" property="cid" />
+    <result column="palletid" jdbcType="VARCHAR" property="palletid" />
+    <result column="memo" jdbcType="VARCHAR" property="memo" />
+    <result column="detail" jdbcType="VARCHAR" property="detail" />
+    <result column="palletcode" jdbcType="VARCHAR" property="palletcode" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, ltime, devno, acode, acontent, cid, palletid, memo, detail, palletcode
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from t_asrs_log_devalarm
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from t_asrs_log_devalarm
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.model.DevLog">
+    insert into t_asrs_log_devalarm (id, ltime, devno, 
+      acode, acontent, cid, 
+      palletid, memo, detail, 
+      palletcode)
+    values (#{id,jdbcType=INTEGER}, #{ltime,jdbcType=TIMESTAMP}, #{devno,jdbcType=VARCHAR}, 
+      #{acode,jdbcType=VARCHAR}, #{acontent,jdbcType=VARCHAR}, #{cid,jdbcType=VARCHAR}, 
+      #{palletid,jdbcType=VARCHAR}, #{memo,jdbcType=VARCHAR}, #{detail,jdbcType=VARCHAR}, 
+      #{palletcode,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.model.DevLog">
+    insert into t_asrs_log_devalarm
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="ltime != null">
+        ltime,
+      </if>
+      <if test="devno != null">
+        devno,
+      </if>
+      <if test="acode != null">
+        acode,
+      </if>
+      <if test="acontent != null">
+        acontent,
+      </if>
+      <if test="cid != null">
+        cid,
+      </if>
+      <if test="palletid != null">
+        palletid,
+      </if>
+      <if test="memo != null">
+        memo,
+      </if>
+      <if test="detail != null">
+        detail,
+      </if>
+      <if test="palletcode != null">
+        palletcode,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="ltime != null">
+        #{ltime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="devno != null">
+        #{devno,jdbcType=VARCHAR},
+      </if>
+      <if test="acode != null">
+        #{acode,jdbcType=VARCHAR},
+      </if>
+      <if test="acontent != null">
+        #{acontent,jdbcType=VARCHAR},
+      </if>
+      <if test="cid != null">
+        #{cid,jdbcType=VARCHAR},
+      </if>
+      <if test="palletid != null">
+        #{palletid,jdbcType=VARCHAR},
+      </if>
+      <if test="memo != null">
+        #{memo,jdbcType=VARCHAR},
+      </if>
+      <if test="detail != null">
+        #{detail,jdbcType=VARCHAR},
+      </if>
+      <if test="palletcode != null">
+        #{palletcode,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.model.DevLog">
+    update t_asrs_log_devalarm
+    <set>
+      <if test="ltime != null">
+        ltime = #{ltime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="devno != null">
+        devno = #{devno,jdbcType=VARCHAR},
+      </if>
+      <if test="acode != null">
+        acode = #{acode,jdbcType=VARCHAR},
+      </if>
+      <if test="acontent != null">
+        acontent = #{acontent,jdbcType=VARCHAR},
+      </if>
+      <if test="cid != null">
+        cid = #{cid,jdbcType=VARCHAR},
+      </if>
+      <if test="palletid != null">
+        palletid = #{palletid,jdbcType=VARCHAR},
+      </if>
+      <if test="memo != null">
+        memo = #{memo,jdbcType=VARCHAR},
+      </if>
+      <if test="detail != null">
+        detail = #{detail,jdbcType=VARCHAR},
+      </if>
+      <if test="palletcode != null">
+        palletcode = #{palletcode,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.model.DevLog">
+    update t_asrs_log_devalarm
+    set ltime = #{ltime,jdbcType=TIMESTAMP},
+      devno = #{devno,jdbcType=VARCHAR},
+      acode = #{acode,jdbcType=VARCHAR},
+      acontent = #{acontent,jdbcType=VARCHAR},
+      cid = #{cid,jdbcType=VARCHAR},
+      palletid = #{palletid,jdbcType=VARCHAR},
+      memo = #{memo,jdbcType=VARCHAR},
+      detail = #{detail,jdbcType=VARCHAR},
+      palletcode = #{palletcode,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

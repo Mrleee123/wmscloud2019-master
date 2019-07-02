@@ -48,8 +48,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/daov2/src/main/resources/mappers/RoleMapper.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1425">
-              <caret line="75" column="69" selection-start-line="75" selection-start-column="69" selection-end-line="75" selection-end-column="69" />
+            <state relative-caret-position="722">
+              <caret line="38" column="34" lean-forward="true" selection-start-line="38" selection-start-column="34" selection-end-line="38" selection-end-column="34" />
             </state>
           </provider>
         </entry>
@@ -551,7 +551,7 @@
       <workItem from="1561614281137" duration="8440000" />
       <workItem from="1561681767001" duration="22665000" />
       <workItem from="1561941579860" duration="28274000" />
-      <workItem from="1562027579082" duration="1547000" />
+      <workItem from="1562027579082" duration="1565000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <created>1561624135955</created>
@@ -574,7 +574,14 @@
       <option name="project" value="LOCAL" />
       <updated>1561977957703</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="commit">
+      <created>1562030709877</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1562030709877</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -610,7 +617,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="67999000" />
+    <option name="totallyTimeSpent" value="68017000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -623,6 +630,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4987775" visible="true" weight="0.18176973" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -920,8 +928,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/daov2/src/main/resources/mappers/RoleMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1425">
-          <caret line="75" column="69" selection-start-line="75" selection-start-column="69" selection-end-line="75" selection-end-column="69" />
+        <state relative-caret-position="722">
+          <caret line="38" column="34" lean-forward="true" selection-start-line="38" selection-start-column="34" selection-end-line="38" selection-end-column="34" />
         </state>
       </provider>
     </entry>

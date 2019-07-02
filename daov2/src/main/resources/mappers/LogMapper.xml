@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.LogMapper">
+  <resultMap id="BaseResultMap" type="com.model.Log">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="ltime" jdbcType="TIMESTAMP" property="ltime" />
+    <result column="lclass" jdbcType="VARCHAR" property="lclass" />
+    <result column="funmain" jdbcType="VARCHAR" property="funmain" />
+    <result column="munc" jdbcType="VARCHAR" property="munc" />
+    <result column="userid" jdbcType="VARCHAR" property="userid" />
+    <result column="memo" jdbcType="VARCHAR" property="memo" />
+    <result column="detail" jdbcType="VARCHAR" property="detail" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, ltime, lclass, funmain, munc, userid, memo, detail
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from t_asrs_log
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from t_asrs_log
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.model.Log">
+    insert into t_asrs_log (id, ltime, lclass, 
+      funmain, munc, userid, 
+      memo, detail)
+    values (#{id,jdbcType=BIGINT}, #{ltime,jdbcType=TIMESTAMP}, #{lclass,jdbcType=VARCHAR}, 
+      #{funmain,jdbcType=VARCHAR}, #{munc,jdbcType=VARCHAR}, #{userid,jdbcType=VARCHAR}, 
+      #{memo,jdbcType=VARCHAR}, #{detail,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.model.Log">
+    insert into t_asrs_log
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="ltime != null">
+        ltime,
+      </if>
+      <if test="lclass != null">
+        lclass,
+      </if>
+      <if test="funmain != null">
+        funmain,
+      </if>
+      <if test="munc != null">
+        munc,
+      </if>
+      <if test="userid != null">
+        userid,
+      </if>
+      <if test="memo != null">
+        memo,
+      </if>
+      <if test="detail != null">
+        detail,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="ltime != null">
+        #{ltime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lclass != null">
+        #{lclass,jdbcType=VARCHAR},
+      </if>
+      <if test="funmain != null">
+        #{funmain,jdbcType=VARCHAR},
+      </if>
+      <if test="munc != null">
+        #{munc,jdbcType=VARCHAR},
+      </if>
+      <if test="userid != null">
+        #{userid,jdbcType=VARCHAR},
+      </if>
+      <if test="memo != null">
+        #{memo,jdbcType=VARCHAR},
+      </if>
+      <if test="detail != null">
+        #{detail,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.model.Log">
+    update t_asrs_log
+    <set>
+      <if test="ltime != null">
+        ltime = #{ltime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lclass != null">
+        lclass = #{lclass,jdbcType=VARCHAR},
+      </if>
+      <if test="funmain != null">
+        funmain = #{funmain,jdbcType=VARCHAR},
+      </if>
+      <if test="munc != null">
+        munc = #{munc,jdbcType=VARCHAR},
+      </if>
+      <if test="userid != null">
+        userid = #{userid,jdbcType=VARCHAR},
+      </if>
+      <if test="memo != null">
+        memo = #{memo,jdbcType=VARCHAR},
+      </if>
+      <if test="detail != null">
+        detail = #{detail,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.model.Log">
+    update t_asrs_log
+    set ltime = #{ltime,jdbcType=TIMESTAMP},
+      lclass = #{lclass,jdbcType=VARCHAR},
+      funmain = #{funmain,jdbcType=VARCHAR},
+      munc = #{munc,jdbcType=VARCHAR},
+      userid = #{userid,jdbcType=VARCHAR},
+      memo = #{memo,jdbcType=VARCHAR},
+      detail = #{detail,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

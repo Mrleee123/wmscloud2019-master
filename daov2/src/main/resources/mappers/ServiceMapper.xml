@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.ServiceMapper">
+  <resultMap id="BaseResultMap" type="com.model.Service">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="service_name" jdbcType="VARCHAR" property="serviceName" />
+    <result column="service_address" jdbcType="VARCHAR" property="serviceAddress" />
+    <result column="isenabled" jdbcType="INTEGER" property="isenabled" />
+    <result column="price" jdbcType="DECIMAL" property="price" />
+    <result column="unit" jdbcType="VARCHAR" property="unit" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, service_name, service_address, isenabled, price, unit, create_time, update_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from t_web_service
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from t_web_service
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.model.Service">
+    insert into t_web_service (id, service_name, service_address, 
+      isenabled, price, unit, 
+      create_time, update_time)
+    values (#{id,jdbcType=BIGINT}, #{serviceName,jdbcType=VARCHAR}, #{serviceAddress,jdbcType=VARCHAR}, 
+      #{isenabled,jdbcType=INTEGER}, #{price,jdbcType=DECIMAL}, #{unit,jdbcType=VARCHAR}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.model.Service">
+    insert into t_web_service
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="serviceName != null">
+        service_name,
+      </if>
+      <if test="serviceAddress != null">
+        service_address,
+      </if>
+      <if test="isenabled != null">
+        isenabled,
+      </if>
+      <if test="price != null">
+        price,
+      </if>
+      <if test="unit != null">
+        unit,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="serviceName != null">
+        #{serviceName,jdbcType=VARCHAR},
+      </if>
+      <if test="serviceAddress != null">
+        #{serviceAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="isenabled != null">
+        #{isenabled,jdbcType=INTEGER},
+      </if>
+      <if test="price != null">
+        #{price,jdbcType=DECIMAL},
+      </if>
+      <if test="unit != null">
+        #{unit,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.model.Service">
+    update t_web_service
+    <set>
+      <if test="serviceName != null">
+        service_name = #{serviceName,jdbcType=VARCHAR},
+      </if>
+      <if test="serviceAddress != null">
+        service_address = #{serviceAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="isenabled != null">
+        isenabled = #{isenabled,jdbcType=INTEGER},
+      </if>
+      <if test="price != null">
+        price = #{price,jdbcType=DECIMAL},
+      </if>
+      <if test="unit != null">
+        unit = #{unit,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.model.Service">
+    update t_web_service
+    set service_name = #{serviceName,jdbcType=VARCHAR},
+      service_address = #{serviceAddress,jdbcType=VARCHAR},
+      isenabled = #{isenabled,jdbcType=INTEGER},
+      price = #{price,jdbcType=DECIMAL},
+      unit = #{unit,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

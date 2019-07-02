@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.MatdetMapper">
+  <resultMap id="BaseResultMap" type="com.model.Matdet">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="matmain_id" jdbcType="BIGINT" property="matmainId" />
+    <result column="matname" jdbcType="VARCHAR" property="matname" />
+    <result column="mspeci" jdbcType="VARCHAR" property="mspeci" />
+    <result column="munit" jdbcType="VARCHAR" property="munit" />
+    <result column="mweight" jdbcType="VARCHAR" property="mweight" />
+    <result column="memo" jdbcType="VARCHAR" property="memo" />
+    <result column="maxstore" jdbcType="VARCHAR" property="maxstore" />
+    <result column="minstore" jdbcType="VARCHAR" property="minstore" />
+    <result column="storage_time" jdbcType="INTEGER" property="storageTime" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="creator" jdbcType="VARCHAR" property="creator" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="updator" jdbcType="VARCHAR" property="updator" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, matmain_id, matname, mspeci, munit, mweight, memo, maxstore, minstore, storage_time, 
+    create_time, creator, update_time, updator
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from t_asrs_sys_matdet
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from t_asrs_sys_matdet
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.model.Matdet">
+    insert into t_asrs_sys_matdet (id, matmain_id, matname, 
+      mspeci, munit, mweight, 
+      memo, maxstore, minstore, 
+      storage_time, create_time, creator, 
+      update_time, updator)
+    values (#{id,jdbcType=BIGINT}, #{matmainId,jdbcType=BIGINT}, #{matname,jdbcType=VARCHAR}, 
+      #{mspeci,jdbcType=VARCHAR}, #{munit,jdbcType=VARCHAR}, #{mweight,jdbcType=VARCHAR}, 
+      #{memo,jdbcType=VARCHAR}, #{maxstore,jdbcType=VARCHAR}, #{minstore,jdbcType=VARCHAR}, 
+      #{storageTime,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, #{creator,jdbcType=VARCHAR}, 
+      #{updateTime,jdbcType=TIMESTAMP}, #{updator,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.model.Matdet">
+    insert into t_asrs_sys_matdet
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="matmainId != null">
+        matmain_id,
+      </if>
+      <if test="matname != null">
+        matname,
+      </if>
+      <if test="mspeci != null">
+        mspeci,
+      </if>
+      <if test="munit != null">
+        munit,
+      </if>
+      <if test="mweight != null">
+        mweight,
+      </if>
+      <if test="memo != null">
+        memo,
+      </if>
+      <if test="maxstore != null">
+        maxstore,
+      </if>
+      <if test="minstore != null">
+        minstore,
+      </if>
+      <if test="storageTime != null">
+        storage_time,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="creator != null">
+        creator,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+      <if test="updator != null">
+        updator,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="matmainId != null">
+        #{matmainId,jdbcType=BIGINT},
+      </if>
+      <if test="matname != null">
+        #{matname,jdbcType=VARCHAR},
+      </if>
+      <if test="mspeci != null">
+        #{mspeci,jdbcType=VARCHAR},
+      </if>
+      <if test="munit != null">
+        #{munit,jdbcType=VARCHAR},
+      </if>
+      <if test="mweight != null">
+        #{mweight,jdbcType=VARCHAR},
+      </if>
+      <if test="memo != null">
+        #{memo,jdbcType=VARCHAR},
+      </if>
+      <if test="maxstore != null">
+        #{maxstore,jdbcType=VARCHAR},
+      </if>
+      <if test="minstore != null">
+        #{minstore,jdbcType=VARCHAR},
+      </if>
+      <if test="storageTime != null">
+        #{storageTime,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="creator != null">
+        #{creator,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updator != null">
+        #{updator,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.model.Matdet">
+    update t_asrs_sys_matdet
+    <set>
+      <if test="matmainId != null">
+        matmain_id = #{matmainId,jdbcType=BIGINT},
+      </if>
+      <if test="matname != null">
+        matname = #{matname,jdbcType=VARCHAR},
+      </if>
+      <if test="mspeci != null">
+        mspeci = #{mspeci,jdbcType=VARCHAR},
+      </if>
+      <if test="munit != null">
+        munit = #{munit,jdbcType=VARCHAR},
+      </if>
+      <if test="mweight != null">
+        mweight = #{mweight,jdbcType=VARCHAR},
+      </if>
+      <if test="memo != null">
+        memo = #{memo,jdbcType=VARCHAR},
+      </if>
+      <if test="maxstore != null">
+        maxstore = #{maxstore,jdbcType=VARCHAR},
+      </if>
+      <if test="minstore != null">
+        minstore = #{minstore,jdbcType=VARCHAR},
+      </if>
+      <if test="storageTime != null">
+        storage_time = #{storageTime,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="creator != null">
+        creator = #{creator,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updator != null">
+        updator = #{updator,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.model.Matdet">
+    update t_asrs_sys_matdet
+    set matmain_id = #{matmainId,jdbcType=BIGINT},
+      matname = #{matname,jdbcType=VARCHAR},
+      mspeci = #{mspeci,jdbcType=VARCHAR},
+      munit = #{munit,jdbcType=VARCHAR},
+      mweight = #{mweight,jdbcType=VARCHAR},
+      memo = #{memo,jdbcType=VARCHAR},
+      maxstore = #{maxstore,jdbcType=VARCHAR},
+      minstore = #{minstore,jdbcType=VARCHAR},
+      storage_time = #{storageTime,jdbcType=INTEGER},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      creator = #{creator,jdbcType=VARCHAR},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      updator = #{updator,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>
