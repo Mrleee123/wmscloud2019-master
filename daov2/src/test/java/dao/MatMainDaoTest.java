@@ -15,7 +15,7 @@ public class MatMainDaoTest {
     public void add() {
         Matmain matmain = new Matmain();
         matmain.setMatmainid("A001");
-        matmain.setMmname("笔记本");
+        matmain.setMmname("电子");
         matmain.setMemo("测试");
         matmain.setCreator("System");
         matMainDao.add(matmain);
@@ -32,7 +32,7 @@ public class MatMainDaoTest {
     public void update() {
         Matmain matmain = new Matmain();
         matmain.setId(1);
-        matmain.setMmname("食品");
+        matmain.setMmname("");
         matmain.setMemo("修改1");
         matMainDao.update(matmain);
         System.out.println("Finish");

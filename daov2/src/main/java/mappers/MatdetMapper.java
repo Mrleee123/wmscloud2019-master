@@ -2,6 +2,8 @@ package mappers;
 
 import entity.Matdet;
 
+import java.util.List;
+
 public interface MatdetMapper {
     int deleteByPrimaryKey(Long id);
 
@@ -10,6 +12,8 @@ public interface MatdetMapper {
     int insertSelective(Matdet record);
 
     Matdet selectByPrimaryKey(Long id);
+
+    List<Matdet> selectAll();
 
     int updateByPrimaryKeySelective(Matdet record);
 

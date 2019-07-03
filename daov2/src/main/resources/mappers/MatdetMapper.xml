@@ -16,31 +16,36 @@
     <result column="creator" jdbcType="VARCHAR" property="creator" />
     <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
     <result column="updator" jdbcType="VARCHAR" property="updator" />
+    <result column="mid" jdbcType="VARCHAR" property="mid" />
+    <association property="matmain" javaType="entity.Matmain" autoMapping="true">
+      <id column="mid" javaType="INT"  property="id" />
+      <result column="memo1" jdbcType="VARCHAR" property="memo" />
+      <result column="mmname" jdbcType="VARCHAR" property="mmname" />
+    </association>
   </resultMap>
   <sql id="Base_Column_List">
-    id, matmain_id, matname, mspeci, munit, mweight, memo, maxstore, minstore, storage_time, 
-    create_time, creator, update_time, updator
+     id as mid,matmain_id, matname, mspeci, munit, mweight, memo  memo1, maxstore, minstore, storage_time,
+    create_time, creator, update_time, updator,mid
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
-    select 
-    <include refid="Base_Column_List" />
-    from t_asrs_sys_matdet
-    where id = #{id,jdbcType=BIGINT}
+    select m.*,n.mmname,n.id as mid
+    from t_asrs_sys_matdet m left join t_asrs_sys_matmain n on m.matmain_id =n.id
+    where m.id = #{m.id,jdbcType=BIGINT}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
     delete from t_asrs_sys_matdet
     where id = #{id,jdbcType=BIGINT}
   </delete>
   <insert id="insert" parameterType="entity.Matdet">
-    insert into t_asrs_sys_matdet (id, matmain_id, matname, 
+    insert into t_asrs_sys_matdet (id, matmain_id, matname, mid,
       mspeci, munit, mweight, 
       memo, maxstore, minstore, 
-      storage_time, create_time, creator, 
+      storage_time, creator,
       update_time, updator)
-    values (#{id,jdbcType=BIGINT}, #{matmainId,jdbcType=BIGINT}, #{matname,jdbcType=VARCHAR}, 
+    values (#{id,jdbcType=BIGINT}, #{matmainId,jdbcType=BIGINT}, #{matname,jdbcType=VARCHAR}, #{mid,jdbcType=VARCHAR},
       #{mspeci,jdbcType=VARCHAR}, #{munit,jdbcType=VARCHAR}, #{mweight,jdbcType=VARCHAR}, 
       #{memo,jdbcType=VARCHAR}, #{maxstore,jdbcType=VARCHAR}, #{minstore,jdbcType=VARCHAR}, 
-      #{storageTime,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, #{creator,jdbcType=VARCHAR}, 
+      #{storageTime,jdbcType=INTEGER}, #{creator,jdbcType=VARCHAR},
       #{updateTime,jdbcType=TIMESTAMP}, #{updator,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="entity.Matdet">
@@ -76,9 +81,7 @@
       <if test="storageTime != null">
         storage_time,
       </if>
-      <if test="createTime != null">
-        create_time,
-      </if>
+
       <if test="creator != null">
         creator,
       </if>
@@ -120,9 +123,7 @@
       <if test="storageTime != null">
         #{storageTime,jdbcType=INTEGER},
       </if>
-      <if test="createTime != null">
-        #{createTime,jdbcType=TIMESTAMP},
-      </if>
+
       <if test="creator != null">
         #{creator,jdbcType=VARCHAR},
       </if>
@@ -164,9 +165,7 @@
       <if test="storageTime != null">
         storage_time = #{storageTime,jdbcType=INTEGER},
       </if>
-      <if test="createTime != null">
-        create_time = #{createTime,jdbcType=TIMESTAMP},
-      </if>
+
       <if test="creator != null">
         creator = #{creator,jdbcType=VARCHAR},
       </if>
@@ -190,10 +189,13 @@
       maxstore = #{maxstore,jdbcType=VARCHAR},
       minstore = #{minstore,jdbcType=VARCHAR},
       storage_time = #{storageTime,jdbcType=INTEGER},
-      create_time = #{createTime,jdbcType=TIMESTAMP},
       creator = #{creator,jdbcType=VARCHAR},
       update_time = #{updateTime,jdbcType=TIMESTAMP},
       updator = #{updator,jdbcType=VARCHAR}
     where id = #{id,jdbcType=BIGINT}
   </update>
+  <select id="selectAll" resultMap="BaseResultMap">
+     select m.*,n.mmname
+    from t_asrs_sys_matdet m left join t_asrs_sys_matmain n on m.matmain_id =n.id
+  </select>
 </mapper>

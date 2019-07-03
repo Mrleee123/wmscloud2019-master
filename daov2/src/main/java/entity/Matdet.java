@@ -6,7 +6,9 @@ import java.util.Date;
 public class Matdet implements Serializable {
     private Long id;
 
-    private Long matmainId;
+    private String mid;
+
+    private Long matmain_Id;
 
     private String matname;
 
@@ -16,7 +18,7 @@ public class Matdet implements Serializable {
 
     private String mweight;
 
-    private String memo;
+    private String memo1;
 
     private String maxstore;
 
@@ -24,15 +26,33 @@ public class Matdet implements Serializable {
 
     private Integer storageTime;
 
-    private Date createTime;
+    private Date create_Time;
 
     private String creator;
 
-    private Date updateTime;
+    private Date update_Time;
 
     private String updator;
 
+    private Matmain matmain;
+
+    public Matmain getMatmain() {
+        return matmain;
+    }
+
+    public void setMatmain(Matmain matmain) {
+        this.matmain = matmain;
+    }
+
     private static final long serialVersionUID = 1L;
+
+    public String getMid() {
+        return mid;
+    }
+
+    public void setMid(String mid) {
+        this.mid = mid;
+    }
 
     public Long getId() {
         return id;
@@ -43,11 +63,11 @@ public class Matdet implements Serializable {
     }
 
     public Long getMatmainId() {
-        return matmainId;
+        return matmain_Id;
     }
 
     public void setMatmainId(Long matmainId) {
-        this.matmainId = matmainId;
+        this.matmain_Id = matmainId;
     }
 
     public String getMatname() {
@@ -83,11 +103,11 @@ public class Matdet implements Serializable {
     }
 
     public String getMemo() {
-        return memo;
+        return memo1;
     }
 
     public void setMemo(String memo) {
-        this.memo = memo == null ? null : memo.trim();
+        this.memo1 = memo == null ? null : memo.trim();
     }
 
     public String getMaxstore() {
@@ -115,11 +135,11 @@ public class Matdet implements Serializable {
     }
 
     public Date getCreateTime() {
-        return createTime;
+        return create_Time;
     }
 
     public void setCreateTime(Date createTime) {
-        this.createTime = createTime;
+        this.create_Time = createTime;
     }
 
     public String getCreator() {
@@ -131,11 +151,11 @@ public class Matdet implements Serializable {
     }
 
     public Date getUpdateTime() {
-        return updateTime;
+        return update_Time;
     }
 
     public void setUpdateTime(Date updateTime) {
-        this.updateTime = updateTime;
+        this.update_Time = updateTime;
     }
 
     public String getUpdator() {
@@ -144,5 +164,10 @@ public class Matdet implements Serializable {
 
     public void setUpdator(String updator) {
         this.updator = updator == null ? null : updator.trim();
+    }
+
+    @Override
+    public String toString(){
+        return "Matmain:"+id+matname+"  "+mid+" "+memo1+" "+creator+"  "+mspeci+" "+matmain.getMmname();
     }
 }
