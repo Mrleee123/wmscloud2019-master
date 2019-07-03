@@ -8,7 +8,7 @@ public class RoleFunction implements Serializable {
     private String RoleCode;
     private String FunctionName;
     private Date updateTime;
-    private static final long serialVersionUID = 1L;
+    //private static final long serialVersionUID = 1L;
     public Integer getId() {
         return id;
     }

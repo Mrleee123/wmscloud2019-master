@@ -87,10 +87,10 @@ public class RoleFunctionDaoTest {
         list.add(6);
         list.add(7);
         System.out.println(list);
-        int result =dao.deleteList(list);
-        if(result == 1){
-            System.out.println("成功");
-        }
-        System.out.println("finish");
+//        int result =dao.deleteList(list);
+//        if(result == 1){
+//            System.out.println("成功");
+//        }
+//        System.out.println("finish");
     }
 }

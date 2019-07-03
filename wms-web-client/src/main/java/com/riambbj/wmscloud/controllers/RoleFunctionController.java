@@ -8,10 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 
-//@RestController  :controller里面的方法都以Json格式输出
-//@RequestParam 用在方法的参数前面 @RequestParam String a =request.getParameter("a")
-// @ResponseBody：
-//表示该方法的返回结果直接写入HTTP response body中
+
 @Controller
 public class RoleFunctionController {
     // @Autto
@@ -47,7 +44,7 @@ public class RoleFunctionController {
 
 
 
-    @PostMapping(value = "/roleFunction/addRole")
+    @PostMapping(value = "/roleFunction/addRoleFunction")
     @ResponseBody
     //public String login(@RequestBody String user_code, @RequestBody String password) {
     public String addRoleFunction(@RequestBody RoleFunction role) {
@@ -67,8 +64,49 @@ public class RoleFunctionController {
        }
     }
 
+    @PostMapping(value = "/roleFunction/addRoleFunctionList")
+    @ResponseBody
+    //public String login(@RequestBody String user_code, @RequestBody String password) {
+    public String addRoleFunctionList(@RequestBody List<RoleFunction> role) {
+//        String user_code = user.getUserCode();
+//        String password = user.getPassword();
+//        long id = user.getId();
+//        int issa = user.getIssa();
+//        String user_name = user.getUserName();
+//        String demo = user.getDemo();
+//        int isendable = user.getIsenabled();
+//        int isdeleted = user.getIsdeleted();
+        try {
+            us.insertList(role);
+            return "TRUE";
+        }catch (Exception e){
+            return "FALSE";
+        }
+    }
+
+//    @RequestMapping(value = "/roleFunction/deleteRoleFunctionList")
+//    @ResponseBody
+//    //public String login(@RequestBody String user_code, @RequestBody String password) {
+//    public String deleteRoleFunctionList(@RequestBody List list) {
+////        String user_code = user.getUserCode();
+////        String password = user.getPassword();
+////        long id = user.getId();
+////        int issa = user.getIssa();
+////        String user_name = user.getUserName();
+////        String demo = user.getDemo();
+////        int isendable = user.getIsenabled();
+////        int isdeleted = user.getIsdeleted();
+//        try {
+//            System.out.println(list);
+//            //us.deleteList(list);
+//            return "TRUE";
+//        }catch (Exception e){
+//            return "FALSE";
+//        }
+//    }
+
     //更新用户信息 需要有id号
-    @PostMapping(value = "/roleFunction/updateRoleInfo")
+    @PostMapping(value = "/roleFunction/updateRoleFunctionInfo")
     @ResponseBody
     //public String login(@RequestBody String user_code, @RequestBody String password) {
     public String updateUserInfo(@RequestBody RoleFunction role) {
@@ -90,9 +128,10 @@ public class RoleFunctionController {
     }
 
 
+
     @RequestMapping(value = "/roleFunction/deleteRoleFunction", method = RequestMethod.GET)
     @ResponseBody
-    public String deleteUser(@RequestParam(value = "id") int id) {
+    public String deleteFunction(@RequestParam(value = "id") int id) {
         try {
             // System.out.println(id);
             us.deleteRoleFunction(id);
@@ -101,7 +140,6 @@ public class RoleFunctionController {
             return "FALSE";
         }
     }
-
 
 //    @RequestMapping(value = "/role/forbiddenRole", method = RequestMethod.GET)
 //    @ResponseBody

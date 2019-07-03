@@ -37,9 +37,9 @@ public class RoleFunctionService {
 //    public int deleteList(List list) {
 //        return roleFunctionDao.deleteList(list);
 //    }
-//
-//    public int insertList(List list) {
-//        return roleFunctionDao.insertList(list);
-//    }
+
+    public int insertList(List list) {
+        return roleFunctionDao.insertList(list);
+    }
 
 }
