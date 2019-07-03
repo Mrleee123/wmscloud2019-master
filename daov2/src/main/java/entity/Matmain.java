@@ -14,11 +14,11 @@ public class Matmain implements Serializable {
 
     private Integer isinused;
 
-    private Integer issys;
+
 
     private Date createTime;
 
-    private String userid;
+    private String creator;
 
     private static final long serialVersionUID = 1L;
 
@@ -62,13 +62,6 @@ public class Matmain implements Serializable {
         this.isinused = isinused;
     }
 
-    public Integer getIssys() {
-        return issys;
-    }
-
-    public void setIssys(Integer issys) {
-        this.issys = issys;
-    }
 
     public Date getCreateTime() {
         return createTime;
@@ -78,11 +71,17 @@ public class Matmain implements Serializable {
         this.createTime = createTime;
     }
 
-    public String getUserid() {
-        return userid;
+    public String getCreator() {
+        return creator;
     }
 
-    public void setUserid(String userid) {
-        this.userid = userid == null ? null : userid.trim();
+    public void setCreator(String creator) {
+        this.creator = creator;
     }
+
+    @Override
+    public String toString(){
+        return "Matmain:  ="+matmainid+"  "+memo+"  "+mmname+" "+createTime;
+    }
+
 }

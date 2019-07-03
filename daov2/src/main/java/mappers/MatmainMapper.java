@@ -2,6 +2,8 @@ package mappers;
 
 import entity.Matmain;
 
+import java.util.List;
+
 public interface MatmainMapper {
     int deleteByPrimaryKey(Integer id);
 
@@ -14,4 +16,6 @@ public interface MatmainMapper {
     int updateByPrimaryKeySelective(Matmain record);
 
     int updateByPrimaryKey(Matmain record);
+
+    List<Matmain> selectAll();
 }
