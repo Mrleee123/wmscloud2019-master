@@ -7,7 +7,7 @@ import java.util.Date;
 public class Vendor implements Serializable {
     private Long id;
 
-    private String vendorName;
+    private String vendor_Name;
 
     private String memo;
 
@@ -28,11 +28,11 @@ public class Vendor implements Serializable {
     }
 
     public String getVendorName() {
-        return vendorName;
+        return vendor_Name;
     }
 
     public void setVendorName(String vendorName) {
-        this.vendorName = vendorName == null ? null : vendorName.trim();
+        this.vendor_Name = vendorName == null ? null : vendorName.trim();
     }
 
     public String getMemo() {
@@ -71,7 +71,7 @@ public class Vendor implements Serializable {
     public String toString() {
         return "Vendor{" +
                 "id='" +id  + '\'' +
-                ", vendorName='" + vendorName + '\'' +
+                ", vendorName='" + vendor_Name + '\'' +
                 ", memo='" + memo + '\'' +
                 ", isinused=" + isinused +
                 ", createTime='" + new SimpleDateFormat("yyyy-MM-dd").format(createTime) + '\'' +

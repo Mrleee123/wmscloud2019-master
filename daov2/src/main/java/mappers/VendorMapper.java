@@ -2,6 +2,8 @@ package mappers;
 
 import entity.Vendor;
 
+import java.util.List;
+
 public interface VendorMapper {
     int deleteByPrimaryKey(Long id);
 
@@ -14,4 +16,6 @@ public interface VendorMapper {
     int updateByPrimaryKeySelective(Vendor record);
 
     int updateByPrimaryKey(Vendor record);
+
+    List<Vendor> selectAll();
 }

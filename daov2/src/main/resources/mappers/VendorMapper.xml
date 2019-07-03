@@ -18,16 +18,20 @@
     from t_asrs_sys_vendor
     where id = #{id,jdbcType=BIGINT}
   </select>
+  <select id="selectAll" resultType="entity.Vendor">
+    select * from t_asrs_sys_vendor
+  </select>
+
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
     delete from t_asrs_sys_vendor
     where id = #{id,jdbcType=BIGINT}
   </delete>
   <insert id="insert" parameterType="entity.Vendor">
     insert into t_asrs_sys_vendor (id, vendor_name, memo, 
-      isinused, create_time, creator
+      creator
       )
     values (#{id,jdbcType=BIGINT}, #{vendorName,jdbcType=VARCHAR}, #{memo,jdbcType=VARCHAR}, 
-      #{isinused,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, #{creator,jdbcType=VARCHAR}
+      #{creator,jdbcType=VARCHAR}
       )
   </insert>
   <insert id="insertSelective" parameterType="entity.Vendor">
@@ -45,9 +49,7 @@
       <if test="isinused != null">
         isinused,
       </if>
-      <if test="createTime != null">
-        create_time,
-      </if>
+
       <if test="creator != null">
         creator,
       </if>
@@ -65,9 +67,7 @@
       <if test="isinused != null">
         #{isinused,jdbcType=INTEGER},
       </if>
-      <if test="createTime != null">
-        #{createTime,jdbcType=TIMESTAMP},
-      </if>
+
       <if test="creator != null">
         #{creator,jdbcType=VARCHAR},
       </if>
@@ -85,9 +85,7 @@
       <if test="isinused != null">
         isinused = #{isinused,jdbcType=INTEGER},
       </if>
-      <if test="createTime != null">
-        create_time = #{createTime,jdbcType=TIMESTAMP},
-      </if>
+
       <if test="creator != null">
         creator = #{creator,jdbcType=VARCHAR},
       </if>
