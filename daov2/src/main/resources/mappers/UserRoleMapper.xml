@@ -25,6 +25,16 @@
     left join  t_asrs_sys_role r on ur.role_code = r.rolecode
     where u.id = #{id,jdbcType=BIGINT}
   </select>
+
+  <select id="selectByUserCode" parameterType="String" resultMap="BaseResultMap">
+    select
+       ur.*,r.id as rid ,r.rolename,u.id as uid ,u.user_name
+    from t_asrs_user_role ur
+    left join  t_asrs_sys_user u on ur.user_code = u.user_code
+    left join  t_asrs_sys_role r on ur.role_code = r.rolecode
+    where u.user_code = #{userCode,jdbcType=VARCHAR}
+  </select>
+
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
     delete from t_asrs_user_role
     where id = #{id,jdbcType=BIGINT}

@@ -56,6 +56,16 @@ public class UserRoleDao {
         }
     }
 
+    public List<UserRole> getByUserCode(String userCode){
+        try {
+            List<UserRole> userRole = mapper.selectByUserCode(userCode);
+            System.out.println(userRole);
+            return userRole;
+        } finally {
+            DBTools.closeSession();
+        }
+    }
+
 //    public List<UserRole> list() {
 //        try {
 //            // Matmain matmain = new Matmain();

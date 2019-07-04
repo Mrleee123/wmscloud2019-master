@@ -33,6 +33,6 @@ public class UserRoleDaoTest {
 
     @Test
     public void get() {
-        dao.get(1l);
+        dao.getByUserCode("user");
     }
 }

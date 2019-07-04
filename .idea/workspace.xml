@@ -2,19 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="254c0f5b-7169-4179-a208-0dfc5c7754aa" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/daov2/src/main/java/dao/UserRoleDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/daov2/src/test/java/dao/UserRoleDaoTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wms-web-client/src/main/java/com/riambbj/wmscloud/controllers/UserRoleController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wms-web-client/src/main/java/com/riambbj/wmscloud/services/UserRoleService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/daov2/src/main/java/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/daov2/src/main/java/dao/UserDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/daov2/src/main/java/entity/UserRole.java" beforeDir="false" afterPath="$PROJECT_DIR$/daov2/src/main/java/entity/UserRole.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/daov2/src/main/java/mappers/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/daov2/src/main/java/mappers/UserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/daov2/src/main/java/dao/UserRoleDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/daov2/src/main/java/dao/UserRoleDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/daov2/src/main/java/mappers/UserRoleMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/daov2/src/main/java/mappers/UserRoleMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/daov2/src/main/resources/mappers/MatdetMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/daov2/src/main/resources/mappers/MatdetMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/daov2/src/main/resources/mappers/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/daov2/src/main/resources/mappers/UserMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/daov2/src/main/resources/mappers/UserRoleMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/daov2/src/main/resources/mappers/UserRoleMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/daov2/src/test/java/dao/UserDaoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/daov2/src/test/java/dao/UserDaoTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wms-web-client/src/main/java/com/riambbj/wmscloud/controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/wms-web-client/src/main/java/com/riambbj/wmscloud/controllers/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wms-web-client/src/main/java/com/riambbj/wmscloud/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/wms-web-client/src/main/java/com/riambbj/wmscloud/services/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/daov2/src/test/java/dao/UserRoleDaoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/daov2/src/test/java/dao/UserRoleDaoTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/wms-web-client/target/" />
@@ -46,10 +40,91 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/daov2/src/test/java/dao/UserRoleDaoTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="493">
+              <caret line="34" column="23" selection-start-line="34" selection-start-column="23" selection-end-line="34" selection-end-column="23" />
+              <folding>
+                <element signature="e#391#392#0" expanded="true" />
+                <element signature="e#421#422#0" expanded="true" />
+                <element signature="e#716#717#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/wms-web-client/src/main/java/com/riambbj/wmscloud/services/UserRoleService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="493">
+              <caret line="27" selection-start-line="27" selection-end-line="27" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#314#315#0" expanded="true" />
+                <element signature="e#352#353#0" expanded="true" />
+                <element signature="e#397#398#0" expanded="true" />
+                <element signature="e#434#435#0" expanded="true" />
+                <element signature="e#487#488#0" expanded="true" />
+                <element signature="e#528#529#0" expanded="true" />
+                <element signature="e#584#585#0" expanded="true" />
+                <element signature="e#618#619#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/wms-web-client/src/main/java/com/riambbj/wmscloud/controllers/UserRoleController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="455">
+              <caret line="61" column="53" selection-start-line="61" selection-start-column="53" selection-end-line="61" selection-end-column="53" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/wms-web-client/src/main/java/com/riambbj/wmscloud/controllers/RoleFunctionController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="380">
+              <caret line="121" column="44" selection-start-line="121" selection-start-column="44" selection-end-line="121" selection-end-column="44" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/wms-web-client/src/main/java/com/riambbj/wmscloud/services/MatdetService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="19" selection-start-line="19" selection-end-line="19" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#300#301#0" expanded="true" />
+                <element signature="e#338#339#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/daov2/src/main/resources/mappers/UserRoleMapper.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="19" column="32" selection-start-line="19" selection-start-column="14" selection-end-line="19" selection-end-column="32" />
+            <state relative-caret-position="456">
+              <caret line="33" column="61" selection-start-line="33" selection-start-column="61" selection-end-line="33" selection-end-column="61" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/daov2/src/main/java/mappers/UserRoleMapper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="285">
+              <caret line="15" column="53" selection-start-line="15" selection-start-column="53" selection-end-line="15" selection-end-column="53" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -57,94 +132,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/daov2/src/main/java/dao/UserRoleDao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="53" column="19" lean-forward="true" selection-start-line="53" selection-start-column="19" selection-end-line="53" selection-end-column="19" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/daov2/src/test/java/dao/UserRoleDaoTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="608">
-              <caret line="35" column="20" lean-forward="true" selection-start-line="35" selection-start-column="20" selection-end-line="35" selection-end-column="20" />
-              <folding>
-                <element signature="e#391#392#0" expanded="true" />
-                <element signature="e#409#410#0" expanded="true" />
-                <element signature="e#679#680#0" expanded="true" />
-                <element signature="e#697#698#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/daov2/src/main/java/entity/User.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-628">
-              <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/daov2/src/main/resources/mappers/UserMapper.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="31" column="43" lean-forward="true" selection-start-line="31" selection-start-column="43" selection-end-line="31" selection-end-column="43" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/daov2/src/main/java/mappers/UserMapper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="531">
-              <caret line="36" column="43" selection-start-line="36" selection-start-column="43" selection-end-line="36" selection-end-column="43" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/daov2/src/main/java/dao/UserDao.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="399">
-              <caret line="90" column="35" selection-start-line="90" selection-start-column="35" selection-end-line="90" selection-end-column="35" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/daov2/src/test/java/dao/UserDaoTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="399">
-              <caret line="59" column="36" lean-forward="true" selection-start-line="59" selection-start-column="36" selection-end-line="59" selection-end-column="36" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/wms-web-client/src/main/java/com/riambbj/wmscloud/services/UserService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="398">
-              <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#620#621#0" expanded="true" />
-                <element signature="e#677#678#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/wms-web-client/src/main/java/com/riambbj/wmscloud/controllers/UserController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="512">
-              <caret line="56" column="55" lean-forward="true" selection-start-line="56" selection-start-column="55" selection-end-line="56" selection-end-column="55" />
+            <state relative-caret-position="456">
+              <caret line="60" column="70" selection-start-line="60" selection-start-column="70" selection-end-line="60" selection-end-column="70" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -158,8 +147,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Jsp File" />
-        <option value="Class" />
         <option value="JUnit4 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -180,11 +169,12 @@
       <find>create_</find>
       <find>Base_Column_List</find>
       <find>matmain</find>
-      <find>matdet</find>
       <find>Vendor</find>
       <find>vendor</find>
       <find>INTE</find>
       <find>BIGINT</find>
+      <find>Matdet</find>
+      <find>matdet</find>
     </findStrings>
     <replaceStrings>
       <replace>entity</replace>
@@ -197,6 +187,7 @@
       <replace>vendor</replace>
       <replace>Storedef</replace>
       <replace>storedef</replace>
+      <replace>UserRole</replace>
       <replace>userRole</replace>
     </replaceStrings>
   </component>
@@ -207,8 +198,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/daov2/src/main/java/mappers/RoleFuctionMapper.java" />
-        <option value="$PROJECT_DIR$/daov2/src/main/resources/mappers/RoleFuctionMapper.xml" />
         <option value="$PROJECT_DIR$/daov2/src/main/java/mappers/RoleMapper.java" />
         <option value="$PROJECT_DIR$/daov2/src/test/java/dao/RoleDaoTest.java" />
         <option value="$PROJECT_DIR$/daov2/src/main/resources/mappers/RoleFunctionMapper.xml" />
@@ -247,10 +236,6 @@
         <option value="$PROJECT_DIR$/wms-web-client/src/main/java/com/riambbj/wmscloud/services/StoredefService.java" />
         <option value="$PROJECT_DIR$/wms-web-client/src/main/java/com/riambbj/wmscloud/controllers/StoredefController.java" />
         <option value="$PROJECT_DIR$/daov2/src/main/resources/mappers/MatdetMapper.xml" />
-        <option value="$PROJECT_DIR$/daov2/src/test/java/dao/UserRoleDaoTest.java" />
-        <option value="$PROJECT_DIR$/daov2/src/main/java/mappers/UserRoleMapper.java" />
-        <option value="$PROJECT_DIR$/daov2/src/main/java/dao/UserRoleDao.java" />
-        <option value="$PROJECT_DIR$/daov2/src/main/resources/mappers/UserRoleMapper.xml" />
         <option value="$PROJECT_DIR$/daov2/src/main/java/entity/UserRole.java" />
         <option value="$PROJECT_DIR$/daov2/src/main/java/mappers/UserMapper.java" />
         <option value="$PROJECT_DIR$/daov2/src/main/java/dao/UserDao.java" />
@@ -258,6 +243,12 @@
         <option value="$PROJECT_DIR$/daov2/src/main/resources/mappers/UserMapper.xml" />
         <option value="$PROJECT_DIR$/wms-web-client/src/main/java/com/riambbj/wmscloud/services/UserService.java" />
         <option value="$PROJECT_DIR$/wms-web-client/src/main/java/com/riambbj/wmscloud/controllers/UserController.java" />
+        <option value="$PROJECT_DIR$/daov2/src/main/resources/mappers/UserRoleMapper.xml" />
+        <option value="$PROJECT_DIR$/daov2/src/main/java/mappers/UserRoleMapper.java" />
+        <option value="$PROJECT_DIR$/daov2/src/main/java/dao/UserRoleDao.java" />
+        <option value="$PROJECT_DIR$/daov2/src/test/java/dao/UserRoleDaoTest.java" />
+        <option value="$PROJECT_DIR$/wms-web-client/src/main/java/com/riambbj/wmscloud/services/UserRoleService.java" />
+        <option value="$PROJECT_DIR$/wms-web-client/src/main/java/com/riambbj/wmscloud/controllers/UserRoleController.java" />
       </list>
     </option>
   </component>
@@ -621,7 +612,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.UserDaoTest.get">
+  <component name="RunManager" selected="JUnit.UserRoleDaoTest.get">
     <configuration name="UserDaoTest.get" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="wmsdao" />
       <extension name="coverage">
@@ -711,8 +702,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.UserDaoTest.get" />
         <item itemvalue="JUnit.UserRoleDaoTest.get" />
+        <item itemvalue="JUnit.UserDaoTest.get" />
         <item itemvalue="JUnit.UserRoleDaoTest.update" />
         <item itemvalue="JUnit.UserRoleDaoTest.delete" />
         <item itemvalue="JUnit.UserRoleDaoTest.add" />
@@ -736,7 +727,7 @@
       <workItem from="1561941579860" duration="28274000" />
       <workItem from="1562027579082" duration="25918000" />
       <workItem from="1562114190495" duration="28462000" />
-      <workItem from="1562200450076" duration="13647000" />
+      <workItem from="1562200450076" duration="17138000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <created>1561624135955</created>
@@ -822,16 +813,17 @@
       <option name="project" value="LOCAL" />
       <updated>1562207104079</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="commit">
+      <created>1562225357785</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1562225357785</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="UserRoleDaoTest_get - 2019.07.04 at 14h 37m 05s.xml">
-      <configuration name="UserRoleDaoTest.get" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="UserRoleDaoTest_get - 2019.07.04 at 14h 42m 09s.xml">
-      <configuration name="UserRoleDaoTest.get" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="UserRoleDaoTest_get - 2019.07.04 at 14h 43m 10s.xml">
       <configuration name="UserRoleDaoTest.get" configurationId="JUnit" />
     </history-entry>
@@ -856,9 +848,15 @@
     <history-entry file="UserDaoTest_get - 2019.07.04 at 15h 22m 48s.xml">
       <configuration name="UserDaoTest.get" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="UserRoleDaoTest_get - 2019.07.04 at 15h 40m 11s.xml">
+      <configuration name="UserRoleDaoTest.get" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UserRoleDaoTest_get - 2019.07.04 at 15h 40m 25s.xml">
+      <configuration name="UserRoleDaoTest.get" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="134479000" />
+    <option name="totallyTimeSpent" value="137970000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -873,7 +871,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4987775" visible="true" weight="0.18550107" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4987775" visible="true" weight="0.18550107" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -899,7 +897,7 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Maven" order="3" visible="true" weight="0.20522387" />
+      <window_info active="true" anchor="right" id="Maven" order="3" visible="true" weight="0.20522387" />
       <window_info anchor="right" id="Palette" order="4" />
       <window_info anchor="right" id="Capture Analysis" order="5" />
       <window_info anchor="right" id="Database" order="6" weight="0.32980332" />
@@ -955,33 +953,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/tomcat/embed/tomcat-embed-core/9.0.19/tomcat-embed-core-9.0.19.jar!/org/apache/coyote/AbstractProtocol.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="229">
-          <caret line="667" selection-start-line="667" selection-end-line="667" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wms-web-client/src/main/java/com/riambbj/wmscloud/controllers/RoleFunctionController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="284">
-          <caret line="97" column="48" lean-forward="true" selection-start-line="97" selection-start-column="48" selection-end-line="97" selection-end-column="48" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/daov2/src/test/java/dao/RoleFunctionDaoTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="436">
-          <caret line="89" column="9" lean-forward="true" selection-start-line="89" selection-start-column="9" selection-end-line="89" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/wms-web-client/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-571">
@@ -1135,18 +1106,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wms-web-client/src/main/java/com/riambbj/wmscloud/services/MatdetService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#300#301#0" expanded="true" />
-            <element signature="e#338#339#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/wms-web-client/src/main/java/com/riambbj/wmscloud/services/MatmainService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="380">
@@ -1161,16 +1120,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1938">
           <caret line="102" column="11" selection-start-line="102" selection-start-column="11" selection-end-line="102" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wms-web-client/src/main/java/com/riambbj/wmscloud/controllers/MatdetController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="722">
-          <caret line="43" column="33" selection-start-line="43" selection-start-column="33" selection-end-line="43" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1238,24 +1187,6 @@
           <caret line="50" column="65" lean-forward="true" selection-start-line="50" selection-start-column="65" selection-end-line="50" selection-end-column="65" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wms-web-client/src/main/java/com/riambbj/wmscloud/services/StoredefService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="10" column="40" selection-start-line="10" selection-start-column="40" selection-end-line="10" selection-end-column="40" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#285#286#0" expanded="true" />
-            <element signature="e#325#326#0" expanded="true" />
-            <element signature="e#370#371#0" expanded="true" />
-            <element signature="e#407#408#0" expanded="true" />
-            <element signature="e#462#463#0" expanded="true" />
-            <element signature="e#505#506#0" expanded="true" />
-            <element signature="e#555#556#0" expanded="true" />
-            <element signature="e#589#590#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1330,16 +1261,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/daov2/src/main/java/mappers/UserRoleMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="13" column="18" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/daov2/src/main/java/entity/UserRole.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="171">
@@ -1360,7 +1281,7 @@
     <entry file="file://$PROJECT_DIR$/daov2/src/main/java/entity/User.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-628">
-          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
+          <caret line="28" selection-start-line="28" selection-end-line="28" />
         </state>
       </provider>
     </entry>
@@ -1378,54 +1299,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/daov2/src/test/java/dao/UserRoleDaoTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="608">
-          <caret line="35" column="20" lean-forward="true" selection-start-line="35" selection-start-column="20" selection-end-line="35" selection-end-column="20" />
-          <folding>
-            <element signature="e#391#392#0" expanded="true" />
-            <element signature="e#409#410#0" expanded="true" />
-            <element signature="e#679#680#0" expanded="true" />
-            <element signature="e#697#698#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/daov2/src/main/java/dao/UserRoleDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="53" column="19" lean-forward="true" selection-start-line="53" selection-start-column="19" selection-end-line="53" selection-end-column="19" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/daov2/src/main/resources/mappers/UserRoleMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="19" column="32" selection-start-line="19" selection-start-column="14" selection-end-line="19" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/daov2/src/main/resources/mappers/UserMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="493">
-          <caret line="31" column="43" lean-forward="true" selection-start-line="31" selection-start-column="43" selection-end-line="31" selection-end-column="43" />
+          <caret line="31" column="43" selection-start-line="31" selection-start-column="43" selection-end-line="31" selection-end-column="43" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/daov2/src/test/java/dao/UserDaoTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="399">
-          <caret line="59" column="36" lean-forward="true" selection-start-line="59" selection-start-column="36" selection-end-line="59" selection-end-column="36" />
+          <caret line="59" column="36" selection-start-line="59" selection-start-column="36" selection-end-line="59" selection-end-column="36" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/wms-web-client/src/main/java/com/riambbj/wmscloud/services/UserService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="398">
-          <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
+          <caret line="34" selection-start-line="34" selection-end-line="34" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#620#621#0" expanded="true" />
@@ -1434,10 +1325,116 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wms-web-client/src/main/java/com/riambbj/wmscloud/controllers/UserController.java">
+    <entry file="file://$PROJECT_DIR$/daov2/src/main/resources/mappers/UserRoleMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="33" column="61" selection-start-line="33" selection-start-column="61" selection-end-line="33" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/daov2/src/main/java/mappers/UserRoleMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="15" column="53" selection-start-line="15" selection-start-column="53" selection-end-line="15" selection-end-column="53" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/daov2/src/main/java/dao/UserRoleDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="60" column="70" selection-start-line="60" selection-start-column="70" selection-end-line="60" selection-end-column="70" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/daov2/src/test/java/dao/UserRoleDaoTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="34" column="23" selection-start-line="34" selection-start-column="23" selection-end-line="34" selection-end-column="23" />
+          <folding>
+            <element signature="e#391#392#0" expanded="true" />
+            <element signature="e#421#422#0" expanded="true" />
+            <element signature="e#716#717#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wms-web-client/src/main/java/com/riambbj/wmscloud/services/MatdetService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#300#301#0" expanded="true" />
+            <element signature="e#338#339#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wms-web-client/src/main/java/com/riambbj/wmscloud/controllers/MatdetController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="512">
-          <caret line="56" column="55" lean-forward="true" selection-start-line="56" selection-start-column="55" selection-end-line="56" selection-end-column="55" />
+          <caret line="69" column="5" lean-forward="true" selection-start-line="69" selection-start-column="5" selection-end-line="69" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wms-web-client/src/main/java/com/riambbj/wmscloud/services/UserRoleService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="27" selection-start-line="27" selection-end-line="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#314#315#0" expanded="true" />
+            <element signature="e#352#353#0" expanded="true" />
+            <element signature="e#397#398#0" expanded="true" />
+            <element signature="e#434#435#0" expanded="true" />
+            <element signature="e#487#488#0" expanded="true" />
+            <element signature="e#528#529#0" expanded="true" />
+            <element signature="e#584#585#0" expanded="true" />
+            <element signature="e#618#619#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wms-web-client/src/main/java/com/riambbj/wmscloud/services/StoredefService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="10" column="40" selection-start-line="10" selection-start-column="40" selection-end-line="10" selection-end-column="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wms-web-client/src/main/java/com/riambbj/wmscloud/controllers/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-229">
+          <caret line="47" column="24" lean-forward="true" selection-start-line="47" selection-start-column="24" selection-end-line="47" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wms-web-client/src/main/java/com/riambbj/wmscloud/controllers/RoleFunctionController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="121" column="44" selection-start-line="121" selection-start-column="44" selection-end-line="121" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wms-web-client/src/main/java/com/riambbj/wmscloud/controllers/UserRoleController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="455">
+          <caret line="61" column="53" selection-start-line="61" selection-start-column="53" selection-end-line="61" selection-end-column="53" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

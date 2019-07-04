@@ -13,6 +13,8 @@ public interface UserRoleMapper {
 
     List<UserRole> selectByPrimaryKey(Long id);
 
+    List<UserRole> selectByUserCode(String userCode);
+
     int updateByPrimaryKeySelective(UserRole record);
 
     int updateByPrimaryKey(UserRole record);
