@@ -2,14 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="254c0f5b-7169-4179-a208-0dfc5c7754aa" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/daov2/src/main/java/dao/VendorDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/daov2/src/test/java/dao/VendorDaoTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wms-web-client/src/main/java/com/riambbj/wmscloud/controllers/VendorController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wms-web-client/src/main/java/com/riambbj/wmscloud/services/VendorService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/daov2/src/main/java/dao/StoredefDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/daov2/src/test/java/dao/StoredefDaoTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wms-web-client/src/main/java/com/riambbj/wmscloud/controllers/StoredefController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wms-web-client/src/main/java/com/riambbj/wmscloud/services/StoredefService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/daov2/src/main/java/entity/Vendor.java" beforeDir="false" afterPath="$PROJECT_DIR$/daov2/src/main/java/entity/Vendor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/daov2/src/main/java/mappers/VendorMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/daov2/src/main/java/mappers/VendorMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/daov2/src/main/resources/mappers/VendorMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/daov2/src/main/resources/mappers/VendorMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/daov2/src/main/java/entity/Storedef.java" beforeDir="false" afterPath="$PROJECT_DIR$/daov2/src/main/java/entity/Storedef.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/daov2/src/main/java/mappers/StoredefMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/daov2/src/main/java/mappers/StoredefMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/daov2/src/main/resources/mappers/StoredefMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/daov2/src/main/resources/mappers/StoredefMapper.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/wms-web-client/target/" />
@@ -40,11 +40,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/wms-web-client/src/main/java/com/riambbj/wmscloud/controllers/VendorController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="337">
-              <caret line="28" column="38" lean-forward="true" selection-start-line="28" selection-start-column="38" selection-end-line="28" selection-end-column="38" />
+            <state relative-caret-position="474">
+              <caret line="63" column="13" selection-start-line="63" selection-start-column="13" selection-end-line="63" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/daov2/src/main/java/dao/StoredefDao.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="342">
+              <caret line="66" column="24" selection-start-line="66" selection-start-column="24" selection-end-line="66" selection-end-column="24" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -55,8 +67,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/wms-web-client/src/main/java/com/riambbj/wmscloud/services/VendorService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
-              <caret line="30" column="1" selection-start-line="30" selection-start-column="1" selection-end-line="30" selection-end-column="1" />
+            <state relative-caret-position="152">
+              <caret line="8" column="28" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -65,10 +77,94 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/wms-web-client/src/main/java/com/riambbj/wmscloud/controllers/MatdetController.java">
+        <entry file="file://$PROJECT_DIR$/daov2/src/test/java/dao/StoredefDaoTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="299">
-              <caret line="43" column="33" selection-start-line="43" selection-start-column="33" selection-end-line="43" selection-end-column="33" />
+            <state relative-caret-position="512">
+              <caret line="44" column="27" selection-start-line="44" selection-start-column="27" selection-end-line="44" selection-end-column="27" />
+              <folding>
+                <element signature="e#927#928#0" expanded="true" />
+                <element signature="e#944#945#0" expanded="true" />
+                <element signature="e#1001#1002#0" expanded="true" />
+                <element signature="e#1027#1028#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/wms-web-client/src/main/java/com/riambbj/wmscloud/services/StoredefService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="190">
+              <caret line="10" column="40" selection-start-line="10" selection-start-column="40" selection-end-line="10" selection-end-column="40" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#285#286#0" expanded="true" />
+                <element signature="e#325#326#0" expanded="true" />
+                <element signature="e#370#371#0" expanded="true" />
+                <element signature="e#407#408#0" expanded="true" />
+                <element signature="e#462#463#0" expanded="true" />
+                <element signature="e#505#506#0" expanded="true" />
+                <element signature="e#555#556#0" expanded="true" />
+                <element signature="e#589#590#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/wms-web-client/src/main/java/com/riambbj/wmscloud/controllers/StoredefController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="417">
+              <caret line="44" column="27" selection-start-line="44" selection-start-column="27" selection-end-line="44" selection-end-column="27" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/daov2/src/main/java/dao/MatMainDao.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="152">
+              <caret line="14" column="25" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/daov2/src/main/java/mappers/StoredefMapper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="342">
+              <caret line="18" selection-start-line="18" selection-end-line="18" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/daov2/src/main/java/entity/Storedef.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1577">
+              <caret line="120" column="98" selection-start-line="120" selection-start-column="98" selection-end-line="120" selection-end-column="98" />
+              <folding>
+                <element signature="e#2385#2386#0" expanded="true" />
+                <element signature="e#2427#2428#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/daov2/src/main/java/dao/MatdetDao.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="284">
+              <caret line="63" column="28" selection-start-line="63" selection-start-column="28" selection-end-line="63" selection-end-column="28" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -105,6 +201,8 @@
       <find>Base_Column_List</find>
       <find>matmain</find>
       <find>matdet</find>
+      <find>Vendor</find>
+      <find>vendor</find>
     </findStrings>
     <replaceStrings>
       <replace>entity</replace>
@@ -115,6 +213,8 @@
       <replace>creator</replace>
       <replace>matdet</replace>
       <replace>vendor</replace>
+      <replace>Storedef</replace>
+      <replace>storedef</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -124,15 +224,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/daov2/src/main/java/mappers/DevVendorMapper.java" />
-        <option value="$PROJECT_DIR$/daov2/src/main/java/mappers/ErrorLogMapper.java" />
-        <option value="$PROJECT_DIR$/daov2/src/main/java/mappers/IOClassMapper.java" />
-        <option value="$PROJECT_DIR$/daov2/src/main/java/mappers/LogMapper.java" />
-        <option value="$PROJECT_DIR$/daov2/src/main/java/mappers/NameMapper.java" />
-        <option value="$PROJECT_DIR$/daov2/src/main/java/mappers/ProjectMapper.java" />
         <option value="$PROJECT_DIR$/daov2/src/main/java/mappers/RackMapper.java" />
         <option value="$PROJECT_DIR$/daov2/src/main/java/mappers/ServiceMapper.java" />
-        <option value="$PROJECT_DIR$/daov2/src/main/java/mappers/StoredefMapper.java" />
         <option value="$PROJECT_DIR$/daov2/src/main/java/mappers/StoreMapper.java" />
         <option value="$PROJECT_DIR$/daov2/src/main/java/mappers/TmpMapper.java" />
         <option value="$PROJECT_DIR$/daov2/src/main/java/mappers/UserRoleMapper.java" />
@@ -175,6 +268,13 @@
         <option value="$PROJECT_DIR$/daov2/src/test/java/dao/VendorDaoTest.java" />
         <option value="$PROJECT_DIR$/wms-web-client/src/main/java/com/riambbj/wmscloud/services/VendorService.java" />
         <option value="$PROJECT_DIR$/wms-web-client/src/main/java/com/riambbj/wmscloud/controllers/VendorController.java" />
+        <option value="$PROJECT_DIR$/daov2/src/main/resources/mappers/StoredefMapper.xml" />
+        <option value="$PROJECT_DIR$/daov2/src/main/java/mappers/StoredefMapper.java" />
+        <option value="$PROJECT_DIR$/daov2/src/main/java/entity/Storedef.java" />
+        <option value="$PROJECT_DIR$/daov2/src/main/java/dao/StoredefDao.java" />
+        <option value="$PROJECT_DIR$/daov2/src/test/java/dao/StoredefDaoTest.java" />
+        <option value="$PROJECT_DIR$/wms-web-client/src/main/java/com/riambbj/wmscloud/services/StoredefService.java" />
+        <option value="$PROJECT_DIR$/wms-web-client/src/main/java/com/riambbj/wmscloud/controllers/StoredefController.java" />
       </list>
     </option>
   </component>
@@ -491,8 +591,8 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -510,8 +610,11 @@
       <recent name="dao" />
       <recent name="mappers" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="F:\javaproject\wmscloud2019-master\wms-web-client\src\main\webapp\WEB-INF\views" />
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\javaproject\wmscloud2019-master\daov2\src\main\resources\mappers" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.riambbj.wmscloud.controllers" />
@@ -519,11 +622,8 @@
       <recent name="dao" />
       <recent name="mappers" />
     </key>
-    <key name="CreateTestDialog.Recents.Supers">
-      <recent name="" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="F:\javaproject\wmscloud2019-master\daov2\src\main\resources\mappers" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\javaproject\wmscloud2019-master\wms-web-client\src\main\webapp\WEB-INF\views" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -538,8 +638,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.VendorDaoTest.list">
-    <configuration name="MatdetDaoTest.list" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.StoredefDaoTest.list">
+    <configuration name="StoredefDaoTest.add" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="wmsdao" />
       <extension name="coverage">
         <pattern>
@@ -548,30 +648,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="dao" />
-      <option name="MAIN_CLASS_NAME" value="dao.MatdetDaoTest" />
-      <option name="METHOD_NAME" value="list" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="VendorDaoTest.add" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="wmsdao" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="dao.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="dao" />
-      <option name="MAIN_CLASS_NAME" value="dao.VendorDaoTest" />
+      <option name="MAIN_CLASS_NAME" value="dao.StoredefDaoTest" />
       <option name="METHOD_NAME" value="add" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="VendorDaoTest.delete" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="StoredefDaoTest.get" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="wmsdao" />
       <extension name="coverage">
         <pattern>
@@ -580,8 +664,40 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="dao" />
-      <option name="MAIN_CLASS_NAME" value="dao.VendorDaoTest" />
-      <option name="METHOD_NAME" value="delete" />
+      <option name="MAIN_CLASS_NAME" value="dao.StoredefDaoTest" />
+      <option name="METHOD_NAME" value="get" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StoredefDaoTest.list" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="wmsdao" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="dao.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="dao" />
+      <option name="MAIN_CLASS_NAME" value="dao.StoredefDaoTest" />
+      <option name="METHOD_NAME" value="list" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StoredefDaoTest.update" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="wmsdao" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="dao.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="dao" />
+      <option name="MAIN_CLASS_NAME" value="dao.StoredefDaoTest" />
+      <option name="METHOD_NAME" value="update" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -603,22 +719,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="VendorDaoTest.update" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="wmsdao" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="dao.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="dao" />
-      <option name="MAIN_CLASS_NAME" value="dao.VendorDaoTest" />
-      <option name="METHOD_NAME" value="update" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="WmscloudApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="wmscloud" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.riambbj.wmscloud.WmscloudApplication" />
@@ -628,11 +728,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.StoredefDaoTest.list" />
+        <item itemvalue="JUnit.StoredefDaoTest.get" />
+        <item itemvalue="JUnit.StoredefDaoTest.update" />
+        <item itemvalue="JUnit.StoredefDaoTest.add" />
         <item itemvalue="JUnit.VendorDaoTest.list" />
-        <item itemvalue="JUnit.VendorDaoTest.update" />
-        <item itemvalue="JUnit.VendorDaoTest.delete" />
-        <item itemvalue="JUnit.VendorDaoTest.add" />
-        <item itemvalue="JUnit.MatdetDaoTest.list" />
       </list>
     </recent_temporary>
   </component>
@@ -652,7 +752,8 @@
       <workItem from="1561681767001" duration="22665000" />
       <workItem from="1561941579860" duration="28274000" />
       <workItem from="1562027579082" duration="25918000" />
-      <workItem from="1562114190495" duration="28291000" />
+      <workItem from="1562114190495" duration="28462000" />
+      <workItem from="1562200450076" duration="6162000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <created>1561624135955</created>
@@ -724,31 +825,17 @@
       <option name="project" value="LOCAL" />
       <updated>1562150505468</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="commit">
+      <created>1562152094767</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1562152094767</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="MatdetDaoTest_get - 2019.07.03 at 18h 16m 51s.xml">
-      <configuration name="MatdetDaoTest.get" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MatdetDaoTest_list - 2019.07.03 at 18h 21m 35s.xml">
-      <configuration name="MatdetDaoTest.list" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="VendorDaoTest_add - 2019.07.03 at 18h 54m 27s.xml">
-      <configuration name="VendorDaoTest.add" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="VendorDaoTest_add - 2019.07.03 at 18h 55m 10s.xml">
-      <configuration name="VendorDaoTest.add" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="VendorDaoTest_add - 2019.07.03 at 18h 55m 28s.xml">
-      <configuration name="VendorDaoTest.add" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="VendorDaoTest_add - 2019.07.03 at 18h 56m 01s.xml">
-      <configuration name="VendorDaoTest.add" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="VendorDaoTest_delete - 2019.07.03 at 18h 56m 19s.xml">
-      <configuration name="VendorDaoTest.delete" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="VendorDaoTest_update - 2019.07.03 at 18h 57m 20s.xml">
       <configuration name="VendorDaoTest.update" configurationId="JUnit" />
     </history-entry>
@@ -758,9 +845,30 @@
     <history-entry file="VendorDaoTest_list - 2019.07.03 at 18h 59m 12s.xml">
       <configuration name="VendorDaoTest.list" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="StoredefDaoTest_add - 2019.07.04 at 09h 54m 26s.xml">
+      <configuration name="StoredefDaoTest.add" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="StoredefDaoTest_add - 2019.07.04 at 09h 55m 15s.xml">
+      <configuration name="StoredefDaoTest.add" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="StoredefDaoTest_update - 2019.07.04 at 09h 57m 00s.xml">
+      <configuration name="StoredefDaoTest.update" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="StoredefDaoTest_update - 2019.07.04 at 09h 57m 59s.xml">
+      <configuration name="StoredefDaoTest.update" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="StoredefDaoTest_get - 2019.07.04 at 09h 58m 40s.xml">
+      <configuration name="StoredefDaoTest.get" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="StoredefDaoTest_get - 2019.07.04 at 10h 05m 47s.xml">
+      <configuration name="StoredefDaoTest.get" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="StoredefDaoTest_list - 2019.07.04 at 10h 07m 50s.xml">
+      <configuration name="StoredefDaoTest.list" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="120661000" />
+    <option name="totallyTimeSpent" value="126994000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -775,7 +883,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4987775" visible="true" weight="0.18336888" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4987775" visible="true" weight="0.18550107" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -857,61 +965,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/daov2/src/main/java/entity/Project.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-19">
-          <caret line="60" column="36" selection-start-line="60" selection-start-column="36" selection-end-line="60" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/daov2/src/main/java/entity/DevLog.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="277">
-          <caret line="37" column="14" selection-start-line="37" selection-start-column="14" selection-end-line="37" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/daov2/src/main/java/entity/Role.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-58">
-          <caret line="18" column="22" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
-          <folding>
-            <element signature="e#400#401#0" expanded="true" />
-            <element signature="e#432#433#0" expanded="true" />
-            <element signature="e#479#480#0" expanded="true" />
-            <element signature="e#521#522#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/mybatis/mybatis/3.4.6/mybatis-3.4.6.jar!/org/apache/ibatis/builder/xml/mybatis-3-mapper.dtd">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="263" selection-start-line="263" selection-end-line="263" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/daov2/src/main/resources/mappers/RoleMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="23" column="12" selection-start-line="23" selection-start-column="12" selection-end-line="23" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/daov2/src/test/java/dao/UserDaoTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1254">
-          <caret line="94" column="30" selection-start-line="94" selection-start-column="30" selection-end-line="94" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/daov2/src/main/resources/mybatis_cfg.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/daov2/src/main/resources/mappers/RoleFunctionMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
@@ -1074,16 +1127,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/daov2/src/main/java/dao/MatMainDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="14" column="25" lean-forward="true" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/daov2/src/main/java/dao/UserDao.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="380">
@@ -1154,23 +1197,6 @@
             <element signature="e#638#639#0" expanded="true" />
             <element signature="e#685#686#0" expanded="true" />
             <element signature="e#723#724#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/daov2/src/main/resources/mappers/MatdetMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="627">
-          <caret line="33" column="11" selection-start-line="33" selection-start-column="11" selection-end-line="33" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/daov2/src/main/java/dao/MatdetDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1266,19 +1292,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wms-web-client/src/main/java/com/riambbj/wmscloud/services/VendorService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="30" column="1" selection-start-line="30" selection-start-column="1" selection-end-line="30" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/wms-web-client/src/main/java/com/riambbj/wmscloud/controllers/MatdetController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
+        <state relative-caret-position="722">
           <caret line="43" column="33" selection-start-line="43" selection-start-column="33" selection-end-line="43" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1286,10 +1302,126 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/daov2/src/main/resources/mappers/MatdetMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="23" column="18" lean-forward="true" selection-start-line="23" selection-start-column="18" selection-end-line="23" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/daov2/src/main/resources/mappers/StoredefMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="28" column="26" lean-forward="true" selection-start-line="28" selection-start-column="26" selection-end-line="28" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/daov2/src/main/java/mappers/StoredefMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/daov2/src/main/java/entity/Storedef.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1577">
+          <caret line="120" column="98" selection-start-line="120" selection-start-column="98" selection-end-line="120" selection-end-column="98" />
+          <folding>
+            <element signature="e#2385#2386#0" expanded="true" />
+            <element signature="e#2427#2428#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/daov2/src/main/java/dao/MatMainDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="14" column="25" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/daov2/src/main/java/dao/MatdetDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="284">
+          <caret line="63" column="28" selection-start-line="63" selection-start-column="28" selection-end-line="63" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/daov2/src/main/java/dao/StoredefDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="66" column="24" selection-start-line="66" selection-start-column="24" selection-end-line="66" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/daov2/src/test/java/dao/StoredefDaoTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="512">
+          <caret line="44" column="27" selection-start-line="44" selection-start-column="27" selection-end-line="44" selection-end-column="27" />
+          <folding>
+            <element signature="e#927#928#0" expanded="true" />
+            <element signature="e#944#945#0" expanded="true" />
+            <element signature="e#1001#1002#0" expanded="true" />
+            <element signature="e#1027#1028#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wms-web-client/src/main/java/com/riambbj/wmscloud/services/VendorService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="8" column="28" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wms-web-client/src/main/java/com/riambbj/wmscloud/services/StoredefService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="10" column="40" selection-start-line="10" selection-start-column="40" selection-end-line="10" selection-end-column="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#285#286#0" expanded="true" />
+            <element signature="e#325#326#0" expanded="true" />
+            <element signature="e#370#371#0" expanded="true" />
+            <element signature="e#407#408#0" expanded="true" />
+            <element signature="e#462#463#0" expanded="true" />
+            <element signature="e#505#506#0" expanded="true" />
+            <element signature="e#555#556#0" expanded="true" />
+            <element signature="e#589#590#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/wms-web-client/src/main/java/com/riambbj/wmscloud/controllers/VendorController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="337">
-          <caret line="28" column="38" lean-forward="true" selection-start-line="28" selection-start-column="38" selection-end-line="28" selection-end-column="38" />
+        <state relative-caret-position="474">
+          <caret line="63" column="13" selection-start-line="63" selection-start-column="13" selection-end-line="63" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wms-web-client/src/main/java/com/riambbj/wmscloud/controllers/StoredefController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="417">
+          <caret line="44" column="27" selection-start-line="44" selection-start-column="27" selection-end-line="44" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

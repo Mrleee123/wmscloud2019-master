@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="mappers.StoredefMapper">
-  <resultMap id="BaseResultMap" type="entity.Storedef">
+<mapper namespace="mappers.StoredefMapper" >
+  <resultMap id="BaseResultMap" type="entity.Storedef" autoMapping="true">
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="storedef_code" jdbcType="VARCHAR" property="storedefCode" />
     <result column="storedef_name" jdbcType="VARCHAR" property="storedefName" />
@@ -24,19 +24,24 @@
     from t_asrs_sys_storedef
     where id = #{id,jdbcType=BIGINT}
   </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from t_asrs_sys_storedef
+  </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
     delete from t_asrs_sys_storedef
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="entity.Storedef">
+  <insert id="insert" parameterType="entity.Storedef" >
     insert into t_asrs_sys_storedef (id, storedef_code, storedef_name, 
-      storedef_type, memo, create_time, 
+      storedef_type, memo,
       creator, update_time, updator, 
       isenabled, isdeleted)
     values (#{id,jdbcType=BIGINT}, #{storedefCode,jdbcType=VARCHAR}, #{storedefName,jdbcType=VARCHAR}, 
-      #{storedefType,jdbcType=VARCHAR}, #{memo,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{storedefType,jdbcType=VARCHAR}, #{memo,jdbcType=VARCHAR},
       #{creator,jdbcType=VARCHAR}, #{updateTime,jdbcType=TIMESTAMP}, #{updator,jdbcType=VARCHAR}, 
-      #{isenabled,jdbcType=INTEGER}, #{isdeleted,jdbcType=INTEGER})
+     1, 0)
   </insert>
   <insert id="insertSelective" parameterType="entity.Storedef">
     insert into t_asrs_sys_storedef
@@ -56,9 +61,7 @@
       <if test="memo != null">
         memo,
       </if>
-      <if test="createTime != null">
-        create_time,
-      </if>
+
       <if test="creator != null">
         creator,
       </if>
@@ -91,9 +94,7 @@
       <if test="memo != null">
         #{memo,jdbcType=VARCHAR},
       </if>
-      <if test="createTime != null">
-        #{createTime,jdbcType=TIMESTAMP},
-      </if>
+
       <if test="creator != null">
         #{creator,jdbcType=VARCHAR},
       </if>
@@ -104,10 +105,10 @@
         #{updator,jdbcType=VARCHAR},
       </if>
       <if test="isenabled != null">
-        #{isenabled,jdbcType=INTEGER},
+        1,
       </if>
       <if test="isdeleted != null">
-        #{isdeleted,jdbcType=INTEGER},
+        0,
       </if>
     </trim>
   </insert>
@@ -126,9 +127,7 @@
       <if test="memo != null">
         memo = #{memo,jdbcType=VARCHAR},
       </if>
-      <if test="createTime != null">
-        create_time = #{createTime,jdbcType=TIMESTAMP},
-      </if>
+
       <if test="creator != null">
         creator = #{creator,jdbcType=VARCHAR},
       </if>
@@ -153,7 +152,7 @@
       storedef_name = #{storedefName,jdbcType=VARCHAR},
       storedef_type = #{storedefType,jdbcType=VARCHAR},
       memo = #{memo,jdbcType=VARCHAR},
-      create_time = #{createTime,jdbcType=TIMESTAMP},
+
       creator = #{creator,jdbcType=VARCHAR},
       update_time = #{updateTime,jdbcType=TIMESTAMP},
       updator = #{updator,jdbcType=VARCHAR},

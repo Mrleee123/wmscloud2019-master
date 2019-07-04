@@ -115,4 +115,9 @@ public class Storedef implements Serializable {
     public void setIsdeleted(Integer isdeleted) {
         this.isdeleted = isdeleted;
     }
+
+    @Override
+    public String toString(){
+        return "Storedef:"+ storedefCode+"  "+storedefName+" "+storedefType+" "+creator+createTime;
+    }
 }
