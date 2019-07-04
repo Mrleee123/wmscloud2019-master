@@ -49,6 +49,19 @@ public class UserController {
         }
     }
 
+    //根据查询用户
+    @RequestMapping(value = "/user/selectByUserCode", method = RequestMethod.GET)
+    @ResponseBody
+    public User getUserByUserCode(@RequestParam(value = "userCode") String userCode) {
+        try {
+            User user = us.getUserByUserCode(userCode);
+            System.out.println(user.getUserCode() + "   --" + user.getPassword());
+            return user;
+        } catch (Exception e) {
+            return null;
+        }
+    }
+
     //用户登录   post
     //在json中参数 userCode userName createTime。。。一点得相同，不然post之后为null
     @PostMapping(value = "/user/login")

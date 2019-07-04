@@ -56,9 +56,10 @@ public class UserDaoTest {
 
     @Test
     public void get() {
-        long a = 1;
+        //long a = 1;
         UserDao dao = new UserDao();
-        User user = dao.get(a);
+
+        User user = dao.selectByUserCode("system");
         System.out.println("-------test finish----------");
     }
 

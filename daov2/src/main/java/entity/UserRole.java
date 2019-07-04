@@ -5,9 +5,13 @@ import java.io.Serializable;
 public class UserRole implements Serializable {
     private Long id;
 
-    private Integer userCode;
+    private String userCode;
 
-    private Integer roleCode;
+    private String roleCode;
+
+    private User user;
+
+    private Role role;
 
     private static final long serialVersionUID = 1L;
 
@@ -19,19 +23,40 @@ public class UserRole implements Serializable {
         this.id = id;
     }
 
-    public Integer getUserCode() {
+    public String getUserCode() {
         return userCode;
     }
 
-    public void setUserCode(Integer userCode) {
+    public void setUserCode(String userCode) {
         this.userCode = userCode;
     }
 
-    public Integer getRoleCode() {
+    public String getRoleCode() {
         return roleCode;
     }
 
-    public void setRoleCode(Integer roleCode) {
+    public void setRoleCode(String roleCode) {
         this.roleCode = roleCode;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public Role getRole() {
+        return role;
+    }
+
+    public void setRole(Role role) {
+        this.role = role;
+    }
+
+    @Override
+    public String toString(){
+        return "UserRole:"+ userCode+"  "+roleCode+"  "+ user.getUserName()+"  "+role.getRoleName();
     }
 }

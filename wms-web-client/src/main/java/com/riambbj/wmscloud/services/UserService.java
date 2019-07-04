@@ -25,6 +25,10 @@ public class UserService {
         return userdao.get(id);
     }
 
+    public User getUserByUserCode(String userCode) {
+        return userdao.selectByUserCode(userCode);
+    }
+
     public int updateUserInfo(User user) {
         return userdao.update(user);
     }
@@ -37,12 +41,13 @@ public class UserService {
         return userdao.delete(id);
     }
 
-    public int forbiddenUserById(long id){
+    public int forbiddenUserById(long id) {
         return userdao.forbiddenUser(id);
     }
 
-    public int enableUserById(long id){
+    public int enableUserById(long id) {
         return userdao.enableUserById(id);
     }
+
 
 }

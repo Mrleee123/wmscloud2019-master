@@ -31,5 +31,8 @@ public interface UserMapper {
     public User login(@Param("user_code")String user_code,  @Param("password")String password);
 
     public int forbiddenUserById(long id);
+
     public int enableUserById(long id);
+
+    User selectByUserCode(String userCode);
 }

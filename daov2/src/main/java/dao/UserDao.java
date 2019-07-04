@@ -81,6 +81,18 @@ public class UserDao {
         }
     }
 
+    public  User selectByUserCode(String userCode){
+        try{
+            User user = new User();
+            user = mapper.selectByUserCode(userCode);
+            System.out.println(user);
+            return user;
+        }finally {
+            DBTools.closeSession();
+        }
+    }
+
+
     public  User loginByCodeAndPwd(String User_code,String password){
         try{
             User user = new User();

@@ -2,6 +2,8 @@ package mappers;
 
 import entity.UserRole;
 
+import java.util.List;
+
 public interface UserRoleMapper {
     int deleteByPrimaryKey(Long id);
 
@@ -9,7 +11,7 @@ public interface UserRoleMapper {
 
     int insertSelective(UserRole record);
 
-    UserRole selectByPrimaryKey(Long id);
+    List<UserRole> selectByPrimaryKey(Long id);
 
     int updateByPrimaryKeySelective(UserRole record);
 
