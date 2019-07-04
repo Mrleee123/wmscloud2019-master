@@ -44,6 +44,8 @@ public class Rack implements Serializable {
 
     private String worktype;
 
+    private Storedef storedef;
+
     private static final long serialVersionUID = 1L;
 
     public Long getId() {
@@ -204,5 +206,18 @@ public class Rack implements Serializable {
 
     public void setWorktype(String worktype) {
         this.worktype = worktype == null ? null : worktype.trim();
+    }
+
+    public Storedef getStoredef() {
+        return storedef;
+    }
+
+    public void setStoredef(Storedef storedef) {
+        this.storedef = storedef;
+    }
+
+    @Override
+    public String toString(){
+        return "Rack:"+cid +"  " + palletid +"  "+ storedef.getStoredefName();
     }
 }
