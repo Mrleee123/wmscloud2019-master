@@ -36,6 +36,8 @@ public class Store implements Serializable {
 
     private String memo;
 
+    private Integer companyId;
+
     private static final long serialVersionUID = 1L;
 
     public Integer getId() {
@@ -164,5 +166,13 @@ public class Store implements Serializable {
 
     public void setMemo(String memo) {
         this.memo = memo == null ? null : memo.trim();
+    }
+
+    public Integer getCompanyId() {
+        return companyId;
+    }
+
+    public void setCompanyId(Integer companyId) {
+        this.companyId = companyId;
     }
 }

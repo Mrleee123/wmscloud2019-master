@@ -58,6 +58,8 @@ public class Project implements Serializable {
 
     private String city;
 
+    private Integer companyId;
+
     private static final long serialVersionUID = 1L;
 
     public Integer getId() {
@@ -274,5 +276,13 @@ public class Project implements Serializable {
 
     public void setCity(String city) {
         this.city = city == null ? null : city.trim();
+    }
+
+    public Integer getCompanyId() {
+        return companyId;
+    }
+
+    public void setCompanyId(Integer companyId) {
+        this.companyId = companyId;
     }
 }

@@ -24,6 +24,8 @@ public class DevLog implements Serializable {
 
     private String palletcode;
 
+    private Integer companyId;
+
     private static final long serialVersionUID = 1L;
 
     public Integer getId() {
@@ -104,5 +106,13 @@ public class DevLog implements Serializable {
 
     public void setPalletcode(String palletcode) {
         this.palletcode = palletcode == null ? null : palletcode.trim();
+    }
+
+    public Integer getCompanyId() {
+        return companyId;
+    }
+
+    public void setCompanyId(Integer companyId) {
+        this.companyId = companyId;
     }
 }

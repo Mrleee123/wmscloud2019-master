@@ -13,6 +13,8 @@ public class UserRole implements Serializable {
 
     private Role role;
 
+    private int companyId;
+
     private static final long serialVersionUID = 1L;
 
     public Long getId() {
@@ -58,5 +60,13 @@ public class UserRole implements Serializable {
     @Override
     public String toString(){
         return "UserRole:"+ userCode+"  "+roleCode+"  "+ user.getUserName()+"  "+role.getRoleName();
+    }
+
+    public int getCompanyId() {
+        return companyId;
+    }
+
+    public void setCompanyId(int companyId) {
+        this.companyId = companyId;
     }
 }

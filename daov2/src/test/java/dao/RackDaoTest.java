@@ -28,6 +28,10 @@ public class RackDaoTest {
 
     @Test
     public void update() {
+        Rack rack = new Rack();
+        rack.setStatus("A");
+
+
     }
 
     @Test

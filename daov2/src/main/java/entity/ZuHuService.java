@@ -6,7 +6,7 @@ import java.math.BigDecimal;
 public class ZuHuService implements Serializable {
     private Integer id;
 
-    private Integer zuhuId;
+    private Integer companyId;
 
     private Integer serviceId;
 
@@ -15,6 +15,7 @@ public class ZuHuService implements Serializable {
     private Integer timeleft;
 
     private BigDecimal moneyleft;
+
 
     private static final long serialVersionUID = 1L;
 
@@ -27,11 +28,11 @@ public class ZuHuService implements Serializable {
     }
 
     public Integer getZuhuId() {
-        return zuhuId;
+        return companyId;
     }
 
     public void setZuhuId(Integer zuhuId) {
-        this.zuhuId = zuhuId;
+        this.companyId = zuhuId;
     }
 
     public Integer getServiceId() {

@@ -26,6 +26,8 @@ public class Storedef implements Serializable {
 
     private Integer isdeleted;
 
+    private Integer companyId;
+
     private static final long serialVersionUID = 1L;
 
     public Long getId() {
@@ -119,5 +121,13 @@ public class Storedef implements Serializable {
     @Override
     public String toString(){
         return "Storedef:"+ storedefCode+"  "+storedefName+" "+storedefType+" "+creator+createTime;
+    }
+
+    public Integer getCompanyId() {
+        return companyId;
+    }
+
+    public void setCompanyId(Integer companyId) {
+        this.companyId = companyId;
     }
 }

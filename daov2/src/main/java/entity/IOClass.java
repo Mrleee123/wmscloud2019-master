@@ -22,6 +22,8 @@ public class IOClass implements Serializable {
 
     private String updator;
 
+    private Integer companyId;
+
     private static final long serialVersionUID = 1L;
 
     public Integer getId() {
@@ -94,5 +96,13 @@ public class IOClass implements Serializable {
 
     public void setUpdator(String updator) {
         this.updator = updator == null ? null : updator.trim();
+    }
+
+    public Integer getCompanyId() {
+        return companyId;
+    }
+
+    public void setCompanyId(Integer companyId) {
+        this.companyId = companyId;
     }
 }

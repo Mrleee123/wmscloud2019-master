@@ -13,6 +13,7 @@
         <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
         <result column="isenabled" jdbcType="INTEGER" property="isenabled" />
         <result column="isdeleted" jdbcType="INTEGER" property="isdeleted" />
+        <result column="companyid" jdbcType="INTEGER" property="companyId" />
     </resultMap>
     <sql id="Base_Column_List">
     id, issa, user_code, user_name , password, demo, create_time , creator, update_time

@@ -20,6 +20,8 @@ public class Devdef implements Serializable {
 
     private BigDecimal virticalsum;
 
+    private Integer companyId;
+
     private static final long serialVersionUID = 1L;
 
     public Integer getId() {
@@ -84,5 +86,13 @@ public class Devdef implements Serializable {
 
     public void setVirticalsum(BigDecimal virticalsum) {
         this.virticalsum = virticalsum;
+    }
+
+    public Integer getCompanyId() {
+        return companyId;
+    }
+
+    public void setCompanyId(Integer companyId) {
+        this.companyId = companyId;
     }
 }

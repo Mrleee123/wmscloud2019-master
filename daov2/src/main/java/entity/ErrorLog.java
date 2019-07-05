@@ -21,6 +21,8 @@ public class ErrorLog implements Serializable {
 
     private Integer storedefId;
 
+    private Integer companyId;
+
     private static final long serialVersionUID = 1L;
 
     public Integer getId() {
@@ -93,5 +95,13 @@ public class ErrorLog implements Serializable {
 
     public void setStoredefId(Integer storedefId) {
         this.storedefId = storedefId;
+    }
+
+    public Integer getCompanyId() {
+        return companyId;
+    }
+
+    public void setCompanyId(Integer companyId) {
+        this.companyId = companyId;
     }
 }

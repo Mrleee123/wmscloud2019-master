@@ -36,6 +36,8 @@ public class Matdet implements Serializable {
 
     private Matmain matmain;
 
+    private Integer companyId;
+
     public Matmain getMatmain() {
         return matmain;
     }
@@ -169,5 +171,13 @@ public class Matdet implements Serializable {
     @Override
     public String toString(){
         return "Matmain:"+id+matname+"  "+mid+" "+memo1+" "+creator+"  "+mspeci+" "+matmain.getMmname();
+    }
+
+    public Integer getCompanyId() {
+        return companyId;
+    }
+
+    public void setCompanyId(Integer companyId) {
+        this.companyId = companyId;
     }
 }

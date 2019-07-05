@@ -46,6 +46,8 @@ public class Rack implements Serializable {
 
     private Storedef storedef;
 
+    private Integer companyId;
+
     private static final long serialVersionUID = 1L;
 
     public Long getId() {
@@ -219,5 +221,13 @@ public class Rack implements Serializable {
     @Override
     public String toString(){
         return "Rack:"+cid +"  " + palletid +"  "+ storedef.getStoredefName();
+    }
+
+    public Integer getCompanyId() {
+        return companyId;
+    }
+
+    public void setCompanyId(Integer companyId) {
+        this.companyId = companyId;
     }
 }

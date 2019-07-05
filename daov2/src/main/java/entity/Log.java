@@ -20,6 +20,8 @@ public class Log implements Serializable {
 
     private String detail;
 
+    private Integer companyId;
+
     private static final long serialVersionUID = 1L;
 
     public Long getId() {
@@ -84,5 +86,13 @@ public class Log implements Serializable {
 
     public void setDetail(String detail) {
         this.detail = detail == null ? null : detail.trim();
+    }
+
+    public Integer getCompanyId() {
+        return companyId;
+    }
+
+    public void setCompanyId(Integer companyId) {
+        this.companyId = companyId;
     }
 }

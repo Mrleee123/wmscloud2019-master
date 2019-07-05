@@ -14,7 +14,7 @@ public class Matmain implements Serializable {
 
     private Integer isinused;
 
-
+    private Integer companyId;
 
     private Date createTime;
 
@@ -84,4 +84,11 @@ public class Matmain implements Serializable {
         return "Matmain:  ="+matmainid+"  "+memo+"  "+mmname+" "+createTime;
     }
 
+    public Integer getCompanyId() {
+        return companyId;
+    }
+
+    public void setCompanyId(Integer companyId) {
+        this.companyId = companyId;
+    }
 }

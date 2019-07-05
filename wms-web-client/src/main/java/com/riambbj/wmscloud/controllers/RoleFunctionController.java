@@ -84,26 +84,26 @@ public class RoleFunctionController {
         }
     }
 
-//    @RequestMapping(value = "/roleFunction/deleteRoleFunctionList")
-//    @ResponseBody
-//    //public String login(@RequestBody String user_code, @RequestBody String password) {
-//    public String deleteRoleFunctionList(@RequestBody List list) {
-////        String user_code = user.getUserCode();
-////        String password = user.getPassword();
-////        long id = user.getId();
-////        int issa = user.getIssa();
-////        String user_name = user.getUserName();
-////        String demo = user.getDemo();
-////        int isendable = user.getIsenabled();
-////        int isdeleted = user.getIsdeleted();
-//        try {
-//            System.out.println(list);
-//            //us.deleteList(list);
-//            return "TRUE";
-//        }catch (Exception e){
-//            return "FALSE";
-//        }
-//    }
+    @RequestMapping(value = "/roleFunction/deleteRoleFunctionList")
+    @ResponseBody
+    //public String login(@RequestBody String user_code, @RequestBody String password) {
+    public String deleteRoleFunctionList(@RequestBody List<Integer> list) {
+//        String user_code = user.getUserCode();
+//        String password = user.getPassword();
+//        long id = user.getId();
+//        int issa = user.getIssa();
+//        String user_name = user.getUserName();
+//        String demo = user.getDemo();
+//        int isendable = user.getIsenabled();
+//        int isdeleted = user.getIsdeleted();
+        try {
+            System.out.println(list);
+            us.deleteList(list);
+            return "TRUE";
+        }catch (Exception e){
+            return "FALSE";
+        }
+    }
 
     //更新用户信息 需要有id号
     @PostMapping(value = "/roleFunction/updateRoleFunctionInfo")

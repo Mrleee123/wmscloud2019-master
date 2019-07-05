@@ -18,6 +18,8 @@ public class Role implements Serializable {
 
     private int isenabled;
 
+    private Integer companyId;
+
     private static final long serialVersionUID = 1L;
 
     public int getIsenabled() {
@@ -86,5 +88,13 @@ public class Role implements Serializable {
                 ", creator='" + creator + '\'' +
                 ", isenabled='" + isenabled + '\'' +
                 '}';
+    }
+
+    public Integer getCompanyId() {
+        return companyId;
+    }
+
+    public void setCompanyId(Integer companyId) {
+        this.companyId = companyId;
     }
 }

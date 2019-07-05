@@ -34,6 +34,8 @@ public class BillHead implements Serializable {
 
     private String gateno;
 
+    private Integer companyId;
+
     private static final long serialVersionUID = 1L;
 
     public Long getId() {
@@ -154,5 +156,13 @@ public class BillHead implements Serializable {
 
     public void setGateno(String gateno) {
         this.gateno = gateno == null ? null : gateno.trim();
+    }
+
+    public Integer getCompanyId() {
+        return companyId;
+    }
+
+    public void setCompanyId(Integer companyId) {
+        this.companyId = companyId;
     }
 }

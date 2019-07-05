@@ -54,6 +54,8 @@ public class WorkFlow implements Serializable {
 
     private Integer workId;
 
+    private int companyId;
+
     private static final long serialVersionUID = 1L;
 
     public Long getId() {
@@ -254,5 +256,13 @@ public class WorkFlow implements Serializable {
 
     public void setWorkId(Integer workId) {
         this.workId = workId;
+    }
+
+    public int getCompanyId() {
+        return companyId;
+    }
+
+    public void setCompanyId(int companyId) {
+        this.companyId = companyId;
     }
 }

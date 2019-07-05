@@ -20,6 +20,8 @@ public class Service implements Serializable {
 
     private Date updateTime;
 
+    private Integer companyId;
+
     private static final long serialVersionUID = 1L;
 
     public Long getId() {
@@ -84,5 +86,13 @@ public class Service implements Serializable {
 
     public void setUpdateTime(Date updateTime) {
         this.updateTime = updateTime;
+    }
+
+    public Integer getCompanyId() {
+        return companyId;
+    }
+
+    public void setCompanyId(Integer companyId) {
+        this.companyId = companyId;
     }
 }

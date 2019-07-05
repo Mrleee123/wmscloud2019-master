@@ -75,7 +75,7 @@ public class UserDaoTest {
     public void login()  {
         User user =new User();
         UserDao dao = new UserDao();
-         user = dao.loginByCodeAndPwd("lixiaobo111","123456qaz");
+         user = dao.loginByCodeAndPwd("lixiaobo111","");
         // assertEquals(4, list.size());
         System.out.println("-------test finish----------");
     }

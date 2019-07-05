@@ -16,6 +16,7 @@ public class Vendor implements Serializable {
     private Date createTime;
 
     private String creator;
+    private int companyId;
 
     private static final long serialVersionUID = 1L;
 
@@ -78,5 +79,13 @@ public class Vendor implements Serializable {
                 ", creator='" + creator + '\'' +
 
                 '}';
+    }
+
+    public int getCompanyId() {
+        return companyId;
+    }
+
+    public void setCompanyId(int companyId) {
+        this.companyId = companyId;
     }
 }
