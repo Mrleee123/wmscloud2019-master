@@ -49,5 +49,6 @@ public class UserService {
         return userdao.enableUserById(id);
     }
 
+    public List<User> selectByMore(User user){ return userdao.selectByMore(user);}
 
 }

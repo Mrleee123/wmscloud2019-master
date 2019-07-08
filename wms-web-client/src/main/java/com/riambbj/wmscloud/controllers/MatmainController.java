@@ -68,4 +68,16 @@ public class MatmainController {
             return null;
         }
     }
+
+    @PostMapping(value = "/matmain/selectByMore")
+    @ResponseBody
+    public List<Matmain> selectByMore(@RequestBody Matmain matmain) {
+        try {
+            List<Matmain> result = us.selectByMore(matmain);
+            return result;
+        } catch (Exception e) {
+            System.out.println(e.toString());
+            return null;
+        }
+    }
 }

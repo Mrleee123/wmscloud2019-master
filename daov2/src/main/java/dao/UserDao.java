@@ -123,4 +123,14 @@ public class UserDao {
             DBTools.closeSession();
         }
     }
+
+    public List<User> selectByMore(User user){
+        try {
+            List<User> result = mapper.selectByMore(user);
+            System.out.println(result);
+            return result;
+        }finally {
+            DBTools.closeSession();
+        }
+    }
 }

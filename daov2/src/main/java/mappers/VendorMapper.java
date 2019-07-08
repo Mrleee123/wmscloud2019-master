@@ -18,4 +18,6 @@ public interface VendorMapper {
     int updateByPrimaryKey(Vendor record);
 
     List<Vendor> selectAll();
+
+    List<Vendor> selectByMore(Vendor vendor);
 }

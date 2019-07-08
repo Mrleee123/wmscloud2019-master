@@ -28,4 +28,6 @@ public class VendorService {
     public List<Vendor> selectVendorList(){
         return dao.list();
     }
+
+    public List<Vendor> selectByMore(Vendor vendor){return dao.selectByMore(vendor);}
 }

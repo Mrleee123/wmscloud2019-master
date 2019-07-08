@@ -34,6 +34,7 @@ public class MatMainDaoTest {
         matmain.setId(1);
         matmain.setMmname("");
         matmain.setMemo("修改1");
+        matmain.setCompanyId(1);
         matMainDao.update(matmain);
         System.out.println("Finish");
     }
@@ -47,5 +48,16 @@ public class MatMainDaoTest {
     @Test
     public void list() {
         List<Matmain> list = matMainDao.list();
+    }
+
+    @Test
+    public void selectByMore() {
+        Matmain matmain = new Matmain();
+        matmain.setCreator("System");
+        matmain.setCompanyId(1);
+        //matmain.setMmname("");
+      //  matmain.setMemo("修改1");
+        matMainDao.selectByMore(matmain);
+        System.out.println("Finish");
     }
 }

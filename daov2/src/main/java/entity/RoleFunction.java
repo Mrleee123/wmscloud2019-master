@@ -8,7 +8,7 @@ public class RoleFunction implements Serializable {
     private String RoleCode;
     private String FunctionName;
     private Date updateTime;
-    private Integer companyId;
+    private Integer companyid;
 
     //private static final long serialVersionUID = 1L;
     public Integer getId() {
@@ -42,7 +42,13 @@ public class RoleFunction implements Serializable {
     public void setFunctionName(String functionName) {
         FunctionName = functionName;
     }
+    public Integer getCompanyId() {
+        return companyid;
+    }
 
+    public void setCompanyId(Integer companyid) {
+        this.companyid = companyid;
+    }
     @Override
     public String toString() {
         return "Role{" +
@@ -52,11 +58,5 @@ public class RoleFunction implements Serializable {
                 '}';
     }
 
-    public Integer getCompanyId() {
-        return companyId;
-    }
 
-    public void setCompanyId(Integer companyId) {
-        this.companyId = companyId;
-    }
 }

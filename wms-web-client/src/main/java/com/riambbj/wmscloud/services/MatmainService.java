@@ -29,4 +29,6 @@ public class MatmainService {
     public List<Matmain> selectMatmainList(){
         return dao.list();
     }
+
+    public List<Matmain> selectByMore(Matmain matmain){return dao.selectByMore(matmain);}
 }

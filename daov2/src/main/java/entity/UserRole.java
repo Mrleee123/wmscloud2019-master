@@ -13,7 +13,7 @@ public class UserRole implements Serializable {
 
     private Role role;
 
-    private int companyId;
+    private int companyid;
 
     private static final long serialVersionUID = 1L;
 
@@ -56,17 +56,17 @@ public class UserRole implements Serializable {
     public void setRole(Role role) {
         this.role = role;
     }
+    public int getCompanyId() {
+        return companyid;
+    }
 
+    public void setCompanyId(int companyid) {
+        this.companyid = companyid;
+    }
     @Override
     public String toString(){
         return "UserRole:"+ userCode+"  "+roleCode+"  "+ user.getUserName()+"  "+role.getRoleName();
     }
 
-    public int getCompanyId() {
-        return companyId;
-    }
 
-    public void setCompanyId(int companyId) {
-        this.companyId = companyId;
-    }
 }

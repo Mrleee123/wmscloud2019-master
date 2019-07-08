@@ -23,4 +23,6 @@ public interface RoleMapper {
     int forbiddenRoleById(int id);
 
     int enableRoleById(int id);
+
+    List<Role> selectByMore(Role role);
 }

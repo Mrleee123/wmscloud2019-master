@@ -66,6 +66,16 @@ public class VendorDao {
             DBTools.closeSession();
         }
     }
+
+    public List<Vendor> selectByMore(Vendor vendor) {
+        try {
+            List<Vendor> result = mapper.selectByMore(vendor);
+            System.out.println(result);
+            return result;
+        } finally {
+            DBTools.closeSession();
+        }
+    }
 }
 
 

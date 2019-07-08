@@ -5,6 +5,7 @@
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="user_code" jdbcType="VARCHAR" property="userCode" />
     <result column="role_code" jdbcType="VARCHAR" property="roleCode" />
+    <result column="companyid" jdbcType="INTEGER" property="companyId" />
     <association property="user" javaType="entity.User" autoMapping="true">
       <id column="uid"   property="id" />
       <result column="memo1" jdbcType="VARCHAR" property="memo" />
@@ -26,6 +27,7 @@
     where u.id = #{id,jdbcType=BIGINT}
   </select>
 
+
   <select id="selectByUserCode" parameterType="String" resultMap="BaseResultMap">
     select
        ur.*,r.id as rid ,r.rolename,u.id as uid ,u.user_name
@@ -40,9 +42,9 @@
     where id = #{id,jdbcType=BIGINT}
   </delete>
   <insert id="insert" parameterType="entity.UserRole">
-    insert into t_asrs_user_role (id, user_code, role_code
+    insert into t_asrs_user_role (id, user_code, role_code,companyid
       )
-    values (#{id,jdbcType=BIGINT}, #{userCode,jdbcType=VARCHAR}, #{roleCode,jdbcType=VARCHAR}
+    values (#{id,jdbcType=BIGINT}, #{userCode,jdbcType=VARCHAR}, #{roleCode,jdbcType=VARCHAR},#{companyId,jdbcType=INTEGER}
       )
   </insert>
   <insert id="insertSelective" parameterType="entity.UserRole">
@@ -78,6 +80,9 @@
       </if>
       <if test="roleCode != null">
         role_code = #{roleCode,jdbcType=VARCHAR},
+      </if>
+      <if test="companyId != null">
+        companyid = #{companyId,jdbcType=INTEGER}
       </if>
     </set>
     where id = #{id,jdbcType=BIGINT}

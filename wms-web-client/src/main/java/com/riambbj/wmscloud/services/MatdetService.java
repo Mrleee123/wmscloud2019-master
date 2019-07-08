@@ -29,4 +29,6 @@ public class MatdetService {
     public List<Matdet> selectMatdetList(){
         return dao.list();
     }
+
+    public List<Matdet> selectByMore(Matdet matdet){return dao.selectByMore(matdet);}
 }

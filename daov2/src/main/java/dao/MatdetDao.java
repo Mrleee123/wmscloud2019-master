@@ -71,6 +71,15 @@ public class MatdetDao {
             DBTools.closeSession();
         }
     }
+
+    public List<Matdet> selectByMore(Matdet matdet) {
+        try {
+            List<Matdet> result = mapper.selectByMore(matdet);
+            return result;
+        } finally {
+            DBTools.closeSession();
+        }
+    }
 }
 
 

@@ -42,4 +42,8 @@ public class RoleFunctionService {
         return roleFunctionDao.insertList(list);
     }
 
+    public List<RoleFunction> selectByMore(RoleFunction roleFunction){
+        return roleFunctionDao.selectByMore(roleFunction);
+    }
+
 }

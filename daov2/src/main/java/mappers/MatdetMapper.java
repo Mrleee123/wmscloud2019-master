@@ -18,4 +18,6 @@ public interface MatdetMapper {
     int updateByPrimaryKeySelective(Matdet record);
 
     int updateByPrimaryKey(Matdet record);
+
+    List<Matdet> selectByMore(Matdet matdet);
 }

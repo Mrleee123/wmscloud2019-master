@@ -97,4 +97,16 @@ public class RoleDao {
             DBTools.closeSession();
         }
     }
+
+    public List<Role> selectByMore(Role role)  {
+        try {
+            List<Role> result = mapper.selectByMore(role);
+            System.out.println(result);
+            return result;
+        }
+        finally {
+            DBTools.closeSession();
+            //sqlSession.close();
+        }
+    }
 }

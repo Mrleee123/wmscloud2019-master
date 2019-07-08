@@ -102,4 +102,14 @@ public class RoleFunctionDao {
         }
     }
 
+    public List<RoleFunction> selectByMore(RoleFunction roleFunction){
+        try {
+            List<RoleFunction> list = mapper.selectByMore(roleFunction);
+            System.out.println(list);
+            return list;
+        }finally {
+            DBTools.closeSession();
+        }
+    }
+
 }

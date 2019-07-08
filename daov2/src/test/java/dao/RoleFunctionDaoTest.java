@@ -93,4 +93,13 @@ public class RoleFunctionDaoTest {
 //        }
 //        System.out.println("finish");
     }
+
+    @Test
+    public void selectByMore(){
+        RoleFunction roleFunction = new RoleFunction();
+        roleFunction.setRoleCode("010");
+        roleFunction.setCompanyId(1);
+        dao.selectByMore(roleFunction);
+
+    }
 }

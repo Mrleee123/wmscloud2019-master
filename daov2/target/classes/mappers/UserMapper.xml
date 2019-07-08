@@ -13,10 +13,11 @@
         <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
         <result column="isenabled" jdbcType="INTEGER" property="isenabled" />
         <result column="isdeleted" jdbcType="INTEGER" property="isdeleted" />
+         <result column="companyid" jdbcType="INTEGER" property="companyid" />
     </resultMap>
     <sql id="Base_Column_List">
     id, issa, user_code, user_name , password, demo, create_time , creator, update_time
-    isenabled, isdeleted
+    isenabled, isdeleted,companyid
   </sql>
     <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
         select
@@ -33,7 +34,50 @@
        from t_asrs_sys_user
        where user_code = #{user_code,jdbcType=VARCHAR}
    </select>
+   <select id="selectByMore" resultMap="BaseResultMap" parameterType="entity.User">
+       select * from t_asrs_sys_user
+       <where>
+              1=1
+           <if test="id != null">
+               and id = #{id,jdbcType=BIGINT}
+           </if>
+           <if test="issa != null">
+              and issa = #{issa,jdbcType=INTEGER}
+           </if>
+           <if test="companyid != null">
+               and  #{companyid,jdbcType=INTEGER}
+           </if>
+           <if test="userCode != null">
+               and  user_code = #{userCode,jdbcType=VARCHAR}
+           </if>
+           <if test="userName != null">
+               and  user_name = #{userName,jdbcType=VARCHAR}
+           </if>
+           <if test="password != null">
+               and  password = #{password,jdbcType=VARCHAR}
+           </if>
+           <if test="demo != null">
+               and  demo = #{demo,jdbcType=VARCHAR}
+           </if>
 
+           <if test="creator != null">
+               and creator = #{creator,jdbcType=VARCHAR}
+           </if>
+           <if test="updateTime != null">
+               and update_time = #{updateTime,jdbcType=TIMESTAMP}
+           </if>
+           <if test="isenabled != null">
+               and  isenabled = #{isenabled,jdbcType=INTEGER}
+           </if>
+           <if test="isdeleted != null">
+               and  isdeleted = #{isdeleted,jdbcType=INTEGER}
+           </if>
+           <if test="companyid != null">
+               and companyid = #{companyid,jdbcType=INTEGER}
+           </if>
+       </where>
+   </select>
+    
 
     <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
     delete from t_asrs_sys_user
@@ -42,10 +86,10 @@
     <insert id="insert" parameterType="entity.User">
     insert into t_asrs_sys_user (issa, user_code,
       user_name, password, demo,
-      create_time, creator)
+      create_time, creator,companyid)
     values ( 0, #{userCode,jdbcType=VARCHAR},
       #{userName,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, #{demo,jdbcType=VARCHAR},
-     now(), #{creator,jdbcType=VARCHAR}
+     now(), #{creator,jdbcType=VARCHAR},#{companyid}
       )
   </insert>
     <insert id="insertSelective" parameterType="entity.User">
@@ -53,6 +97,9 @@
         <trim prefix="(" suffix=")" suffixOverrides=",">
             <if test="id != null">
                 id,
+            </if>
+            <if test="companyid != null">
+                companyid,
             </if>
             <if test="issa != null">
                 issa,
@@ -81,6 +128,9 @@
         <trim prefix="values (" suffix=")" suffixOverrides=",">
             <if test="id != null">
                 #{id,jdbcType=BIGINT},
+            </if>
+            <if test="companyid != null">
+                #{companyid,jdbcType=INTEGER},
             </if>
             <if test="issa != null">
                 #{issa,jdbcType=INTEGER},
@@ -138,6 +188,9 @@
             <if test="isdeleted != null">
                 isdeleted = #{isdeleted,jdbcType=INTEGER},
             </if>
+            <if test="companyid != null">
+                companyid = #{companyid,jdbcType=INTEGER},
+            </if>
         </set>
         where id = #{id,jdbcType=BIGINT}
     </update>
@@ -152,7 +205,9 @@
       creator = #{creator,jdbcType=VARCHAR},
       update_time = #{updateTime,jdbcType=TIMESTAMP},
       isenabled = #{isenabled,jdbcType=INTEGER},
-      isdeleted = #{isdeleted,jdbcType=INTEGER}
+       companyid = #{companyid,jdbcType=INTEGER},
+      isdeleted = #{isdeleted,jdbcType=INTEGER},
+      companyid = companyid = #{companyid,jdbcType=INTEGER}
     where id = #{id,jdbcType=BIGINT}
   </update>
 

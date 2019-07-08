@@ -45,7 +45,8 @@ public class UserDaoTest {
         user.setPassword("123456");
         user.setIsdeleted(1);
        // user.setCreator("system");
-        user.setDemo("测试");
+        user.setDemo("测试0708");
+        user.setCompanyId(1);
         UserDao dao =  new UserDao();
         int result =  dao.update(user);
         if (result ==1) {
@@ -94,6 +95,17 @@ public class UserDaoTest {
 
         UserDao dao = new UserDao();
         dao.enableUserById(6);
+        // assertEquals(4, list.size());
+        System.out.println("-------test finish----------");
+    }
+
+    @Test
+    public void selectByMore()  {
+
+        UserDao dao = new UserDao();
+        User user = new User() ;
+        user.setCreator("system");
+        dao.selectByMore(user);
         // assertEquals(4, list.size());
         System.out.println("-------test finish----------");
     }

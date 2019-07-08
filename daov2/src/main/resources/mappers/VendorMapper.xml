@@ -8,9 +8,10 @@
     <result column="isinused" jdbcType="INTEGER" property="isinused" />
     <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
     <result column="creator" jdbcType="VARCHAR" property="creator" />
+    <result column="companyid" jdbcType="INTEGER" property="companyId" />
   </resultMap>
   <sql id="Base_Column_List">
-    id, vendor_name, memo, isinused, create_time, creator
+    id, vendor_name, memo, isinused, create_time, creator,companyid
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
     select 
@@ -21,17 +22,39 @@
   <select id="selectAll" resultType="entity.Vendor">
     select * from t_asrs_sys_vendor
   </select>
+<select id="selectByMore" resultMap="BaseResultMap" parameterType="entity.Vendor">
+  select * from t_asrs_sys_vendor
+ <where>
 
+     1=1
+   <if test="vendorName != null">
+     and vendor_name = #{vendorName,jdbcType=VARCHAR}
+   </if>
+   <if test="memo != null">
+     and memo = #{memo,jdbcType=VARCHAR}
+   </if>
+   <if test="isinused != null">
+     and isinused = #{isinused,jdbcType=INTEGER}
+   </if>
+
+   <if test="creator != null">
+     and  creator = #{creator,jdbcType=VARCHAR}
+   </if>
+   <if test="companyId != null">
+     and companyid = #{companyId,jdbcType=INTEGER}
+   </if>
+ </where>
+</select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
     delete from t_asrs_sys_vendor
     where id = #{id,jdbcType=BIGINT}
   </delete>
   <insert id="insert" parameterType="entity.Vendor">
     insert into t_asrs_sys_vendor (id, vendor_name, memo, 
-      creator
+      creator,companyid
       )
     values (#{id,jdbcType=BIGINT}, #{vendorName,jdbcType=VARCHAR}, #{memo,jdbcType=VARCHAR}, 
-      #{creator,jdbcType=VARCHAR}
+      #{creator,jdbcType=VARCHAR},#{companyId,jdbcType=INTEGER}
       )
   </insert>
   <insert id="insertSelective" parameterType="entity.Vendor">
@@ -88,6 +111,9 @@
 
       <if test="creator != null">
         creator = #{creator,jdbcType=VARCHAR},
+      </if>
+      <if test="companyId != null">
+        companyid = #{companyId,jdbcType=INTEGER}
       </if>
     </set>
     where id = #{id,jdbcType=BIGINT}

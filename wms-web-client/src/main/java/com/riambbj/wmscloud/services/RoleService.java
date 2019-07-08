@@ -42,4 +42,6 @@ public class RoleService {
         return roledao.enableRoleById(id);
     }
 
+    public List<Role> selectByMore(Role role){return roledao.selectByMore(role);}
+
 }

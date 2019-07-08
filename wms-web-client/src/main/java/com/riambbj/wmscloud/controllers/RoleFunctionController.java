@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 
-
 @Controller
 public class RoleFunctionController {
     // @Autto
@@ -43,7 +42,6 @@ public class RoleFunctionController {
     }
 
 
-
     @PostMapping(value = "/roleFunction/addRoleFunction")
     @ResponseBody
     //public String login(@RequestBody String user_code, @RequestBody String password) {
@@ -56,12 +54,12 @@ public class RoleFunctionController {
 //        String demo = user.getDemo();
 //        int isendable = user.getIsenabled();
 //        int isdeleted = user.getIsdeleted();
-       try {
-           us.insertRoleFunctionInfo(role);
-           return "TRUE";
-       }catch (Exception e){
-           return "FALSE";
-       }
+        try {
+            us.insertRoleFunctionInfo(role);
+            return "TRUE";
+        } catch (Exception e) {
+            return "FALSE";
+        }
     }
 
     @PostMapping(value = "/roleFunction/addRoleFunctionList")
@@ -79,7 +77,7 @@ public class RoleFunctionController {
         try {
             us.insertList(role);
             return "TRUE";
-        }catch (Exception e){
+        } catch (Exception e) {
             return "FALSE";
         }
     }
@@ -100,7 +98,7 @@ public class RoleFunctionController {
             System.out.println(list);
             us.deleteList(list);
             return "TRUE";
-        }catch (Exception e){
+        } catch (Exception e) {
             return "FALSE";
         }
     }
@@ -128,7 +126,6 @@ public class RoleFunctionController {
     }
 
 
-
     @RequestMapping(value = "/roleFunction/deleteRoleFunction", method = RequestMethod.GET)
     @ResponseBody
     public String deleteFunction(@RequestParam(value = "id") int id) {
@@ -138,6 +135,26 @@ public class RoleFunctionController {
             return "TRUE";
         } catch (Exception e) {
             return "FALSE";
+        }
+    }
+
+    @PostMapping(value = "/roleFunction/selectByMore")
+    @ResponseBody
+    //public String login(@RequestBody String user_code, @RequestBody String password) {
+    public List<RoleFunction> selectByMore(@RequestBody RoleFunction roleFunction) {
+//        String user_code = user.getUserCode();
+//        String password = user.getPassword();
+//        long id = user.getId();
+//        int issa = user.getIssa();
+//        String user_name = user.getUserName();
+//        String demo = user.getDemo();
+//        int isendable = user.getIsenabled();
+//        int isdeleted = user.getIsdeleted();
+        try {
+            List<RoleFunction> result = us.selectByMore(roleFunction);
+            return result;
+        } catch (Exception e) {
+            return null;
         }
     }
 

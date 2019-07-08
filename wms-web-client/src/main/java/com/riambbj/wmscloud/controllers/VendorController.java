@@ -68,4 +68,16 @@ public class VendorController {
             return null;
         }
     }
+
+    @PostMapping(value = "/vendor/selectByMore")
+    @ResponseBody
+    public List<Vendor> selectByMore(@RequestBody Vendor vendor) {
+        try {
+           List<Vendor> list = us.selectByMore(vendor);
+            return list;
+        } catch (Exception e) {
+            System.out.println(e.toString());
+            return null;
+        }
+    }
 }

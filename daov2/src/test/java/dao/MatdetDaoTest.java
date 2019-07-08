@@ -40,6 +40,7 @@ public class MatdetDaoTest {
         matdet.setId(2l);
         matdet.setUpdator("user1");
         matdet.setMinstore("11111");
+        matdet.setCompanyId(1);
         int result =dao.update(matdet);
         System.out.println(result);
     }
@@ -52,5 +53,15 @@ public class MatdetDaoTest {
     @Test
     public void list() {
         dao.list();
+    }
+
+    @Test
+    public void selectByMore() {
+        Matdet matdet = new Matdet();
+        matdet.setCreator("System");
+        //matdet.setMinstore("11111");
+        matdet.setCompanyId(1);
+        List<Matdet> result =dao.selectByMore(matdet);
+        System.out.println(result);
     }
 }

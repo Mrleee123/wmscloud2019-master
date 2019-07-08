@@ -6,9 +6,10 @@
     <result column="RoleCode" jdbcType="VARCHAR" property="RoleCode" />
     <result column="FunctionName" jdbcType="VARCHAR" property="FunctionName" />
     <result column="updateTime" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="companyid" jdbcType="INTEGER" property="companyid" />
   </resultMap>
   <sql id="Base_Column_List">
-    id, RoleCode, FunctionName, updateTime
+    id, RoleCode, FunctionName, updateTime,companyid
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
@@ -19,6 +20,25 @@
   <select id="selectAll" resultType="entity.RoleFunction">
         select * from t_asrs_role_function;
    </select>
+  <select id="selectByMore" resultMap="BaseResultMap" parameterType="entity.RoleFunction">
+    select * from t_asrs_role_function
+    <where>
+      1=1
+      <if test="RoleCode != null">
+       and RoleCode = #{RoleCode,jdbcType=VARCHAR}
+      </if>
+      <if test="FunctionName != null">
+        and FunctionName = #{FunctionName,jdbcType=VARCHAR}
+      </if>
+      <if test="updateTime != null">
+        and updateTime = #{updateTime,jdbcType=TIMESTAMP}
+      </if>
+      <if test="companyid !=null">
+        and companyid = #{companyid,jdbcType=INTEGER}
+      </if>
+    </where>
+  </select>
+
 
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from t_asrs_role_function
@@ -34,18 +54,18 @@
   </delete>
 
   <insert id="insert" parameterType="entity.RoleFunction">
-    insert into t_asrs_role_function (id, RoleCode, FunctionName
+    insert into t_asrs_role_function (id, RoleCode, FunctionName,companyid
       )
-    values (#{id,jdbcType=INTEGER}, #{RoleCode,jdbcType=VARCHAR},#{FunctionName,jdbcType=VARCHAR}
+    values (#{id,jdbcType=INTEGER}, #{RoleCode,jdbcType=VARCHAR},#{FunctionName,jdbcType=VARCHAR}, #{companyid,jdbcType=INTEGER}
       )
   </insert>
 
   <insert id="insertList" parameterType="entity.RoleFunction">
-    insert into t_asrs_role_function (id, RoleCode, FunctionName
+    insert into t_asrs_role_function (id, RoleCode, FunctionName,companyid
       )
     values
     <foreach collection="list" item="RoleFunction" index="index" separator=",">
-    (#{RoleFunction.id,jdbcType=INTEGER}, #{RoleFunction.RoleCode,jdbcType=VARCHAR},#{RoleFunction.FunctionName,jdbcType=VARCHAR}
+    (#{RoleFunction.id,jdbcType=INTEGER}, #{RoleFunction.RoleCode,jdbcType=VARCHAR},#{RoleFunction.FunctionName,jdbcType=VARCHAR}, #{companyid,jdbcType=INTEGER}
       )
     </foreach>
   </insert>
@@ -92,6 +112,9 @@
       <if test="updateTime != null">
         updateTime = #{updateTime,jdbcType=TIMESTAMP},
       </if>
+      <if test="companyid !=null">
+        companyid = #{companyid,jdbcType=INTEGER}
+      </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
@@ -100,6 +123,7 @@
     set RoleCode = #{RoleCode,jdbcType=VARCHAR},
       FunctionName = #{FunctionName,jdbcType=VARCHAR},
       updateTime = #{memo,jdbcType=TIMESTAMP},
+      companyid = #{companyid,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>
 

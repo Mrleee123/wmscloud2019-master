@@ -18,4 +18,6 @@ public interface MatmainMapper {
     int updateByPrimaryKey(Matmain record);
 
     List<Matmain> selectAll();
+
+    List<Matmain> selectByMore(Matmain matmain);
 }

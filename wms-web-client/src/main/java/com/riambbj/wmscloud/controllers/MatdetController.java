@@ -68,4 +68,16 @@ public class MatdetController {
             return null;
         }
     }
+
+    @PostMapping(value = "/matdet/selectByMore")
+    @ResponseBody
+    public List<Matdet> selectByMore(@RequestBody Matdet matdet) {
+        try {
+           List<Matdet> result = us.selectByMore(matdet);
+            return result;
+        } catch (Exception e) {
+            System.out.println(e.toString());
+            return null;
+        }
+    }
 }

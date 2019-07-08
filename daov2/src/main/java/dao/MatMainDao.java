@@ -67,4 +67,14 @@ public class MatMainDao {
             DBTools.closeSession();
         }
     }
+
+    public List<Matmain> selectByMore(Matmain matmain){
+        try{
+            List<Matmain> result = mapper.selectByMore(matmain);
+            System.out.println(result);
+            return result;
+        }finally {
+            DBTools.closeSession();
+        }
+    }
 }

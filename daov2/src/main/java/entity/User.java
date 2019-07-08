@@ -27,7 +27,7 @@ public class User implements Serializable {
 
     private Integer isdeleted;
 
-    private Integer companyId;
+    private Integer companyid;
 
     private static final long serialVersionUID = 1L;
 
@@ -118,7 +118,13 @@ public class User implements Serializable {
     public void setIsdeleted(Integer isdeleted) {
         this.isdeleted = isdeleted;
     }
+    public Integer getCompanyId() {
+        return companyid;
+    }
 
+    public void setCompanyId(Integer companyid) {
+        this.companyid = companyid;
+    }
     @Override
     public String toString() {
         return "User{" +
@@ -133,11 +139,5 @@ public class User implements Serializable {
                 '}';
     }
 
-    public Integer getCompanyId() {
-        return companyId;
-    }
 
-    public void setCompanyId(Integer companyId) {
-        this.companyId = companyId;
-    }
 }

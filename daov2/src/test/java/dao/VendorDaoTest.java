@@ -26,8 +26,9 @@ public class VendorDaoTest {
     public void update() {
         Vendor vendor = new Vendor();
         vendor.setId(5l);
-        vendor.setMemo("测试1");
+        vendor.setMemo("测试2");
         vendor.setCreator("system");
+        vendor.setCompanyId(1);
         vendorDao.update(vendor);
     }
 
@@ -39,5 +40,14 @@ public class VendorDaoTest {
     @Test
     public void list() {
         vendorDao.list();
+    }
+
+    @Test
+    public void selectByMore() {
+        Vendor vendor = new Vendor();
+       vendor.setVendorName("1122");
+       // vendor.setMemo("测试1");
+        //vendor.setCreator("system");
+        vendorDao.selectByMore(vendor);
     }
 }

@@ -71,6 +71,16 @@ public class StoredefDao {
         }
     }
 
+    public List<Storedef> selectByMore(Storedef storedef) {
+        try {
+
+            List<Storedef> result = mapper.selectByMore(storedef);
+            System.out.println(result);
+            return result;
+        } finally {
+            DBTools.closeSession();
+        }
+    }
 }
 
 

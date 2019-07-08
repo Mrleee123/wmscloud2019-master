@@ -18,4 +18,6 @@ public interface StoredefMapper {
     int updateByPrimaryKey(Storedef record);
 
     List<Storedef> selectAll();
+
+    List<Storedef> selectByMore(Storedef storedef);
 }

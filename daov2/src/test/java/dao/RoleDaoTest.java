@@ -39,6 +39,7 @@ public class RoleDaoTest {
         Role role = new Role();
         role.setRoleName("库官员11");
         role.setId(1);
+        role.setCompanyId(1);
         int result =dao.update(role);
         if(result == 1){
             System.out.println("成功");
@@ -74,5 +75,16 @@ public class RoleDaoTest {
             System.out.println("成功");
         }
         System.out.println("finish");
+    }
+
+    @Test
+    public void selectByMore() {
+        Role role = new Role();
+        role.setIsenabled(1);
+        role.setCompanyId(1);
+        List<Role> result =dao.selectByMore(role);
+
+            System.out.println("成功");
+
     }
 }

@@ -22,4 +22,6 @@ public interface RoleFunctionMapper {
     int insertList(List<RoleFunction> record);
 
     int deleteList(List list);
+
+    List<RoleFunction> selectByMore(RoleFunction roleFunction);
 }

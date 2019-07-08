@@ -126,6 +126,19 @@ public class RoleController {
             return "FALSE";
         }
     }
+
+    @PostMapping(value = "/role/selectByMore")
+    @ResponseBody
+    //public String login(@RequestBody String user_code, @RequestBody String password) {
+    public List<Role> selectByMore(@RequestBody Role role) {
+
+        try {
+            List<Role> result =us.selectByMore(role);
+            return result;
+        }catch (Exception e){
+            return null;
+        }
+    }
 }
 
 

@@ -68,5 +68,17 @@ public class StoredefController {
             return null;
         }
     }
+
+    @PostMapping(value = "/storedef/selectByMore")
+    @ResponseBody
+    public List<Storedef> selectByMore(@RequestBody Storedef storedef) {
+        try {
+           List<Storedef> result = us.selectByMore(storedef);
+            return result;
+        } catch (Exception e) {
+            System.out.println(e.toString());
+            return null;
+        }
+    }
 }
 

@@ -35,4 +35,6 @@ public interface UserMapper {
     public int enableUserById(long id);
 
     User selectByUserCode(String userCode);
+
+    List<User> selectByMore(User user);
 }

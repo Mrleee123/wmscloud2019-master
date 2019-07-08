@@ -28,4 +28,6 @@ public class StoredefService {
     public List<Storedef> selectStoredefList(){
         return dao.list();
     }
+
+    public List<Storedef> selectByMore(Storedef storedef){return  dao.selectByMore(storedef);}
 }
