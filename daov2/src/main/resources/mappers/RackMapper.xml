@@ -22,6 +22,7 @@
     <result column="memo" jdbcType="VARCHAR" property="memo" />
     <result column="issys" jdbcType="INTEGER" property="issys" />
     <result column="worktype" jdbcType="VARCHAR" property="worktype" />
+    <result column="companyid" jdbcType="INTEGER" property="companyId" />
     <association property="storedef" javaType="entity.Storedef" autoMapping="true">
            <id column="sid"   property="id" />
          <result column="memo2" jdbcType="VARCHAR" property="memo" />
@@ -29,15 +30,81 @@
   </resultMap>
   <sql id="Base_Column_List">
     id, storedef_id, cid, cellcode, palletid, aisle, layer, rank, roww, status, lasttime, 
-    plattype, cellclass, spalletid, lpalletid, cpalletid, xpalletid, memo, issys, worktype
+    plattype, cellclass, spalletid, lpalletid, cpalletid, xpalletid, memo, issys, worktype,companyid
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
     select 
-    <include refid="Base_Column_List" />
-    from t_asrs_rack
-    where id = #{id,jdbcType=BIGINT}
+     r.*,s.*
+    from t_asrs_rack r left join t_asrs_sys_storedef s on  r.storedef_id = s.id
+    where r.id = #{id,jdbcType=BIGINT}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+<select id="selectByMore" resultMap="BaseResultMap" parameterType="entity.Storedef">
+   select
+     r.*,s.*
+    from t_asrs_rack r left join t_asrs_sys_storedef s on  r.storedef_id = s.id
+    <where>
+       1=1
+      <if test="storedefId != null">
+       and r.storedef_id = #{storedefId,jdbcType=INTEGER}
+      </if>
+      <if test="cid != null">
+        and r.cid = #{cid,jdbcType=VARCHAR}
+      </if>
+      <if test="cellcode != null">
+        and r.cellcode = #{cellcode,jdbcType=VARCHAR}
+      </if>
+      <if test="palletid != null">
+        and r.palletid = #{palletid,jdbcType=VARCHAR}
+      </if>
+      <if test="aisle != null">
+        and r.aisle = #{aisle,jdbcType=INTEGER}
+      </if>
+      <if test="layer != null">
+        and r.layer = #{layer,jdbcType=INTEGER}
+      </if>
+      <if test="rank != null">
+        and r.rank = #{rank,jdbcType=INTEGER}
+      </if>
+      <if test="roww != null">
+        and r.roww = #{roww,jdbcType=INTEGER}
+      </if>
+      <if test="status != null">
+        and r.status = #{status,jdbcType=VARCHAR}
+      </if>
+
+      <if test="plattype != null">
+        and r.plattype = #{plattype,jdbcType=VARCHAR}
+      </if>
+      <if test="cellclass != null">
+        and r.cellclass = #{cellclass,jdbcType=VARCHAR}
+      </if>
+      <if test="spalletid != null">
+        and r.spalletid = #{spalletid,jdbcType=VARCHAR}
+      </if>
+      <if test="lpalletid != null">
+        and r.lpalletid = #{lpalletid,jdbcType=VARCHAR}
+      </if>
+      <if test="cpalletid != null">
+        and  r.cpalletid = #{cpalletid,jdbcType=VARCHAR}
+      </if>
+      <if test="xpalletid != null">
+        and r.xpalletid = #{xpalletid,jdbcType=VARCHAR}
+      </if>
+      <if test="memo != null">
+        and   r.memo = #{memo,jdbcType=VARCHAR}
+      </if>
+      <if test="issys != null">
+        and r.issys = #{issys,jdbcType=INTEGER}
+      </if>
+      <if test="worktype != null">
+        and r.worktype = #{worktype,jdbcType=VARCHAR}
+      </if>
+      <if test="companyId != null">
+        and r.companyid = #{companyId,jdbcType=INTEGER}
+      </if>
+    </where>
+</select>
+   <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
     delete from t_asrs_rack
     where id = #{id,jdbcType=BIGINT}
   </delete>
@@ -48,14 +115,14 @@
       status, lasttime, plattype, 
       cellclass, spalletid, lpalletid, 
       cpalletid, xpalletid, memo, 
-      issys, worktype)
+      issys, worktype,companyid)
     values (#{id,jdbcType=BIGINT}, #{storedefId,jdbcType=INTEGER}, #{cid,jdbcType=VARCHAR}, 
       #{cellcode,jdbcType=VARCHAR}, #{palletid,jdbcType=VARCHAR}, #{aisle,jdbcType=INTEGER}, 
       #{layer,jdbcType=INTEGER}, #{rank,jdbcType=INTEGER}, #{roww,jdbcType=INTEGER}, 
-      #{status,jdbcType=VARCHAR}, #{lasttime,jdbcType=TIMESTAMP}, #{plattype,jdbcType=VARCHAR}, 
+      #{status,jdbcType=VARCHAR},now(), #{plattype,jdbcType=VARCHAR},
       #{cellclass,jdbcType=VARCHAR}, #{spalletid,jdbcType=VARCHAR}, #{lpalletid,jdbcType=VARCHAR}, 
       #{cpalletid,jdbcType=VARCHAR}, #{xpalletid,jdbcType=VARCHAR}, #{memo,jdbcType=VARCHAR}, 
-      #{issys,jdbcType=INTEGER}, #{worktype,jdbcType=VARCHAR})
+      #{issys,jdbcType=INTEGER}, #{worktype,jdbcType=VARCHAR},#{companyId,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" parameterType="entity.Rack">
     insert into t_asrs_rack
@@ -90,9 +157,7 @@
       <if test="status != null">
         status,
       </if>
-      <if test="lasttime != null">
         lasttime,
-      </if>
       <if test="plattype != null">
         plattype,
       </if>
@@ -152,9 +217,7 @@
       <if test="status != null">
         #{status,jdbcType=VARCHAR},
       </if>
-      <if test="lasttime != null">
-        #{lasttime,jdbcType=TIMESTAMP},
-      </if>
+      now(),
       <if test="plattype != null">
         #{plattype,jdbcType=VARCHAR},
       </if>
@@ -214,9 +277,9 @@
       <if test="status != null">
         status = #{status,jdbcType=VARCHAR},
       </if>
-      <if test="lasttime != null">
-        lasttime = #{lasttime,jdbcType=TIMESTAMP},
-      </if>
+
+        lasttime = now(),
+
       <if test="plattype != null">
         plattype = #{plattype,jdbcType=VARCHAR},
       </if>
@@ -243,6 +306,9 @@
       </if>
       <if test="worktype != null">
         worktype = #{worktype,jdbcType=VARCHAR},
+      </if>
+      <if test="companyId != null">
+        companyid = #{companyId,jdbcType=INTEGER}
       </if>
     </set>
     where id = #{id,jdbcType=BIGINT}

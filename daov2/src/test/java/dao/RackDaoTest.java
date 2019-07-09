@@ -30,11 +30,23 @@ public class RackDaoTest {
     public void update() {
         Rack rack = new Rack();
         rack.setStatus("A");
+        rack.setId(1l);
+        dao.update(rack);
 
 
     }
 
     @Test
     public void get() {
+        dao.get(1l);
+    }
+
+    @Test
+    public void selectByMore(){
+        Rack rack = new Rack();
+        rack.setPalletid("10086");
+        rack.setStoredefId(1);
+        dao.selectByMore(rack);
+        System.out.println("Finish____");
     }
 }

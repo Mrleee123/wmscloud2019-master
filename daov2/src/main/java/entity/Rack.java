@@ -218,10 +218,10 @@ public class Rack implements Serializable {
         this.storedef = storedef;
     }
 
-    @Override
-    public String toString(){
-        return "Rack:"+cid +"  " + palletid +"  "+ storedef.getStoredefName();
-    }
+//    @Override
+//    public String toString(){
+//        return "Rack:"+cid +"  " + palletid +"  "+ storedef.getStoredefName();
+//    }
 
     public Integer getCompanyId() {
         return companyId;

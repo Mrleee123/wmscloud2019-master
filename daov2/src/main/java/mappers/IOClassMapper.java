@@ -2,6 +2,8 @@ package mappers;
 
 import entity.IOClass;
 
+import java.util.List;
+
 public interface IOClassMapper {
     int deleteByPrimaryKey(Integer id);
 
@@ -14,4 +16,6 @@ public interface IOClassMapper {
     int updateByPrimaryKeySelective(IOClass record);
 
     int updateByPrimaryKey(IOClass record);
+
+    List<IOClass> selectByMore(IOClass ioClass);
 }

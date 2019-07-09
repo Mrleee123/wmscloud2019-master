@@ -105,4 +105,10 @@ public class IOClass implements Serializable {
     public void setCompanyId(Integer companyId) {
         this.companyId = companyId;
     }
+
+    @Override
+    public String toString(){
+        return "IOCLASS ;"+creator +"  "+ ioclassCode+"  "+ioclassName
+        +"  "+tranType+"  ";
+    }
 }

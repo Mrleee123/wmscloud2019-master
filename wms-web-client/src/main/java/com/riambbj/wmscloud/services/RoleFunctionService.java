@@ -5,16 +5,16 @@ import dao.RoleFunctionDao;
 import entity.RoleFunction;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import java.util.List;
+import java.util.*;
 
 /*
   服务器，事务控制
 */
 public class RoleFunctionService {
-    @Autowired
+
     RoleFunctionDao roleFunctionDao = new RoleFunctionDao();
 
-    public List<RoleFunction> getRoleFunctionList() throws Exception {
+    public List<RoleFunction> getRoleFunctionList()  {
         return roleFunctionDao.list();
     }
 

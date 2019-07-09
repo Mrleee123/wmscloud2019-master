@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mappers.BillDetailMapper">
+  <resultMap id="BaseResultMap" type="entity.BillDetail">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="billno" jdbcType="VARCHAR" property="billno" />
+    <result column="bill_head_id" jdbcType="BIGINT" property="bill_head_id" />
+    <result column="m_id" jdbcType="BIGINT" property="m_id" />
+    <result column="Mstatus" jdbcType="INTEGER" property="Mstatus" />
+    <result column="weight" jdbcType="DECIMAL" property="weight" />
+    <result column="num" jdbcType="DECIMAL" property="num" />
+    <result column="memo" jdbcType="VARCHAR" property="memo" />
+    <result column="batchno" jdbcType="VARCHAR" property="batchno" />
+    <result column="palletid" jdbcType="VARCHAR" property="palletid" />
+    <result column="finishnum" jdbcType="DECIMAL" property="finishnum" />
+    <result column="finishweight" jdbcType="DECIMAL" property="finishweight" />
+    <result column="createtime" jdbcType="TIMESTAMP" property="createtime" />
+    <result column="creator" jdbcType="VARCHAR" property="creator" />
+    <result column="updatetime" jdbcType="TIMESTAMP" property="updatetime" />
+    <result column="updator" jdbcType="VARCHAR" property="updator" />
+    <result column="companyid" jdbcType="INTEGER" property="companyid" />
+    <association property="billHead" javaType="entity.BillHead" autoMapping="true">
+      <id column="bid"   property="id" />
+      <result column="memo1" jdbcType="VARCHAR" property="memo" />
+      <result column="creator1" jdbcType="VARCHAR" property="creator" />
+    </association>
+    <association property="matdet" javaType="entity.Matdet" autoMapping="true">
+      <id column="mid"   property="id" />
+      <result column="memo2" jdbcType="VARCHAR" property="memo" />
+      <result column="creator2" jdbcType="VARCHAR" property="creator" />
+    </association>
+  </resultMap>
+
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+
+    from t_asrs_bill_detail bd
+    left join t_asrs_bill_head h on bd.bill_head_id = h.id
+    left join t_asrs_sys_matdet m on bd.m_id =m.id
+    where bd.id = #{id,jdbcType=BIGINT}
+  </select>
+  <select id="selectAll" resultType="entity.BillDetail">
+        select * from t_asrs_bill_detail;
+   </select>
+<select id="selectByMore" resultMap="BaseResultMap">
+   select
+
+    from t_asrs_bill_detail bd
+    left join t_asrs_bill_head h on bd.bill_head_id = h.id
+    left join t_asrs_sys_matdet m on bd.m_id =m.id
+    <where>
+      <if test="billno != null">
+        and bd.billno = #{billno,jdbcType=VARCHAR},
+      </if>
+      <if test="bill_head_id != null">
+        and bd.bill_head_id= #{bill_head_id,jdbcType=BIGINT},
+      </if>
+      <if test="m_id != null">
+        and bd.m_id = #{m_id,jdbcType=BIGINT},
+      </if>
+      <if test="Mstatus != null">
+        and bd.Mstatus= #{Mstatus,jdbcType=VARCHAR},
+      </if>
+      <if test="weight != null">
+        and bd.weight= #{weight,jdbcType=DECIMAL},
+
+      </if>
+      <if test="num != null">
+        and bd.num= #{num,jdbcType=DECIMAL},
+      </if>
+      <if test="batchno != null">
+        and bd.batchno= #{batchno,jdbcType=VARCHAR},
+      </if>
+
+
+      <if test="createtime != null">
+        and bd.createtime = #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="creator != null">
+        and bd.creator = #{creator,jdbcType=VARCHAR},
+      </if>
+
+
+
+      <if test="updator != null">
+        and bd.updator = #{updator,jdbcType=VARCHAR},
+      </if>
+      <if test="palletid != null">
+        and bd.palletid=#{palletid,jdbcType=VARCHAR},
+      </if>
+      <if test="finishnum != null">
+        and bd.finishnum= #{finishnum,jdbcType=DECIMAL},
+      </if>
+      <if test="finishweight != null">
+        and bd.finishweight= #{finishweight,jdbcType=DECIMAL},
+
+      </if>
+      <if test="detail_status != null">
+        and bd.detail_status=#{detail_status,jdbcType=VARCHAR},
+
+      </if>
+      <if test="memo != null">
+        and bd.memo= #{memo,jdbcType=VARCHAR},
+
+      </if>
+      <if test="companyid != null">
+        and bd.companyid = #{companyid,jdbcType=INTEGER}
+      </if>
+    </where>
+</select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from t_asrs_bill_detail
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="entity.BillDetail">
+    insert into t_asrs_bill_detail (id,
+bill_head_id ,
+billno,
+m_id,
+Mstatus,
+weight,
+num,
+batchno,
+palletid,
+finishnum,
+finishweight,
+detail_status,
+memo,
+creator,
+createtime,
+updator,
+updatetime,
+companyid
+      )
+    values (#{id,jdbcType=BIGINT}, #{bill_head_id,jdbcType=BIGINT}, #{billno,jdbcType=VARCHAR},
+      #{m_id,jdbcType=BIGINT}, #{Mstatus,jdbcType=VARCHAR}, #{weight,jdbcType=DECIMAL},
+      #{num,jdbcType=DECIMAL}, #{batchno,jdbcType=VARCHAR},
+      #{palletid,jdbcType=VARCHAR}, #{finishnum,jdbcType=DECIMAL},#{finishweight,jdbcType=DECIMAL},
+      #{detail_status,jdbcType=VARCHAR},#{memo,jdbcType=VARCHAR}, #{creator,jdbcType=VARCHAR},now(),
+      #{updator,jdbcType=VARCHAR},#{updatetime,jdbcType=TIMESTAMP},#{companyid,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="entity.BillDetail">
+    insert into t_asrs_bill_detail
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="billno != null">
+        billno,
+      </if>
+      <if test="storedefId != null">
+        storedef_id,
+      </if>
+      <if test="ioclassId != null">
+        ioclass_id,
+      </if>
+      <if test="vendorId != null">
+        vendor_id,
+      </if>
+      <if test="customerId != null">
+        customer_id,
+      </if>
+      <if test="deptId != null">
+        dept_id,
+      </if>
+      <if test="memo != null">
+        memo,
+      </if>
+    
+
+      <if test="createtime != null">
+        create_time,
+      </if>
+      <if test="creator != null">
+        creator,
+      </if>
+      <if test="updatetime != null">
+        update_time,
+      </if>
+      <if test="updator != null">
+        updator,
+      </if>
+      <if test="gateno != null">
+        gateno,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="billno != null">
+        #{billno,jdbcType=VARCHAR},
+      </if>
+      <if test="storedefId != null">
+        #{storedefId,jdbcType=INTEGER},
+      </if>
+      <if test="ioclassId != null">
+        #{ioclassId,jdbcType=INTEGER},
+      </if>
+      <if test="vendorId != null">
+        #{vendorId,jdbcType=INTEGER},
+      </if>
+      <if test="customerId != null">
+        #{customerId,jdbcType=INTEGER},
+      </if>
+      <if test="deptId != null">
+        #{deptId,jdbcType=INTEGER},
+      </if>
+      <if test="memo != null">
+        #{memo,jdbcType=VARCHAR},
+      </if>
+   
+
+      <if test="createtime != null">
+        #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="creator != null">
+        #{creator,jdbcType=VARCHAR},
+      </if>
+      <if test="updatetime != null">
+        #{updatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updator != null">
+        #{updator,jdbcType=VARCHAR},
+      </if>
+      <if test="gateno != null">
+        #{gateno,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="entity.BillDetail">
+    update t_asrs_bill_detail
+    <set>
+      <if test="billno != null">
+        billno = #{billno,jdbcType=VARCHAR},
+      </if>
+      <if test="bill_head_id != null">
+        bill_head_id= #{bill_head_id,jdbcType=BIGINT},
+      </if>
+      <if test="m_id != null">
+        m_id = #{m_id,jdbcType=BIGINT},
+      </if>
+      <if test="Mstatus != null">
+        Mstatus= #{Mstatus,jdbcType=VARCHAR},
+      </if>
+      <if test="weight != null">
+        weight= #{weight,jdbcType=DECIMAL},
+
+      </if>
+      <if test="num != null">
+        num= #{num,jdbcType=DECIMAL},
+      </if>
+      <if test="batchno != null">
+        batchno= #{batchno,jdbcType=VARCHAR},
+      </if>
+
+      <if test="createtime != null">
+        createtime = #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="creator != null">
+        creator = #{creator,jdbcType=VARCHAR},
+      </if>
+
+        updatetime = now(),
+
+      <if test="updator != null">
+        updator = #{updator,jdbcType=VARCHAR},
+      </if>
+      <if test="palletid != null">
+        palletid=#{palletid,jdbcType=VARCHAR},
+      </if>
+      <if test="finishnum != null">
+        finishnum= #{finishnum,jdbcType=DECIMAL},
+      </if>
+      <if test="finishweight != null">
+        finishweight= #{finishweight,jdbcType=DECIMAL},
+
+      </if>
+      <if test="detail_status != null">
+        detail_status=#{detail_status,jdbcType=VARCHAR},
+
+      </if>
+      <if test="memo != null">
+        memo= #{memo,jdbcType=VARCHAR},
+
+      </if>
+      <if test="companyid != null">
+        companyid = #{companyid,jdbcType=INTEGER}
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="entity.BillDetail">
+    update t_asrs_bill_detail
+    set billno = #{billno,jdbcType=VARCHAR},
+      storedef_id = #{storedefId,jdbcType=INTEGER},
+      ioclass_id = #{ioclassId,jdbcType=INTEGER},
+      vendor_id = #{vendorId,jdbcType=INTEGER},
+      customer_id = #{customerId,jdbcType=INTEGER},
+      dept_id = #{deptId,jdbcType=INTEGER},
+      memo = #{memo,jdbcType=VARCHAR},
+
+
+      createtime = #{createtime,jdbcType=TIMESTAMP},
+      creator = #{creator,jdbcType=VARCHAR},
+      update_time = #{updatetime,jdbcType=TIMESTAMP},
+      updator = #{updator,jdbcType=VARCHAR},
+      gateno = #{gateno,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

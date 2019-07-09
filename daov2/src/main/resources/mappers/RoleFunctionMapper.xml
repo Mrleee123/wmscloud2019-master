@@ -109,9 +109,9 @@
       </if>
 
 
-      <if test="updateTime != null">
-        updateTime = #{updateTime,jdbcType=TIMESTAMP},
-      </if>
+
+        updateTime = now(),
+
       <if test="companyid !=null">
         companyid = #{companyid,jdbcType=INTEGER}
       </if>

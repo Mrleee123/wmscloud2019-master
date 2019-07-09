@@ -11,16 +11,49 @@
     <result column="creator" jdbcType="VARCHAR" property="creator" />
     <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
     <result column="updator" jdbcType="VARCHAR" property="updator" />
+    <result column="companyid" jdbcType="INTEGER" property="companyId" />
   </resultMap>
   <sql id="Base_Column_List">
     id, ioclass_code, ioclass_name, tran_type, memo, create_time, creator, update_time, 
-    updator
+    updator,companyid
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
     from t_asrs_sys_ioclass
     where id = #{id,jdbcType=INTEGER}
+  </select>
+  <select id="selectByMore" resultMap="BaseResultMap" parameterType="entity.IOClass">
+    select * from t_asrs_sys_ioclass
+    <where>
+      <if test="ioclassCode != null">
+       and ioclass_code = #{ioclassCode,jdbcType=VARCHAR}
+      </if>
+      <if test="ioclassName != null">
+        and ioclass_name = #{ioclassName,jdbcType=VARCHAR}
+      </if>
+      <if test="tranType != null">
+        and tran_type = #{tranType,jdbcType=VARCHAR}
+      </if>
+      <if test="memo != null">
+        and memo = #{memo,jdbcType=VARCHAR}
+      </if>
+      <if test="createTime != null">
+        and create_time = #{createTime,jdbcType=TIMESTAMP}
+      </if>
+      <if test="creator != null">
+        and creator = #{creator,jdbcType=VARCHAR}
+      </if>
+      <if test="updateTime != null">
+        and update_time = #{updateTime,jdbcType=TIMESTAMP}
+      </if>
+      <if test="updator != null">
+        and updator = #{updator,jdbcType=VARCHAR}
+      </if>
+      <if test="companyId != null">
+        and companyid = #{companyId,jdbcType=INTEGER}
+      </if>
+    </where>
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from t_asrs_sys_ioclass
@@ -29,11 +62,11 @@
   <insert id="insert" parameterType="entity.IOClass">
     insert into t_asrs_sys_ioclass (id, ioclass_code, ioclass_name, 
       tran_type, memo, create_time, 
-      creator, update_time, updator
+      creator, update_time, updator,companyid
       )
     values (#{id,jdbcType=INTEGER}, #{ioclassCode,jdbcType=VARCHAR}, #{ioclassName,jdbcType=VARCHAR}, 
-      #{tranType,jdbcType=VARCHAR}, #{memo,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
-      #{creator,jdbcType=VARCHAR}, #{updateTime,jdbcType=TIMESTAMP}, #{updator,jdbcType=VARCHAR}
+      #{tranType,jdbcType=VARCHAR}, #{memo,jdbcType=VARCHAR},now(),
+      #{creator,jdbcType=VARCHAR}, #{updateTime,jdbcType=TIMESTAMP}, #{updator,jdbcType=VARCHAR},#{companyId,jdbcType=INTEGER}
       )
   </insert>
   <insert id="insertSelective" parameterType="entity.IOClass">
@@ -118,11 +151,14 @@
       <if test="creator != null">
         creator = #{creator,jdbcType=VARCHAR},
       </if>
-      <if test="updateTime != null">
-        update_time = #{updateTime,jdbcType=TIMESTAMP},
-      </if>
+
+        update_time = now(),
+
       <if test="updator != null">
         updator = #{updator,jdbcType=VARCHAR},
+      </if>
+      <if test="companyId != null">
+        companyid = #{companyId,jdbcType=INTEGER}
       </if>
     </set>
     where id = #{id,jdbcType=INTEGER}

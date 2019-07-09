@@ -18,6 +18,30 @@
     <result column="bill_head_id" jdbcType="INTEGER" property="billHeadId" />
     <result column="bill_detail_id" jdbcType="INTEGER" property="billDetailId" />
     <result column="memo" jdbcType="VARCHAR" property="memo" />
+    <association property="storedef" javaType="entity.Storedef" autoMapping="true">
+      <id column="sid"   property="id" />
+      <result column="memo1" jdbcType="VARCHAR" property="memo" />
+    </association>
+    <association property="rack" javaType="entity.Rack" autoMapping="true">
+      <id column="rid"   property="id" />
+      <result column="memo2" jdbcType="VARCHAR" property="memo" />
+    </association>
+    <association property="matdet" javaType="entity.Matdet" autoMapping="true">
+      <id column="mid"   property="id" />
+      <result column="memo3" jdbcType="VARCHAR" property="memo" />
+    </association>
+    <association property="vendor" javaType="entity.Vendor" autoMapping="true">
+      <id column="vid"   property="id" />
+      <result column="memo4" jdbcType="VARCHAR" property="memo" />
+    </association>
+    <association property="billhead" javaType="entity.BillHead" autoMapping="true">
+      <id column="hid"   property="id" />
+      <result column="memo5" jdbcType="VARCHAR" property="memo" />
+    </association>
+    <association property="billdetail" javaType="entity.BillDetail" autoMapping="true">
+      <id column="hid"   property="id" />
+      <result column="memo5" jdbcType="VARCHAR" property="memo" />
+    </association>
   </resultMap>
   <sql id="Base_Column_List">
     id, storedef_id, c_id, palletid, m_id, production_date, num, weight, mstatus, batchno, 
@@ -25,8 +49,14 @@
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
-    <include refid="Base_Column_List" />
-    from t_asrs_store
+        s.*,sd.*,r.*,m.*,v.*,h.*,d.*
+    from t_asrs_store s
+    left join  t_asrs_sys_storedef sd on s.storedef_id = sd.id
+    left join t_asrs_rack r on s.c_id = r.id
+    left join t_asrs_sys_matdet m on s.m_id = m.id
+    left join t_asrs_sys_vendor v on s.vendor_id = v.id
+    left join t_asrs_bill_head h on s.bill_head_id = h.id
+    left join t_asrs_bill_detail d on s.bill_detail_id = d.id
     where id = #{id,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">

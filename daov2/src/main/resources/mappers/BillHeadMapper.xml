@@ -17,6 +17,22 @@
     <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
     <result column="updator" jdbcType="VARCHAR" property="updator" />
     <result column="gateno" jdbcType="VARCHAR" property="gateno" />
+    <result column="companyid" jdbcType="INTEGER" property="companyId" />
+    <association property="storedef" javaType="entity.Storedef" autoMapping="true">
+      <id column="sid"   property="id" />
+      <result column="memo1" jdbcType="VARCHAR" property="memo" />
+      <result column="creator1" jdbcType="VARCHAR" property="creator" />
+    </association>
+    <association property="ioClass" javaType="entity.IOClass" autoMapping="true">
+      <id column="oid"   property="id" />
+      <result column="memo2" jdbcType="VARCHAR" property="memo" />
+      <result column="creator2" jdbcType="VARCHAR" property="creator" />
+    </association>
+    <association property="vendor" javaType="entity.Vendor" autoMapping="true">
+      <id column="vid"   property="id" />
+      <result column="memo3" jdbcType="VARCHAR" property="memo" />
+      <result column="creator3" jdbcType="VARCHAR" property="creator" />
+    </association>
   </resultMap>
   <sql id="Base_Column_List">
     id, billno, storedef_id, ioclass_id, vendor_id, customer_id, dept_id, memo, head_status, 
@@ -24,14 +40,69 @@
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
     select 
-    <include refid="Base_Column_List" />
-    from t_asrs_bill_head
-    where id = #{id,jdbcType=BIGINT}
+         h.*,s.*,i.*,v.*
+    from t_asrs_bill_head h
+    left join t_asrs_sys_storedef s on h.storedef_id = s.id
+    left join t_asrs_sys_ioclass i  on h.ioclass_id = i.id
+    left join t_asrs_sys_vendor v  on h.vendor_id = v.id
+    where h.id = #{id,jdbcType=BIGINT}
   </select>
-  <select id="selectAll" resultType="entity.BillHead">
-        select * from t_asrs_bill_head;
-   </select>
 
+<select id="selectByMore" resultMap="BaseResultMap">
+      select
+         h.*,s.*,i.*,v.*
+    from t_asrs_bill_head h
+    left join t_asrs_sys_storedef s on h.storedef_id = s.id
+    left join t_asrs_sys_ioclass i  on h.ioclass_id = i.id
+    left join t_asrs_sys_vendor v  on h.vendor_id = v.id
+    <where>
+      <if test="billno != null">
+       and h.billno = #{billno,jdbcType=VARCHAR}
+      </if>
+      <if test="storedefId != null">
+        and h.storedef_id = #{storedefId,jdbcType=INTEGER}
+      </if>
+      <if test="ioclassId != null">
+        and h.ioclass_id = #{ioclassId,jdbcType=INTEGER}
+      </if>
+      <if test="vendorId != null">
+        and h.vendor_id = #{vendorId,jdbcType=INTEGER}
+      </if>
+      <if test="customerId != null">
+        and h.customer_id = #{customerId,jdbcType=INTEGER}
+      </if>
+      <if test="deptId != null">
+        and h.dept_id = #{deptId,jdbcType=INTEGER}
+      </if>
+      <if test="memo != null">
+        and h.memo = #{memo,jdbcType=VARCHAR}
+      </if>
+      <if test="headStatus != null">
+        and h.head_status = #{headStatus,jdbcType=INTEGER}
+      </if>
+      <if test="billDate != null">
+        and h.bill_date = #{billDate,jdbcType=DATE}
+      </if>
+      <if test="createTime != null">
+        and h.create_time = #{createTime,jdbcType=TIMESTAMP}
+      </if>
+      <if test="creator != null">
+        and h.creator = #{creator,jdbcType=VARCHAR}
+      </if>
+      <if test="updateTime != null">
+        and h.update_time = #{updateTime,jdbcType=TIMESTAMP}
+      </if>
+      <if test="updator != null">
+        and h.updator = #{updator,jdbcType=VARCHAR}
+      </if>
+      <if test="gateno != null">
+        and h.gateno = #{gateno,jdbcType=VARCHAR}
+      </if>
+      <if test="companyId != null">
+        and h.companyid = #{companyId,jdbcType=INTEGER}
+      </if>
+    </where>
+</select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
     delete from t_asrs_bill_head
     where id = #{id,jdbcType=BIGINT}
@@ -41,13 +112,14 @@
       ioclass_id, vendor_id, customer_id, 
       dept_id, memo, head_status, 
       bill_date, create_time, creator, 
-      update_time, updator, gateno
+      update_time, updator, gateno,companyid
       )
     values (#{id,jdbcType=BIGINT}, #{billno,jdbcType=VARCHAR}, #{storedefId,jdbcType=INTEGER}, 
       #{ioclassId,jdbcType=INTEGER}, #{vendorId,jdbcType=INTEGER}, #{customerId,jdbcType=INTEGER}, 
       #{deptId,jdbcType=INTEGER}, #{memo,jdbcType=VARCHAR}, #{headStatus,jdbcType=INTEGER}, 
-      #{billDate,jdbcType=DATE}, #{createTime,jdbcType=TIMESTAMP}, #{creator,jdbcType=VARCHAR}, 
-      #{updateTime,jdbcType=TIMESTAMP}, #{updator,jdbcType=VARCHAR}, #{gateno,jdbcType=VARCHAR}
+      #{billDate,jdbcType=DATE}, now(), #{creator,jdbcType=VARCHAR},
+      #{updateTime,jdbcType=TIMESTAMP}, #{updator,jdbcType=VARCHAR}, #{gateno,jdbcType=VARCHAR},
+    #{companyId,jdbcType=INTEGER}
       )
   </insert>
   <insert id="insertSelective" parameterType="entity.BillHead">
@@ -183,14 +255,17 @@
       <if test="creator != null">
         creator = #{creator,jdbcType=VARCHAR},
       </if>
-      <if test="updateTime != null">
-        update_time = #{updateTime,jdbcType=TIMESTAMP},
-      </if>
+
+        update_time = now(),
+
       <if test="updator != null">
         updator = #{updator,jdbcType=VARCHAR},
       </if>
       <if test="gateno != null">
         gateno = #{gateno,jdbcType=VARCHAR},
+      </if>
+      <if test="companyId != null">
+        companyid = #{companyId,jdbcType=INTEGER}
       </if>
     </set>
     where id = #{id,jdbcType=BIGINT}

@@ -57,6 +57,16 @@ public class RackDao {
         }
     }
 
+    public List<Rack> selectByMore(Rack rack){
+        try {
+            List<Rack> result = mapper.selectByMore(rack);
+            System.out.println(result);
+            return result;
+        }finally {
+            DBTools.closeSession();
+        }
+    }
+
 //    public List<Rack> list() {
 //        try {
 //            // Matmain matmain = new Matmain();

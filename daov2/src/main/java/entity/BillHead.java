@@ -36,6 +36,12 @@ public class BillHead implements Serializable {
 
     private Integer companyId;
 
+    private Storedef storedef;
+
+    private IOClass ioClass;
+
+    private Vendor vendor;
+
     private static final long serialVersionUID = 1L;
 
     public Long getId() {
@@ -164,5 +170,34 @@ public class BillHead implements Serializable {
 
     public void setCompanyId(Integer companyId) {
         this.companyId = companyId;
+    }
+
+    public Storedef getStoredef() {
+        return storedef;
+    }
+
+    public void setStoredef(Storedef storedef) {
+        this.storedef = storedef;
+    }
+
+    public IOClass getIoClass() {
+        return ioClass;
+    }
+
+    public void setIoClass(IOClass ioClass) {
+        this.ioClass = ioClass;
+    }
+
+    public Vendor getVendor() {
+        return vendor;
+    }
+
+    public void setVendor(Vendor vendor) {
+        this.vendor = vendor;
+    }
+
+    @Override
+    public String toString(){
+        return "BilHead:"+"  "+billno +"  "+ storedef.getStoredefName()+"  "+ioClass.getIoclassName()+" "+vendor.getVendorName()+"  "+creator;
     }
 }

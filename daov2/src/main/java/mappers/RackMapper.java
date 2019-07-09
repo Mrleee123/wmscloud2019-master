@@ -2,6 +2,8 @@ package mappers;
 
 import entity.Rack;
 
+import java.util.List;
+
 public interface RackMapper {
     int deleteByPrimaryKey(Long id);
 
@@ -14,4 +16,6 @@ public interface RackMapper {
     int updateByPrimaryKeySelective(Rack record);
 
     int updateByPrimaryKey(Rack record);
+
+    List<Rack> selectByMore(Rack rack);
 }

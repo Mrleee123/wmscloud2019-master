@@ -45,9 +45,6 @@ public class RoleFunctionDao {
 
     public int update(RoleFunction entity)  {
         try {
-            java.sql.Date time = new java.sql.Date(new Date().getTime());
-            Date updateTime = time;
-            entity.setUpdateTime(updateTime);
             int result = mapper.updateByPrimaryKeySelective(entity);
             sqlSession.commit();
             return result;
