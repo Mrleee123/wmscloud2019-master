@@ -13,16 +13,16 @@ public class BillDetailDaoTest {
     public void add() {
         BillDetail billDetail = new BillDetail();
         billDetail.setBill_head_id(1);
-        billDetail.setCreator("system");
-        billDetail.setM_id(1l);
-        billDetail.setMstatus("A");
+        billDetail.setCreator("system1");
+        billDetail.setM_id(3l);
+        billDetail.setMstatus("B");
         billDetail.setDetail_status(5);
         BigDecimal num = new BigDecimal(1000000);
         BigDecimal num1 = new BigDecimal(10000.999);
         billDetail.setWeight(num);
-        billDetail.setBillno("1111222333HHH");
+        billDetail.setBillno("22222");
         billDetail.setWeight(num1);
-        billDetail.setBatchno("123456789");
+        billDetail.setBatchno("12345678911");
         billDetail.setCompanyid(1);
         dao.add(billDetail);
         System.out.println("finish");
@@ -37,7 +37,9 @@ public class BillDetailDaoTest {
     @Test
     public void update() {
         BillDetail billDetail = new BillDetail();
-        billDetail.setId(1l);
+        billDetail.setId(2l);
+        billDetail.setM_id(3l);
+        billDetail.setBill_head_id(2);
         billDetail.setUpdator("user2");
         billDetail.setMemo("测试2");
         billDetail.setBillno("101111HHHH");
@@ -55,8 +57,8 @@ public class BillDetailDaoTest {
     @Test
     public void selectByMore() {
         BillDetail billDetail = new BillDetail();
-        billDetail.setCreator("System");
-        billDetail.setBillno("101111HHHH");
+       // billDetail.setCreator("system");
+        //billDetail.setBillno("101111HHHH");
         //billDetail.setMinstore("11111");s
         billDetail.setCompanyid(1);
 

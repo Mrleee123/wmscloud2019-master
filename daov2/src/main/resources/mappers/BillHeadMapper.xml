@@ -119,7 +119,7 @@
       #{deptId,jdbcType=INTEGER}, #{memo,jdbcType=VARCHAR}, #{headStatus,jdbcType=INTEGER}, 
       #{billDate,jdbcType=DATE}, now(), #{creator,jdbcType=VARCHAR},
       #{updateTime,jdbcType=TIMESTAMP}, #{updator,jdbcType=VARCHAR}, #{gateno,jdbcType=VARCHAR},
-    #{companyId,jdbcType=INTEGER}
+      #{companyId,jdbcType=INTEGER}
       )
   </insert>
   <insert id="insertSelective" parameterType="entity.BillHead">

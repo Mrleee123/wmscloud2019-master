@@ -32,8 +32,8 @@
   </resultMap>
 
   <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
-    select 
-
+    select
+      bd.*,h.*,m.*
     from t_asrs_bill_detail bd
     left join t_asrs_bill_head h on bd.bill_head_id = h.id
     left join t_asrs_sys_matdet m on bd.m_id =m.id
@@ -44,63 +44,62 @@
    </select>
 <select id="selectByMore" resultMap="BaseResultMap">
    select
-
+       bd.*,h.*,m.*
     from t_asrs_bill_detail bd
     left join t_asrs_bill_head h on bd.bill_head_id = h.id
     left join t_asrs_sys_matdet m on bd.m_id =m.id
     <where>
+        1=1
+
+
       <if test="billno != null">
-        and bd.billno = #{billno,jdbcType=VARCHAR},
+       and bd.billno = #{billno,jdbcType=VARCHAR}
       </if>
       <if test="bill_head_id != null">
-        and bd.bill_head_id= #{bill_head_id,jdbcType=BIGINT},
+        and bd.bill_head_id= #{bill_head_id,jdbcType=BIGINT}
       </if>
       <if test="m_id != null">
-        and bd.m_id = #{m_id,jdbcType=BIGINT},
+        and bd.m_id = #{m_id,jdbcType=BIGINT}
       </if>
       <if test="Mstatus != null">
-        and bd.Mstatus= #{Mstatus,jdbcType=VARCHAR},
+        and bd.Mstatus= #{Mstatus,jdbcType=VARCHAR}
       </if>
       <if test="weight != null">
-        and bd.weight= #{weight,jdbcType=DECIMAL},
+        and bd.weight= #{weight,jdbcType=DECIMAL}
 
       </if>
       <if test="num != null">
-        and bd.num= #{num,jdbcType=DECIMAL},
+        and bd.num= #{num,jdbcType=DECIMAL}
       </if>
       <if test="batchno != null">
-        and bd.batchno= #{batchno,jdbcType=VARCHAR},
+        and bd.batchno= #{batchno,jdbcType=VARCHAR}
       </if>
-
 
       <if test="createtime != null">
-        and bd.createtime = #{createtime,jdbcType=TIMESTAMP},
+        and bd.createtime = #{createtime,jdbcType=TIMESTAMP}
       </if>
       <if test="creator != null">
-        and bd.creator = #{creator,jdbcType=VARCHAR},
+        and bd.creator = #{creator,jdbcType=VARCHAR}
       </if>
-
-
 
       <if test="updator != null">
-        and bd.updator = #{updator,jdbcType=VARCHAR},
+        and bd.updator = #{updator,jdbcType=VARCHAR}
       </if>
       <if test="palletid != null">
-        and bd.palletid=#{palletid,jdbcType=VARCHAR},
+        and bd.palletid=#{palletid,jdbcType=VARCHAR}
       </if>
       <if test="finishnum != null">
-        and bd.finishnum= #{finishnum,jdbcType=DECIMAL},
+        and bd.finishnum= #{finishnum,jdbcType=DECIMAL}
       </if>
       <if test="finishweight != null">
-        and bd.finishweight= #{finishweight,jdbcType=DECIMAL},
+        and bd.finishweight= #{finishweight,jdbcType=DECIMAL}
 
       </if>
       <if test="detail_status != null">
-        and bd.detail_status=#{detail_status,jdbcType=VARCHAR},
-
+        and bd.detail_status=#{detail_status,jdbcType=VARCHAR}
       </if>
       <if test="memo != null">
-        and bd.memo= #{memo,jdbcType=VARCHAR},
+        and bd.memo= #{memo,jdbcType=VARCHAR}
 
       </if>
       <if test="companyid != null">
@@ -112,6 +111,7 @@
     delete from t_asrs_bill_detail
     where id = #{id,jdbcType=BIGINT}
   </delete>
+
   <insert id="insert" parameterType="entity.BillDetail">
     insert into t_asrs_bill_detail (id,
 bill_head_id ,

@@ -18,6 +18,7 @@
     <result column="bill_head_id" jdbcType="INTEGER" property="billHeadId" />
     <result column="bill_detail_id" jdbcType="INTEGER" property="billDetailId" />
     <result column="memo" jdbcType="VARCHAR" property="memo" />
+    <result column="companyid" jdbcType="INTEGER" property="companyId" />
     <association property="storedef" javaType="entity.Storedef" autoMapping="true">
       <id column="sid"   property="id" />
       <result column="memo1" jdbcType="VARCHAR" property="memo" />
@@ -34,11 +35,11 @@
       <id column="vid"   property="id" />
       <result column="memo4" jdbcType="VARCHAR" property="memo" />
     </association>
-    <association property="billhead" javaType="entity.BillHead" autoMapping="true">
+    <association property="billHead" javaType="entity.BillHead" autoMapping="true">
       <id column="hid"   property="id" />
       <result column="memo5" jdbcType="VARCHAR" property="memo" />
     </association>
-    <association property="billdetail" javaType="entity.BillDetail" autoMapping="true">
+    <association property="billDetail" javaType="entity.BillDetail" autoMapping="true">
       <id column="hid"   property="id" />
       <result column="memo5" jdbcType="VARCHAR" property="memo" />
     </association>
@@ -57,8 +58,69 @@
     left join t_asrs_sys_vendor v on s.vendor_id = v.id
     left join t_asrs_bill_head h on s.bill_head_id = h.id
     left join t_asrs_bill_detail d on s.bill_detail_id = d.id
-    where id = #{id,jdbcType=INTEGER}
+    where s.id = #{id,jdbcType=INTEGER}
   </select>
+
+  <select id="selectByMore" resultMap="BaseResultMap">
+    select
+        s.*,sd.*,r.*,m.*,v.*,h.*,d.*
+    from t_asrs_store s
+    left join  t_asrs_sys_storedef sd on s.storedef_id = sd.id
+    left join t_asrs_rack r on s.c_id = r.id
+    left join t_asrs_sys_matdet m on s.m_id = m.id
+    left join t_asrs_sys_vendor v on s.vendor_id = v.id
+    left join t_asrs_bill_head h on s.bill_head_id = h.id
+    left join t_asrs_bill_detail d on s.bill_detail_id = d.id
+   <where>
+   1=1
+     <if test="storedefId != null">
+     and s.storedef_id = #{storedefId,jdbcType=INTEGER}
+     </if>
+     <if test="cId != null">
+       and s.c_id = #{cId,jdbcType=BIGINT}
+     </if>
+     <if test="palletid != null">
+       and s.palletid = #{palletid,jdbcType=VARCHAR}
+     </if>
+     <if test="mId != null">
+       and s.m_id = #{mId,jdbcType=BIGINT}
+     </if>
+     <if test="productionDate != null">
+       and s.production_date = #{productionDate,jdbcType=VARCHAR}
+     </if>
+     <if test="num != null">
+       and s.num = #{num,jdbcType=DECIMAL}
+     </if>
+     <if test="weight != null">
+       and s.weight = #{weight,jdbcType=DECIMAL}
+     </if>
+     <if test="mstatus != null">
+       and s.mstatus = #{mstatus,jdbcType=VARCHAR}
+     </if>
+     <if test="batchno != null">
+       and s.batchno = #{batchno,jdbcType=VARCHAR}
+     </if>
+     <if test="vendorId != null">
+       and s.vendor_id = #{vendorId,jdbcType=INTEGER}
+     </if>
+     <if test="customerId != null">
+       and s.customer_id = #{customerId,jdbcType=INTEGER}
+     </if>
+     <if test="billno != null">
+       and s.billno = #{billno,jdbcType=VARCHAR}
+     </if>
+     <if test="billHeadId != null">
+       and s.bill_head_id = #{billHeadId,jdbcType=INTEGER}
+     </if>
+     <if test="billDetailId != null">
+       and s.bill_detail_id = #{billDetailId,jdbcType=INTEGER}
+     </if>
+     <if test="memo != null">
+       and s.memo = #{memo,jdbcType=VARCHAR}
+     </if>
+   </where>
+  </select>
+
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from t_asrs_store
     where id = #{id,jdbcType=INTEGER}
@@ -69,13 +131,13 @@
       num, weight, mstatus, 
       batchno, vendor_id, customer_id, 
       billno, bill_head_id, bill_detail_id, 
-      memo)
+      memo,companyid)
     values (#{id,jdbcType=INTEGER}, #{storedefId,jdbcType=INTEGER}, #{cId,jdbcType=BIGINT}, 
       #{palletid,jdbcType=VARCHAR}, #{mId,jdbcType=BIGINT}, #{productionDate,jdbcType=VARCHAR}, 
       #{num,jdbcType=DECIMAL}, #{weight,jdbcType=DECIMAL}, #{mstatus,jdbcType=VARCHAR}, 
       #{batchno,jdbcType=VARCHAR}, #{vendorId,jdbcType=INTEGER}, #{customerId,jdbcType=INTEGER}, 
       #{billno,jdbcType=VARCHAR}, #{billHeadId,jdbcType=INTEGER}, #{billDetailId,jdbcType=INTEGER}, 
-      #{memo,jdbcType=VARCHAR})
+      #{memo,jdbcType=VARCHAR},#{companyId,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" parameterType="entity.Store">
     insert into t_asrs_store
@@ -227,6 +289,9 @@
       </if>
       <if test="memo != null">
         memo = #{memo,jdbcType=VARCHAR},
+      </if>
+      <if test="companyId != null">
+        companyid = #{companyId,jdbcType=INTEGER}
       </if>
     </set>
     where id = #{id,jdbcType=INTEGER}

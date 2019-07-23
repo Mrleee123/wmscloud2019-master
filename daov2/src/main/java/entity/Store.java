@@ -38,6 +38,18 @@ public class Store implements Serializable {
 
     private Integer companyId;
 
+    private Rack rack;
+
+    private Matdet matdet;
+
+    private Vendor vendor;
+
+    private  BillHead billHead;
+
+    private  BillDetail billDetail;
+
+    private Storedef storedef;
+
     private static final long serialVersionUID = 1L;
 
     public Integer getId() {
@@ -174,5 +186,57 @@ public class Store implements Serializable {
 
     public void setCompanyId(Integer companyId) {
         this.companyId = companyId;
+    }
+
+    public Rack getRack() {
+        return rack;
+    }
+
+    public void setRack(Rack rack) {
+        this.rack = rack;
+    }
+
+    public Matdet getMatdet() {
+        return matdet;
+    }
+
+    public void setMatdet(Matdet matdet) {
+        this.matdet = matdet;
+    }
+
+    public Vendor getVendor() {
+        return vendor;
+    }
+
+    public void setVendor(Vendor vendor) {
+        this.vendor = vendor;
+    }
+
+    public BillHead getBillHead() {
+        return billHead;
+    }
+
+    public void setBillHead(BillHead billHead) {
+        this.billHead = billHead;
+    }
+
+    public BillDetail getBillDetail() {
+        return billDetail;
+    }
+
+    public void setBillDetail(BillDetail billDetail) {
+        this.billDetail = billDetail;
+    }
+
+    public Storedef getStoredef() {
+        return storedef;
+    }
+
+    public void setStoredef(Storedef storedef) {
+        this.storedef = storedef;
+    }
+
+    public String toString(){
+        return "Store:"+ palletid+"  "+ storedef.getStoredefName() + "   "+rack.getCid()+"  "+ matdet.getMatname()+"  "+ num + billDetail.getBillno();
     }
 }

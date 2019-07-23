@@ -185,4 +185,9 @@ public class BillDetail implements Serializable {
     public void setCompanyid(Integer companyid) {
         this.companyid = companyid;
     }
+
+//    @Override
+//    public String toString(){
+//        return "BillDetail:"+billno+"  "+matdet.getMatname()+"   "+batchno+"  "+creator;
+//    }
 }
