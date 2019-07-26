@@ -69,11 +69,11 @@ public class MatdetController {
         }
     }
 
-    @PostMapping(value = "/matdet/selectByMore")
+    @PostMapping(value = "/matdet/selectByMore/{currPage}/{pageSize}")
     @ResponseBody
-    public List<Matdet> selectByMore(@RequestBody Matdet matdet) {
+    public List<Matdet> selectByMore(@RequestBody Matdet matdet,@PathVariable("currPage") int currPage, @PathVariable("pageSize") int pageSize) {
         try {
-           List<Matdet> result = us.selectByMore(matdet);
+           List<Matdet> result = us.selectByMore(matdet,currPage,pageSize);
             return result;
         } catch (Exception e) {
             System.out.println(e.toString());

@@ -30,5 +30,9 @@ public class MatdetService {
         return dao.list();
     }
 
-    public List<Matdet> selectByMore(Matdet matdet){return dao.selectByMore(matdet);}
+    public List<Matdet> selectByMore(Matdet matdet,int currPage, int pageSize){
+        List<Matdet> list = dao.selectByMore(matdet);
+        int firstIndex= (currPage-1)*pageSize;
+        int lastIndex=currPage*pageSize;
+        return list.subList(firstIndex,lastIndex);}
 }
