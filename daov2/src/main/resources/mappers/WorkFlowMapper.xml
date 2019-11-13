@@ -27,18 +27,93 @@
     <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
     <result column="creator" jdbcType="VARCHAR" property="creator" />
     <result column="work_id" jdbcType="INTEGER" property="workId" />
+    <result column="m_id" jdbcType="BIGINT" property="m_id" />
+    <result column="num" jdbcType="INTEGER" property="num" />
+    <result column="batchno" jdbcType="VARCHAR" property="batchno" />
+    <association property="storedef" javaType="entity.Storedef" autoMapping="true">
+      <id column="sid"   property="id" />
+      <result column="memo1" jdbcType="VARCHAR" property="memo" />
+    </association>
+    <association property="matdet" javaType="entity.Matdet" autoMapping="true">
+      <id column="mid"   property="id" />
+      <result column="memo3" jdbcType="VARCHAR" property="memo" />
+    </association>
   </resultMap>
   <sql id="Base_Column_List">
     id, Ltime, storedef_id, billno, stackerid, work_type, palletid, aisle, slayer, srank, 
     srow, taisle, tlayer, trank, trow, status, stationid, workindx, xpalletid, deal_time, 
-    orderid, send_time, create_time, creator, work_id
+    orderid, send_time, create_time, creator, work_id,m_id
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
     select 
-    <include refid="Base_Column_List" />
-    from t_asrs_workflow
+      *
+    from t_asrs_workflow w
+     left join  t_asrs_sys_storedef sd on s.storedef_id = sd.id
+
+    left join t_asrs_sys_matdet m on s.m_id = m.id
     where id = #{id,jdbcType=BIGINT}
   </select>
+
+  <select id="selectByMore" parameterType="entity.Log" resultMap="BaseResultMap">
+    select
+    s.*,sd.*,r.*,m.*,v.*,h.*,d.*
+    from t_asrs_workflow
+    left join  t_asrs_sys_storedef sd on s.storedef_id = sd.id
+    left join t_asrs_rack r on s.c_id = r.id
+    left join t_asrs_sys_matdet m on s.m_id = m.id
+    left join t_asrs_sys_vendor v on s.vendor_id = v.id
+    left join t_asrs_bill_head h on s.bill_head_id = h.id
+    left join t_asrs_bill_detail d on s.bill_detail_id = d.id
+    <where>
+      1=1
+      <if test="storedefId != null">
+        and s.storedef_id = #{storedefId,jdbcType=INTEGER}
+      </if>
+      <if test="cId != null">
+        and s.c_id = #{cId,jdbcType=BIGINT}
+      </if>
+      <if test="palletid != null">
+        and s.palletid = #{palletid,jdbcType=VARCHAR}
+      </if>
+      <if test="mId != null">
+        and s.m_id = #{mId,jdbcType=BIGINT}
+      </if>
+      <if test="productionDate != null">
+        and s.production_date = #{productionDate,jdbcType=VARCHAR}
+      </if>
+      <if test="num != null">
+        and s.num = #{num,jdbcType=DECIMAL}
+      </if>
+      <if test="weight != null">
+        and s.weight = #{weight,jdbcType=DECIMAL}
+      </if>
+      <if test="mstatus != null">
+        and s.mstatus = #{mstatus,jdbcType=VARCHAR}
+      </if>
+      <if test="batchno != null">
+        and s.batchno = #{batchno,jdbcType=VARCHAR}
+      </if>
+      <if test="vendorId != null">
+        and s.vendor_id = #{vendorId,jdbcType=INTEGER}
+      </if>
+      <if test="customerId != null">
+        and s.customer_id = #{customerId,jdbcType=INTEGER}
+      </if>
+      <if test="billno != null">
+        and s.billno = #{billno,jdbcType=VARCHAR}
+      </if>
+      <if test="billHeadId != null">
+        and s.bill_head_id = #{billHeadId,jdbcType=INTEGER}
+      </if>
+      <if test="billDetailId != null">
+        and s.bill_detail_id = #{billDetailId,jdbcType=INTEGER}
+      </if>
+      <if test="memo != null">
+        and s.memo = #{memo,jdbcType=VARCHAR}
+      </if>
+    </where>
+  </select>
+
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
     delete from t_asrs_workflow
     where id = #{id,jdbcType=BIGINT}

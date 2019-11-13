@@ -5,6 +5,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.math.BigDecimal;
+import java.util.Date;
 import java.util.List;
 
 import static org.junit.Assert.*;
@@ -15,19 +16,23 @@ public class StoreDaoTest {
     @Test
     public void add() {
         Store store =  new Store();
-        store.setStoredefId(1);
-        store.setcId(2l);
-        store.setPalletid("100086");
+        store.setStoredefId(2);
+        store.setcId(3l);
+        store.setPalletid("200096");
         store.setmId(2l);
-        BigDecimal num = new BigDecimal(1000000);
-        BigDecimal num1 = new BigDecimal(10000.999);
+        BigDecimal num = new BigDecimal(8888);
+        BigDecimal num1 = new BigDecimal(1088.999);
         store.setWeight(num);
-        store.setMstatus("AAAAA");
+        store.setMstatus("BBB");
+        Date date =  new Date();
+        store.setProductionDate(date.toString());
         store.setWeight(num1);
-        store.setBatchno("124124");
+        store.setBatchno("20191111");
         store.setVendorId(2);
-        store.setMemo("ceshi");
+        store.setMemo("测试");
         store.setCompanyId(1);
+        store.setBillHeadId(1);
+        store.setBillDetailId(2);
         int result = dao.add(store);
         System.out.println(result);
          System.out.println("--------finish---------");

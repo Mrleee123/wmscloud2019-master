@@ -56,6 +56,46 @@ public class WorkFlow implements Serializable {
 
     private int companyId;
 
+    private long m_id;
+
+    private int num;
+
+    public long getM_id() {
+        return m_id;
+    }
+
+    public void setM_id(long m_id) {
+        this.m_id = m_id;
+    }
+
+    public int getNum() {
+        return num;
+    }
+
+    public void setNum(int num) {
+        this.num = num;
+    }
+
+    public String getBatchno() {
+        return batchno;
+    }
+
+    public void setBatchno(String batchno) {
+        this.batchno = batchno;
+    }
+
+    public Matdet getMatdet() {
+        return matdet;
+    }
+
+    public void setMatdet(Matdet matdet) {
+        this.matdet = matdet;
+    }
+
+    private String batchno;
+
+    private Matdet matdet;
+
     private static final long serialVersionUID = 1L;
 
     public Long getId() {

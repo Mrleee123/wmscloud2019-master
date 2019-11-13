@@ -22,6 +22,16 @@ public class Log implements Serializable {
 
     private Integer companyId;
 
+    private User user;
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
     private static final long serialVersionUID = 1L;
 
     public Long getId() {

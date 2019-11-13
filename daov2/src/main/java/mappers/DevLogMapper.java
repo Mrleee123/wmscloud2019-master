@@ -2,6 +2,8 @@ package mappers;
 
 import entity.DevLog;
 
+import java.util.List;
+
 public interface DevLogMapper {
     int deleteByPrimaryKey(Integer id);
 
@@ -14,4 +16,6 @@ public interface DevLogMapper {
     int updateByPrimaryKeySelective(DevLog record);
 
     int updateByPrimaryKey(DevLog record);
+
+    List<DevLog> selectByMore(DevLog record);
 }

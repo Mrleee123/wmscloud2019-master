@@ -10,16 +10,37 @@
     <result column="userid" jdbcType="VARCHAR" property="userid" />
     <result column="memo" jdbcType="VARCHAR" property="memo" />
     <result column="detail" jdbcType="VARCHAR" property="detail" />
+    <association property="user" javaType="entity.User" autoMapping="true">
+      <id column="uid"   property="id" />
+      <result column="memo1" jdbcType="VARCHAR" property="memo" />
+    </association>
+
   </resultMap>
   <sql id="Base_Column_List">
     id, ltime, lclass, funmain, munc, userid, memo, detail
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
     select 
-    <include refid="Base_Column_List" />
-    from t_asrs_log
-    where id = #{id,jdbcType=BIGINT}
+       l.*,u.user_code,u.user_name,u.id as uid
+    from t_asrs_log l left join t_asrs_sys_user u on u.id =l.userid
+    where l.id = #{id,jdbcType=BIGINT}
   </select>
+
+  <select id="selectByMore" parameterType="entity.Log" resultMap="BaseResultMap">
+    select
+    l.*,u.user_code,u.user_name,u.id as uid
+    from t_asrs_log l left join t_asrs_sys_user u on u.id =l.userid
+    <where>
+      <if test="lclass != null">
+        and l.lcalss = #{lclass,jdbcType=VARCHAR}
+      </if>
+      <if test="userid != null">
+        and l.userid = #{userid,jdbcType=VARCHAR}
+      </if>
+
+    </where>
+  </select>
+
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
     delete from t_asrs_log
     where id = #{id,jdbcType=BIGINT}
@@ -27,10 +48,10 @@
   <insert id="insert" parameterType="entity.Log">
     insert into t_asrs_log (id, ltime, lclass, 
       funmain, munc, userid, 
-      memo, detail)
+      memo, detail,companyId)
     values (#{id,jdbcType=BIGINT}, #{ltime,jdbcType=TIMESTAMP}, #{lclass,jdbcType=VARCHAR}, 
       #{funmain,jdbcType=VARCHAR}, #{munc,jdbcType=VARCHAR}, #{userid,jdbcType=VARCHAR}, 
-      #{memo,jdbcType=VARCHAR}, #{detail,jdbcType=VARCHAR})
+      #{memo,jdbcType=VARCHAR}, #{detail,jdbcType=VARCHAR},#{companyId,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" parameterType="entity.Log">
     insert into t_asrs_log
@@ -110,6 +131,9 @@
       </if>
       <if test="detail != null">
         detail = #{detail,jdbcType=VARCHAR},
+      </if>
+      <if test="companyId != null">
+        companyid = #{companyId,jdbcType=INTEGER}
       </if>
     </set>
     where id = #{id,jdbcType=BIGINT}

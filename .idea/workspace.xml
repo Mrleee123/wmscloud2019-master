@@ -2,12 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="254c0f5b-7169-4179-a208-0dfc5c7754aa" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/wmscloud2019-master.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/daov2/src/main/java/dao/DveLogDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/daov2/src/main/java/dao/LogDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/daov2/src/test/java/dao/DevLogDaoTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/daov2/src/test/java/dao/LogDaoTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wms-web-client/src/main/java/com/riambbj/wmscloud/controllers/DevLogController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wms-web-client/src/main/java/com/riambbj/wmscloud/controllers/LogController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wms-web-client/src/main/java/com/riambbj/wmscloud/services/DevLogService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wms-web-client/src/main/java/com/riambbj/wmscloud/services/LogService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/daov2/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/daov2/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wms-web-client/src/main/java/com/riambbj/wmscloud/controllers/MatdetController.java" beforeDir="false" afterPath="$PROJECT_DIR$/wms-web-client/src/main/java/com/riambbj/wmscloud/controllers/MatdetController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wms-web-client/src/main/java/com/riambbj/wmscloud/services/MatdetService.java" beforeDir="false" afterPath="$PROJECT_DIR$/wms-web-client/src/main/java/com/riambbj/wmscloud/services/MatdetService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/daov2/src/main/java/entity/DevLog.java" beforeDir="false" afterPath="$PROJECT_DIR$/daov2/src/main/java/entity/DevLog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/daov2/src/main/java/entity/Log.java" beforeDir="false" afterPath="$PROJECT_DIR$/daov2/src/main/java/entity/Log.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/daov2/src/main/java/entity/WorkFlow.java" beforeDir="false" afterPath="$PROJECT_DIR$/daov2/src/main/java/entity/WorkFlow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/daov2/src/main/java/mappers/DevLogMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/daov2/src/main/java/mappers/DevLogMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/daov2/src/main/java/mappers/LogMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/daov2/src/main/java/mappers/LogMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/daov2/src/main/resources/mappers/DevLogMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/daov2/src/main/resources/mappers/DevLogMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/daov2/src/main/resources/mappers/LogMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/daov2/src/main/resources/mappers/LogMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/daov2/src/main/resources/mappers/WorkFlowMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/daov2/src/main/resources/mappers/WorkFlowMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/daov2/src/main/resources/mybatis_cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/daov2/src/main/resources/mybatis_cfg.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/daov2/src/test/java/dao/StoreDaoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/daov2/src/test/java/dao/StoreDaoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/daov2/target/classes/mybatis_cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/daov2/target/classes/mybatis_cfg.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -36,75 +50,10 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Jsp File" />
-        <option value="Class" />
         <option value="JUnit4 Test Class" />
+        <option value="Class" />
       </list>
     </option>
-  </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>RoleFunctionCode</find>
-      <find>userid</find>
-      <find>issys</find>
-      <find>create_</find>
-      <find>Base_Column_List</find>
-      <find>Vendor</find>
-      <find>vendor</find>
-      <find>INTE</find>
-      <find>BIGINT</find>
-      <find>BaseResultMap</find>
-      <find>memo1</find>
-      <find>bill_head</find>
-      <find>Matdet</find>
-      <find>matdet</find>
-      <find>matmain</find>
-      <find>ioClass</find>
-      <find>IOClass</find>
-      <find>Mstatus</find>
-      <find>mstatus</find>
-      <find>updateTime</find>
-      <find>companyId</find>
-      <find>headStatus</find>
-      <find>companyid</find>
-      <find>billDate</find>
-      <find>createTime</find>
-      <find>billHead</find>
-      <find>m_id</find>
-      <find>BillHead</find>
-      <find>billDetail</find>
-      <find>BillDetail</find>
-    </findStrings>
-    <replaceStrings>
-      <replace>entity</replace>
-      <replace>mappers</replace>
-      <replace>functionName</replace>
-      <replace>RoleFuction</replace>
-      <replace>RoleFunction</replace>
-      <replace>creator</replace>
-      <replace>matdet</replace>
-      <replace>vendor</replace>
-      <replace>Storedef</replace>
-      <replace>storedef</replace>
-      <replace>UserRole</replace>
-      <replace>userRole</replace>
-      <replace>rack</replace>
-      <replace>companyId</replace>
-      <replace>Rack</replace>
-      <replace>bill_detail</replace>
-      <replace>IOClass</replace>
-      <replace>ioClass</replace>
-      <replace>billHead</replace>
-      <replace>BillHead</replace>
-      <replace>Mstatus</replace>
-      <replace>updatetime</replace>
-      <replace>c</replace>
-      <replace>companyid</replace>
-      <replace>createtime</replace>
-      <replace>billDetail</replace>
-      <replace>BillDetail</replace>
-      <replace>store</replace>
-      <replace>Store</replace>
-    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="ROOT_SYNC" value="DONT_SYNC" />
@@ -158,8 +107,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.StoreDaoTest.selectByMore">
-    <configuration name="BillDetailDaoTest.selectByMore" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.DevLogDaoTest.selectByMore">
+    <configuration name="DevLogDaoTest.add" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="wmsdao" />
       <extension name="coverage">
         <pattern>
@@ -168,30 +117,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="dao" />
-      <option name="MAIN_CLASS_NAME" value="dao.BillDetailDaoTest" />
-      <option name="METHOD_NAME" value="selectByMore" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="StoreDaoTest.add" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="wmsdao" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="dao.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="dao" />
-      <option name="MAIN_CLASS_NAME" value="dao.StoreDaoTest" />
+      <option name="MAIN_CLASS_NAME" value="dao.DevLogDaoTest" />
       <option name="METHOD_NAME" value="add" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="StoreDaoTest.get" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DevLogDaoTest.delete" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="wmsdao" />
       <extension name="coverage">
         <pattern>
@@ -200,14 +133,30 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="dao" />
-      <option name="MAIN_CLASS_NAME" value="dao.StoreDaoTest" />
+      <option name="MAIN_CLASS_NAME" value="dao.DevLogDaoTest" />
+      <option name="METHOD_NAME" value="delete" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DevLogDaoTest.get" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="wmsdao" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="dao.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="dao" />
+      <option name="MAIN_CLASS_NAME" value="dao.DevLogDaoTest" />
       <option name="METHOD_NAME" value="get" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="StoreDaoTest.selectByMore" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DevLogDaoTest.selectByMore" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="wmsdao" />
       <extension name="coverage">
         <pattern>
@@ -216,14 +165,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="dao" />
-      <option name="MAIN_CLASS_NAME" value="dao.StoreDaoTest" />
+      <option name="MAIN_CLASS_NAME" value="dao.DevLogDaoTest" />
       <option name="METHOD_NAME" value="selectByMore" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="StoreDaoTest.update" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="LogDaoTest.selectByMore" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="wmsdao" />
       <extension name="coverage">
         <pattern>
@@ -232,8 +181,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="dao" />
-      <option name="MAIN_CLASS_NAME" value="dao.StoreDaoTest" />
-      <option name="METHOD_NAME" value="update" />
+      <option name="MAIN_CLASS_NAME" value="dao.LogDaoTest" />
+      <option name="METHOD_NAME" value="selectByMore" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -248,11 +197,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.StoreDaoTest.selectByMore" />
-        <item itemvalue="JUnit.StoreDaoTest.get" />
-        <item itemvalue="JUnit.StoreDaoTest.update" />
-        <item itemvalue="JUnit.StoreDaoTest.add" />
-        <item itemvalue="JUnit.BillDetailDaoTest.selectByMore" />
+        <item itemvalue="JUnit.DevLogDaoTest.selectByMore" />
+        <item itemvalue="JUnit.DevLogDaoTest.get" />
+        <item itemvalue="JUnit.LogDaoTest.selectByMore" />
+        <item itemvalue="JUnit.DevLogDaoTest.add" />
+        <item itemvalue="JUnit.DevLogDaoTest.delete" />
       </list>
     </recent_temporary>
   </component>
@@ -281,7 +230,10 @@
       <workItem from="1563413848041" duration="610000" />
       <workItem from="1563862151835" duration="13532000" />
       <workItem from="1564100447548" duration="1519000" />
-      <workItem from="1564102431808" duration="5973000" />
+      <workItem from="1564102431808" duration="6189000" />
+      <workItem from="1573441913893" duration="1825000" />
+      <workItem from="1573462729569" duration="10824000" />
+      <workItem from="1573609276101" duration="6258000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <created>1561624135955</created>
@@ -416,40 +368,15 @@
       <option name="project" value="LOCAL" />
       <updated>1563876259043</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="commit 0726">
+      <created>1564120036075</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1564120036075</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
-  </component>
-  <component name="TestHistory">
-    <history-entry file="StoreDaoTest_update - 2019.07.23 at 16h 45m 46s.xml">
-      <configuration name="StoreDaoTest.update" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="StoreDaoTest_update - 2019.07.23 at 17h 12m 36s.xml">
-      <configuration name="StoreDaoTest.update" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="StoreDaoTest_update - 2019.07.23 at 17h 14m 08s.xml">
-      <configuration name="StoreDaoTest.update" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="StoreDaoTest_update - 2019.07.23 at 17h 16m 13s.xml">
-      <configuration name="StoreDaoTest.update" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="StoreDaoTest_update - 2019.07.23 at 17h 16m 59s.xml">
-      <configuration name="StoreDaoTest.update" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="StoreDaoTest_update - 2019.07.23 at 17h 19m 26s.xml">
-      <configuration name="StoreDaoTest.update" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="StoreDaoTest_get - 2019.07.23 at 17h 20m 10s.xml">
-      <configuration name="StoreDaoTest.get" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="StoreDaoTest_selectByMore - 2019.07.23 at 17h 23m 08s.xml">
-      <configuration name="StoreDaoTest.selectByMore" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="StoreDaoTest_selectByMore - 2019.07.23 at 17h 24m 37s.xml">
-      <configuration name="StoreDaoTest.selectByMore" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="StoreDaoTest_selectByMore - 2019.07.23 at 17h 26m 17s.xml">
-      <configuration name="StoreDaoTest.selectByMore" configurationId="JUnit" />
-    </history-entry>
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -468,7 +395,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
@@ -480,7 +409,8 @@
     <MESSAGE value="commit companyid" />
     <MESSAGE value="commit 0709" />
     <MESSAGE value="commit 0723" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit 0723" />
+    <MESSAGE value="commit 0726" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit 0726" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

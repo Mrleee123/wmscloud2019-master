@@ -26,6 +26,11 @@ public class DevLog implements Serializable {
 
     private Integer companyId;
 
+    private Date startTime;
+
+    private Date endTime;
+
+
     private static final long serialVersionUID = 1L;
 
     public Integer getId() {
@@ -114,5 +119,21 @@ public class DevLog implements Serializable {
 
     public void setCompanyId(Integer companyId) {
         this.companyId = companyId;
+    }
+
+    public Date getStartTime() {
+        return startTime;
+    }
+
+    public void setStartTime(Date startTime) {
+        this.startTime = startTime;
+    }
+
+    public Date getEndTime() {
+        return endTime;
+    }
+
+    public void setEndTime(Date endTime) {
+        this.endTime = endTime;
     }
 }
