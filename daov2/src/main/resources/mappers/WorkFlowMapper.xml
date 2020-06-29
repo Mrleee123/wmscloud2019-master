@@ -42,7 +42,7 @@
   <sql id="Base_Column_List">
     id, Ltime, storedef_id, billno, stackerid, work_type, palletid, aisle, slayer, srank, 
     srow, taisle, tlayer, trank, trow, status, stationid, workindx, xpalletid, deal_time, 
-    orderid, send_time, create_time, creator, work_id,m_id
+    orderid, send_time, create_time, creator, work_id
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
     select 
@@ -50,48 +50,52 @@
     from t_asrs_workflow w
      left join  t_asrs_sys_storedef sd on s.storedef_id = sd.id
 
-    left join t_asrs_sys_matdet m on s.m_id = m.id
+
     where id = #{id,jdbcType=BIGINT}
   </select>
 
-  <select id="selectByMore" parameterType="entity.Log" resultMap="BaseResultMap">
+  <select id="selectByMore" parameterType="entity.WorkFlow" resultMap="BaseResultMap">
     select
-    s.*,sd.*,r.*,m.*,v.*,h.*,d.*
-    from t_asrs_workflow
-    left join  t_asrs_sys_storedef sd on s.storedef_id = sd.id
-    left join t_asrs_rack r on s.c_id = r.id
-    left join t_asrs_sys_matdet m on s.m_id = m.id
-    left join t_asrs_sys_vendor v on s.vendor_id = v.id
-    left join t_asrs_bill_head h on s.bill_head_id = h.id
-    left join t_asrs_bill_detail d on s.bill_detail_id = d.id
+      w.* s.*
+    from t_asrs_workflow w
+    left join  t_asrs_sys_storedef sd on w.storedef_id = sd.id
     <where>
       1=1
       <if test="storedefId != null">
-        and s.storedef_id = #{storedefId,jdbcType=INTEGER}
+        and w.storedef_id = #{storedefId,jdbcType=INTEGER}
       </if>
-      <if test="cId != null">
-        and s.c_id = #{cId,jdbcType=BIGINT}
+      <if test="ltime != null">
+        and w.ltime = #{ltime,jdbcType=BIGINT}
       </if>
       <if test="palletid != null">
-        and s.palletid = #{palletid,jdbcType=VARCHAR}
+        and w.palletid = #{palletid,jdbcType=VARCHAR}
       </if>
-      <if test="mId != null">
-        and s.m_id = #{mId,jdbcType=BIGINT}
+      <if test="stackerid != null">
+        and w.stackerid = #{stackerid,jdbcType=BIGINT}
       </if>
-      <if test="productionDate != null">
-        and s.production_date = #{productionDate,jdbcType=VARCHAR}
+      <if test="work_type != null">
+        and w.work_type = #{workType,jdbcType=VARCHAR}
       </if>
-      <if test="num != null">
-        and s.num = #{num,jdbcType=DECIMAL}
+      <if test="aisle != null">
+        and w.aisle = #{aisle,jdbcType=DECIMAL}
       </if>
-      <if test="weight != null">
-        and s.weight = #{weight,jdbcType=DECIMAL}
+      <if test="slayer != null">
+        and w.slayer = #{slayer,jdbcType=DECIMAL}
       </if>
-      <if test="mstatus != null">
-        and s.mstatus = #{mstatus,jdbcType=VARCHAR}
+      <if test="srank != null">
+        and w.srank = #{srank,jdbcType=VARCHAR}
       </if>
-      <if test="batchno != null">
-        and s.batchno = #{batchno,jdbcType=VARCHAR}
+      <if test="srow != null">
+        and w.srow = #{srow,jdbcType=VARCHAR}
+      </if>
+      <if test="tlayer != null">
+        and w.tlayer = #{tlayer,jdbcType=DECIMAL}
+      </if>
+      <if test="trank != null">
+        and w.trank = #{trank,jdbcType=VARCHAR}
+      </if>
+      <if test="trow != null">
+        and w.trow = #{trow,jdbcType=VARCHAR}
       </if>
       <if test="vendorId != null">
         and s.vendor_id = #{vendorId,jdbcType=INTEGER}
