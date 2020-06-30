@@ -11,6 +11,7 @@
     <properties>
         <java.version>1.8</java.version>
     </properties>
+
     <groupId>com.riambbj</groupId>
     <artifactId>wmsdao</artifactId>
     <version>0.0.1-SNAPSHOT</version>
@@ -33,6 +34,9 @@
             <artifactId>junit</artifactId>
             <version>4.10</version>
         </dependency>
+
+
+
 
     </dependencies>
 

@@ -1,14 +1,11 @@
 package dao;
 
 import entity.Store;
-import org.junit.Before;
 import org.junit.Test;
 
 import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
-
-import static org.junit.Assert.*;
 
 public class StoreDaoTest {
     StoreDao dao = new StoreDao();
@@ -40,6 +37,11 @@ public class StoreDaoTest {
 
     @Test
     public void delete() {
+        int result =dao.delete(3);
+        if(result == 1){
+            System.out.println("成功");
+        }
+        System.out.println("finish");
     }
 
     @Test

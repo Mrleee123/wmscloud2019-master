@@ -30,6 +30,7 @@
     <result column="m_id" jdbcType="BIGINT" property="m_id" />
     <result column="num" jdbcType="INTEGER" property="num" />
     <result column="batchno" jdbcType="VARCHAR" property="batchno" />
+    <result column="companyid" jdbcType="VARCHAR" property="companyId" />
     <association property="storedef" javaType="entity.Storedef" autoMapping="true">
       <id column="sid"   property="id" />
       <result column="memo1" jdbcType="VARCHAR" property="memo" />
@@ -46,17 +47,17 @@
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
     select 
-      *
+       w.* ,sd.storedef_code,sd.storedef_name
     from t_asrs_workflow w
-     left join  t_asrs_sys_storedef sd on s.storedef_id = sd.id
+     left join  t_asrs_sys_storedef sd on w.storedef_id = sd.id
 
 
-    where id = #{id,jdbcType=BIGINT}
+    where w.id = #{id,jdbcType=BIGINT}
   </select>
 
   <select id="selectByMore" parameterType="entity.WorkFlow" resultMap="BaseResultMap">
     select
-      w.* s.*
+      w.*, sd.storedef_code,sd.storedef_name
     from t_asrs_workflow w
     left join  t_asrs_sys_storedef sd on w.storedef_id = sd.id
     <where>
@@ -65,56 +66,68 @@
         and w.storedef_id = #{storedefId,jdbcType=INTEGER}
       </if>
       <if test="ltime != null">
-        and w.ltime = #{ltime,jdbcType=BIGINT}
+        and <![CDATA[   and DATE_FORMAT(ltime , '%Y-%m-%d')>=  DATE_FORMAT(#{startTime}, '%Y-%m-%d')   ]]>
       </if>
       <if test="palletid != null">
         and w.palletid = #{palletid,jdbcType=VARCHAR}
       </if>
       <if test="stackerid != null">
-        and w.stackerid = #{stackerid,jdbcType=BIGINT}
+        and w.stackerid = #{stackerid,jdbcType=INTEGER}
       </if>
-      <if test="work_type != null">
+      <if test="workType != null">
         and w.work_type = #{workType,jdbcType=VARCHAR}
       </if>
       <if test="aisle != null">
-        and w.aisle = #{aisle,jdbcType=DECIMAL}
+        and w.aisle = #{aisle,jdbcType=INTEGER}
       </if>
       <if test="slayer != null">
-        and w.slayer = #{slayer,jdbcType=DECIMAL}
+        and w.slayer = #{slayer,jdbcType=INTEGER}
       </if>
       <if test="srank != null">
-        and w.srank = #{srank,jdbcType=VARCHAR}
+        and w.srank = #{srank,jdbcType=INTEGER}
       </if>
       <if test="srow != null">
-        and w.srow = #{srow,jdbcType=VARCHAR}
+        and w.srow = #{srow,jdbcType=INTEGER}
       </if>
       <if test="tlayer != null">
-        and w.tlayer = #{tlayer,jdbcType=DECIMAL}
+        and w.tlayer = #{tlayer,jdbcType=INTEGER}
       </if>
       <if test="trank != null">
-        and w.trank = #{trank,jdbcType=VARCHAR}
+        and w.trank = #{trank,jdbcType=INTEGER}
       </if>
       <if test="trow != null">
-        and w.trow = #{trow,jdbcType=VARCHAR}
+        and w.trow = #{trow,jdbcType=INTEGER}
       </if>
-      <if test="vendorId != null">
-        and s.vendor_id = #{vendorId,jdbcType=INTEGER}
+      <if test="status != null">
+        and w.status = #{status,jdbcType=VARCHAR}
       </if>
-      <if test="customerId != null">
-        and s.customer_id = #{customerId,jdbcType=INTEGER}
+      <if test="stationid != null">
+        and w.stationid = #{stationid,jdbcType=VARCHAR}
       </if>
-      <if test="billno != null">
-        and s.billno = #{billno,jdbcType=VARCHAR}
+      <if test="workindx != null">
+        and w.workindx = #{workindx,jdbcType=BIGINT}
       </if>
-      <if test="billHeadId != null">
-        and s.bill_head_id = #{billHeadId,jdbcType=INTEGER}
+      <if test="xpalletid != null">
+        and w.xpalletid = #{xpalletid,jdbcType=VARCHAR}
       </if>
-      <if test="billDetailId != null">
-        and s.bill_detail_id = #{billDetailId,jdbcType=INTEGER}
+      <if test="dealTime != null">
+        and w.deal_time = #{dealTime,jdbcType=TIMESTAMP}
       </if>
-      <if test="memo != null">
-        and s.memo = #{memo,jdbcType=VARCHAR}
+      <if test="sendTime != null">
+        <![CDATA[   and DATE_FORMAT(send_time , '%Y-%m-%d')>=  DATE_FORMAT(#{sendTime}, '%Y-%m-%d')   ]]>
+
       </if>
+      <if test="createTime != null">
+        <![CDATA[   and DATE_FORMAT(create_time , '%Y-%m-%d')>=  DATE_FORMAT(#{createTime}, '%Y-%m-%d')   ]]>
+
+      </if>
+      <if test="creator != null">
+      and w.creator=#{creator,jdbcType=VARCHAR}
+      </if>
+      <if test="companyId != null">
+        and w.companyid = #{companyId,jdbcType=VARCHAR}
+      </if>
+
     </where>
   </select>
 
@@ -131,7 +144,7 @@
       status, stationid, workindx, 
       xpalletid, deal_time, orderid, 
       send_time, create_time, creator, 
-      work_id)
+      work_id,companyid)
     values (#{id,jdbcType=BIGINT}, #{ltime,jdbcType=TIMESTAMP}, #{storedefId,jdbcType=INTEGER}, 
       #{billno,jdbcType=VARCHAR}, #{stackerid,jdbcType=VARCHAR}, #{workType,jdbcType=VARCHAR}, 
       #{palletid,jdbcType=VARCHAR}, #{aisle,jdbcType=INTEGER}, #{slayer,jdbcType=INTEGER}, 
@@ -140,7 +153,7 @@
       #{status,jdbcType=VARCHAR}, #{stationid,jdbcType=VARCHAR}, #{workindx,jdbcType=BIGINT}, 
       #{xpalletid,jdbcType=VARCHAR}, #{dealTime,jdbcType=TIMESTAMP}, #{orderid,jdbcType=VARCHAR}, 
       #{sendTime,jdbcType=TIMESTAMP}, #{createTime,jdbcType=TIMESTAMP}, #{creator,jdbcType=VARCHAR}, 
-      #{workId,jdbcType=INTEGER})
+      #{workId,jdbcType=INTEGER}, #{companyId,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="entity.WorkFlow">
     insert into t_asrs_workflow
@@ -374,6 +387,9 @@
       <if test="workId != null">
         work_id = #{workId,jdbcType=INTEGER},
       </if>
+      <if test="companyid != null">
+        companyid = #{companyId,jdbcType=VARCHAR}
+      </if>
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
@@ -402,7 +418,8 @@
       send_time = #{sendTime,jdbcType=TIMESTAMP},
       create_time = #{createTime,jdbcType=TIMESTAMP},
       creator = #{creator,jdbcType=VARCHAR},
-      work_id = #{workId,jdbcType=INTEGER}
+      work_id = #{workId,jdbcType=INTEGER},
+      companyid =  #{companyId,jdbcType=VARCHAR}
     where id = #{id,jdbcType=BIGINT}
   </update>
 </mapper>

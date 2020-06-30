@@ -26,7 +26,7 @@
     </association>
   </resultMap>
   <sql id="Base_Column_List">
-     id ,matmain_id, matname, mspeci, munit, mweight, memo  memo1, maxstore, minstore, storage_time,
+     id ,matmain_id, matname, mspeci, munit, mweight, memo,memo1, maxstore, minstore, storage_time,
     create_time, creator, update_time, updator,mid
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">

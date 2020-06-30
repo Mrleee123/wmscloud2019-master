@@ -6,7 +6,8 @@
 
     <groupId>com.riambbj</groupId>
     <artifactId>wms-cloud2019</artifactId>
-    <packaging>pom</packaging>
+  <packaging>pom</packaging>
+
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>wms-web-client</module>

@@ -7,12 +7,12 @@
     <result column="mmname" jdbcType="VARCHAR" property="mmname" />
     <result column="memo" jdbcType="VARCHAR" property="memo" />
     <result column="isinused" jdbcType="INTEGER" property="isinused" />
-    <result column="createTime" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
     <result column="creator" jdbcType="VARCHAR" property="creator" />
     <result column="companyid" jdbcType="INTEGER" property="companyId" />
   </resultMap>
   <sql id="Base_Column_List">
-    id, matmainid, mmname, memo, isinused, createTime, creator,companyid
+    id, matmainid, mmname, memo, isinused, create_time, creator,companyid
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
@@ -59,8 +59,8 @@
       memo, isinused,
       creator,companyid)
     values (#{id,jdbcType=INTEGER}, #{matmainid,jdbcType=VARCHAR}, #{mmname,jdbcType=VARCHAR}, 
-      #{memo,jdbcType=VARCHAR}, 1, #{companyId,jdbcType=INTEGER}
-      , #{creator,jdbcType=VARCHAR})
+      #{memo,jdbcType=VARCHAR}, 1,
+       #{creator,jdbcType=VARCHAR}, #{companyId,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" parameterType="entity.Matmain">
     insert into t_asrs_sys_matmain

@@ -20,6 +20,7 @@ public class Matmain implements Serializable {
 
     private String creator;
 
+
     private static final long serialVersionUID = 1L;
 
     public Integer getId() {

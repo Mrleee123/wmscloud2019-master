@@ -7,8 +7,6 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.Assert.*;
-
 public class RoleFunctionDaoTest {
     RoleFunctionDao dao = new RoleFunctionDao();
 
@@ -62,16 +60,19 @@ public class RoleFunctionDaoTest {
         RoleFunction roleFunction1 = new RoleFunction();
         roleFunction1.setRoleCode("0101");
         roleFunction1.setFunctionName("盘库管理");
+        roleFunction1.setCompanyId(1);
         RoleFunction roleFunction2 = new RoleFunction();
         roleFunction2.setRoleCode("010");
         roleFunction2.setFunctionName("物料管理");
+        roleFunction2.setCompanyId(1);
         RoleFunction roleFunction3 = new RoleFunction();
         roleFunction3.setRoleCode("010");
         roleFunction3.setFunctionName("作业管理");
+        roleFunction3.setCompanyId(1);
 
         List<RoleFunction> roleFunctionList = new ArrayList<>();
         roleFunctionList.add(roleFunction1);
-        //roleFunctionList.add(roleFunction2);
+        roleFunctionList.add(roleFunction2);
       //  roleFunctionList.add(roleFunction3);
         System.out.println(roleFunctionList);
         int result =dao.insertList(roleFunctionList);

@@ -14,6 +14,7 @@
     <result column="palletcode" jdbcType="VARCHAR" property="palletcode" />
     <result column="startTime" jdbcType="TIMESTAMP" property="startTime" />
     <result column="endTime" jdbcType="TIMESTAMP" property="endTime" />
+    <result column="companyid" jdbcType="INTEGER" property="companyId" />
   </resultMap>
   <sql id="Base_Column_List">
     id, ltime, devno, acode, acontent, cid, palletid, memo, detail, palletcode,companyId
@@ -37,11 +38,14 @@
         and acode = #{acode,jdbcType=VARCHAR}
       </if>
       <if test="startTime != null">
-        <![CDATA[   and DATE_FORMAT(ltime , '%Y-%m-%d')>=  DATE_FORMAT(#{startTime}, '%Y-%m-%d')   ]]>
+       and <![CDATA[   and DATE_FORMAT(ltime , '%Y-%m-%d')>=  DATE_FORMAT(#{startTime}, '%Y-%m-%d')   ]]>
 
       </if>
       <if test="endTime != null">
         and #{endTime,jdbcType=TIMESTAMP}>=ltime
+      </if>
+      <if test="companyId != null">
+        and l.companyid = #{companyId,jdbcType=VARCHAR}
       </if>
     </where>
   </select>

@@ -60,6 +60,16 @@ public class WorkFlow implements Serializable {
 
     private int num;
 
+    public Storedef getStoredef() {
+        return storedef;
+    }
+
+    public void setStoredef(Storedef storedef) {
+        this.storedef = storedef;
+    }
+
+    public Storedef storedef;
+
     public long getM_id() {
         return m_id;
     }

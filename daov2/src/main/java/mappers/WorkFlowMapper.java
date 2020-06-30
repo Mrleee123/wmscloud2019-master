@@ -2,6 +2,8 @@ package mappers;
 
 import entity.WorkFlow;
 
+import java.util.List;
+
 public interface WorkFlowMapper {
     int deleteByPrimaryKey(Long id);
 
@@ -14,4 +16,6 @@ public interface WorkFlowMapper {
     int updateByPrimaryKeySelective(WorkFlow record);
 
     int updateByPrimaryKey(WorkFlow record);
+
+    List<WorkFlow> selectByMore(WorkFlow record);
 }

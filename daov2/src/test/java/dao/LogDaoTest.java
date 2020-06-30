@@ -14,11 +14,11 @@ public class LogDaoTest {
         Log log = new Log();
         Date date = new Date();
         log.setLtime(date);
-        log.setLclass("ssss");
+        log.setLclass("ss22ss");
         log.setMemo("测试");
         log.setFunmain("盘点");
         log.setUserid("1");
-        log.setDetail("panjiao");
+        log.setDetail("panjiao1");
         log.setCompanyId(1);
 
         dao.add(log);

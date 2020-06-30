@@ -5,8 +5,6 @@ import org.junit.Test;
 
 import java.util.List;
 
-import static org.junit.Assert.*;
-
 public class MatdetDaoTest {
     MatdetDao dao = new MatdetDao();
 
@@ -14,7 +12,7 @@ public class MatdetDaoTest {
     public void add() {
         Matdet matdet = new Matdet();
         matdet.setMatmainId(3l);
-        matdet.setMatname("笔记本");
+        matdet.setMatname("笔记本1");
         matdet.setMemo("测试");
         matdet.setMunit("kg");
         matdet.setMweight("1000");

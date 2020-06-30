@@ -62,9 +62,9 @@ public class DveLogDao {
         }
 
 
-        public List<DevLog> selectByMore(DevLog matdet) {
+        public List<DevLog> selectByMore(DevLog devLog) {
             try {
-                List<DevLog> result = mapper.selectByMore(matdet);
+                List<DevLog> result = mapper.selectByMore(devLog);
                 return result;
             } finally {
                 DBTools.closeSession();

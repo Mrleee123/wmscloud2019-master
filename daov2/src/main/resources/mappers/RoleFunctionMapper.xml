@@ -54,18 +54,18 @@
   </delete>
 
   <insert id="insert" parameterType="entity.RoleFunction">
-    insert into t_asrs_role_function (id, RoleCode, FunctionName,companyid
+    insert into t_asrs_role_function ( RoleCode, FunctionName,companyid
       )
-    values (#{id,jdbcType=INTEGER}, #{RoleCode,jdbcType=VARCHAR},#{FunctionName,jdbcType=VARCHAR}, #{companyid,jdbcType=INTEGER}
+    values ( #{RoleCode,jdbcType=VARCHAR},#{FunctionName,jdbcType=VARCHAR}, #{companyid,jdbcType=INTEGER}
       )
   </insert>
 
   <insert id="insertList" parameterType="entity.RoleFunction">
-    insert into t_asrs_role_function (id, RoleCode, FunctionName,companyid
-      )
+    insert into t_asrs_role_function ( RoleCode, FunctionName,companyid
+    )
     values
     <foreach collection="list" item="RoleFunction" index="index" separator=",">
-    (#{RoleFunction.id,jdbcType=INTEGER}, #{RoleFunction.RoleCode,jdbcType=VARCHAR},#{RoleFunction.FunctionName,jdbcType=VARCHAR}, #{companyid,jdbcType=INTEGER}
+      ( #{RoleFunction.RoleCode,jdbcType=VARCHAR},#{RoleFunction.FunctionName,jdbcType=VARCHAR}, #{RoleFunction.companyid,jdbcType=INTEGER}
       )
     </foreach>
   </insert>

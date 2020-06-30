@@ -5,8 +5,6 @@ import org.junit.Test;
 
 import java.util.List;
 
-import static org.junit.Assert.*;
-
 public class UserDaoTest {
 
     @Test
@@ -27,7 +25,7 @@ public class UserDaoTest {
 
     @Test
     public void delete() {
-        long a = 6;
+        long a = 5;
         UserDao dao = new UserDao();
         int result =  dao.delete(a);
         if (result ==1) {
@@ -40,7 +38,7 @@ public class UserDaoTest {
     public void update() {
         User user  = new User();
        // user.setUserCode("MM1");
-        user.setId(5L);
+        user.setId(3L);
         user.setUserName("江小P111");
         user.setPassword("123456");
         user.setIsdeleted(1);

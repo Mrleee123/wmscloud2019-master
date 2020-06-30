@@ -1,28 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="254c0f5b-7169-4179-a208-0dfc5c7754aa" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/daov2/src/main/java/dao/DveLogDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/daov2/src/main/java/dao/LogDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/daov2/src/test/java/dao/DevLogDaoTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/daov2/src/test/java/dao/LogDaoTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wms-web-client/src/main/java/com/riambbj/wmscloud/controllers/DevLogController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wms-web-client/src/main/java/com/riambbj/wmscloud/controllers/LogController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wms-web-client/src/main/java/com/riambbj/wmscloud/services/DevLogService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wms-web-client/src/main/java/com/riambbj/wmscloud/services/LogService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/daov2/src/main/java/entity/DevLog.java" beforeDir="false" afterPath="$PROJECT_DIR$/daov2/src/main/java/entity/DevLog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/daov2/src/main/java/entity/Log.java" beforeDir="false" afterPath="$PROJECT_DIR$/daov2/src/main/java/entity/Log.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/daov2/src/main/java/entity/WorkFlow.java" beforeDir="false" afterPath="$PROJECT_DIR$/daov2/src/main/java/entity/WorkFlow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/daov2/src/main/java/mappers/DevLogMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/daov2/src/main/java/mappers/DevLogMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/daov2/src/main/java/mappers/LogMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/daov2/src/main/java/mappers/LogMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/daov2/src/main/resources/mappers/DevLogMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/daov2/src/main/resources/mappers/DevLogMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/daov2/src/main/resources/mappers/LogMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/daov2/src/main/resources/mappers/LogMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/daov2/src/main/resources/mappers/WorkFlowMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/daov2/src/main/resources/mappers/WorkFlowMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/daov2/src/main/resources/mybatis_cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/daov2/src/main/resources/mybatis_cfg.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/daov2/src/test/java/dao/StoreDaoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/daov2/src/test/java/dao/StoreDaoTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/daov2/target/classes/mybatis_cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/daov2/target/classes/mybatis_cfg.xml" afterDir="false" />
-    </list>
+    <list default="true" id="254c0f5b-7169-4179-a208-0dfc5c7754aa" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -233,7 +212,7 @@
       <workItem from="1564102431808" duration="6189000" />
       <workItem from="1573441913893" duration="1825000" />
       <workItem from="1573462729569" duration="10824000" />
-      <workItem from="1573609276101" duration="6258000" />
+      <workItem from="1573609276101" duration="6486000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <created>1561624135955</created>
@@ -375,7 +354,14 @@
       <option name="project" value="LOCAL" />
       <updated>1564120036075</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="commit 1113">
+      <created>1573615626942</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1573615626942</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TodoView">
@@ -410,7 +396,8 @@
     <MESSAGE value="commit 0709" />
     <MESSAGE value="commit 0723" />
     <MESSAGE value="commit 0726" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit 0726" />
+    <MESSAGE value="commit 1113" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit 1113" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

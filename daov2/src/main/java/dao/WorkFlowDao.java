@@ -1,23 +1,23 @@
 package dao;
 
 import dbtools.DBTools;
-import entity.Log;
-import mappers.LogMapper;
+import entity.WorkFlow;
+import mappers.WorkFlowMapper;
 import org.apache.ibatis.session.SqlSession;
 
 import java.util.Date;
 import java.util.List;
 
-public class LogDao {
+public class WorkFlowDao {
     private SqlSession sqlSession;
-    private LogMapper mapper;
+    private WorkFlowMapper mapper;
 
-    public LogDao() {
+    public WorkFlowDao() {
         sqlSession = DBTools.getSession();
-        mapper = sqlSession.getMapper(LogMapper.class);
+        mapper = sqlSession.getMapper(WorkFlowMapper.class);
     }
 
-    public int add(Log matdet) {
+    public int add(WorkFlow matdet) {
         try {
             int result = mapper.insert(matdet);
             sqlSession.commit();
@@ -37,12 +37,12 @@ public class LogDao {
         }
     }
 
-    public int update(Log log) {
+    public int update(WorkFlow WorkFlow) {
         try {
             java.sql.Date time = new java.sql.Date(new Date().getTime());
             Date update_time = time;
-            log.setLtime(update_time);
-            int result = mapper.updateByPrimaryKeySelective(log);
+            WorkFlow.setLtime(update_time);
+            int result = mapper.updateByPrimaryKeySelective(WorkFlow);
             sqlSession.commit();
             return result;
         } finally {
@@ -50,9 +50,9 @@ public class LogDao {
         }
     }
 
-    public Log get(long id) {
+    public WorkFlow get(long id) {
         try {
-            Log matdet = mapper.selectByPrimaryKey(id);
+            WorkFlow matdet = mapper.selectByPrimaryKey(id);
             System.out.println(matdet);
             return matdet;
         } finally {
@@ -61,9 +61,9 @@ public class LogDao {
     }
 
 
-    public List<Log> selectByMore(Log log) {
+    public List<WorkFlow> selectByMore(WorkFlow workFlow) {
         try {
-            List<Log> result = mapper.selectByMore(log);
+            List<WorkFlow> result = mapper.selectByMore(workFlow);
             return result;
         } finally {
             DBTools.closeSession();

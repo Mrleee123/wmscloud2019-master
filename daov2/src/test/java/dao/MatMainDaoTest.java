@@ -5,8 +5,6 @@ import org.junit.Test;
 
 import java.util.List;
 
-import static org.junit.Assert.*;
-
 public class MatMainDaoTest {
 
   MatMainDao matMainDao = new MatMainDao();
@@ -14,17 +12,18 @@ public class MatMainDaoTest {
     @Test
     public void add() {
         Matmain matmain = new Matmain();
-        matmain.setMatmainid("A001");
-        matmain.setMmname("电子");
+        matmain.setMatmainid("A0012");
+        matmain.setMmname("电子1");
         matmain.setMemo("测试");
         matmain.setCreator("System");
+        matmain.setCompanyId(1);
         matMainDao.add(matmain);
         System.out.println("finish");
     }
 
     @Test
     public void delete() {
-        int result =matMainDao.delete(2);
+        int result =matMainDao.delete(1);
         System.out.println(result);
     }
 

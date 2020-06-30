@@ -10,6 +10,7 @@
     <result column="userid" jdbcType="VARCHAR" property="userid" />
     <result column="memo" jdbcType="VARCHAR" property="memo" />
     <result column="detail" jdbcType="VARCHAR" property="detail" />
+    <result column="companyid" jdbcType="INTEGER" property="companyId" />
     <association property="user" javaType="entity.User" autoMapping="true">
       <id column="uid"   property="id" />
       <result column="memo1" jdbcType="VARCHAR" property="memo" />
@@ -17,7 +18,7 @@
 
   </resultMap>
   <sql id="Base_Column_List">
-    id, ltime, lclass, funmain, munc, userid, memo, detail
+    id, ltime, lclass, funmain, munc, userid, memo, detail,companyid
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
     select 
@@ -37,7 +38,9 @@
       <if test="userid != null">
         and l.userid = #{userid,jdbcType=VARCHAR}
       </if>
-
+      <if test="companyId != null">
+        and l.companyid = #{companyId,jdbcType=VARCHAR}
+      </if>
     </where>
   </select>
 
@@ -147,6 +150,7 @@
       userid = #{userid,jdbcType=VARCHAR},
       memo = #{memo,jdbcType=VARCHAR},
       detail = #{detail,jdbcType=VARCHAR}
+      companyid=#{companyId,jdbcType=INTEGER}
     where id = #{id,jdbcType=BIGINT}
   </update>
 </mapper>

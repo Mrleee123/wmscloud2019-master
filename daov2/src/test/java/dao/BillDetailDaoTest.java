@@ -12,10 +12,11 @@ public class BillDetailDaoTest {
     @Test
     public void add() {
         BillDetail billDetail = new BillDetail();
-        billDetail.setBill_head_id(1);
-        billDetail.setCreator("system1");
+        billDetail.setBill_head_id(2);
+        billDetail.setCreator("system");
         billDetail.setM_id(3l);
         billDetail.setMstatus("B");
+        billDetail.setNum(new BigDecimal(111));
         billDetail.setDetail_status(5);
         BigDecimal num = new BigDecimal(1000000);
         BigDecimal num1 = new BigDecimal(10000.999);
