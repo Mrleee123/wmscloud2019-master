@@ -2,6 +2,8 @@ package mappers;
 
 import entity.ZuHu;
 
+import java.util.List;
+
 public interface ZuHuMapper {
     int deleteByPrimaryKey(Integer id);
 
@@ -14,4 +16,6 @@ public interface ZuHuMapper {
     int updateByPrimaryKeySelective(ZuHu record);
 
     int updateByPrimaryKey(ZuHu record);
+
+    List<ZuHu> selectByMore(ZuHu record);
 }

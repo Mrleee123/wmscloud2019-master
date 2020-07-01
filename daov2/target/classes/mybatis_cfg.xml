@@ -48,6 +48,7 @@
 
     <!-- 为mybatis的映射文件mapper.xml设置路径 -->
     <mappers>
+
         <package name="mappers"/>
     </mappers>
 

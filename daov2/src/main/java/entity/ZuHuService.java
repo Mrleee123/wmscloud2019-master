@@ -17,7 +17,28 @@ public class ZuHuService implements Serializable {
     private BigDecimal moneyleft;
 
 
+
+    public ZuHu zuHu;
+
+    public Service service;
+
     private static final long serialVersionUID = 1L;
+
+    public ZuHu getZuHu() {
+        return zuHu;
+    }
+
+    public void setZuHu(ZuHu zuHu) {
+        this.zuHu = zuHu;
+    }
+
+    public Service getService() {
+        return service;
+    }
+
+    public void setService(Service service) {
+        this.service = service;
+    }
 
     public Integer getId() {
         return id;

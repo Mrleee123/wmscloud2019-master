@@ -124,7 +124,7 @@
       <if test="creator != null">
       and w.creator=#{creator,jdbcType=VARCHAR}
       </if>
-      <if test="companyId != null">
+      <if test="companyId != null and companyId != 0 ">
         and w.companyid = #{companyId,jdbcType=VARCHAR}
       </if>
 

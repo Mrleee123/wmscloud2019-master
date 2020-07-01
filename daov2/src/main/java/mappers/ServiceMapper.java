@@ -2,6 +2,8 @@ package mappers;
 
 import entity.Service;
 
+import java.util.List;
+
 public interface ServiceMapper {
     int deleteByPrimaryKey(Long id);
 
@@ -14,4 +16,6 @@ public interface ServiceMapper {
     int updateByPrimaryKeySelective(Service record);
 
     int updateByPrimaryKey(Service record);
+
+    List<Service> selectByMore(Service record);
 }

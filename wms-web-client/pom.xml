@@ -10,7 +10,7 @@
     <groupId>com.riambbj</groupId>
     <artifactId>wmscloud</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <packaging>war</packaging>
+    <packaging>jar</packaging>
     <name>wmscloud</name>
     <description>Demo project for Spring Boot</description>
 

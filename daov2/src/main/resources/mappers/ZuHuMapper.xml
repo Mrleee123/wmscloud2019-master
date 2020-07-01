@@ -26,6 +26,55 @@
     from t_web_zuhu
     where id = #{id,jdbcType=INTEGER}
   </select>
+
+  <select id="selectByMore" parameterType="entity.ZuHu" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from t_web_zuhu
+    <where>
+       1=1
+      <if test="id != null">
+        and id=#{id,jdbcType=INTEGER}
+      </if>
+      <if test="company != null">
+        and company=#{company,jdbcType=VARCHAR}
+      </if>
+      <if test="tel != null">
+        and tel=#{tel,jdbcType=VARCHAR}
+      </if>
+      <if test="postcode != null">
+       and postcode=#{postcode,jdbcType=VARCHAR}
+      </if>
+      <if test="preCompany != null">
+        and pre_company=#{preCompany,jdbcType=VARCHAR}
+      </if>
+      <if test="ismain != null">
+        and ismain=#{ismain,jdbcType=INTEGER}
+      </if>
+      <if test="address != null">
+        and address=#{address,jdbcType=VARCHAR}
+      </if>
+      <if test="caegory != null">
+        and caegory=#{caegory,jdbcType=VARCHAR}
+      </if>
+      <if test="maxnumUser != null">
+        and maxnum_user=#{maxnumUser,jdbcType=BIGINT}
+      </if>
+      <if test="maxnumCompany != null">
+        and maxnum_company=#{maxnumCompany,jdbcType=INTEGER}
+      </if>
+      <if test="maxnumDev != null">
+        and maxnum_dev=#{maxnumDev,jdbcType=BIGINT}
+      </if>
+      <if test="serviceAddress != null">
+        and service_address=#{serviceAddress,jdbcType=VARCHAR}
+      </if>
+      <if test="createTime != null">
+        and create_time=#{createTime,jdbcType=TIMESTAMP}
+      </if>
+    </where>
+  </select>
+
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from t_web_zuhu
     where id = #{id,jdbcType=INTEGER}

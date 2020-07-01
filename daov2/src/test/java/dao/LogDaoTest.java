@@ -34,7 +34,7 @@ public class LogDaoTest {
     @Test
     public void update() {
         Log log = new Log();
-        log.setId(2l);
+        log.setId(1l);
         Date date = new Date();
         log.setLtime(date);
         log.setLclass("ssss");
