@@ -26,12 +26,18 @@ public class ServiceService {
         return dao.get(id);
     }
 
-
+    public List<Service> selectByCompanyId(int companyid) {return dao.selectByCompanyId(companyid);}
 
     public List<Service> selectByMore(Service Service, int currPage, int pageSize){
         List<Service> list = dao.selectByMore(Service);
         int firstIndex= (currPage-1)*pageSize;
         int lastIndex=currPage*pageSize;
-        return list.subList(firstIndex,lastIndex);}
+        if (list.size()>lastIndex) {
+            return list.subList(firstIndex, lastIndex);
+        }else{
+            return  list;
+        }
+
+        }
 }
 

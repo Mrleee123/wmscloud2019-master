@@ -4,7 +4,6 @@ package dao;
 import dbtools.DBTools;
 import entity.User;
 import mappers.UserMapper;
-import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.session.SqlSession;
 
 import java.util.Date;
@@ -93,10 +92,10 @@ public class UserDao {
     }
 
 
-    public  User loginByCodeAndPwd(String User_code,String password){
+    public  User loginByCodeAndPwd(String User_code,String password,Integer companyid){
         try{
             User user = new User();
-            user = mapper.login(User_code,password);
+            user = mapper.login(User_code,password,companyid);
             System.out.println(user);
             return user;
         }finally {

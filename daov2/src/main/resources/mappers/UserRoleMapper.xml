@@ -5,7 +5,8 @@
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="user_code" jdbcType="VARCHAR" property="userCode" />
     <result column="role_code" jdbcType="VARCHAR" property="roleCode" />
-    <result column="companyid" jdbcType="INTEGER" property="companyId" />
+    <result column="companyid" jdbcType="INTEGER" property="companyid" />
+    <result column="projectid" jdbcType="BIGINT" property="projectid" />
     <association property="user" javaType="entity.User" autoMapping="true">
       <id column="uid"   property="id" />
       <result column="memo1" jdbcType="VARCHAR" property="memo" />
@@ -26,7 +27,6 @@
     left join  t_asrs_sys_role r on ur.role_code = r.rolecode
     where u.id = #{id,jdbcType=BIGINT}
   </select>
-
 
   <select id="selectByUserCode" parameterType="String" resultMap="BaseResultMap">
     select

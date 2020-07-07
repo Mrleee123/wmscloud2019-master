@@ -58,6 +58,17 @@ public class ServiceController {
         }
     }
 
+    @RequestMapping(value = "/Service/selectByCompanyId", method = RequestMethod.GET)
+    @ResponseBody
+    public List<Service> selectByCompanyId(@RequestParam(value = "companyid") int companyid) {
+        try {
+            List<Service> Service = us.selectByCompanyId(companyid);
+            return Service;
+        } catch (Exception e) {
+            return null;
+        }
+    }
+
     @PostMapping(value = "/Service/selectByMore/{currPage}/{pageSize}")
     @ResponseBody
     public List<Service> selectByMore(@RequestBody Service Service, @PathVariable("currPage") int currPage, @PathVariable("pageSize") int pageSize) {

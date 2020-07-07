@@ -2,10 +2,10 @@ package dao;
 
 import dbtools.DBTools;
 import entity.Rack;
+import entity.RackSum;
 import mappers.RackMapper;
 import org.apache.ibatis.session.SqlSession;
 
-import java.util.Date;
 import java.util.List;
 
 public class RackDao {
@@ -60,6 +60,16 @@ public class RackDao {
     public List<Rack> selectByMore(Rack rack){
         try {
             List<Rack> result = mapper.selectByMore(rack);
+            System.out.println(result);
+            return result;
+        }finally {
+            DBTools.closeSession();
+        }
+    }
+
+    public List<RackSum> selectByStatus(int companyid){
+        try {
+            List<RackSum> result = mapper.selectByStatus(companyid);
             System.out.println(result);
             return result;
         }finally {

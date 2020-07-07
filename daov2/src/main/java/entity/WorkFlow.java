@@ -60,6 +60,10 @@ public class WorkFlow implements Serializable {
 
     private int num;
 
+    private int projectid;
+
+    private Project project;
+
     public Storedef getStoredef() {
         return storedef;
     }
@@ -314,5 +318,21 @@ public class WorkFlow implements Serializable {
 
     public void setCompanyId(int companyId) {
         this.companyId = companyId;
+    }
+
+    public int getProjectid() {
+        return projectid;
+    }
+
+    public void setProjectid(int projectid) {
+        this.projectid = projectid;
+    }
+
+    public Project getProject() {
+        return project;
+    }
+
+    public void setProject(Project project) {
+        this.project = project;
     }
 }

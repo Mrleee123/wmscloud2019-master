@@ -10,9 +10,10 @@
     <result column="creator" jdbcType="VARCHAR" property="creator" />
     <result column="isenabled" jdbcType="VARCHAR" property="isenabled" />
     <result column="companyid" jdbcType="INTEGER" property="companyId" />
+    <result column="projectid" jdbcType="BIGINT" property="projectid" />
   </resultMap>
   <sql id="Base_Column_List">
-    id, rolecode, rolename, memo, createtime, creator,isenabled,companyid
+    id, rolecode, rolename, memo, createtime, creator,isenabled,companyid,projectid
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
@@ -42,6 +43,9 @@
      <if test="companyId !=null">
        and companyid = #{companyId,jdbcType=INTEGER}
      </if>
+     <if test="projectid !=null">
+       and projectid = #{projectid,jdbcType=BIGINT}
+     </if>
    </where>
  </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
@@ -50,10 +54,10 @@
   </delete>
   <insert id="insert" parameterType="entity.Role">
     insert into t_asrs_sys_role (id, rolecode, rolename,
-      memo, creator,companyid
+      memo, creator,companyid,projectid
       )
     values (#{id,jdbcType=INTEGER}, #{roleCode,jdbcType=VARCHAR}, #{roleName,jdbcType=VARCHAR}, 
-      #{memo,jdbcType=VARCHAR}, #{creator,jdbcType=VARCHAR},#{companyId,jdbcType=INTEGER}
+      #{memo,jdbcType=VARCHAR}, #{creator,jdbcType=VARCHAR},#{companyId,jdbcType=INTEGER},#{projectid,jdbcType=BIGINT}
       )
   </insert>
   <insert id="insertSelective" parameterType="entity.Role">
@@ -75,6 +79,12 @@
       <if test="creator != null">
         creator,
       </if>
+      <if test="companyId != null">
+        companyid,
+      </if>
+      <if test="projectid != null">
+        projectid,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -92,6 +102,12 @@
 
       <if test="creator != null">
         #{creator,jdbcType=VARCHAR},
+      </if>
+      <if test="companyId != null">
+        #{companyId,jdbcType=INTEGER},
+      </if>
+      <if test="projectid != null">
+        #{projectid,jdbcType=BIGINT},
       </if>
     </trim>
   </insert>

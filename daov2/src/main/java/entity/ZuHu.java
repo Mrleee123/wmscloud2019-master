@@ -12,7 +12,9 @@ public class ZuHu implements Serializable {
 
     private String postcode;
 
-    private String preCompany;
+
+
+    private Integer preCompany;
 
     private Integer ismain;
 
@@ -30,7 +32,27 @@ public class ZuHu implements Serializable {
 
     private Date createTime;
 
+    private ZuHu zuHu1 ;
+
+    private long projectid;
+
     private static final long serialVersionUID = 1L;
+
+    public ZuHu getZuHu1() {
+        return zuHu1;
+    }
+
+    public void setZuHu1(ZuHu zuHu1) {
+        this.zuHu1 = zuHu1;
+    }
+
+    public Integer getPreCompany() {
+        return preCompany;
+    }
+
+    public void setPreCompany(Integer preCompany) {
+        this.preCompany = preCompany;
+    }
 
     public Integer getId() {
         return id;
@@ -64,13 +86,6 @@ public class ZuHu implements Serializable {
         this.postcode = postcode == null ? null : postcode.trim();
     }
 
-    public String getPreCompany() {
-        return preCompany;
-    }
-
-    public void setPreCompany(String preCompany) {
-        this.preCompany = preCompany == null ? null : preCompany.trim();
-    }
 
     public Integer getIsmain() {
         return ismain;
@@ -134,5 +149,13 @@ public class ZuHu implements Serializable {
 
     public void setCreateTime(Date createTime) {
         this.createTime = createTime;
+    }
+
+    public long getProjectid() {
+        return projectid;
+    }
+
+    public void setProjectid(long projectid) {
+        this.projectid = projectid;
     }
 }

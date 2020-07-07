@@ -29,4 +29,5 @@ public class UserRoleService {
     public List<UserRole> selectUserRoleByUserCode(String userCode){
         return dao.getByUserCode(userCode);
     }
+
 }

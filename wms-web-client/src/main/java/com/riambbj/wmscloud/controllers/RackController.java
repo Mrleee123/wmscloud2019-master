@@ -2,6 +2,7 @@ package com.riambbj.wmscloud.controllers;
 
 import com.riambbj.wmscloud.services.RackService;
 import entity.Rack;
+import entity.RackSum;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
@@ -52,6 +53,17 @@ public class RackController {
     public Rack selectrackByid(@RequestParam(value = "id") long id) {
         try {
             Rack rack = us.selectByIdService(id);
+            return rack;
+        } catch (Exception e) {
+            return null;
+        }
+    }
+
+    @RequestMapping(value = "/rack/selectByStatus", method = RequestMethod.GET)
+    @ResponseBody
+    public List<RackSum> selectByStatus(@RequestParam(value = "companyid") int companyid) {
+        try {
+            List<RackSum> rack = us.selectByStatus(companyid);
             return rack;
         } catch (Exception e) {
             return null;

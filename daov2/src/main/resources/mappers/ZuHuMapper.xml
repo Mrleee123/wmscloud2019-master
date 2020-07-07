@@ -6,7 +6,7 @@
     <result column="company" jdbcType="VARCHAR" property="company" />
     <result column="tel" jdbcType="VARCHAR" property="tel" />
     <result column="postcode" jdbcType="VARCHAR" property="postcode" />
-    <result column="pre_company" jdbcType="VARCHAR" property="preCompany" />
+    <result column="pre_company" jdbcType="INTEGER" property="preCompany" />
     <result column="ismain" jdbcType="INTEGER" property="ismain" />
     <result column="address" jdbcType="VARCHAR" property="address" />
     <result column="caegory" jdbcType="VARCHAR" property="caegory" />
@@ -15,6 +15,14 @@
     <result column="maxnum_dev" jdbcType="BIGINT" property="maxnumDev" />
     <result column="service_address" jdbcType="VARCHAR" property="serviceAddress" />
     <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="projectid" jdbcType="BIGINT" property="projectid" />
+    <!-- association ：配置一对一属性 -->
+    <!-- property:order里面的User属性名 -->
+    <!-- javaType:属性类型 -->
+    <association property="zuHu1" javaType="entity.ZuHu" autoMapping="true">
+      <id column="pre_id"   property="id" />
+      <result column="company" jdbcType="VARCHAR" property="company" />
+    </association>
   </resultMap>
   <sql id="Base_Column_List">
     id, company, tel, postcode, pre_company, ismain, address, caegory, maxnum_user, maxnum_company, 
@@ -22,55 +30,60 @@
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
-    <include refid="Base_Column_List" />
-    from t_web_zuhu
-    where id = #{id,jdbcType=INTEGER}
+      t.*,t1.*
+    from t_web_zuhu t
+    left join  t_web_zuhu t1 on t.pre_company = t1.id
+    where t.id = #{id,jdbcType=INTEGER}
   </select>
 
   <select id="selectByMore" parameterType="entity.ZuHu" resultMap="BaseResultMap">
     select
-    <include refid="Base_Column_List" />
-    from t_web_zuhu
+    t.*,t1.company
+    from t_web_zuhu t
+    left join  t_web_zuhu t1 on t.pre_company = t1.id
     <where>
        1=1
       <if test="id != null">
-        and id=#{id,jdbcType=INTEGER}
+        and t.id=#{id,jdbcType=INTEGER}
       </if>
       <if test="company != null">
-        and company=#{company,jdbcType=VARCHAR}
+        and t.company=#{company,jdbcType=VARCHAR}
       </if>
       <if test="tel != null">
-        and tel=#{tel,jdbcType=VARCHAR}
+        and t.tel=#{tel,jdbcType=VARCHAR}
       </if>
       <if test="postcode != null">
-       and postcode=#{postcode,jdbcType=VARCHAR}
+       and t.postcode=#{postcode,jdbcType=VARCHAR}
       </if>
       <if test="preCompany != null">
-        and pre_company=#{preCompany,jdbcType=VARCHAR}
+        and t.pre_company=#{preCompany,jdbcType=INTEGER}
       </if>
       <if test="ismain != null">
-        and ismain=#{ismain,jdbcType=INTEGER}
+        and t.ismain=#{ismain,jdbcType=INTEGER}
       </if>
       <if test="address != null">
-        and address=#{address,jdbcType=VARCHAR}
+        and t.address=#{address,jdbcType=VARCHAR}
       </if>
       <if test="caegory != null">
-        and caegory=#{caegory,jdbcType=VARCHAR}
+        and t.caegory=#{caegory,jdbcType=VARCHAR}
       </if>
       <if test="maxnumUser != null">
-        and maxnum_user=#{maxnumUser,jdbcType=BIGINT}
+        and t.maxnum_user=#{maxnumUser,jdbcType=BIGINT}
       </if>
       <if test="maxnumCompany != null">
-        and maxnum_company=#{maxnumCompany,jdbcType=INTEGER}
+        and t.maxnum_company=#{maxnumCompany,jdbcType=INTEGER}
       </if>
       <if test="maxnumDev != null">
-        and maxnum_dev=#{maxnumDev,jdbcType=BIGINT}
+        and t.maxnum_dev=#{maxnumDev,jdbcType=BIGINT}
       </if>
       <if test="serviceAddress != null">
-        and service_address=#{serviceAddress,jdbcType=VARCHAR}
+        and t.service_address=#{serviceAddress,jdbcType=VARCHAR}
       </if>
       <if test="createTime != null">
-        and create_time=#{createTime,jdbcType=TIMESTAMP}
+        and t.create_time=#{createTime,jdbcType=TIMESTAMP}
+      </if>
+      <if test="projectid != null and projectid != 0">
+        and t.projectid=#{projectid,jdbcType=BIGINT}
       </if>
     </where>
   </select>
@@ -79,17 +92,18 @@
     delete from t_web_zuhu
     where id = #{id,jdbcType=INTEGER}
   </delete>
+
   <insert id="insert" parameterType="entity.ZuHu">
     insert into t_web_zuhu (id, company, tel, 
       postcode, pre_company, ismain, 
       address, caegory, maxnum_user, 
       maxnum_company, maxnum_dev, service_address, 
-      create_time)
+      create_time,projectid)
     values (#{id,jdbcType=INTEGER}, #{company,jdbcType=VARCHAR}, #{tel,jdbcType=VARCHAR}, 
-      #{postcode,jdbcType=VARCHAR}, #{preCompany,jdbcType=VARCHAR}, #{ismain,jdbcType=INTEGER}, 
+      #{postcode,jdbcType=VARCHAR}, #{preCompany,jdbcType=INTEGER}, #{ismain,jdbcType=INTEGER},
       #{address,jdbcType=VARCHAR}, #{caegory,jdbcType=VARCHAR}, #{maxnumUser,jdbcType=BIGINT}, 
       #{maxnumCompany,jdbcType=INTEGER}, #{maxnumDev,jdbcType=BIGINT}, #{serviceAddress,jdbcType=VARCHAR}, 
-      #{createTime,jdbcType=TIMESTAMP})
+      now(),#{projectid,jdbcType=BIGINT})
   </insert>
   <insert id="insertSelective" parameterType="entity.ZuHu">
     insert into t_web_zuhu
@@ -133,6 +147,9 @@
       <if test="createTime != null">
         create_time,
       </if>
+      <if test="projectid ! = null">
+        projectid,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -174,6 +191,9 @@
       <if test="createTime != null">
         #{createTime,jdbcType=TIMESTAMP},
       </if>
+      <if test="projectid != null">
+        #{projectid,jdbcType=BIGINT},
+      </if>
     </trim>
   </insert>
   <update id="updateByPrimaryKeySelective" parameterType="entity.ZuHu">
@@ -189,7 +209,7 @@
         postcode = #{postcode,jdbcType=VARCHAR},
       </if>
       <if test="preCompany != null">
-        pre_company = #{preCompany,jdbcType=VARCHAR},
+        pre_company = #{preCompany,jdbcType=INTEGER},
       </if>
       <if test="ismain != null">
         ismain = #{ismain,jdbcType=INTEGER},
@@ -215,6 +235,9 @@
       <if test="createTime != null">
         create_time = #{createTime,jdbcType=TIMESTAMP},
       </if>
+      <if test="projectid != null">
+        projectid = #{projectid,jdbcType=BIGINT},
+      </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
@@ -223,7 +246,7 @@
     set company = #{company,jdbcType=VARCHAR},
       tel = #{tel,jdbcType=VARCHAR},
       postcode = #{postcode,jdbcType=VARCHAR},
-      pre_company = #{preCompany,jdbcType=VARCHAR},
+      pre_company = #{preCompany,jdbcType=INTEGER},
       ismain = #{ismain,jdbcType=INTEGER},
       address = #{address,jdbcType=VARCHAR},
       caegory = #{caegory,jdbcType=VARCHAR},
@@ -231,7 +254,8 @@
       maxnum_company = #{maxnumCompany,jdbcType=INTEGER},
       maxnum_dev = #{maxnumDev,jdbcType=BIGINT},
       service_address = #{serviceAddress,jdbcType=VARCHAR},
-      create_time = #{createTime,jdbcType=TIMESTAMP}
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      projectid = #{projectid,jdbcType=BIGINT}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

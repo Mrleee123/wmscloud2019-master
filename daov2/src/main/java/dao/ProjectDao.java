@@ -1,23 +1,22 @@
 package dao;
 
 import dbtools.DBTools;
-import entity.Service;
-import mappers.ServiceMapper;
+import entity.Project;
+import mappers.ProjectMapper;
 import org.apache.ibatis.session.SqlSession;
 
-import java.util.Date;
 import java.util.List;
 
-public class ServiceDao {
+public class ProjectDao {
     private SqlSession sqlSession;
-    private ServiceMapper mapper;
+    private ProjectMapper mapper;
 
-    public ServiceDao() {
+    public ProjectDao() {
         sqlSession = DBTools.getSession();
-        mapper = sqlSession.getMapper(ServiceMapper.class);
+        mapper = sqlSession.getMapper(ProjectMapper.class);
     }
 
-    public int add(Service matdet) {
+    public int add(Project matdet) {
         try {
             int result = mapper.insert(matdet);
             sqlSession.commit();
@@ -37,12 +36,12 @@ public class ServiceDao {
         }
     }
 
-    public int update(Service Service) {
+    public int update(Project Project) {
         try {
-            java.sql.Date time = new java.sql.Date(new Date().getTime());
-            Date update_time = time;
-            Service.setUpdateTime(update_time);
-            int result = mapper.updateByPrimaryKeySelective(Service);
+//            java.sql.Date time = new java.sql.Date(new Date().getTime());
+//            Date update_time = time;
+//            Project.setLtime(update_time);
+            int result = mapper.updateByPrimaryKeySelective(Project);
             sqlSession.commit();
             return result;
         } finally {
@@ -50,9 +49,9 @@ public class ServiceDao {
         }
     }
 
-    public Service get(long id) {
+    public Project get(long id) {
         try {
-            Service matdet = mapper.selectByPrimaryKey(id);
+            Project matdet = mapper.selectByPrimaryKey(id);
             System.out.println(matdet);
             return matdet;
         } finally {
@@ -61,18 +60,9 @@ public class ServiceDao {
     }
 
 
-    public List<Service> selectByMore(Service Service) {
+    public List<Project> selectByMore(Project Project) {
         try {
-            List<Service> result = mapper.selectByMore(Service);
-            return result;
-        } finally {
-            DBTools.closeSession();
-        }
-    }
-
-    public List<Service> selectByCompanyId(int companyid) {
-        try {
-            List<Service> result = mapper.selectByCompanyId(companyid);
+            List<Project> result = mapper.selectByMore(Project);
             return result;
         } finally {
             DBTools.closeSession();

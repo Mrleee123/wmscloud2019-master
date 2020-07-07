@@ -28,7 +28,7 @@ public interface UserMapper {
 
     int updateByPrimaryKey(User record);
 
-    public User login(@Param("user_code")String user_code,  @Param("password")String password);
+    public User login(@Param("user_code")String user_code,  @Param("password")String password,@Param("companyid")Integer companyid);
 
     public int forbiddenUserById(long id);
 

@@ -15,21 +15,27 @@
     <result column="startTime" jdbcType="TIMESTAMP" property="startTime" />
     <result column="endTime" jdbcType="TIMESTAMP" property="endTime" />
     <result column="companyid" jdbcType="INTEGER" property="companyId" />
+    <result column="projectId" jdbcType="INTEGER" property="projectId" />
+    <association property="project" javaType="entity.Project" autoMapping="true">
+      <id column="pid"   property="id" />
+    </association>
   </resultMap>
   <sql id="Base_Column_List">
     id, ltime, devno, acode, acontent, cid, palletid, memo, detail, palletcode,companyId
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
-    <include refid="Base_Column_List" />
-    from t_asrs_log_devalarm
-    where id = #{id,jdbcType=INTEGER}
+      l.* ,p.*
+    from t_asrs_log_devalarm l
+    left join t_web_project p on l.projectid = p.id
+    where l.id = #{id,jdbcType=INTEGER}
   </select>
 
   <select id="selectByMore" parameterType="entity.DevLog" resultMap="BaseResultMap">
     select
-   *
+    l.* ,p.*
     from t_asrs_log_devalarm l
+    left join t_web_project p on l.projectid = p.id
     <where>
       <if test="devno != null">
         and devno = #{devno,jdbcType=VARCHAR}

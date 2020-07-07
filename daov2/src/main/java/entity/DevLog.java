@@ -31,6 +31,10 @@ public class DevLog implements Serializable {
     private Date endTime;
 
 
+    private Project project;
+
+    private Integer projectId;
+
     private static final long serialVersionUID = 1L;
 
     public Integer getId() {
@@ -136,4 +140,21 @@ public class DevLog implements Serializable {
     public void setEndTime(Date endTime) {
         this.endTime = endTime;
     }
+
+    public Integer getProjectId() {
+        return projectId;
+    }
+
+    public void setProjectId(Integer projectId) {
+        this.projectId = projectId;
+    }
+
+    public Project getProject() {
+        return project;
+    }
+
+    public void setProject(Project project) {
+        this.project = project;
+    }
+
 }

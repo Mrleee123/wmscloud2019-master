@@ -7,9 +7,11 @@
     <result column="FunctionName" jdbcType="VARCHAR" property="FunctionName" />
     <result column="updateTime" jdbcType="TIMESTAMP" property="updateTime" />
     <result column="companyid" jdbcType="INTEGER" property="companyid" />
+    <result column="projectid" jdbcType="BIGINT" property="projectid" />
+    <result column="url" jdbcType="VARCHAR" property="url" />
   </resultMap>
   <sql id="Base_Column_List">
-    id, RoleCode, FunctionName, updateTime,companyid
+    id, RoleCode, FunctionName, updateTime,companyid,url
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
@@ -33,11 +35,18 @@
       <if test="updateTime != null">
         and updateTime = #{updateTime,jdbcType=TIMESTAMP}
       </if>
-      <if test="companyid !=null">
+      <if test="companyid !=null and companyid !=0 ">
         and companyid = #{companyid,jdbcType=INTEGER}
+      </if>
+      <if test="projectid !=null and projectid !=0 ">
+        and companyid = #{companyid,jdbcType=INTEGER}
+      </if>
+      <if test="url !=null">
+        and url = #{url,jdbcType=VARCHAR}
       </if>
     </where>
   </select>
+
 
 
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
@@ -54,18 +63,18 @@
   </delete>
 
   <insert id="insert" parameterType="entity.RoleFunction">
-    insert into t_asrs_role_function ( RoleCode, FunctionName,companyid
+    insert into t_asrs_role_function ( RoleCode, FunctionName,companyid,url
       )
-    values ( #{RoleCode,jdbcType=VARCHAR},#{FunctionName,jdbcType=VARCHAR}, #{companyid,jdbcType=INTEGER}
+    values ( #{RoleCode,jdbcType=VARCHAR},#{FunctionName,jdbcType=VARCHAR}, #{companyid,jdbcType=INTEGER},#{url,jdbcType=VARCHAR}
       )
   </insert>
 
   <insert id="insertList" parameterType="entity.RoleFunction">
-    insert into t_asrs_role_function ( RoleCode, FunctionName,companyid
+    insert into t_asrs_role_function ( RoleCode, FunctionName,companyid,url
     )
     values
     <foreach collection="list" item="RoleFunction" index="index" separator=",">
-      ( #{RoleFunction.RoleCode,jdbcType=VARCHAR},#{RoleFunction.FunctionName,jdbcType=VARCHAR}, #{RoleFunction.companyid,jdbcType=INTEGER}
+      ( #{RoleFunction.RoleCode,jdbcType=VARCHAR},#{RoleFunction.FunctionName,jdbcType=VARCHAR}, #{RoleFunction.companyid,jdbcType=INTEGER},#{RoleFunction.url,jdbcType=VARCHAR}
       )
     </foreach>
   </insert>
@@ -123,7 +132,8 @@
     set RoleCode = #{RoleCode,jdbcType=VARCHAR},
       FunctionName = #{FunctionName,jdbcType=VARCHAR},
       updateTime = #{memo,jdbcType=TIMESTAMP},
-      companyid = #{companyid,jdbcType=INTEGER}
+      companyid = #{companyid,jdbcType=INTEGER},
+      url = #{url,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
 

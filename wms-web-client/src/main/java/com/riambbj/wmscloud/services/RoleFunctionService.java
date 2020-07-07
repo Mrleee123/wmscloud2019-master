@@ -1,18 +1,22 @@
 package com.riambbj.wmscloud.services;
 
 import dao.RoleFunctionDao;
-
+import dao.UserRoleDao;
 import entity.RoleFunction;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import java.util.*;
+import java.util.List;
 
 /*
   服务器，事务控制
 */
 public class RoleFunctionService {
-
+    //Spring 自动对对象进行setget方法 注入
+    @Autowired
     RoleFunctionDao roleFunctionDao = new RoleFunctionDao();
+
+    @Autowired
+    UserRoleDao userRole =  new UserRoleDao();
 
     public List<RoleFunction> getRoleFunctionList()  {
         return roleFunctionDao.list();
@@ -45,5 +49,6 @@ public class RoleFunctionService {
     public List<RoleFunction> selectByMore(RoleFunction roleFunction){
         return roleFunctionDao.selectByMore(roleFunction);
     }
+
 
 }

@@ -15,6 +15,12 @@
         <result column="isdeleted" jdbcType="INTEGER" property="isdeleted" />
          <result column="companyid" jdbcType="INTEGER" property="companyid" />
     </resultMap>
+    <cache
+        eviction="FIFO"
+        flushInterval="60000"
+        size = "512"
+        readOnly="true"/>
+
     <sql id="Base_Column_List">
     id, issa, user_code, user_name , password, demo, create_time , creator, update_time
     isenabled, isdeleted,companyid
@@ -212,7 +218,7 @@
   </update>
 
     <select id="login" resultType="entity.User" parameterType="string">
-        select * from t_asrs_sys_user where user_code = #{user_code} and  password = #{password}
+        select * from t_asrs_sys_user where user_code = #{user_code} and  password = #{password} and companyid=#{companyid}
     </select>
 
     <update id="forbiddenUserById" parameterType="java.lang.Long">

@@ -1,6 +1,7 @@
 package mappers;
 
 import entity.Rack;
+import entity.RackSum;
 
 import java.util.List;
 
@@ -18,4 +19,6 @@ public interface RackMapper {
     int updateByPrimaryKey(Rack record);
 
     List<Rack> selectByMore(Rack rack);
+
+    List<RackSum> selectByStatus(int companyid);
 }

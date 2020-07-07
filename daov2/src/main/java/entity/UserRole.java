@@ -15,6 +15,10 @@ public class UserRole implements Serializable {
 
     private int companyid;
 
+    private  long projectid;
+
+    private  String url;
+
     private static final long serialVersionUID = 1L;
 
     public Long getId() {
@@ -63,6 +67,31 @@ public class UserRole implements Serializable {
     public void setCompanyId(int companyid) {
         this.companyid = companyid;
     }
+
+    public int getCompanyid() {
+        return companyid;
+    }
+
+    public void setCompanyid(int companyid) {
+        this.companyid = companyid;
+    }
+
+    public long getProjectid() {
+        return projectid;
+    }
+
+    public void setProjectid(long projectid) {
+        this.projectid = projectid;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
     @Override
     public String toString(){
         return "UserRole:"+ userCode+"  "+roleCode+"  "+ user.getUserName()+"  "+role.getRoleName();

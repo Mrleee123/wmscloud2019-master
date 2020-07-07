@@ -9,6 +9,8 @@ public class RoleFunction implements Serializable {
     private String FunctionName;
     private Date updateTime;
     private Integer companyid;
+    private long projectid;
+    private  String url;
 
     //private static final long serialVersionUID = 1L;
     public Integer getId() {
@@ -49,6 +51,31 @@ public class RoleFunction implements Serializable {
     public void setCompanyId(Integer companyid) {
         this.companyid = companyid;
     }
+
+    public Integer getCompanyid() {
+        return companyid;
+    }
+
+    public void setCompanyid(Integer companyid) {
+        this.companyid = companyid;
+    }
+
+    public long getProjectid() {
+        return projectid;
+    }
+
+    public void setProjectid(long projectid) {
+        this.projectid = projectid;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
     @Override
     public String toString() {
         return "Role{" +

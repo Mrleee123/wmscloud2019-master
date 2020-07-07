@@ -2,16 +2,20 @@ package mappers;
 
 import entity.Project;
 
+import java.util.List;
+
 public interface ProjectMapper {
-    int deleteByPrimaryKey(Integer id);
+    int deleteByPrimaryKey(long id);
 
     int insert(Project record);
 
     int insertSelective(Project record);
 
-    Project selectByPrimaryKey(Integer id);
+    Project selectByPrimaryKey(long id);
 
     int updateByPrimaryKeySelective(Project record);
 
     int updateByPrimaryKey(Project record);
+
+    List<Project> selectByMore(Project record);
 }

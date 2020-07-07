@@ -1,12 +1,9 @@
 package dao;
 
 import entity.Role;
-import org.junit.Before;
 import org.junit.Test;
 
 import java.util.List;
-
-import static org.junit.Assert.*;
 
 public class RoleDaoTest {
 
@@ -15,9 +12,11 @@ public class RoleDaoTest {
     @Test
     public void add() {
         Role role = new Role();
-        role.setRoleCode("010221");
-        role.setRoleName("库官员");
+        role.setRoleCode("011");
+        role.setRoleName("库官员1");
         role.setCreator("system");
+        role.setCompanyId(1);
+        role.setProjectid(1l);
         int result =dao.add(role);
         if(result == 1){
             System.out.println("成功");

@@ -1,15 +1,13 @@
 package com.riambbj.wmscloud.controllers;
 
 import com.riambbj.wmscloud.services.UserService;
+import entity.RoleFunction;
 import entity.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.ModelAndView;
 
-import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
-import java.util.Map;
 
 
 //@RestController  :controller里面的方法都以Json格式输出
@@ -64,24 +62,26 @@ public class UserController {
 
     //用户登录   post
     //在json中参数 userCode userName createTime。。。一点得相同，不然post之后为null
+    //返回功能和URL
     @PostMapping(value = "/user/login")
     @ResponseBody
     //public String login(@RequestBody String user_code, @RequestBody String password) {
     public String login(@RequestBody User user) {
         String user_code = user.getUserCode();
         String password = user.getPassword();
+        Integer companyid = user.getCompanyId();
         //System.out.println(user_code + "   1---   " + password);
-        if (user_code != null && password != null) {
+        if (user_code != null && password != null && companyid!=null) {
             //System.out.println(user_code + "   2---   " + password);
-            User result = us.loginUser(user_code, password);
+            User result = us.loginUser(user_code, password,companyid);
             // System.out.println(user_code + "   3---   " + password);
             if (result != null) {
                 return "登录成功";
             } else {
-                return "用户名或密码不正确";
+                return "用户名或密码或公司不正确";
             }
         } else {
-            return "用户名或密码不能为空";
+            return "用户名或密码或公司不能为空";
         }
     }
 
@@ -188,6 +188,19 @@ public class UserController {
             return "FALSE";
         }
     }
+
+    @RequestMapping(value = "/user/selectFuctionByUserCode", method = RequestMethod.GET)
+    @ResponseBody
+    public List<RoleFunction> selectUserRoleByUserCode(@RequestParam(value = "userCode") String userCode) {
+        try {
+
+            List<RoleFunction> list = us.selectFuctionByUserCode(userCode);
+            return list;
+        } catch (Exception e) {
+            return null;
+        }
+    }
+
 }
 
 

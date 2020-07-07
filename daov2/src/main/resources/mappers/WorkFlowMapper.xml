@@ -30,7 +30,8 @@
     <result column="m_id" jdbcType="BIGINT" property="m_id" />
     <result column="num" jdbcType="INTEGER" property="num" />
     <result column="batchno" jdbcType="VARCHAR" property="batchno" />
-    <result column="companyid" jdbcType="VARCHAR" property="companyId" />
+    <result column="companyid" jdbcType="INTEGER" property="companyId" />
+    <result column="projectid" jdbcType="INTEGER" property="projectid" />
     <association property="storedef" javaType="entity.Storedef" autoMapping="true">
       <id column="sid"   property="id" />
       <result column="memo1" jdbcType="VARCHAR" property="memo" />
@@ -38,6 +39,9 @@
     <association property="matdet" javaType="entity.Matdet" autoMapping="true">
       <id column="mid"   property="id" />
       <result column="memo3" jdbcType="VARCHAR" property="memo" />
+    </association>
+    <association property="project" javaType="entity.Project" autoMapping="true">
+      <id column="pid"   property="id" />
     </association>
   </resultMap>
   <sql id="Base_Column_List">
@@ -47,19 +51,19 @@
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
     select 
-       w.* ,sd.storedef_code,sd.storedef_name
+       w.* ,sd.storedef_code,sd.storedef_name,p.*
     from t_asrs_workflow w
      left join  t_asrs_sys_storedef sd on w.storedef_id = sd.id
-
-
+     left join t_web_project p on w.projectid=p.id
     where w.id = #{id,jdbcType=BIGINT}
   </select>
 
   <select id="selectByMore" parameterType="entity.WorkFlow" resultMap="BaseResultMap">
     select
-      w.*, sd.storedef_code,sd.storedef_name
+      w.*, sd.storedef_code,sd.storedef_name,p.*
     from t_asrs_workflow w
     left join  t_asrs_sys_storedef sd on w.storedef_id = sd.id
+    left join t_web_project p on w.projectid=p.id
     <where>
       1=1
       <if test="storedefId != null">
@@ -125,9 +129,11 @@
       and w.creator=#{creator,jdbcType=VARCHAR}
       </if>
       <if test="companyId != null and companyId != 0 ">
-        and w.companyid = #{companyId,jdbcType=VARCHAR}
+        and w.companyid = #{companyId,jdbcType=INTEGER}
       </if>
-
+      <if test="projectid != null and projectid != 0 ">
+        and w.projectid = #{projectid,jdbcType=INTEGER}
+      </if>
     </where>
   </select>
 
@@ -144,7 +150,7 @@
       status, stationid, workindx, 
       xpalletid, deal_time, orderid, 
       send_time, create_time, creator, 
-      work_id,companyid)
+      work_id,companyid,projectid)
     values (#{id,jdbcType=BIGINT}, #{ltime,jdbcType=TIMESTAMP}, #{storedefId,jdbcType=INTEGER}, 
       #{billno,jdbcType=VARCHAR}, #{stackerid,jdbcType=VARCHAR}, #{workType,jdbcType=VARCHAR}, 
       #{palletid,jdbcType=VARCHAR}, #{aisle,jdbcType=INTEGER}, #{slayer,jdbcType=INTEGER}, 
@@ -153,7 +159,7 @@
       #{status,jdbcType=VARCHAR}, #{stationid,jdbcType=VARCHAR}, #{workindx,jdbcType=BIGINT}, 
       #{xpalletid,jdbcType=VARCHAR}, #{dealTime,jdbcType=TIMESTAMP}, #{orderid,jdbcType=VARCHAR}, 
       #{sendTime,jdbcType=TIMESTAMP}, #{createTime,jdbcType=TIMESTAMP}, #{creator,jdbcType=VARCHAR}, 
-      #{workId,jdbcType=INTEGER}, #{companyId,jdbcType=VARCHAR})
+      #{workId,jdbcType=INTEGER}, #{companyId,jdbcType=INTEGER},#{projectid,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" parameterType="entity.WorkFlow">
     insert into t_asrs_workflow
@@ -387,8 +393,11 @@
       <if test="workId != null">
         work_id = #{workId,jdbcType=INTEGER},
       </if>
-      <if test="companyid != null">
-        companyid = #{companyId,jdbcType=VARCHAR}
+      <if test="companyId != null and companyId != 0">
+        companyid = #{companyId,jdbcType=INTEGER},
+      </if>
+      <if test="projectid != null ">
+        projectid = #{projectid,jdbcType=INTEGER},
       </if>
     </set>
     where id = #{id,jdbcType=BIGINT}
@@ -419,7 +428,8 @@
       create_time = #{createTime,jdbcType=TIMESTAMP},
       creator = #{creator,jdbcType=VARCHAR},
       work_id = #{workId,jdbcType=INTEGER},
-      companyid =  #{companyId,jdbcType=VARCHAR}
+      companyid =  #{companyId,jdbcType=INTEGER},
+      projectid = #{projectid,jdbcType=INTEGER}
     where id = #{id,jdbcType=BIGINT}
   </update>
 </mapper>

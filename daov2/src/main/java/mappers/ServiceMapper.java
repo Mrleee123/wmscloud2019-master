@@ -18,4 +18,6 @@ public interface ServiceMapper {
     int updateByPrimaryKey(Service record);
 
     List<Service> selectByMore(Service record);
+
+    List<Service> selectByCompanyId(int companynyid);
 }

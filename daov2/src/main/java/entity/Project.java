@@ -4,7 +4,15 @@ import java.io.Serializable;
 import java.util.Date;
 
 public class Project implements Serializable {
-    private Integer id;
+    private long id;
+
+    public String getProjectName() {
+        return projectName;
+    }
+
+    public void setProjectName(String projectName) {
+        this.projectName = projectName;
+    }
 
     private String projectName;
 
@@ -60,23 +68,18 @@ public class Project implements Serializable {
 
     private Integer companyId;
 
+
     private static final long serialVersionUID = 1L;
 
-    public Integer getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(long id) {
         this.id = id;
     }
 
-    public String getProjectName() {
-        return projectName;
-    }
 
-    public void setProjectName(String projectName) {
-        this.projectName = projectName == null ? null : projectName.trim();
-    }
 
     public String getProjectCode() {
         return projectCode;

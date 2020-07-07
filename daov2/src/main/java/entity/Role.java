@@ -20,6 +20,8 @@ public class Role implements Serializable {
 
     private Integer companyId;
 
+    private long projectid;
+
     private static final long serialVersionUID = 1L;
 
     public int getIsenabled() {
@@ -76,6 +78,14 @@ public class Role implements Serializable {
 
     public void setCreator(String creator) {
         this.creator = creator == null ? null : creator.trim();
+    }
+
+    public long getProjectid() {
+        return projectid;
+    }
+
+    public void setProjectid(long projectid) {
+        this.projectid = projectid;
     }
 
     @Override

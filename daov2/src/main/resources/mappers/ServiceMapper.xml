@@ -13,7 +13,7 @@
     <result column="companyid" jdbcType="INTEGER" property="companyId" />
   </resultMap>
   <sql id="Base_Column_List">
-    id, service_name, service_address, isenabled, price, unit, create_time, update_time
+    id, service_name, service_address, isenabled, price, unit, create_time, update_time,companyid
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
     select 
@@ -29,30 +29,37 @@
    <where>
       1=1
      <if test="serviceName != null">
-      and service_name = #{serviceName,jdbcType=VARCHAR},
+      and service_name = #{serviceName,jdbcType=VARCHAR}
      </if>
      <if test="serviceAddress != null">
-       and service_address = #{serviceAddress,jdbcType=VARCHAR},
+       and service_address = #{serviceAddress,jdbcType=VARCHAR}
      </if>
      <if test="isenabled != null">
-       and isenabled = #{isenabled,jdbcType=INTEGER},
+       and isenabled = #{isenabled,jdbcType=INTEGER}
      </if>
      <if test="price != null">
-       and price = #{price,jdbcType=DECIMAL},
+       and price = #{price,jdbcType=DECIMAL}
      </if>
      <if test="unit != null">
-       and unit = #{unit,jdbcType=VARCHAR},
+       and unit = #{unit,jdbcType=VARCHAR}
      </if>
      <if test="createTime != null">
-       and create_time = #{createTime,jdbcType=TIMESTAMP},
+       and create_time = #{createTime,jdbcType=TIMESTAMP}
      </if>
      <if test="updateTime != null">
-       and update_time = #{updateTime,jdbcType=TIMESTAMP},
+       and update_time = #{updateTime,jdbcType=TIMESTAMP}
      </if>
      <if test="companyId !=null">
-       and companyid = #{companyId,jdbcType=INTEGER},
+       and companyid = #{companyId,jdbcType=INTEGER}
      </if>
    </where>
+  </select>
+
+  <select id="selectByCompanyId" parameterType="entity.Service" resultMap="BaseResultMap">
+    select
+     *
+    from t_web_service
+    where companyid = #{companyId,jdbcType=INTEGER}
   </select>
 
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">

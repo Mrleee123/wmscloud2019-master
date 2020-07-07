@@ -28,6 +28,14 @@
          <result column="memo2" jdbcType="VARCHAR" property="memo" />
     </association>
   </resultMap>
+  <resultMap id="map1" type="entity.RackSum" autoMapping="true">
+    <result column="status" jdbcType="VARCHAR" property="status" />
+    <result column="number" jdbcType="INTEGER" property="number" />
+    <result column="percent" jdbcType="VARCHAR" property="percent" />
+    <result column="companyid" jdbcType="INTEGER" property="companyid" />
+
+  </resultMap>
+
   <sql id="Base_Column_List">
     id, storedef_id, cid, cellcode, palletid, aisle, layer, rank, roww, status, lasttime, 
     plattype, cellclass, spalletid, lpalletid, cpalletid, xpalletid, memo, issys, worktype,companyid
@@ -38,6 +46,41 @@
     from t_asrs_rack r left join t_asrs_sys_storedef s on  r.storedef_id = s.id
     where r.id = #{id,jdbcType=BIGINT}
   </select>
+
+  <select id="selectByStatus" parameterType="java.lang.Integer" resultMap="map1">
+
+SELECT
+  `status`,
+  number,
+  concat(round(number / total * 100.00, 2), '%') percent,
+  companyid
+FROM
+  (
+    SELECT
+      *
+    FROM
+      (
+        SELECT
+          `status`,
+          companyid,
+          COUNT(1) number
+        FROM
+          `t_asrs_rack`
+        GROUP BY
+          `status`,companyid
+
+      ) t1
+      INNER JOIN(
+        SELECT
+          COUNT(1) total
+        FROM
+          `t_asrs_rack`
+          where companyid = #{companyId,jdbcType=INTEGER}
+      ) t2 ON t1.companyid = #{companyId,jdbcType=INTEGER}
+  ) t
+
+  </select>
+
 <select id="selectByMore" resultMap="BaseResultMap" parameterType="entity.Storedef">
    select
      r.*,s.*
