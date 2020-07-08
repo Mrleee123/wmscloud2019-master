@@ -60,9 +60,20 @@ public class ProjectDao {
     }
 
 
+
+
     public List<Project> selectByMore(Project Project) {
         try {
             List<Project> result = mapper.selectByMore(Project);
+            return result;
+        } finally {
+            DBTools.closeSession();
+        }
+    }
+
+    public int selectTotalNumber(){
+        try {
+            int result = mapper.selectTotalNumber();
             return result;
         } finally {
             DBTools.closeSession();

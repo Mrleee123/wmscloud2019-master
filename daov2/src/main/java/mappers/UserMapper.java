@@ -37,4 +37,6 @@ public interface UserMapper {
     User selectByUserCode(String userCode);
 
     List<User> selectByMore(User user);
+
+    int selectTotalNumber(Integer companyid);
 }

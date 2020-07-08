@@ -4,6 +4,7 @@ import entity.DevLog;
 import org.junit.Test;
 
 import java.util.List;
+import java.util.Map;
 
 public class DevLogDaoTest {
     DveLogDao dao = new DveLogDao();
@@ -79,5 +80,14 @@ public class DevLogDaoTest {
 
         List<DevLog> result =dao.selectByMore(devLog);
         System.out.println(result);
+    }
+
+    @Test
+    public void selectByDev(){
+       List<Map> maps= dao.selectByDev("System");
+
+        for (Map map : maps) {
+            System.out.println(map.get("num")+"\t"+map.get("company"));
+        }
     }
 }

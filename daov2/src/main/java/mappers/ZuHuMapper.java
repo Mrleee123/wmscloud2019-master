@@ -18,4 +18,8 @@ public interface ZuHuMapper {
     int updateByPrimaryKey(ZuHu record);
 
     List<ZuHu> selectByMore(ZuHu record);
+
+    int selectTotalNumber();
+
+    int selectDevnumber(Integer id);
 }

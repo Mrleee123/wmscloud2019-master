@@ -66,5 +66,23 @@ public class ZuHuDao {
             DBTools.closeSession();
         }
     }
+
+    public int selectTotalNumber(){
+        try {
+            int result = mapper.selectTotalNumber();
+            return result;
+        } finally {
+            DBTools.closeSession();
+        }
+    }
+
+    public int selectDevnumber(Integer id){
+        try {
+            int result = mapper.selectDevnumber(id);
+            return result;
+        } finally {
+            DBTools.closeSession();
+        }
+    }
 }
 

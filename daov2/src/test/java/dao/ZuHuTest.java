@@ -68,4 +68,14 @@
 //        List<ZuHu> result =dao.selectByMore(ZuHu);
 //        System.out.println(result);
 //    }
+//
+//    @Test
+//    public void selectTotalNumber() {
+//
+//        // ZuHu.setDetail("System");
+//        //ZuHu.setMinstore("11111");
+//        //ZuHu.setCompanyId(1);
+//       int result =dao.selectTotalNumber();
+//        System.out.println(result);
+//    }
 //}

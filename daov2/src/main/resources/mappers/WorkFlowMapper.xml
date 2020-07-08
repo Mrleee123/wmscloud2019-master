@@ -137,6 +137,14 @@
     </where>
   </select>
 
+  <select id="selectTotalNumber" resultType="int">
+     select count(*) as sum_project from t_asrs_workflow
+  </select>
+
+  <select id="selectTotalNumberByCompany" resultType="int">
+     select count(*) as sum_project from t_asrs_workflow where companyid =  #{companyId,jdbcType=INTEGER}
+  </select>
+
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
     delete from t_asrs_workflow
     where id = #{id,jdbcType=BIGINT}

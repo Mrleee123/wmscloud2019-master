@@ -29,6 +29,7 @@
 //        Rack rack = new Rack();
 //        rack.setStatus("A");
 //        rack.setId(1l);
+//        rack.setCompanyId(1);
 //        dao.update(rack);
 //
 //

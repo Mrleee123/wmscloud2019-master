@@ -6,6 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 @Controller
 public class DevLogController {
@@ -65,6 +66,18 @@ public class DevLogController {
         try {
             List<DevLog> result = us.selectByMore(devLog,currPage,pageSize);
             return result;
+        } catch (Exception e) {
+            System.out.println(e.toString());
+            return null;
+        }
+    }
+
+    @RequestMapping(value = "/devLog/selectByDev", method = RequestMethod.GET)
+    @ResponseBody
+    public List<Map> selectByDev(@RequestParam(value = "devno") String devno) {
+        try {
+            List<Map> maps = us.selectByDev(devno) ;
+            return maps;
         } catch (Exception e) {
             System.out.println(e.toString());
             return null;

@@ -18,4 +18,8 @@ public interface WorkFlowMapper {
     int updateByPrimaryKey(WorkFlow record);
 
     List<WorkFlow> selectByMore(WorkFlow record);
+
+    int selectTotalNumber();
+
+    int selectTotalNumberByCompany(Integer companyid);
 }

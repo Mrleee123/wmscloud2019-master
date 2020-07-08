@@ -44,6 +44,10 @@
     where id = #{id,jdbcType=BIGINT}
   </select>
 
+  <select id="selectTotalNumber" resultType="int">
+     select count(*) as sum_project from t_web_project
+  </select>
+
   <select id="selectByMore" resultMap="BaseResultMap" parameterType="entity.Project">
     select
     <include refid="Base_Column_List" />

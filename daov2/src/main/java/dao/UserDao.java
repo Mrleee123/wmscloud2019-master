@@ -132,4 +132,13 @@ public class UserDao {
             DBTools.closeSession();
         }
     }
+
+    public int selectTotalNumber(Integer companyid){
+        try {
+            int result = mapper.selectTotalNumber(companyid);
+            return result;
+        } finally {
+            DBTools.closeSession();
+        }
+    }
 }

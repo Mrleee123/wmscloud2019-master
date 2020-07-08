@@ -33,6 +33,8 @@ public class DevLog implements Serializable {
 
     private Project project;
 
+    private ZuHu zuHu;
+
     private Integer projectId;
 
     private static final long serialVersionUID = 1L;
@@ -157,4 +159,11 @@ public class DevLog implements Serializable {
         this.project = project;
     }
 
+    public ZuHu getZuHu() {
+        return zuHu;
+    }
+
+    public void setZuHu(ZuHu zuHu) {
+        this.zuHu = zuHu;
+    }
 }

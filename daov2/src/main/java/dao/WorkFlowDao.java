@@ -69,4 +69,22 @@ public class WorkFlowDao {
             DBTools.closeSession();
         }
     }
+
+    public int selectTotalNumber(){
+        try {
+            int result = mapper.selectTotalNumber();
+            return result;
+        } finally {
+            DBTools.closeSession();
+        }
+    }
+
+    public int selectTotalNumberByCompany(Integer companyid){
+        try {
+            int result = mapper.selectTotalNumberByCompany(companyid);
+            return result;
+        } finally {
+            DBTools.closeSession();
+        }
+    }
 }

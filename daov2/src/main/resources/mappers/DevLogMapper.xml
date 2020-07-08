@@ -19,6 +19,10 @@
     <association property="project" javaType="entity.Project" autoMapping="true">
       <id column="pid"   property="id" />
     </association>
+    <association property="zuHu" javaType="entity.ZuHu" autoMapping="true">
+      <id column="zid"   property="id" />
+      <result column="company" jdbcType="VARCHAR" property="company" />
+    </association>
   </resultMap>
   <sql id="Base_Column_List">
     id, ltime, devno, acode, acontent, cid, palletid, memo, detail, palletcode,companyId
@@ -56,7 +60,11 @@
     </where>
   </select>
 
-
+<select id="selectByDev" parameterType="java.lang.String" resultType="java.util.HashMap">
+        select count(*) as num,z.company from t_asrs_log_devalarm l
+        left join t_web_zuhu z on l.companyid = z.id
+        where l.devno =  #{devno,jdbcType=VARCHAR} group by companyid
+</select>
 
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from t_asrs_log_devalarm

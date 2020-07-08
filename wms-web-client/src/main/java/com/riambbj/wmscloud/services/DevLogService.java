@@ -5,6 +5,7 @@ import entity.DevLog;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
+import java.util.Map;
 
 public class DevLogService {
     @Autowired
@@ -32,5 +33,11 @@ public class DevLogService {
         List<DevLog> list = dao.selectByMore(log);
         int firstIndex= (currPage-1)*pageSize;
         int lastIndex=currPage*pageSize;
-        return list.subList(firstIndex,lastIndex);}
+        return list.subList(firstIndex,lastIndex);
+    }
+
+    public  List<Map> selectByDev(String Devno){
+        List<Map> maps =  dao.selectByDev(Devno);
+        return maps;
+    }
 }

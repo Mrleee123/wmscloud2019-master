@@ -7,6 +7,7 @@ import org.apache.ibatis.session.SqlSession;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 public class DveLogDao {
 
@@ -69,6 +70,16 @@ public class DveLogDao {
             } finally {
                 DBTools.closeSession();
             }
+        }
+
+        public List<Map> selectByDev(String Devno) {
+            try {
+                List<Map> map= mapper.selectByDev(Devno);
+                return map;
+            } finally {
+                DBTools.closeSession();
+            }
+
         }
     }
 

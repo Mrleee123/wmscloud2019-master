@@ -21,4 +21,6 @@ public interface RackMapper {
     List<Rack> selectByMore(Rack rack);
 
     List<RackSum> selectByStatus(int companyid);
+
+
 }

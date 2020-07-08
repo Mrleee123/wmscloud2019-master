@@ -40,6 +40,11 @@
        from t_asrs_sys_user
        where user_code = #{user_code,jdbcType=VARCHAR}
    </select>
+
+    <select id="selectTotalNumber" parameterType="java.lang.Integer" resultType="int">
+     select count(*) as sum_zuhu from t_asrs_user where companyid = #{companyid,jdbcType=INTEGER}
+  </select>
+
    <select id="selectByMore" resultMap="BaseResultMap" parameterType="entity.User">
        select * from t_asrs_sys_user
        <where>
