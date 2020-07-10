@@ -69,4 +69,16 @@ public class StoreController {
             return null;
         }
     }
+
+    @PostMapping(value = "/store/selectByMore/{currPage}/{pageSize}")
+    @ResponseBody
+    public List<Store> selectByMore(@RequestBody Store store,@PathVariable("currPage") int currPage, @PathVariable("pageSize") int pageSize) {
+        try {
+            List<Store> result = us.selectByMore(store,currPage,pageSize);
+            return result;
+        } catch (Exception e) {
+            System.out.println(e.toString());
+            return null;
+        }
+    }
 }

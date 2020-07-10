@@ -180,6 +180,26 @@ public class RoleFunctionController {
 //            return "FALSE";
 //        }
 //    }
+
+    @PostMapping(value = "/roleFunction/selectByMore/{currPage}/{pageSize}")
+    @ResponseBody
+    //public String login(@RequestBody String user_code, @RequestBody String password) {
+    public List<RoleFunction> selectByMore(@RequestBody RoleFunction role,@PathVariable("currPage") int currPage, @PathVariable("pageSize") int pageSize) {
+//        String user_code = user.getUserCode();
+//        String password = user.getPassword();
+//        long id = user.getId();
+//        int issa = user.getIssa();
+//        String user_name = user.getUserName();
+//        String demo = user.getDemo();
+//        int isendable = user.getIsenabled();
+//        int isdeleted = user.getIsdeleted();
+        try {
+            List<RoleFunction> result = us.selectByMore(role,currPage,pageSize);
+            return result;
+        }catch (Exception e){
+            return null;
+        }
+    }
 }
 
 

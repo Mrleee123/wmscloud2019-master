@@ -31,4 +31,17 @@ public class MatmainService {
     }
 
     public List<Matmain> selectByMore(Matmain matmain){return dao.selectByMore(matmain);}
+
+    public List<Matmain> selectByMore(Matmain log,int currPage, int pageSize){
+        List<Matmain> list = dao.selectByMore(log);
+        int firstIndex= (currPage-1)*pageSize;
+        int lastIndex=currPage*pageSize;
+        if (list.size()>=lastIndex ) {
+            return list.subList(firstIndex, lastIndex);
+        }else if( currPage==1){
+            return  list;
+        }else {
+            return null;
+        }
+    }
 }

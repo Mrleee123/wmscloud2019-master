@@ -3,6 +3,7 @@ package mappers;
 import entity.Project;
 
 import java.util.List;
+import java.util.Map;
 
 public interface ProjectMapper {
     int deleteByPrimaryKey(long id);
@@ -20,4 +21,6 @@ public interface ProjectMapper {
     List<Project> selectByMore(Project record);
 
     int selectTotalNumber();
+
+    List<Map> selectAddress();
 }

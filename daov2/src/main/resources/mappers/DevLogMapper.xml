@@ -24,6 +24,21 @@
       <result column="company" jdbcType="VARCHAR" property="company" />
     </association>
   </resultMap>
+
+  <resultMap id="Compare" type="entity.Compare" autoMapping="true">
+    <result column="devno" jdbcType="VARCHAR" property="devno" />
+    <result column="companyid" jdbcType="INTEGER" property="companyid" />
+    <result column="StartTime" jdbcType="VARCHAR" property="StartTime" />
+    <result column="endTime" jdbcType="INTEGER" property="endTime" />
+  </resultMap>
+
+  <resultMap id="map1" type="entity.RackSum" autoMapping="true">
+    <result column="devno" jdbcType="VARCHAR" property="status" />
+    <result column="number" jdbcType="INTEGER" property="number" />
+    <result column="percent" jdbcType="VARCHAR" property="percent" />
+    <result column="companyid" jdbcType="INTEGER" property="companyid" />
+  </resultMap>
+
   <sql id="Base_Column_List">
     id, ltime, devno, acode, acontent, cid, palletid, memo, detail, palletcode,companyId
   </sql>
@@ -41,21 +56,21 @@
     from t_asrs_log_devalarm l
     left join t_web_project p on l.projectid = p.id
     <where>
+       1=1
       <if test="devno != null">
         and devno = #{devno,jdbcType=VARCHAR}
       </if>
       <if test="acode != null">
         and acode = #{acode,jdbcType=VARCHAR}
       </if>
-      <if test="startTime != null">
-       and <![CDATA[   and DATE_FORMAT(ltime , '%Y-%m-%d')>=  DATE_FORMAT(#{startTime}, '%Y-%m-%d')   ]]>
-
+     <if test="startTime != null">
+       and l.ltime >=  #{startTime,jdbcType=TIMESTAMP}
       </if>
       <if test="endTime != null">
-        and #{endTime,jdbcType=TIMESTAMP}>=ltime
+        and #{endTime,jdbcType=TIMESTAMP}>=l.ltime
       </if>
       <if test="companyId != null">
-        and l.companyid = #{companyId,jdbcType=VARCHAR}
+        and l.companyid = #{companyId,jdbcType=INTEGER}
       </if>
     </where>
   </select>
@@ -65,6 +80,67 @@
         left join t_web_zuhu z on l.companyid = z.id
         where l.devno =  #{devno,jdbcType=VARCHAR} group by companyid
 </select>
+
+  <select id="selectByDevAndCompany"  resultType="java.util.HashMap">
+        select count(*) as num,z.company from t_asrs_log_devalarm l
+        left join t_web_zuhu z on l.companyid = z.id
+        where l.devno =  #{devno,jdbcType=VARCHAR} and  z.pre_company in (select pre_company from t_web_zuhu where id= #{companyId,jdbcType=INTEGER})
+         group by companyid
+</select>
+
+<!--  <select id="selectCompare"  parameterType="entity.Compare" resultMap="BaseResultMap">-->
+<!--    select-->
+<!--    l.* ,p.*-->
+<!--    from t_asrs_log_devalarm l-->
+<!--    left join t_web_project p on l.projectid = p.id-->
+<!--    <where>-->
+<!--       1=1-->
+<!--      <if test="devno != null">-->
+<!--        and devno in-->
+<!--        <foreach collection="list"  item="Compare" open="(" separator="," close=")">-->
+<!--         #{Compare.devno,jdbcType=VARCHAR}-->
+<!--        </foreach>-->
+<!--      </if>-->
+<!--      <if test="startTime != null">-->
+<!--        and l.ltime >=  #{startTime}-->
+<!--      </if>-->
+<!--      <if test="endTime != null">-->
+<!--        and #{endTime,jdbcType=TIMESTAMP}>=l.ltime-->
+<!--      </if>-->
+<!--      <if test="companyId != null">-->
+<!--        and l.companyid in-->
+<!--        <foreach collection="ids"  item="Compare" open="(" separator="," close=")">-->
+<!--             #{Compare.companyId,jdbcType=INTEGER}-->
+<!--        </foreach>-->
+<!--      </if>-->
+<!--    </where>-->
+<!--  </select>-->
+
+  <select id="selectMore" parameterType="entity.DevLog" resultMap="BaseResultMap">
+    select
+    l.* ,p.*
+    from t_asrs_log_devalarm l
+    left join t_web_project p on l.projectid = p.id
+    <where>
+      1=1
+      <if test="devno != null">
+        and devno = #{devno,jdbcType=VARCHAR}
+      </if>
+      <if test="acode != null">
+        and acode = #{acode,jdbcType=VARCHAR}
+      </if>
+      <if test="startTime != null">
+        and l.ltime >=  #{startTime,jdbcType=TIMESTAMP}
+      </if>
+      <if test="endTime != null">
+        and #{endTime,jdbcType=TIMESTAMP}>=l.ltime
+      </if>
+      <if test="companyId != null">
+        and l.companyid = #{companyId,jdbcType=INTEGER}
+      </if>
+    </where>
+  </select>
+
 
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from t_asrs_log_devalarm
@@ -195,4 +271,75 @@
       palletcode = #{palletcode,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
+
+  <select id="selectByStatus"  resultMap="map1">
+
+SELECT
+  `devno` ,
+  number,
+  concat(round(number / total * 100.00, 2), '%') percent,
+  companyid
+FROM
+  (
+    SELECT
+      *
+    FROM
+      (
+        SELECT
+          `devno` ,
+          companyid,
+          COUNT(1) number
+        FROM
+          `t_asrs_log_devalarm`
+        where ltime>#{ltime,jdbcType=TIMESTAMP}
+        GROUP BY
+          `devno`,companyid
+
+      ) t1
+      INNER JOIN(
+        SELECT
+          COUNT(1) total
+        FROM
+          `t_asrs_log_devalarm`
+          where companyid in (select id from t_web_zuhu where pre_company= #{companyId,jdbcType=INTEGER}) and ltime>#{ltime,jdbcType=TIMESTAMP}
+      ) t2 ON t1.companyid in (select id from t_web_zuhu where pre_company= #{companyId,jdbcType=INTEGER})
+  ) t
+
+  </select>
+
+  <select id="selectByStatusAll"  resultMap="map1">
+
+SELECT
+  `devno` ,
+  number,
+  concat(round(number / total * 100.00, 2), '%') percent,
+  companyid
+FROM
+  (
+    SELECT
+      *
+    FROM
+      (
+        SELECT
+          `devno` ,
+          companyid,
+          COUNT(1) number
+        FROM
+          `t_asrs_log_devalarm`
+        where ltime>#{ltime,jdbcType=TIMESTAMP}
+        GROUP BY
+          `devno`,companyid
+
+      ) t1
+      INNER JOIN(
+        SELECT
+          COUNT(1) total
+        FROM
+          `t_asrs_log_devalarm`
+          where ltime>#{ltime,jdbcType=TIMESTAMP}
+      ) t2 ON 1=1
+  ) t
+
+  </select>
+
 </mapper>

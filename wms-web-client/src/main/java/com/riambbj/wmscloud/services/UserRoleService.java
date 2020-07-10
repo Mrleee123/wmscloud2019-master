@@ -30,4 +30,16 @@ public class UserRoleService {
         return dao.getByUserCode(userCode);
     }
 
+//    public List<UserRole> selectByMore(UserRole log,int currPage, int pageSize){
+//        List<UserRole> list = dao.se(log);
+//        int firstIndex= (currPage-1)*pageSize;
+//        int lastIndex=currPage*pageSize;
+//        if (list.size()>=lastIndex ) {
+//            return list.subList(firstIndex, lastIndex);
+//        }else if( currPage==1){
+//            return  list;
+//        }else {
+//            return null;
+//        }
+//    }
 }

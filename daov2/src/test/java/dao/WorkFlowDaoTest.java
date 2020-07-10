@@ -66,5 +66,15 @@
 //        List<WorkFlow> result =dao.selectByMore(WorkFlow);
 //        System.out.println(result);
 //    }
+//
+//        @Test
+//    public void selectTotalNumberByCompany() {
+//
+//        // ZuHu.setDetail("System");
+//        //ZuHu.setMinstore("11111");
+//        //ZuHu.setCompanyId(1);
+//        int result =dao.selectTotalNumberByCompany(1);
+//        System.out.println(result);
+//    }
 //}
 //

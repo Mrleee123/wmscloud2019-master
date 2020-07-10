@@ -19,4 +19,17 @@ public class BillHeadService {
     public BillHead selectByIdService(int id){return dao.get(id);}
 
     public List<BillHead> selectByMore(BillHead billHead){return dao.selectByMore(billHead);}
+
+    public List<BillHead> selectByMore(BillHead log,int currPage, int pageSize){
+        List<BillHead> list = dao.selectByMore(log);
+        int firstIndex= (currPage-1)*pageSize;
+        int lastIndex=currPage*pageSize;
+        if (list.size()>=lastIndex ) {
+            return list.subList(firstIndex, lastIndex);
+        }else if( currPage==1){
+            return  list;
+        }else {
+            return null;
+        }
+    }
 }

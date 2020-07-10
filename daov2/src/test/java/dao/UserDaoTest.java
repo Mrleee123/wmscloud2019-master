@@ -69,15 +69,15 @@
 //       // assertEquals(4, list.size());
 //        System.out.println("-------test finish----------");
 //    }
-//
-//    @Test
-//    public void login()  {
-//        User user =new User();
-//        UserDao dao = new UserDao();
-//         user = dao.loginByCodeAndPwd("lixiaobo111","");
-//        // assertEquals(4, list.size());
-//        System.out.println("-------test finish----------");
-//    }
+////
+////    @Test
+////    public void login()  {
+////        User user =new User();
+////        UserDao dao = new UserDao();
+////         user = dao.loginByCodeAndPwd("lixiaobo111","");
+////        // assertEquals(4, list.size());
+////        System.out.println("-------test finish----------");
+////    }
 //
 //    @Test
 //    public void forbiddenUser()  {
@@ -106,6 +106,15 @@
 //        dao.selectByMore(user);
 //        // assertEquals(4, list.size());
 //        System.out.println("-------test finish----------");
+//    }
+//
+//        @Test
+//    public void selectTotalNumber() {
+//
+//
+//        UserDao dao = new UserDao();
+//        int result =dao.selectTotalNumber(1);
+//        System.out.println(result);
 //    }
 //
 //}

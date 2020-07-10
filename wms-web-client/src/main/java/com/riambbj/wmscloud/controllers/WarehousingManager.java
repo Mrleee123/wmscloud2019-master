@@ -20,6 +20,5 @@ public class WarehousingManager {
         Map<Integer, Integer> map = new HashMap<>();
         map = us.selectTotalNumberServiceByCompany(companyid);
         return map;
-
     }
 }

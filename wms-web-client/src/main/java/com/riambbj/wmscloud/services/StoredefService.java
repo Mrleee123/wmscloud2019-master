@@ -30,4 +30,17 @@ public class StoredefService {
     }
 
     public List<Storedef> selectByMore(Storedef storedef){return  dao.selectByMore(storedef);}
+
+    public List<Storedef> selectByMore(Storedef log,int currPage, int pageSize){
+        List<Storedef> list = dao.selectByMore(log);
+        int firstIndex= (currPage-1)*pageSize;
+        int lastIndex=currPage*pageSize;
+        if (list.size()>=lastIndex ) {
+            return list.subList(firstIndex, lastIndex);
+        }else if( currPage==1){
+            return  list;
+        }else {
+            return null;
+        }
+    }
 }

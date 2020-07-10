@@ -69,4 +69,16 @@ public class BillDetailController {
             return null;
         }
     }
+
+    @PostMapping(value = "/billDetail/selectByMore/{currPage}/{pageSize}")
+    @ResponseBody
+    public List<BillDetail> selectByMore(@RequestBody BillDetail billDetail,@PathVariable("currPage") int currPage, @PathVariable("pageSize") int pageSize) {
+        try {
+            List<BillDetail> result = us.selectByMore(billDetail,currPage,pageSize);
+            return result;
+        } catch (Exception e) {
+            System.out.println(e.toString());
+            return null;
+        }
+    }
 }

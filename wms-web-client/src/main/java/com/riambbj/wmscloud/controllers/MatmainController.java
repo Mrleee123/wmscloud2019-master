@@ -80,4 +80,16 @@ public class MatmainController {
             return null;
         }
     }
+
+    @PostMapping(value = "/matmain/selectByMore/{currPage}/{pageSize}")
+    @ResponseBody
+    public List<Matmain> selectByMore(@RequestBody Matmain matmain,@PathVariable("currPage") int currPage, @PathVariable("pageSize") int pageSize) {
+        try {
+            List<Matmain> result = us.selectByMore(matmain,currPage,pageSize);
+            return result;
+        } catch (Exception e) {
+            System.out.println(e.toString());
+            return null;
+        }
+    }
 }

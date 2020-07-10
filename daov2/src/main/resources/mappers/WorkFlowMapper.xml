@@ -32,6 +32,8 @@
     <result column="batchno" jdbcType="VARCHAR" property="batchno" />
     <result column="companyid" jdbcType="INTEGER" property="companyId" />
     <result column="projectid" jdbcType="INTEGER" property="projectid" />
+    <result column="startTime" jdbcType="TIMESTAMP" property="startTime" />
+    <result column="endTime" jdbcType="TIMESTAMP" property="endTime" />
     <association property="storedef" javaType="entity.Storedef" autoMapping="true">
       <id column="sid"   property="id" />
       <result column="memo1" jdbcType="VARCHAR" property="memo" />
@@ -44,6 +46,14 @@
       <id column="pid"   property="id" />
     </association>
   </resultMap>
+
+  <resultMap id="map1" type="entity.RackSum" autoMapping="true">
+    <result column="work_type" jdbcType="VARCHAR" property="status" />
+    <result column="number" jdbcType="INTEGER" property="number" />
+    <result column="percent" jdbcType="VARCHAR" property="percent" />
+    <result column="companyid" jdbcType="INTEGER" property="companyid" />
+  </resultMap>
+
   <sql id="Base_Column_List">
     id, Ltime, storedef_id, billno, stackerid, work_type, palletid, aisle, slayer, srank, 
     srow, taisle, tlayer, trank, trow, status, stationid, workindx, xpalletid, deal_time, 
@@ -70,7 +80,7 @@
         and w.storedef_id = #{storedefId,jdbcType=INTEGER}
       </if>
       <if test="ltime != null">
-        and <![CDATA[   and DATE_FORMAT(ltime , '%Y-%m-%d')>=  DATE_FORMAT(#{startTime}, '%Y-%m-%d')   ]]>
+       and ltime >= (#{startTime}, '%Y-%m-%d')  >
       </if>
       <if test="palletid != null">
         and w.palletid = #{palletid,jdbcType=VARCHAR}
@@ -134,15 +144,22 @@
       <if test="projectid != null and projectid != 0 ">
         and w.projectid = #{projectid,jdbcType=INTEGER}
       </if>
+      <if test="startTime != null">
+        and w.ltime >=  #{startTime,jdbcType=TIMESTAMP}
+      </if>
+      <if test="endTime != null">
+        and #{endTime,jdbcType=TIMESTAMP}>=w.ltime
+      </if>
     </where>
   </select>
+
 
   <select id="selectTotalNumber" resultType="int">
      select count(*) as sum_project from t_asrs_workflow
   </select>
 
   <select id="selectTotalNumberByCompany" resultType="int">
-     select count(*) as sum_project from t_asrs_workflow where companyid =  #{companyId,jdbcType=INTEGER}
+     select count(*) as sum_project from t_asrs_workflow where companyid in  (select id from t_web_zuhu where pre_company= #{companyid,jdbcType=INTEGER})
   </select>
 
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
@@ -440,4 +457,74 @@
       projectid = #{projectid,jdbcType=INTEGER}
     where id = #{id,jdbcType=BIGINT}
   </update>
+
+  <select id="selectByStatus"  resultMap="map1">
+
+SELECT
+  `work_type`,
+  number,
+  concat(round(number / total * 100.00, 2), '%') percent,
+  companyid
+FROM
+  (
+    SELECT
+      *
+    FROM
+      (
+        SELECT
+          `work_type`,
+          companyid,
+          COUNT(1) number
+        FROM
+          `t_asrs_workflow`
+        where ltime>#{ltime,jdbcType=TIMESTAMP}
+        GROUP BY
+          `work_type`,companyid
+
+      ) t1
+      INNER JOIN(
+        SELECT
+          COUNT(1) total
+        FROM
+          `t_asrs_workflow`
+          where companyid in (select id from t_web_zuhu where pre_company= #{companyId,jdbcType=INTEGER}) and ltime>#{ltime,jdbcType=TIMESTAMP}
+      ) t2 ON t1.companyid in (select id from t_web_zuhu where pre_company= #{companyId,jdbcType=INTEGER})
+  ) t
+
+  </select>
+
+  <select id="selectByStatusAll"  resultMap="map1">
+
+SELECT
+  `work_type`,
+  number,
+  concat(round(number / total * 100.00, 2), '%') percent,
+  companyid
+FROM
+  (
+    SELECT
+      *
+    FROM
+      (
+        SELECT
+          `work_type`,
+          companyid,
+          COUNT(1) number
+        FROM
+          `t_asrs_workflow`
+        where ltime>#{ltime,jdbcType=TIMESTAMP}
+        GROUP BY
+          `work_type`,companyid
+
+      ) t1
+      INNER JOIN(
+        SELECT
+          COUNT(1) total
+        FROM
+          `t_asrs_workflow`
+          where ltime>#{ltime,jdbcType=TIMESTAMP}
+      ) t2 ON 1=1
+  ) t
+
+  </select>
 </mapper>

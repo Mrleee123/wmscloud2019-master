@@ -6,6 +6,7 @@ import mappers.ProjectMapper;
 import org.apache.ibatis.session.SqlSession;
 
 import java.util.List;
+import java.util.Map;
 
 public class ProjectDao {
     private SqlSession sqlSession;
@@ -75,6 +76,15 @@ public class ProjectDao {
         try {
             int result = mapper.selectTotalNumber();
             return result;
+        } finally {
+            DBTools.closeSession();
+        }
+    }
+
+    public List<Map> selectAddress() {
+        try {
+            List<Map> map= mapper.selectAddress();
+            return map;
         } finally {
             DBTools.closeSession();
         }

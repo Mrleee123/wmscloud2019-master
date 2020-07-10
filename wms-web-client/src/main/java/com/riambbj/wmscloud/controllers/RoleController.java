@@ -5,7 +5,6 @@ import entity.Role;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Date;
 import java.util.List;
 
 
@@ -134,6 +133,26 @@ public class RoleController {
 
         try {
             List<Role> result =us.selectByMore(role);
+            return result;
+        }catch (Exception e){
+            return null;
+        }
+    }
+
+    @PostMapping(value = "/role/selectByMore/{currPage}/{pageSize}")
+    @ResponseBody
+    //public String login(@RequestBody String user_code, @RequestBody String password) {
+    public List<Role> selectByMore(@RequestBody Role role,@PathVariable("currPage") int currPage, @PathVariable("pageSize") int pageSize) {
+//        String user_code = user.getUserCode();
+//        String password = user.getPassword();
+//        long id = user.getId();
+//        int issa = user.getIssa();
+//        String user_name = user.getUserName();
+//        String demo = user.getDemo();
+//        int isendable = user.getIsenabled();
+//        int isdeleted = user.getIsdeleted();
+        try {
+            List<Role> result = us.selectByMore(role,currPage,pageSize);
             return result;
         }catch (Exception e){
             return null;

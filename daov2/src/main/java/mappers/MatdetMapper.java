@@ -1,7 +1,10 @@
 package mappers;
 
 import entity.Matdet;
+import entity.RackSum;
+import org.apache.ibatis.annotations.Param;
 
+import java.util.Date;
 import java.util.List;
 
 public interface MatdetMapper {
@@ -20,4 +23,6 @@ public interface MatdetMapper {
     int updateByPrimaryKey(Matdet record);
 
     List<Matdet> selectByMore(Matdet matdet);
+
+    List<RackSum> selectByStatus(@Param("companyId") int companyid, @Param("createTime") Date ltime);
 }

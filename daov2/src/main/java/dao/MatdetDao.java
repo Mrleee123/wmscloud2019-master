@@ -2,8 +2,8 @@ package dao;
 
 import dbtools.DBTools;
 import entity.Matdet;
+import entity.RackSum;
 import mappers.MatdetMapper;
-import mappers.MatmainMapper;
 import org.apache.ibatis.session.SqlSession;
 
 import java.util.Date;
@@ -80,6 +80,17 @@ public class MatdetDao {
             DBTools.closeSession();
         }
     }
+
+    public List<RackSum> selectByStatus(int companyid, Date ltime){
+        try {
+            List<RackSum> result = mapper.selectByStatus(companyid,ltime);
+            System.out.println(result);
+            return result;
+        }finally {
+            DBTools.closeSession();
+        }
+    }
+
 }
 
 

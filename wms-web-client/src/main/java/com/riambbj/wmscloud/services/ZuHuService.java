@@ -31,6 +31,12 @@ public class ZuHuService {
         List<ZuHu> list = dao.selectByMore(ZuHu);
         int firstIndex = (currPage - 1) * pageSize;
         int lastIndex = currPage * pageSize;
-        return list.subList(firstIndex, lastIndex);
+        if (list.size() >= lastIndex) {
+            return list.subList(firstIndex, lastIndex);
+        } else if (currPage == 1) {
+            return list;
+        } else {
+            return null;
+        }
     }
 }

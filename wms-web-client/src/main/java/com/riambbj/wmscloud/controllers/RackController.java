@@ -81,4 +81,16 @@ public class RackController {
             return null;
         }
     }
+
+    @PostMapping(value = "/rack/selectByMore/{currPage}/{pageSize}")
+    @ResponseBody
+    public List<Rack> selectByMore(@RequestBody Rack rack,@PathVariable("currPage") int currPage, @PathVariable("pageSize") int pageSize) {
+        try {
+            List<Rack> result = us.selectByMore(rack,currPage,pageSize);
+            return result;
+        } catch (Exception e) {
+            System.out.println(e.toString());
+            return null;
+        }
+    }
 }

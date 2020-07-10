@@ -34,8 +34,8 @@ public class ManagerService {
     public Map selectTotalNumberServiceByCompany(Integer id){
 
         Map<Integer,Integer> map = new HashMap<>() ;
-        map.put(1,zuHuDao.selectDevnumber(id));
-        map.put(2,userDao.selectTotalNumber(id));
+        map.put(1,userDao.selectTotalNumber(id));
+        map.put(2,zuHuDao.selectDevnumber(id));
         map.put(3,workFlowDao.selectTotalNumberByCompany(id));
         return map;
     }

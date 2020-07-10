@@ -30,4 +30,17 @@ public class VendorService {
     }
 
     public List<Vendor> selectByMore(Vendor vendor){return dao.selectByMore(vendor);}
+
+    public List<Vendor> selectByMore(Vendor log,int currPage, int pageSize){
+        List<Vendor> list = dao.selectByMore(log);
+        int firstIndex= (currPage-1)*pageSize;
+        int lastIndex=currPage*pageSize;
+        if (list.size()>=lastIndex ) {
+            return list.subList(firstIndex, lastIndex);
+        }else if( currPage==1){
+            return  list;
+        }else {
+            return null;
+        }
+    }
 }

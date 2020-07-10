@@ -125,6 +125,26 @@ public class UserController {
         }
     }
 
+    @PostMapping(value = "/user/selectByMore/{currPage}/{pageSize}")
+    @ResponseBody
+    //public String login(@RequestBody String user_code, @RequestBody String password) {
+    public List<User> selectByMore(@RequestBody User user,@PathVariable("currPage") int currPage, @PathVariable("pageSize") int pageSize) {
+//        String user_code = user.getUserCode();
+//        String password = user.getPassword();
+//        long id = user.getId();
+//        int issa = user.getIssa();
+//        String user_name = user.getUserName();
+//        String demo = user.getDemo();
+//        int isendable = user.getIsenabled();
+//        int isdeleted = user.getIsdeleted();
+        try {
+            List<User> result = us.selectByMore(user,currPage,pageSize);
+            return result;
+        }catch (Exception e){
+            return null;
+        }
+    }
+
     //更新用户信息 需要有id号
     @PostMapping(value = "/user/updateUserInfo")
     @ResponseBody

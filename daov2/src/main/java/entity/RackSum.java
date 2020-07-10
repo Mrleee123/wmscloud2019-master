@@ -37,4 +37,9 @@ public class RackSum {
     public void setCompanyid(int companyid) {
         this.companyid = companyid;
     }
+
+    @Override
+    public String toString(){
+        return "RackSum:"+status+"  "+number+" "+percent+" "+companyid;
+    }
 }

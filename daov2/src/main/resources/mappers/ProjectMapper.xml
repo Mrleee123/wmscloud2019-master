@@ -48,6 +48,12 @@
      select count(*) as sum_project from t_web_project
   </select>
 
+  <select id="selectAddress"  resultType="java.util.HashMap">
+        select count(*) as num,city
+        from  t_web_project
+         group by city
+</select>
+
   <select id="selectByMore" resultMap="BaseResultMap" parameterType="entity.Project">
     select
     <include refid="Base_Column_List" />

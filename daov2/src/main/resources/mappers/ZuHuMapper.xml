@@ -92,8 +92,8 @@
      select count(*) as sum_zuhu from t_web_zuhu
   </select>
 
-  <select id="selectDevNumber" resultType="int">
-     select maxnum_dev  from t_web_zuhu where t.id = #{id,jdbcType=INTEGER}
+  <select id="selectDevnumber"  resultType="int">
+     select sum(maxnum_dev)  from t_web_zuhu where pre_company = #{id,jdbcType=INTEGER}
   </select>
 
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">

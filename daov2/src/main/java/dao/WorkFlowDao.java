@@ -1,6 +1,7 @@
 package dao;
 
 import dbtools.DBTools;
+import entity.RackSum;
 import entity.WorkFlow;
 import mappers.WorkFlowMapper;
 import org.apache.ibatis.session.SqlSession;
@@ -84,6 +85,26 @@ public class WorkFlowDao {
             int result = mapper.selectTotalNumberByCompany(companyid);
             return result;
         } finally {
+            DBTools.closeSession();
+        }
+    }
+
+    public List<RackSum> selectByStatus(int companyid, Date ltime){
+        try {
+            List<RackSum> result = mapper.selectByStatus(companyid,ltime);
+            System.out.println(result);
+            return result;
+        }finally {
+            DBTools.closeSession();
+        }
+    }
+
+    public List<RackSum> selectByStatusAll( Date ltime){
+        try {
+            List<RackSum> result = mapper.selectByStatusAll(ltime);
+            System.out.println(result);
+            return result;
+        }finally {
             DBTools.closeSession();
         }
     }

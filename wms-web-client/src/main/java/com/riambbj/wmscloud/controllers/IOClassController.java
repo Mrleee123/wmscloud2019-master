@@ -69,4 +69,16 @@ public class IOClassController {
             return null;
         }
     }
+
+    @PostMapping(value = "/ioClass/selectByMore/{currPage}/{pageSize}")
+    @ResponseBody
+    public List<IOClass> selectByMore(@RequestBody IOClass ioClass,@PathVariable("currPage") int currPage, @PathVariable("pageSize") int pageSize) {
+        try {
+            List<IOClass> result = us.selectByMore(ioClass,currPage,pageSize);
+            return result;
+        } catch (Exception e) {
+            System.out.println(e.toString());
+            return null;
+        }
+    }
 }

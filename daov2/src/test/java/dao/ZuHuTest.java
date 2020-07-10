@@ -78,4 +78,14 @@
 //       int result =dao.selectTotalNumber();
 //        System.out.println(result);
 //    }
+//
+//    @Test
+//    public void selectDevnumber() {
+//
+//        // ZuHu.setDetail("System");
+//        //ZuHu.setMinstore("11111");
+//        //ZuHu.setCompanyId(1);
+//        int result =dao.selectDevnumber(1);
+//        System.out.println(result);
+//    }
 //}

@@ -69,6 +69,17 @@ public class UserRoleController {
             return null;
         }
     }
+//
+//    @RequestMapping(value = "/userRole/selectByUserCode/{currPage}/{pageSize}", method = RequestMethod.GET)
+//    @ResponseBody
+//    public List<UserRole> selectUserRoleByUserCode(@RequestParam(value = "userCode") String userCode,@PathVariable("currPage") int currPage, @PathVariable("pageSize") int pageSize) {
+//        try {
+//            List<UserRole> list = us.selectUserRoleByUserCode(userCode,currPage,pageSize);
+//            return list;
+//        } catch (Exception e) {
+//            return null;
+//        }
+//    }
 
 }
 

@@ -19,4 +19,17 @@ public class StoreService {
     public Store selectByIdService(int id){return dao.get(id);}
 
     public List<Store> selectByMore(Store store){return dao.selectByMore(store);}
+
+    public List<Store> selectByMore(Store log,int currPage, int pageSize){
+        List<Store> list = dao.selectByMore(log);
+        int firstIndex= (currPage-1)*pageSize;
+        int lastIndex=currPage*pageSize;
+        if (list.size()>=lastIndex ) {
+            return list.subList(firstIndex, lastIndex);
+        }else if( currPage==1){
+            return  list;
+        }else {
+            return null;
+        }
+    }
 }

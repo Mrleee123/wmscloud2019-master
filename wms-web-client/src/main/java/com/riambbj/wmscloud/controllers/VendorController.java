@@ -80,4 +80,16 @@ public class VendorController {
             return null;
         }
     }
+
+    @PostMapping(value = "/vendor/selectByMore/{currPage}/{pageSize}")
+    @ResponseBody
+    public List<Vendor> selectByMore(@RequestBody Vendor vendor,@PathVariable("currPage") int currPage, @PathVariable("pageSize") int pageSize) {
+        try {
+            List<Vendor> list = us.selectByMore(vendor,currPage,pageSize);
+            return list;
+        } catch (Exception e) {
+            System.out.println(e.toString());
+            return null;
+        }
+    }
 }

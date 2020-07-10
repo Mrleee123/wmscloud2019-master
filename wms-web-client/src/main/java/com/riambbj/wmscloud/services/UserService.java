@@ -64,6 +64,19 @@ public class UserService {
 
     public List<User> selectByMore(User user){ return userdao.selectByMore(user);}
 
+    public List<User> selectByMore(User log,int currPage, int pageSize){
+        List<User> list = userdao.selectByMore(log);
+        int firstIndex= (currPage-1)*pageSize;
+        int lastIndex=currPage*pageSize;
+        if (list.size()>=lastIndex ) {
+            return list.subList(firstIndex, lastIndex);
+        }else if( currPage==1){
+            return  list;
+        }else {
+            return null;
+        }
+    }
+
     //返回功能URL
     public List<RoleFunction> selectFuctionByUserCode(String UserCode){
 

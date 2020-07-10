@@ -30,14 +30,15 @@ public class ServiceService {
 
     public List<Service> selectByMore(Service Service, int currPage, int pageSize){
         List<Service> list = dao.selectByMore(Service);
-        int firstIndex= (currPage-1)*pageSize;
-        int lastIndex=currPage*pageSize;
-        if (list.size()>lastIndex) {
+        int firstIndex = (currPage - 1) * pageSize;
+        int lastIndex = currPage * pageSize;
+        if (list.size() >= lastIndex) {
             return list.subList(firstIndex, lastIndex);
-        }else{
-            return  list;
+        } else if (currPage == 1) {
+            return list;
+        } else {
+            return null;
         }
-
-        }
+    }
 }
 

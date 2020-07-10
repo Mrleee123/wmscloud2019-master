@@ -50,5 +50,17 @@ public class RoleFunctionService {
         return roleFunctionDao.selectByMore(roleFunction);
     }
 
+    public List<RoleFunction> selectByMore(RoleFunction log,int currPage, int pageSize){
+        List<RoleFunction> list = roleFunctionDao.selectByMore(log);
+        int firstIndex= (currPage-1)*pageSize;
+        int lastIndex=currPage*pageSize;
+        if (list.size()>=lastIndex ) {
+            return list.subList(firstIndex, lastIndex);
+        }else if( currPage==1){
+            return  list;
+        }else {
+            return null;
+        }
+    }
 
 }

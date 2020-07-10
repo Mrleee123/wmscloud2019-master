@@ -1,7 +1,9 @@
 package dao;
 
 import dbtools.DBTools;
+import entity.Compare;
 import entity.DevLog;
+import entity.RackSum;
 import mappers.DevLogMapper;
 import org.apache.ibatis.session.SqlSession;
 
@@ -72,6 +74,16 @@ public class DveLogDao {
             }
         }
 
+
+    public List<DevLog> selectMore(DevLog devLog) {
+        try {
+            List<DevLog> result = mapper.selectByMore(devLog);
+            return result;
+        } finally {
+            DBTools.closeSession();
+        }
+    }
+
         public List<Map> selectByDev(String Devno) {
             try {
                 List<Map> map= mapper.selectByDev(Devno);
@@ -79,8 +91,46 @@ public class DveLogDao {
             } finally {
                 DBTools.closeSession();
             }
+        }
 
+    public List<Map> selectByDevAndCompany( String Devno, Integer companyid) {
+        try {
+            List<Map> map= mapper.selectByDevAndCompany(Devno,companyid);
+            return map;
+        } finally {
+            DBTools.closeSession();
         }
     }
+
+    public List<DevLog> selectCompare( List<Compare> compare) {
+        try {
+            List<DevLog> devLogs= mapper.selectCompare(compare);
+            return devLogs;
+        } finally {
+            DBTools.closeSession();
+        }
+    }
+
+
+    public List<RackSum> selectByStatus(int companyid, Date ltime){
+        try {
+            List<RackSum> result = mapper.selectByStatus(companyid,ltime);
+            System.out.println(result);
+            return result;
+        }finally {
+            DBTools.closeSession();
+        }
+    }
+
+    public List<RackSum> selectByStatusAll( Date ltime){
+        try {
+            List<RackSum> result = mapper.selectByStatusAll(ltime);
+            System.out.println(result);
+            return result;
+        }finally {
+            DBTools.closeSession();
+        }
+    }
+}
 
 

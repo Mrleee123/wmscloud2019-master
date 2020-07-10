@@ -80,5 +80,17 @@ public class StoredefController {
             return null;
         }
     }
+
+    @PostMapping(value = "/storedef/selectByMore/{currPage}/{pageSize}")
+    @ResponseBody
+    public List<Storedef> selectByMore(@RequestBody Storedef storedef,@PathVariable("currPage") int currPage, @PathVariable("pageSize") int pageSize) {
+        try {
+            List<Storedef> result = us.selectByMore(storedef,currPage,pageSize);
+            return result;
+        } catch (Exception e) {
+            System.out.println(e.toString());
+            return null;
+        }
+    }
 }
 

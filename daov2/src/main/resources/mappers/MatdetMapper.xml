@@ -25,6 +25,14 @@
       <result column="creator1" jdbcType="VARCHAR" property="creator" />
     </association>
   </resultMap>
+
+  <resultMap id="map1" type="entity.RackSum" autoMapping="true">
+    <result column="matname" jdbcType="VARCHAR" property="status" />
+    <result column="number" jdbcType="INTEGER" property="number" />
+    <result column="percent" jdbcType="VARCHAR" property="percent" />
+    <result column="companyid" jdbcType="INTEGER" property="companyid" />
+  </resultMap>
+
   <sql id="Base_Column_List">
      id ,matmain_id, matname, mspeci, munit, mweight, memo,memo1, maxstore, minstore, storage_time,
     create_time, creator, update_time, updator,mid
@@ -93,7 +101,7 @@
     values (#{id,jdbcType=BIGINT}, #{matmainId,jdbcType=BIGINT}, #{matname,jdbcType=VARCHAR}, #{mid,jdbcType=VARCHAR},
       #{mspeci,jdbcType=VARCHAR}, #{munit,jdbcType=VARCHAR}, #{mweight,jdbcType=VARCHAR}, 
       #{memo,jdbcType=VARCHAR}, #{maxstore,jdbcType=VARCHAR}, #{minstore,jdbcType=VARCHAR}, 
-      #{storageTime,jdbcType=INTEGER}, #{creator,jdbcType=VARCHAR},
+      #{storageTime,jdbcType=INTEGER}, now(),
       #{updateTime,jdbcType=TIMESTAMP}, #{updator,jdbcType=VARCHAR},#{companyId,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" parameterType="entity.Matdet">
@@ -245,6 +253,43 @@
       updator = #{updator,jdbcType=VARCHAR}
     where id = #{id,jdbcType=BIGINT}
   </update>
+
+
+  <select id="selectByStatus"  resultMap="map1">
+
+    SELECT
+      `matname`,
+      number,
+      concat(round(number / total * 100.00, 2), '%') percent,
+      companyid
+    FROM
+      (
+        SELECT
+          *
+        FROM
+          (
+            SELECT
+              `matname`,
+              companyid,
+              COUNT(1) number
+            FROM
+              `t_asrs_sys_matdet`
+            where create_time>#{createTime,jdbcType=TIMESTAMP}
+            GROUP BY
+              `matname`,companyid
+
+          ) t1
+          INNER JOIN(
+            SELECT
+              COUNT(1) total
+            FROM
+              `t_asrs_sys_matdet`
+              where companyid in (select id from t_web_zuhu where pre_company= #{companyId,jdbcType=INTEGER}) and create_time>#{createTime,jdbcType=TIMESTAMP}
+          ) t2 ON t1.companyid in (select id from t_web_zuhu where pre_company= #{companyId,jdbcType=INTEGER})
+      ) t
+
+  </select>
+
   <select id="selectAll" resultMap="BaseResultMap">
      select m.*,n.mmname
     from t_asrs_sys_matdet m left join t_asrs_sys_matmain n on m.matmain_id =n.id

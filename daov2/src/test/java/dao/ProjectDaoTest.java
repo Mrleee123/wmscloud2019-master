@@ -1,13 +1,13 @@
-//package dao;
-//
-//import entity.Project;
-//import org.junit.Test;
-//
-//import java.util.Date;
-//import java.util.List;
-//
-//public class ProjectDaoTest {
-//    ProjectDao dao = new ProjectDao();
+package dao;
+
+import entity.Project;
+import org.junit.Test;
+
+import java.util.List;
+import java.util.Map;
+
+public class ProjectDaoTest {
+    ProjectDao dao = new ProjectDao();
 //
 //    @Test
 //    public void add() {
@@ -56,15 +56,24 @@
 //    public void get() {
 //        dao.get(1l);
 //    }
-//
-//
-//    @Test
-//    public void selectByMore() {
-//        Project Project = new Project();
-//        // Project.setDetail("System");
-//        //Project.setMinstore("11111");
-//        //Project.setCompanyId(1);
-//        List<Project> result =dao.selectByMore(Project);
-//        System.out.println(result);
-//    }
-//}
+
+
+    @Test
+    public void selectByMore() {
+        Project Project = new Project();
+        // Project.setDetail("System");
+        //Project.setMinstore("11111");
+        //Project.setCompanyId(1);
+        List<Project> result =dao.selectByMore(Project);
+        System.out.println(result);
+    }
+
+    @Test
+    public void selectAddress(){
+        List<Map> maps= dao.selectAddress();
+
+        for (Map map : maps) {
+            System.out.println(map.get("num")+"\t"+map.get("city"));
+        }
+    }
+}

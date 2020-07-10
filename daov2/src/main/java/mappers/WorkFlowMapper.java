@@ -1,7 +1,10 @@
 package mappers;
 
+import entity.RackSum;
 import entity.WorkFlow;
+import org.apache.ibatis.annotations.Param;
 
+import java.util.Date;
 import java.util.List;
 
 public interface WorkFlowMapper {
@@ -22,4 +25,8 @@ public interface WorkFlowMapper {
     int selectTotalNumber();
 
     int selectTotalNumberByCompany(Integer companyid);
+
+    List<RackSum> selectByStatus(@Param("companyId") int companyid, @Param("ltime") Date ltime);
+
+    List<RackSum> selectByStatusAll( @Param("ltime") Date ltime);
 }
