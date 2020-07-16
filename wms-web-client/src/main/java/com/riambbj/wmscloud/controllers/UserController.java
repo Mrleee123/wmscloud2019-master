@@ -76,12 +76,12 @@ public class UserController {
             User result = us.loginUser(user_code, password,companyid);
             // System.out.println(user_code + "   3---   " + password);
             if (result != null) {
-                return "登录成功";
+                return "1";
             } else {
-                return "用户名或密码或公司不正确";
+                return "500";
             }
         } else {
-            return "用户名或密码或公司不能为空";
+            return "404";
         }
     }
 

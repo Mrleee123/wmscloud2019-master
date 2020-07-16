@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="254c0f5b-7169-4179-a208-0dfc5c7754aa" name="Default Changelist" comment="" />
+    <list default="true" id="254c0f5b-7169-4179-a208-0dfc5c7754aa" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/daov2/target/classes/dbtools/DBTools.class" beforeDir="false" afterPath="$PROJECT_DIR$/daov2/target/classes/dbtools/DBTools.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/daov2/target/classes/entity/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/daov2/target/classes/entity/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wms-web-client/src/main/java/com/riambbj/wmscloud/controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/wms-web-client/src/main/java/com/riambbj/wmscloud/controllers/UserController.java" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,8 +55,8 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/daov2/src/main/resources/mappers" />
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="settings.github" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
@@ -213,6 +218,9 @@
       <workItem from="1573441913893" duration="1825000" />
       <workItem from="1573462729569" duration="10824000" />
       <workItem from="1573609276101" duration="6486000" />
+      <workItem from="1594599557891" duration="958000" />
+      <workItem from="1594600766003" duration="975000" />
+      <workItem from="1594863015844" duration="2169000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <created>1561624135955</created>
@@ -363,15 +371,6 @@
     </task>
     <option name="localTasksCounter" value="22" />
     <servers />
-  </component>
-  <component name="TodoView">
-    <todo-panel id="selected-file">
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-    <todo-panel id="all">
-      <are-packages-shown value="true" />
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
